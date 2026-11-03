@@ -71,8 +71,9 @@ Medições em Mesa llvmpipe são renderização por CPU, com amostras curtas; n�
 certificam 60 FPS nem desempenho em GPU física. A criação inicial do mundo ainda
 possui trabalho síncrono de alguns segundos; chunks de exploração são assíncronos.
 Gruta/ruínas e parte da arte continuam transitórias e procedurais, sem alegação
-de arte final. Não houve validação de Windows gráfico ou dispositivos físicos
-nesta máquina Linux. Gerar um instalador Windows não certifica sua instalação.
+de arte final. O [workflow nativo Windows](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41577176498) passou para o commit `036edb3`: instalação, atalhos,
+execução headless, restauração/reinício, reinstalação, desinstalação e hashes.
+Windows gráfico interativo e dispositivos físicos continuam sem validação.
 Não foi simulada uma rede externa com perda/latência: ENet confiável, autoridade,
 checagens de estado, testes de reconexão e reload reduzem erros, sem prometer
 impossibilidade de qualquer bug sob todas as condições.

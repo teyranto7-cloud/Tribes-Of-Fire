@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "commit": "036edb3d473cfbbd06e50079b08d29a40f1be9bd",
+  "run_url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41577176498",
+  "job": "native-windows",
+  "total_duration": "1m 13s",
+  "verified_via": "public GitHub Actions workflow summary",
+  "coverage": [
+    "five artifact checksums and ZIP documentation",
+    "native Windows installer and shortcuts",
+    "headless game startup",
+    "checksummed save and server restart",
+    "reinstall",
+    "uninstall preserving personal data and saves"
+  ],
+  "interactive_graphics_verified": false
+}

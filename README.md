@@ -15,6 +15,7 @@ barra 1–9, mapa com zoom/pan e minimapa opcional. Consulte o
 [relatório de continuidade e limites](Docs/CONTINUITY_REPORT.md),
 [as capturas reais](Docs/verification/0.6.0-dev/screenshots) e as regras de
 [biomas](Data/Biomes.json). I ou Tab abre a mochila; M abre o mapa.
+O [teste nativo Windows da 0.6 passou](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41577176498), incluindo instalação e saves.
 
 Pacotes desta revisão: [Downloads/0.6.0-dev](Downloads/0.6.0-dev).
 As informações e os links 0.5 abaixo descrevem a entrega anterior preservada.

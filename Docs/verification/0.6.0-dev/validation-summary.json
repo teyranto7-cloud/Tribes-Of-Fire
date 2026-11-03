@@ -16,10 +16,14 @@
   "multiplayer": "movement and shared harvest passed",
   "reconnect": "same inventory after reconnect and server restart",
   "install_script_repeat": "passed",
-  "windows_native_validation": "initial run rejected generator 3 in an outdated test validator; validator updated, final run pending",
+  "windows_native_validation": {
+    "status": "passed",
+    "run_url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41577176498",
+    "commit": "036edb3d473cfbbd06e50079b08d29a40f1be9bd"
+  },
   "physical_gpu_validation": "not executed",
   "package_artifacts_verified": 5,
   "source_package_checks": 2,
   "source_package": "fresh import and play/save passed",
-  "package_commit": "e4fb3e3"
+  "package_commit": "036edb3d473cfbbd06e50079b08d29a40f1be9bd"
 }
