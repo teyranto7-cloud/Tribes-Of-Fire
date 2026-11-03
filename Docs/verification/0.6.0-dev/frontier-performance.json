@@ -1,0 +1,120 @@
+{
+	"method": "1s warmup + 2.5s per view, three seeds; software rendering",
+	"preset": "Very Low",
+	"reference_hardware_verified": false,
+	"renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+	"resolution": [
+		1280,
+		720
+	],
+	"results": [
+		{
+			"draw_calls": 419.285714285714,
+			"fps": 5.32107762464054,
+			"generation_ms": 2284.109,
+			"loaded_chunks": 24,
+			"p95_ms": 229.723,
+			"samples": 14,
+			"seed": 718991,
+			"static_memory_bytes": 119783089,
+			"tree_nodes": 35,
+			"view": 0
+		},
+		{
+			"draw_calls": 159.083333333333,
+			"fps": 4.78146322337562,
+			"generation_ms": 2284.109,
+			"loaded_chunks": 19,
+			"p95_ms": 311.476,
+			"samples": 12,
+			"seed": 718991,
+			"static_memory_bytes": 118408567,
+			"tree_nodes": 18,
+			"view": 1
+		},
+		{
+			"draw_calls": 187.923076923077,
+			"fps": 5.00066932035519,
+			"generation_ms": 2284.109,
+			"loaded_chunks": 20,
+			"p95_ms": 273.782,
+			"samples": 13,
+			"seed": 718991,
+			"static_memory_bytes": 119381469,
+			"tree_nodes": 36,
+			"view": 2
+		},
+		{
+			"draw_calls": 452.8,
+			"fps": 3.69670324308079,
+			"generation_ms": 2675.934,
+			"loaded_chunks": 19,
+			"p95_ms": 501.627,
+			"samples": 10,
+			"seed": 12345,
+			"static_memory_bytes": 118564180,
+			"tree_nodes": 17,
+			"view": 0
+		},
+		{
+			"draw_calls": 190.583333333333,
+			"fps": 4.46142927091695,
+			"generation_ms": 2675.934,
+			"loaded_chunks": 18,
+			"p95_ms": 288.131,
+			"samples": 12,
+			"seed": 12345,
+			"static_memory_bytes": 118413842,
+			"tree_nodes": 16,
+			"view": 1
+		},
+		{
+			"draw_calls": 157.230769230769,
+			"fps": 4.96941706062039,
+			"generation_ms": 2675.934,
+			"loaded_chunks": 20,
+			"p95_ms": 258.181,
+			"samples": 13,
+			"seed": 12345,
+			"static_memory_bytes": 118805198,
+			"tree_nodes": 21,
+			"view": 2
+		},
+		{
+			"draw_calls": 387.083333333333,
+			"fps": 4.76386891261913,
+			"generation_ms": 2404.203,
+			"loaded_chunks": 21,
+			"p95_ms": 246.246,
+			"samples": 12,
+			"seed": 90210,
+			"static_memory_bytes": 118903031,
+			"tree_nodes": 18,
+			"view": 0
+		},
+		{
+			"draw_calls": 245.333333333333,
+			"fps": 4.58889258549681,
+			"generation_ms": 2404.203,
+			"loaded_chunks": 18,
+			"p95_ms": 273.287,
+			"samples": 12,
+			"seed": 90210,
+			"static_memory_bytes": 118789985,
+			"tree_nodes": 22,
+			"view": 1
+		},
+		{
+			"draw_calls": 148.0,
+			"fps": 4.61529763477535,
+			"generation_ms": 2404.203,
+			"loaded_chunks": 19,
+			"p95_ms": 526.554,
+			"samples": 12,
+			"seed": 90210,
+			"static_memory_bytes": 118534203,
+			"tree_nodes": 15,
+			"view": 2
+		}
+	]
+}

@@ -59,6 +59,14 @@ func _ready() -> void:
 		button_style.content_margin_bottom = 9
 		theme.set_stylebox(state, "Button", button_style)
 	root.theme = theme
+	var minimap := preload("res://UI/NavigationMiniMap.gd").new(); minimap.game=game
+	minimap.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+	minimap.offset_left=-178;minimap.offset_right=-18;minimap.offset_top=18;minimap.offset_bottom=178
+	minimap.mouse_filter=Control.MOUSE_FILTER_IGNORE;root.add_child(minimap)
+	var quickbar := preload("res://UI/Quickbar.gd").new();quickbar.game=game
+	quickbar.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
+	quickbar.offset_left=18;quickbar.offset_right=-18;quickbar.offset_top=-70;quickbar.offset_bottom=-14
+	root.add_child(quickbar)
 	stats = Label.new()
 	stats.position = Vector2(24, 18)
 	stats.add_theme_font_size_override("font_size", 18)
@@ -72,8 +80,8 @@ func _ready() -> void:
 	root.add_child(exposure_label)
 	hint = Label.new()
 	hint.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
-	hint.offset_top = -78
-	hint.offset_bottom = -20
+	hint.offset_top = -110
+	hint.offset_bottom = -78
 	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	hint.add_theme_font_size_override("font_size", 15)
 	hint.add_theme_color_override("font_shadow_color", Color.BLACK)
@@ -412,6 +420,9 @@ func _language() -> void:
 
 func _settings() -> void:
 	_heading(tr("Settings"))
+	var minimap_toggle := CheckBox.new(); minimap_toggle.text=t("Mostrar minimapa", "Show minimap")
+	minimap_toggle.button_pressed=game.settings_manager.read("accessibility","minimap",false)==true
+	minimap_toggle.toggled.connect(func(value):game.settings_manager.write_sections({"accessibility":{"minimap":value}}));column.add_child(minimap_toggle)
 	button(tr("Graphics"), func(): show_panel("graphics"))
 	button(tr("Controls"), func(): show_panel("controls"))
 	button(tr("Language"), func(): show_panel("language"))
@@ -485,20 +496,7 @@ func _technology() -> void:
 	button(tr("Back"),func():show_panel("pause"))
 func _storage() -> void:
 	_heading(tr("Storage"))
-	var info: Dictionary = game.runtime.channel_state.get("storage",{})
-	var chest = game.world.get_structure(int(info.get("id",-1)))
-	if chest==null:
-		button(tr("Back"),func():show_panel(""));return
-	var contents: Dictionary = info.get("storage",chest.storage)
-	var items: Array = contents.keys();items.sort()
-	for i in range(items.size()):
-		var index: int = i
-		button(tr("Take")+" · "+preload("res://Items/Catalog.gd").display_name(items[i])+" × "+str(contents[items[i]]),func():game.request_command("chest_transfer",{"structure":chest.structure_id,"slot":index,"amount":1,"to_chest":false}))
-	var slots: Array = game.inventory.serialize()["slots"]
-	for i in range(slots.size()):
-		if slots[i].is_empty(): continue
-		var index: int = i
-		button(tr("Store")+" · "+preload("res://Items/Catalog.gd").display_name(slots[i]["id"]),func():game.request_command("chest_transfer",{"structure":chest.structure_id,"slot":index,"amount":1,"to_chest":true}))
+	_add_panel(preload("res://UI/StoragePanel.gd"))
 	button(tr("Back"),func():show_panel(""))
 
 func apply_accessibility(config: Dictionary) -> void:

@@ -139,6 +139,14 @@ func reposition() -> void:
 			var radius:float=10.0+float(i-22)*0.5 if i<32 else rng.randf_range(22,extent)
 			var angle:float=float(i)*2.39996
 			node.position=Vector3(cos(angle)*radius,0,sin(angle)*radius)
+		if int(world.descriptor()["generator"]) >= 3 and i >= 32:
+			var kind := resource_kind(i)
+			if kind in ["rare_ore","gold_ore","silver_ore","sulfur"]:
+				var cave: Vector3 = world.sampler.locations[0]["position"]
+				node.position = cave + Vector3(sin(i*2.4)*14,0,cos(i*2.4)*14)
+			elif kind in ["clay","herb","petals","soil"]:
+				var z := rng.randf_range(-500,500)
+				node.position = Vector3(world.sampler.river_x(z)+world.sampler.watershed.width(z)+rng.randf_range(10,25),0,z)
 		if world.has_method("descriptor") and world.descriptor()["generator"]>=2:
 			for attempt in range(80):
 				if world.terrain_height(node.position.x,node.position.z)>-2.0: break

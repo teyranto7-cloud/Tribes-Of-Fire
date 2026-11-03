@@ -1,0 +1,16 @@
+{
+  "generator": 3,
+  "rules": [
+    {"region":"pradaria inicial","rule":"raio de 24m; relevo legado suave; recursos básicos próximos"},
+    {"region":"vale fluvial","rule":"canal contínuo, talvegue escavado; largura 16–22m; quatro travessias"},
+    {"region":"margem fértil","rule":"faixa seca até 38m do canal; ervas, argila e fibras"},
+    {"region":"floresta densa/aberta","rule":"umidade positiva/negativa; árvores determinísticas, clareiras"},
+    {"region":"colinas e montanhas","rule":"ruído de baixa frequência, elevação >14m; pinheiros e minérios"},
+    {"region":"pedreira","rule":"depósitos minerais em terrenos secos, avançados próximos à gruta"},
+    {"region":"lago","rule":"bacia conectada ao vale principal; pesca"},
+    {"region":"cascata","rule":"afluente elevado termina no vale; queda visual sobre rocha"},
+    {"region":"gruta e ruína","rule":"um exemplar de cada; oito marcos regionais; sem distribuição excessiva"},
+    {"region":"praia","rule":"transição costeira gradual nos limites do mundo"}
+  ],
+  "art_status":"Arte procedural estilizada em evolução; gruta e ruínas ainda transitórias. Não representam arte final."
+}

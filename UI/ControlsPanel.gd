@@ -1,5 +1,5 @@
 extends VBoxContainer
-const ACTIONS := ["forward", "back", "left", "right", "sprint", "jump", "crouch", "dodge", "block", "heavy", "interact", "inventory", "push_to_talk", "chat", "world_map", "rotate_build", "view", "axe", "build", "shelter", "menu", "save", "load"]
+const ACTIONS := ["forward", "back", "left", "right", "sprint", "jump", "crouch", "dodge", "block", "heavy", "interact", "inventory", "push_to_talk", "chat", "world_map", "rotate_build", "view", "axe", "build", "shelter", "menu", "save", "load", "quick4", "quick5", "quick6", "quick7", "quick8", "quick9"]
 var waiting: String = ""
 var game
 var buttons: Dictionary = {}

@@ -10,6 +10,7 @@ var owner_key: String = ""
 var hp: int = 100
 var open: bool = false
 var storage: Dictionary = {}
+var storage_wear: Dictionary = {}
 var bound_to: String = ""
 var crop: String = ""
 var growth: float = 0.0
@@ -27,6 +28,7 @@ func setup(record: Dictionary) -> void:
 	rotation.y = int(record.get("rotation", 0)) * PI * 0.5
 	hp = int(record.get("hp", 100))
 	storage = record.get("storage", {}).duplicate(true)
+	storage_wear = record.get("storage_wear", {}).duplicate(true)
 	bound_to = str(record.get("bound_to", ""))
 	add_to_group("building_piece")
 	add_to_group(kind)
@@ -139,7 +141,9 @@ func set_crop(value: String, progress: float, moisture: float) -> void:
 func get_record() -> Dictionary:
 	var result := {"id": structure_id, "kind": kind, "position": [position.x, position.y, position.z],
 		"rotation": posmod(roundi(rotation.y / (PI * 0.5)), 4), "owner": owner_key, "hp": hp, "open": open}
-	if kind == "chest": result["storage"] = storage.duplicate(true)
+	if kind == "chest":
+		result["storage"] = storage.duplicate(true)
+		result["storage_wear"] = storage_wear.duplicate(true)
 	if kind == "bed": result["bound_to"] = bound_to
 	return result
 

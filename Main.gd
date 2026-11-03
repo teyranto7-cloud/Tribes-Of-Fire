@@ -149,6 +149,7 @@ func install_inputs() -> void:
 		"sprint": KEY_SHIFT, "jump": KEY_SPACE, "inventory": KEY_I,
 		"menu": KEY_ESCAPE, "save": KEY_F5, "load": KEY_F9,
 		"view": KEY_F4, "rotate_build": KEY_R, "world_map": KEY_M, "axe": KEY_1, "build": KEY_2, "shelter": KEY_3, "interact": KEY_E,
+		"quick4":KEY_4,"quick5":KEY_5,"quick6":KEY_6,"quick7":KEY_7,"quick8":KEY_8,"quick9":KEY_9,
 		"crouch": KEY_C, "dodge": KEY_Q, "heavy": KEY_F, "push_to_talk": KEY_V, "chat": KEY_ENTER}
 	for action in keys:
 		if not InputMap.has_action(action):
@@ -176,7 +177,7 @@ func _empty_world(seed_value: int = -1) -> Dictionary:
 		var entropy := Crypto.new().generate_random_bytes(4)
 		seed_value = (int(entropy.decode_u32(0)) if entropy.size()==4 else Time.get_ticks_usec()) & 0x7fffffff
 	seed_value=seed_value & 0x7fffffff
-	var description := {"seed":seed_value,"generator":2,"size":1536}
+	var description := {"seed":seed_value,"generator":3,"size":1536}
 	var sampler=WorldScript.Terrain.new(description)
 	var loot: Array = []
 	for place in sampler.locations:
@@ -231,7 +232,8 @@ func _start_host(port: int, dedicated: bool) -> void:
 		return
 	var data: Dictionary = opened["data"]
 	if data.is_empty():
-		data = _empty_world(int(server_rules["seed"]))
+		data = _empty_world(int(server_rules["seed"]) if cli.has("seed") or cli.has("server-config") else -1)
+		server_rules["seed"] = data["seed"]
 	if not _begin_authority(data):
 		return
 	server_rules["port"] = port
@@ -338,6 +340,7 @@ func _spawn_player(id: int) -> void:
 	var record: Dictionary = saved.get("players", {}).get(record_key, {})
 	var origin: Array = record.get("position", [float(players.size()) * 1.5, world.terrain_height(float(players.size()) * 1.5, 0) + 0.2, 0])
 	body.position = Vector3(origin[0], origin[1], origin[2])
+	if record.is_empty() and int(world.descriptor()["generator"]) >= 3: body.position = world.sampler.spawn_point(players.size())
 	body.vitals.hp = int(record.get("hp", 100))
 	body.set_meta("death_handled", record.get("death_handled",false)==true)
 	body.vitals.regen_delay = _config_number(float(cli.get("regen-delay", "6")), 6, 0, 60)
@@ -491,6 +494,7 @@ func network_state(recipient_id: int = 0) -> Dictionary:
 	for record in building_data:
 		if not runtime.tribes.can_build(record["owner"], session.player_key(recipient_id)):
 			record.erase("storage")
+			record.erase("storage_wear")
 	var data := {"players": bodies, "world": world.descriptor(), "structures": building_data,
 		"resource_timers": world.resource_timers.duplicate(), "fire_states": world.fire_states(), "fishing": world.fish_states(),
 		"terrain_changes": world.sampler.changes.duplicate(true), "cut": world.cut_ids(), "fires": world.fire_positions(), "shelters": world.shelter_positions(),
@@ -686,16 +690,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		load_game()
 	elif hud.mode == "":
 		if event.is_action_pressed("axe"):
-			tool = 1
-			build_piece = ""
+			use_quick_slot(0)
 		elif event.is_action_pressed("build"):
-			tool = 2
-			build_piece = ""
+			use_quick_slot(1)
 		elif event.is_action_pressed("shelter"):
-			tool = 3
-			build_piece = ""
+			use_quick_slot(2)
 		elif event.is_action_pressed("use"):
 			use_tool()
+		else:
+			for i in range(3,9):
+				if event.is_action_pressed("quick%d" % (i+1)): use_quick_slot(i)
 
 func _physics_process(delta: float) -> void:
 	if not running or quitting:
@@ -941,3 +945,19 @@ func _drop_death_items(id: int) -> void:
 		var at: Vector3=body.position
 		at.y=world.terrain_height(at.x,at.z)+0.4
 		runtime._add_drop(taken["id"],taken["count"],at,int(taken.get("durability",100)))
+
+func use_quick_slot(index: int) -> void:
+	if index < 0 or index >= 9 or player == null or hud.mode != "": return
+	var item: String = preload("res://UI/Quickbar.gd").item_for(self,index)
+	if inventory.count(item) < 1:
+		hud.notify_message(hud.t("Você não possui esse item.","You do not have this item.")); return
+	if item in ["campfire","shelter"]:
+		tool = 2 if item == "campfire" else 3; build_piece=""; return
+	if item == "water": request_command("drink",{}); return
+	var slots: Array = inventory.serialize()["slots"]
+	for i in range(slots.size()):
+		if slots[i].get("id") == item:
+			if Inventory.Catalog.WEAPONS.has(item) or Inventory.Catalog.ARMOR.has(item) or item == "shield":
+				request_command("equip",{"slot":i});tool=1;build_piece=""
+			else: request_command("eat",{"item":item})
+			return

@@ -56,8 +56,11 @@ func craft_shelter() -> bool:
 func restore(data: Dictionary) -> void:
 	if data.has("slots") and valid_state(data):
 		slots = data["slots"].duplicate(true)
+		for slot in slots:
+			if not slot.is_empty(): slot["count"] = int(slot["count"])
 		equipment = data["equipment"].duplicate()
 		durability = data.get("durability", {}).duplicate()
+		for item in durability: durability[item] = int(durability[item])
 		_sync_counts()
 		return
 	items = {"axe": 1, "wood": 0, "campfire": 0, "shelter": 0}
@@ -234,3 +237,14 @@ func craft_recipe(id: String, stations: Array = []) -> bool:
 	if recipe["station"] != "hand" and not recipe["station"] in stations:
 		return false
 	return transact(recipe["cost"], {id: 1})
+
+# Sorting is an authority command; the UI never rewrites inventory state.
+func organize() -> bool:
+	_ensure_slots()
+	var occupied: Array = slots.filter(func(slot): return not slot.is_empty())
+	occupied.sort_custom(func(a, b): return str(a["id"]) < str(b["id"]))
+	slots = occupied
+	while slots.size() < SLOT_COUNT:
+		slots.append({})
+	_sync_counts()
+	return true

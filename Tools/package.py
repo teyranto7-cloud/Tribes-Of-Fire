@@ -27,6 +27,8 @@ DOCS = ('README.md', 'ARCHITECTURE.md', 'PROGRESS.md', 'CREDITS.md', 'CHANGELOG.
         'Docs/FEATURE_MATRIX.md', 'Docs/QA.md', 'Docs/ROADMAP.md', 'Docs/RECONSTRUCTION_DIAGNOSIS.md',
         'Docs/REQUEST_RECONSTRUCTION.md', 'Docs/REQUEST_RECONSTRUCTION_PART2.md',
         'Docs/REQUEST_CONTENT.md', 'Docs/REQUEST_CONTINUITY_MASTER.md',
+        'Docs/CONTINUITY_REPORT.md', 'Data/Biomes.json',
+        'Docs/verification/0.6.0-dev/frontier-performance.json',
         'Tests/MANUAL.md', 'Tools/Test-Windows.ps1')
 
 

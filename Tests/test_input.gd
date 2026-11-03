@@ -21,7 +21,7 @@ func run() -> void:
 	while not game.ready_world:
 		await process_frame
 	check(game.menu_camera.current, "Menu possui camera antes da primeira jornada")
-	game.new_game()
+	game.new_game(718991)
 	await frames(30)
 	check(game.player != null and game.player.enabled and game.player.camera.current,
 		"Nova jornada cria personagem e ativa camera e controles")

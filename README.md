@@ -1,11 +1,23 @@
 # Tribes of Fire
 
-Criado por **felipealx** · código em desenvolvimento **0.5.0-dev** · Godot 4.6.3 · Windows/Linux x64
+Criado por **felipealx** · código em desenvolvimento **0.6.0-dev** · Godot 4.6.3 · Windows/Linux x64
 
 Jogo de sobrevivência 3D em terceira pessoa, com modo solo, hospedagem por jogador
 e servidor dedicado autoritativo. A reconstrução continua a base existente; não é
 uma versão 1.0 concluída. Funcionalidades, resultados observados e critérios ainda
 pendentes estão em [PROGRESS.md](PROGRESS.md) e [Docs/PENDENCIAS.md](Docs/PENDENCIAS.md).
+
+## Continuidade 0.6.0-dev
+
+Gerador 3 versionado, correção do limite de streaming, travessias, cascata e
+margens regionais; mochila com busca, divisão, descarte físico, ícones e baús;
+barra 1–9, mapa com zoom/pan e minimapa opcional. Consulte o
+[relatório de continuidade e limites](Docs/CONTINUITY_REPORT.md),
+[as capturas reais](Docs/verification/0.6.0-dev/screenshots) e as regras de
+[biomas](Data/Biomes.json). I ou Tab abre a mochila; M abre o mapa.
+
+Pacotes desta revisão: [Downloads/0.6.0-dev](Downloads/0.6.0-dev).
+As informações e os links 0.5 abaixo descrevem a entrega anterior preservada.
 
 ## Versões e downloads
 

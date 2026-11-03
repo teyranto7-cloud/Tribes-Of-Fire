@@ -11,11 +11,14 @@ var temperature := FastNoiseLite.new()
 var locations: Array[Dictionary] = []
 var river_offset: float = 0.0
 var lake_center := Vector2.ZERO
+var watershed
+var waterfall := Vector3.ZERO
 
 func _init(description: Dictionary = LEGACY, edits: Dictionary = {}) -> void:
 	changes=edits.duplicate(true)
 	settings = description.duplicate(true)
 	var seed_value := int(settings.get("seed", 1337))
+	if int(settings.get("generator", 0)) >= 3: watershed = preload("res://World/Watershed.gd").new(seed_value)
 	for index in range(4):
 		var noise: FastNoiseLite = [relief, detail, moisture, temperature][index]
 		noise.seed = seed_value + index * 7919
@@ -26,6 +29,9 @@ func _init(description: Dictionary = LEGACY, edits: Dictionary = {}) -> void:
 	rng.seed = seed_value + 413
 	river_offset = rng.randf_range(30, 55) * (-1 if seed_value % 2 else 1)
 	lake_center = Vector2(river_offset + rng.randf_range(-12, 12), rng.randf_range(55, 85))
+	if watershed != null:
+		lake_center = Vector2(watershed.center(265), 265)
+		waterfall = Vector3(watershed.center(-270) + 28, WATER_LEVEL + 8, -270)
 	var cave := Vector2(rng.randf_range(-85, -55), rng.randf_range(-70, -40))
 	var ruins := Vector2(rng.randf_range(65, 95), rng.randf_range(-65, -35))
 	locations.append({"kind": "cave", "position": Vector3(cave.x, raw_height(cave.x, cave.y), cave.y), "id": 3000})
@@ -43,11 +49,13 @@ static func legacy_height(x: float, z: float) -> float:
 	return sin(x * 0.052) * 1.6 + cos(z * 0.047) * 1.4 + sin((x + z) * 0.031) * 0.8
 
 func river_x(z: float) -> float:
+	if watershed != null: return watershed.center(z)
 	return river_offset + sin(z * 0.026 + int(settings["seed"]) * 0.01) * 12.0
 
 func raw_height(x: float, z: float) -> float:
 	if int(settings.get("generator", 0)) == 0:
 		return legacy_height(x, z)
+	if int(settings.get("generator", 0)) >= 3: return frontier_height(x,z)
 	if int(settings.get("generator", 0)) >= 2: return living_height(x,z)
 	var continental := relief.get_noise_2d(x, z)
 	var ridges := pow(maxf(0, absf(relief.get_noise_2d(x + 420, z - 310)) - 0.18), 1.8) * 40.0
@@ -98,6 +106,7 @@ func ground_color(x: float, z: float, normal: Vector3) -> Color:
 		"tundra": Color("#c8d7d0"), "beach": Color("#c7b889"), "desert": Color("#b9a77a"),
 		"volcanic": Color("#665e57")}[biome(x, z)]
 	tint = tint.lerp(Color("#747971"), smoothstep(0.15, 0.5, 1.0 - normal.y))
+	if watershed != null and path_distance(x,z) < 1.2 and height(x,z) > WATER_LEVEL + 0.4: tint = tint.lerp(Color("#bda77a"),0.7)
 	return tint.lightened(detail.get_noise_2d(x * 3.0, z * 3.0) * 0.12)
 
 func chunk_arrays(x0: int, z0: int) -> Array:
@@ -148,3 +157,33 @@ func living_height(x: float, z: float) -> float:
 	value=lerpf(value,WATER_LEVEL-3.5,channel)
 	var lake:=1.0-smoothstep(18.0,29.0,Vector2(x,z).distance_to(lake_center))
 	return lerpf(value,WATER_LEVEL-4.0,lake)
+
+# A new version keeps generator 0/1/2 saves bit-for-bit reproducible.
+func frontier_height(x: float, z: float) -> float:
+	var distance := Vector2(x,z).length()
+	var ridge := pow(1.0 - absf(relief.get_noise_2d(x*0.35+470,z*0.35-190)),3.0)
+	var upland := smoothstep(70,240,distance) * smoothstep(0.35,0.75,moisture.get_noise_2d(x*0.32,z*0.32)+0.5)
+	var value := 5.0 + relief.get_noise_2d(x*0.65,z*0.65)*12 + detail.get_noise_2d(x,z)*1.2 + ridge*upland*48
+	value = lerpf(legacy_height(x,z), value, smoothstep(24,50,distance))
+	value = lerpf(value, -12.0, smoothstep(620,755,maxf(absf(x),absf(z))))
+	value = watershed.carve(value,x,z,WATER_LEVEL)
+	var basin := 1.0 - smoothstep(20,34,Vector2(x,z).distance_to(lake_center))
+	value = lerpf(value,WATER_LEVEL-4,basin)
+	# Raised tributary shelf with a dry, accessible overlook beside the cascade.
+	var shelf := 1.0 - smoothstep(6,17,Vector2(x,z).distance_to(Vector2(waterfall.x+9,waterfall.z)))
+	return lerpf(value, waterfall.y + 0.6, shelf)
+
+func path_distance(x: float, z: float) -> float:
+	# An exploration trail connects the spawn to the two nearby POIs.
+	var best := INF
+	var point := Vector2(x,z)
+	for place in locations.slice(0,2):
+		var end := Vector2(place["position"].x,place["position"].z)
+		var t := clampf(point.dot(end)/maxf(1,end.length_squared()),0,1)
+		best = minf(best,point.distance_to(end*t))
+	return best
+
+func spawn_point(index: int = 0) -> Vector3:
+	# Keep player spawns clear of initial trees and resource rocks.
+	var p := Vector2(sin(index*2.399)*2.0, cos(index*2.399)*2.0)
+	return Vector3(p.x,height(p.x,p.y)+0.3,p.y)

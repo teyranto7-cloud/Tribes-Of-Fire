@@ -194,6 +194,7 @@ func run() -> void:
 	replacement=game.snapshot()
 	replacement["structures"][0]["kind"]="wall"
 	replacement["structures"][0].erase("storage")
+	replacement["structures"][0].erase("storage_wear")
 	check(Store.save_world(replacement,game.save_folder)=="" and game._begin_authority(Store.load_world(game.save_folder)),"A save may replace the structural kind associated with a reused ID")
 	game._spawn_player(1);game.player.set_physics_process(false)
 	replaced=game.world.get_structure(3000)

@@ -1,5 +1,12 @@
 # Mudanças — Tribes of Fire
 
+## 0.6.0-dev — continuidade das Fases 1 e 2
+
+Gerador 3 preservando saves anteriores, streaming de todo o mapa e transição de
+terreno por chunks instalados; vale com travessias/cascata, regiões e trilhas.
+Mochila, split/descarte físico, baús com durabilidade, atalhos 1–9, minimapa e
+navegação com zoom/pan. Evidências e limites em Docs/CONTINUITY_REPORT.md.
+
 Criado por **felipealx**.
 
 ## 0.5.0-dev — mundo ampliado e progressão jogável

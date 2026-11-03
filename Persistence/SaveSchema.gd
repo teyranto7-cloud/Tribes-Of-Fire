@@ -11,8 +11,8 @@ static func position(value: Variant, extent: float) -> bool:
 static func descriptor(data: Dictionary) -> bool:
 	var world: Variant = data.get("world")
 	if not world is Dictionary or world.size() != 3: return false
-	if not number(world.get("seed"),0,2147483647,true) or not number(world.get("generator"),0,2,true): return false
-	return world.get("seed") == data.get("seed") and ((world["generator"] == 0 and world.get("size") == 128 and world["seed"] == 1337) or (world["generator"] == 1 and world.get("size") == 320) or (world["generator"] == 2 and world.get("size") == 1536))
+	if not number(world.get("seed"),0,2147483647,true) or not number(world.get("generator"),0,3,true): return false
+	return world.get("seed") == data.get("seed") and ((world["generator"] == 0 and world.get("size") == 128 and world["seed"] == 1337) or (world["generator"] == 1 and world.get("size") == 320) or (int(world["generator"]) in [2,3] and world.get("size") == 1536))
 static func extra(data: Dictionary, extent: float) -> bool:
 	var edits:Variant=data.get("terrain_changes",{})
 	if not edits is Dictionary or edits.size()>1024:return false
@@ -48,6 +48,10 @@ static func extra(data: Dictionary, extent: float) -> bool:
 			if piece["kind"] != "chest" or not piece["storage"] is Dictionary or piece["storage"].size()>24: return false
 			for item in piece["storage"]:
 				if not item is String or not Catalog.known(item) or not number(piece["storage"][item],0,9999,true): return false
+		if piece.has("storage_wear"):
+			if piece["kind"] != "chest" or not piece["storage_wear"] is Dictionary or piece["storage_wear"].size()>24: return false
+			for item in piece["storage_wear"]:
+				if not piece.get("storage",{}).has(item) or not number(piece["storage_wear"][item],0,100,true):return false
 	var fishes: Variant = data.get("fishing",[])
 	if not fishes is Array or fishes.size()>12: return false
 	var fish_ids: Dictionary = {}

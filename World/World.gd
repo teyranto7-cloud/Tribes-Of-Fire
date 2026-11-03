@@ -33,6 +33,9 @@ var _generation: int = 0
 var _mutex := Mutex.new()
 var _poi_nodes: Array = []
 var _grass_center := Vector3.ZERO
+var _chunk_mask_signature: int = -1
+var _chunk_mask: Image
+var _chunk_mask_texture: ImageTexture
 var trees: Array = []
 var fires: Array[Node3D] = []
 var shelters: Array[Node3D] = []
@@ -662,6 +665,9 @@ func _build_tree_catalog() -> void:
 		var tint := Color("#38724c").lerp(Color("#7ea958"), rng.randf())
 		if not legacy and at.y < water_level + 0.6: continue
 		var biome := biome_at(at.x, at.z)
+		if int(world_description["generator"]) >= 3 and id > 2:
+			if sampler.path_distance(at.x,at.z) < 2.2: continue
+			if biome in ["plains","woodland"] and id % 3 != 0: continue
 		var species: String = "oak" if legacy else ("palm" if biome == "beach" else ("pine" if biome in ["mountains", "tundra"] else ("burnt" if biome == "volcanic" else ["oak","pine","birch","fruit","fallen"][id % 5])))
 		var key := Vector2i(floori(at.x/16), floori(at.z/16))
 		if not _chunk_records.has(key): _chunk_records[key] = []
@@ -686,7 +692,8 @@ func update_streaming(foci: Array) -> void:
 		for z in range(-3,4):
 			for x in range(-3,4):
 				var key := center + Vector2i(x,z)
-				if key.x >= -10 and key.x < 10 and key.y >= -10 and key.y < 10: _wanted[key] = true
+				var limit := ceili(half_extent() / 16)
+				if key.x >= -limit and key.x < limit and key.y >= -limit and key.y < limit: _wanted[key] = true
 	for key in _chunks.keys():
 		if _wanted.has(key): continue
 		var keep := false
@@ -706,6 +713,7 @@ func _build_chunk_job(key: Vector2i, model, generation: int) -> void:
 
 func _process(_delta: float) -> void:
 	_sync_distant_forest()
+	_update_chunk_mask()
 	if forest_material!=null and not _focus_positions.is_empty():forest_material.set_shader_parameter("focus",Vector2(_focus_positions[0].x,_focus_positions[0].z))
 	for poi in _poi_nodes: poi.visible=has_terrain_at(poi.position)
 	if distant_material!=null and not _focus_positions.is_empty(): distant_material.set_shader_parameter("focus",Vector2(_focus_positions[0].x,_focus_positions[0].z))
@@ -831,11 +839,13 @@ func restore_buildings(records: Array) -> void:
 				piece.replica_target=at;piece.replica_yaw=int(record["rotation"])*PI*0.5
 				if piece.is_multiplayer_authority():piece.position=at;piece.rotation.y=piece.replica_yaw
 			piece.hp = int(record["hp"]); piece.set_open(bool(record.get("open",false)))
+			piece.storage_wear = record.get("storage_wear",{}).duplicate(true)
 			piece.storage = record.get("storage",{}).duplicate(true); piece.bound_to = str(record.get("bound_to",""))
 	for piece in structures.duplicate():
 		if not ids.has(piece.structure_id): structures.erase(piece); remove_child(piece); piece.queue_free()
 
 func _make_points_of_interest() -> void:
+	if int(world_description["generator"]) >= 3: _make_watershed_landmarks()
 	for place in sampler.locations:
 		var node := StaticBody3D.new(); node.position=place["position"]; add_child(node); _poi_nodes.append(node)
 		var rock := Color("#66645b")
@@ -886,17 +896,23 @@ func _make_distant_terrain() -> void:
 	if int(world_description["generator"])<2 or DisplayServer.get_name()=="headless":return
 	var surface:=SurfaceTool.new();surface.begin(Mesh.PRIMITIVE_TRIANGLES)
 	var extent:=half_extent();var step:=extent*2/96
+	var samples:Dictionary={}
+	for z in range(97):
+		for x in range(97):
+			var at:=Vector2(-extent+x*step,-extent+z*step)
+			var normal:=Vector3(sampler.height(at.x-1,at.y)-sampler.height(at.x+1,at.y),2,sampler.height(at.x,at.y-1)-sampler.height(at.x,at.y+1)).normalized()
+			samples[Vector2i(x,z)]=[Vector3(at.x,sampler.height(at.x,at.y)-0.7,at.y),normal,sampler.ground_color(at.x,at.y,normal)]
 	for z in range(96):
 		for x in range(96):
 			for corner in [Vector2i(0,0),Vector2i(1,0),Vector2i(0,1),Vector2i(1,0),Vector2i(1,1),Vector2i(0,1)]:
-				var at:=Vector2(-extent+(x+corner.x)*step,-extent+(z+corner.y)*step)
-				var normal:=Vector3(sampler.height(at.x-1,at.y)-sampler.height(at.x+1,at.y),2,sampler.height(at.x,at.y-1)-sampler.height(at.x,at.y+1)).normalized()
-				surface.set_normal(normal);surface.set_color(sampler.ground_color(at.x,at.y,normal))
-				surface.add_vertex(Vector3(at.x,sampler.height(at.x,at.y)-0.7,at.y))
+				var sample:Array=samples[Vector2i(x,z)+corner]
+				surface.set_normal(sample[1]);surface.set_color(sample[2]);surface.add_vertex(sample[0])
 	distant_terrain=MeshInstance3D.new();distant_terrain.mesh=surface.commit()
 	distant_terrain.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	distant_material=ShaderMaterial.new();distant_material.shader=preload("res://Assets/Shaders/distant_terrain.gdshader")
 	distant_terrain.material_override=distant_material;add_child(distant_terrain)
+	_chunk_mask_signature=-1
+	_update_chunk_mask()
 func _spawn_ground_life(parent: Node3D,key: Vector2i) -> void:
 	var rng:=RandomNumberGenerator.new();rng.seed=int(world_description["seed"])+key.x*1973+key.y*9277
 	var stem:=CylinderMesh.new();stem.top_radius=0.015;stem.bottom_radius=0.025;stem.height=0.32;stem.radial_segments=5
@@ -959,3 +975,39 @@ func _sync_distant_forest() -> void:
 		var index:int=forest_ids[id];var at:Transform3D=forest_transforms[index]
 		if _cut_registry.has(id):at.basis=at.basis.scaled(Vector3.ZERO)
 		far_forest.multimesh.set_instance_transform(index,at)
+
+func _make_watershed_landmarks() -> void:
+	for z in sampler.watershed.crossings:
+		var x: float = sampler.river_x(z)
+		var bridge := StaticBody3D.new(); bridge.name = "SeedBridge"; bridge.add_to_group("seed_bridge")
+		bridge.position = Vector3(x, water_level+1.2, z); add_child(bridge); _poi_nodes.append(bridge)
+		var width: float = sampler.watershed.width(z)*2+18
+		for i in range(18):
+			var at := Vector3((i+0.5)/18.0*width-width*0.5,0,0)
+			Shapes.box(bridge,Vector3(width/18.0+0.03,0.22,3.2),at,Color("#8c7048").lightened((i%3)*0.03))
+		var slab := BoxShape3D.new(); slab.size = Vector3(width,0.3,3.2); Shapes.collider(bridge,slab,Vector3.ZERO)
+		Shapes.consolidate(bridge)
+	# Small elevated tributary waterfall, adjacent to the low main valley.
+	var falls := Node3D.new(); falls.position = sampler.waterfall; add_child(falls); _poi_nodes.append(falls)
+	for side in [-1,1]:
+		Shapes.sculpted(falls,Vector3(side*2.3,-3,0),Vector3(2,5,2),Color("#72796c"),"head",side+2)
+	var sheet := PlaneMesh.new(); sheet.size = Vector2(3.2,8)
+	var flow := MeshInstance3D.new(); flow.mesh=sheet; flow.position=Vector3(0,-4,0); flow.rotation.x=PI/2
+	var material := ShaderMaterial.new(); material.shader=preload("res://Assets/Shaders/cascade.gdshader"); flow.material_override=material
+	falls.add_child(flow)
+	var pool := Shapes.sphere(falls,2.0,Vector3(0,-7.7,0),Color("#b1dcce")); pool.scale=Vector3(1.4,0.08,0.8)
+
+func _update_chunk_mask() -> void:
+	if distant_material == null: return
+	var signature:=hash(_chunks.keys())
+	if signature==_chunk_mask_signature:return
+	_chunk_mask_signature=signature
+	var side:=ceili(half_extent()/16.0)*2
+	_chunk_mask=Image.create(side,side,false,Image.FORMAT_L8)
+	_chunk_mask.fill(Color.BLACK)
+	for key in _chunks:
+		var cell:Vector2i=key+Vector2i(side/2,side/2)
+		if cell.x>=0 and cell.x<side and cell.y>=0 and cell.y<side:_chunk_mask.set_pixel(cell.x,cell.y,Color.WHITE)
+	_chunk_mask_texture=ImageTexture.create_from_image(_chunk_mask)
+	distant_material.set_shader_parameter("loaded_chunks",_chunk_mask_texture)
+	distant_material.set_shader_parameter("world_extent",half_extent())

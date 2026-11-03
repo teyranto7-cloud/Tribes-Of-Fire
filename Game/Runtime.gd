@@ -249,6 +249,12 @@ func command(id: int, action: String, data: Dictionary) -> void:
 	var body = game.players[id]
 	var inv = game.inventories[id]
 	var identity := key(id)
+	if action in ["inventory_move", "inventory_drop"] and data.has("expected"):
+		var slot_index := int(data.get("from", -1) if action == "inventory_move" else data.get("slot", -1))
+		var slots: Array = inv.serialize()["slots"]
+		if slot_index < 0 or slot_index >= slots.size() or slots[slot_index].get("id", "") != data["expected"].get("id", "") or int(slots[slot_index].get("count", 0)) != int(data["expected"].get("count", -1)):
+			_notify(id, false)
+			return
 	var accepted := false
 	if action == "appearance":
 		if not Appearance.valid(data) or str(data.get("name", "")).to_lower() in ["admin", "server", "system"]:
@@ -568,16 +574,20 @@ func _chest_transfer(id: int, data: Dictionary) -> bool:
 	if bool(data.get("to_chest",false)):
 		if slot<0 or slot>=36: return false
 		var item: String = inv.serialize()["slots"][slot].get("id","")
-		if item.is_empty() or inv.durability.has(item) or inv.count(item)<amount or chest.storage.get(item,0)+amount>9999 or (not chest.storage.has(item) and chest.storage.size()>=24): return false
-		if not inv.consume(item,amount): return false
+		if data.has("expected_item") and data["expected_item"] != item: return false
+		if item.is_empty() or int(inv.serialize()["slots"][slot].get("count",0))<amount or chest.storage.get(item,0)+amount>9999 or (not chest.storage.has(item) and chest.storage.size()>=24): return false
+		var taken: Dictionary = inv.take_slot(slot,amount)
+		if taken.is_empty(): return false
+		if taken.has("durability"): chest.storage_wear[item] = mini(int(chest.storage_wear.get(item,100)),int(taken["durability"]))
 		chest.storage[item]=int(chest.storage.get(item,0))+amount
 	else:
 		var items: Array = chest.storage.keys();items.sort()
 		if slot<0 or slot>=items.size(): return false
 		var item: String = items[slot]
-		if int(chest.storage[item])<amount or not inv.add(item,amount): return false
+		if data.has("expected_item") and data["expected_item"] != item:return false
+		if int(chest.storage[item])<amount or not inv.add(item,amount,int(chest.storage_wear.get(item,-1))): return false
 		chest.storage[item]=int(chest.storage[item])-amount
-		if chest.storage[item]==0: chest.storage.erase(item)
+		if chest.storage[item]==0: chest.storage.erase(item);chest.storage_wear.erase(item)
 	game.session.notify(id,"storage",{"id":chest.structure_id,"storage":chest.storage.duplicate(true)})
 	return true
 func _refuel(id: int) -> bool:

@@ -16,7 +16,7 @@ signal voice_received(id: int, sequence: int, packet: PackedByteArray, channel: 
 signal admin_requested(id: int, action: String, data: Dictionary)
 const ServerConfig = preload("res://Networking/ServerConfig.gd")
 const SnapshotCodec = preload("res://Networking/SnapshotCodec.gd")
-const PROTOCOL_VERSION := 4
+const PROTOCOL_VERSION := 5
 const COMMANDS := ["tribe_war","tribe_alliance","tribe_accept_alliance","tribe_break_alliance","tribe_peace","tribe_accept_peace","factory_load","factory_take","dig","appearance", "eat", "drink", "cook", "respawn", "inventory_sort", "inventory_move", "inventory_drop", "equip", "unequip", "craft", "interact", "combat", "mine", "build", "tribe_create", "tribe_invite", "tribe_accept", "tribe_leave", "tribe_kick", "tribe_leader", "chat", "group_create", "group_invite", "group_accept", "group_leave", "group_kick", "call_invite", "call_accept", "call_leave", "block", "chest_transfer", "refuel", "research", "craft_cancel", "repair", "plant", "harvest_crop", "fish", "tame", "map_mark", "map_remove"]
 
 const DEFAULT_PORT := 24567
@@ -445,6 +445,16 @@ func _connection_failed() -> void:
 static func valid_command(command: String, data: Dictionary) -> bool:
 	if command not in COMMANDS or not _bounded(data, 0) or JSON.stringify(data).length() > 4096:
 		return false
+	if command == "chest_transfer" and data.has("expected_item"):
+		if not data["expected_item"] is String or not preload("res://Items/Catalog.gd").known(data["expected_item"]):return false
+		var base:=data.duplicate();base.erase("expected_item")
+		return valid_command(command,base)
+	if command in ["inventory_move", "inventory_drop"] and data.has("expected"):
+		var expected: Variant = data["expected"]
+		if not expected is Dictionary or expected.size() != 2 or not expected.get("id") is String or not preload("res://Items/Catalog.gd").known(expected["id"]): return false
+		if not _number(expected.get("count")) or expected["count"] < 1 or expected["count"] > 9999 or expected["count"] != floorf(expected["count"]): return false
+		var base := data.duplicate(true); base.erase("expected")
+		return valid_command(command, base)
 	if command == "appearance":
 		return preload("res://Character/Appearance.gd").valid(data)
 	var fields: Dictionary = {"tribe_war":["target"],"tribe_alliance":["target"],"tribe_accept_alliance":["target"],"tribe_break_alliance":["target"],"tribe_peace":["target"],"tribe_accept_peace":["target"],"factory_load":["station"],"factory_take":["station"],"dig":[],
