@@ -1,0 +1,670 @@
+{
+  "total_files": 246,
+  "text_files": 105,
+  "runtime_scripts": [
+    "Main.gd",
+    "Animals/Animal.gd",
+    "Animals/Director.gd",
+    "Audio/Manager.gd",
+    "Building/Campfire.gd",
+    "Building/Shelter.gd",
+    "Building/Workshop.gd",
+    "Character/Appearance.gd",
+    "Character/Equipment.gd",
+    "Character/Rig.gd",
+    "Combat/Rules.gd",
+    "Communication/ADPCM.gd",
+    "Communication/Channels.gd",
+    "Communication/Voice.gd",
+    "Core/Inventory.gd",
+    "Core/Vitals.gd",
+    "Game/Diagnostics.gd",
+    "Game/Runtime.gd",
+    "Graphics/Settings.gd",
+    "Items/Catalog.gd",
+    "Localization/Manager.gd",
+    "Mining/System.gd",
+    "Networking/Session.gd",
+    "Persistence/Store.gd",
+    "Player/Player.gd",
+    "Survival/Survival.gd",
+    "Tribes/System.gd",
+    "UI/CharacterCreator.gd",
+    "UI/ChatWidget.gd",
+    "UI/CommunicationPanel.gd",
+    "UI/ControlsPanel.gd",
+    "UI/GraphicsPanel.gd",
+    "UI/HUD.gd",
+    "UI/InventoryPanel.gd",
+    "UI/InventorySlot.gd",
+    "UI/PerformanceOverlay.gd",
+    "Weather/Exposure.gd",
+    "Weather/Weather.gd",
+    "World/Clock.gd",
+    "World/Shapes.gd",
+    "World/Tree.gd",
+    "World/World.gd"
+  ],
+  "scenes": [
+    "Scenes/Main.tscn"
+  ],
+  "literal_resource_references": [
+    {
+      "source": "Main.gd",
+      "target": "World/World.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "Player/Player.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "Core/Inventory.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "World/Clock.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "Weather/Weather.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "Weather/Exposure.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "Persistence/Store.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "UI/HUD.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "Networking/Session.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "Game/Runtime.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "Localization/Manager.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "Graphics/Settings.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "Game/Diagnostics.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "UI/ChatWidget.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "UI/PerformanceOverlay.gd"
+    },
+    {
+      "source": "Main.gd",
+      "target": "UI/ControlsPanel.gd"
+    },
+    {
+      "source": "export_presets.cfg",
+      "target": "Assets/icon.ico"
+    },
+    {
+      "source": "project.godot",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "project.godot",
+      "target": "Assets/icon.svg"
+    },
+    {
+      "source": "Animals/Animal.gd",
+      "target": "World/Shapes.gd"
+    },
+    {
+      "source": "Animals/Director.gd",
+      "target": "Animals/Animal.gd"
+    },
+    {
+      "source": "Building/Campfire.gd",
+      "target": "World/Shapes.gd"
+    },
+    {
+      "source": "Building/Shelter.gd",
+      "target": "World/Shapes.gd"
+    },
+    {
+      "source": "Building/Workshop.gd",
+      "target": "World/Shapes.gd"
+    },
+    {
+      "source": "Character/Appearance.gd",
+      "target": "World/Shapes.gd"
+    },
+    {
+      "source": "Character/Appearance.gd",
+      "target": "Assets/Shaders/hide.gdshader"
+    },
+    {
+      "source": "Character/Appearance.gd",
+      "target": "Assets/Fonts/NotoSansCJK-Regular.ttc"
+    },
+    {
+      "source": "Character/Appearance.gd",
+      "target": "Character/Rig.gd"
+    },
+    {
+      "source": "Character/Equipment.gd",
+      "target": "World/Shapes.gd"
+    },
+    {
+      "source": "Combat/Rules.gd",
+      "target": "Items/Catalog.gd"
+    },
+    {
+      "source": "Communication/Voice.gd",
+      "target": "Communication/ADPCM.gd"
+    },
+    {
+      "source": "Core/Inventory.gd",
+      "target": "Items/Catalog.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "Survival/Survival.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "Tribes/System.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "Communication/Channels.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "Communication/Voice.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "Character/Appearance.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "Mining/System.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "Building/Workshop.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "Combat/Rules.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "Animals/Director.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "Audio/Manager.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "Persistence/Store.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "World/Shapes.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "World/Shapes.gd"
+    },
+    {
+      "source": "Game/Runtime.gd",
+      "target": "Communication/ADPCM.gd"
+    },
+    {
+      "source": "Graphics/Settings.gd",
+      "target": "Assets/Shaders/color_grade.gdshader"
+    },
+    {
+      "source": "Mining/System.gd",
+      "target": "World/Shapes.gd"
+    },
+    {
+      "source": "Networking/Session.gd",
+      "target": "Character/Appearance.gd"
+    },
+    {
+      "source": "Persistence/Store.gd",
+      "target": "Weather/Weather.gd"
+    },
+    {
+      "source": "Persistence/Store.gd",
+      "target": "Weather/Exposure.gd"
+    },
+    {
+      "source": "Persistence/Store.gd",
+      "target": "Core/Inventory.gd"
+    },
+    {
+      "source": "Persistence/Store.gd",
+      "target": "Items/Catalog.gd"
+    },
+    {
+      "source": "Persistence/Store.gd",
+      "target": "Character/Appearance.gd"
+    },
+    {
+      "source": "Persistence/Store.gd",
+      "target": "Survival/Survival.gd"
+    },
+    {
+      "source": "Persistence/Store.gd",
+      "target": "Tribes/System.gd"
+    },
+    {
+      "source": "Persistence/Store.gd",
+      "target": "Animals/Director.gd"
+    },
+    {
+      "source": "Persistence/Store.gd",
+      "target": "Communication/Channels.gd"
+    },
+    {
+      "source": "Player/Player.gd",
+      "target": "Core/Vitals.gd"
+    },
+    {
+      "source": "Player/Player.gd",
+      "target": "Character/Appearance.gd"
+    },
+    {
+      "source": "Player/Player.gd",
+      "target": "Character/Equipment.gd"
+    },
+    {
+      "source": "Scenes/Main.tscn",
+      "target": "Main.gd"
+    },
+    {
+      "source": "Tests/test_communication_peer.gd",
+      "target": "Communication/ADPCM.gd"
+    },
+    {
+      "source": "Tests/test_communication_peer.gd",
+      "target": "Character/Appearance.gd"
+    },
+    {
+      "source": "Tests/test_communication_peer.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tests/test_gameplay.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tests/test_gameplay.gd",
+      "target": "Persistence/Store.gd"
+    },
+    {
+      "source": "Tests/test_input.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tests/test_input.gd",
+      "target": "Persistence/Store.gd"
+    },
+    {
+      "source": "Tests/test_player.gd",
+      "target": "Player/Player.gd"
+    },
+    {
+      "source": "Tests/test_reconnect.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tests/test_rules.gd",
+      "target": "Core/Inventory.gd"
+    },
+    {
+      "source": "Tests/test_rules.gd",
+      "target": "Core/Vitals.gd"
+    },
+    {
+      "source": "Tests/test_rules.gd",
+      "target": "World/Clock.gd"
+    },
+    {
+      "source": "Tests/test_rules.gd",
+      "target": "Weather/Weather.gd"
+    },
+    {
+      "source": "Tests/test_rules.gd",
+      "target": "Weather/Exposure.gd"
+    },
+    {
+      "source": "Tests/test_rules.gd",
+      "target": "Persistence/Store.gd"
+    },
+    {
+      "source": "Tests/test_session.gd",
+      "target": "Networking/Session.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Core/Inventory.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Items/Catalog.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Tribes/System.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Communication/Channels.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Communication/ADPCM.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Communication/Voice.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Character/Appearance.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Graphics/Settings.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Localization/Manager.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Survival/Survival.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Core/Vitals.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Persistence/Store.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Networking/Session.gd"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Assets/Fonts/NotoSansCJK-Regular.ttc"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tests/test_v3.gd",
+      "target": "Animals/Director.gd"
+    },
+    {
+      "source": "Tests/test_world.gd",
+      "target": "World/World.gd"
+    },
+    {
+      "source": "Tests/test_ui_regressions.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tests/test_ui_regressions.gd",
+      "target": "Persistence/Store.gd"
+    },
+    {
+      "source": "Tests/test_ui_regressions.gd",
+      "target": "UI/ControlsPanel.gd"
+    },
+    {
+      "source": "Tests/test_ui_regressions.gd",
+      "target": "Main.gd"
+    },
+    {
+      "source": "Tests/test_tribes_regression.gd",
+      "target": "Tribes/System.gd"
+    },
+    {
+      "source": "Tests/test_tribes_regression.gd",
+      "target": "Persistence/Store.gd"
+    },
+    {
+      "source": "Tests/test_tribes_regression.gd",
+      "target": "Weather/Weather.gd"
+    },
+    {
+      "source": "Tests/test_reliability.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tests/test_reliability.gd",
+      "target": "Persistence/Store.gd"
+    },
+    {
+      "source": "Tests/test_reliability.gd",
+      "target": "Core/Inventory.gd"
+    },
+    {
+      "source": "Tests/test_reliability.gd",
+      "target": "Items/Catalog.gd"
+    },
+    {
+      "source": "Tests/test_reliability.gd",
+      "target": "Networking/Session.gd"
+    },
+    {
+      "source": "Tests/test_voice_regressions.gd",
+      "target": "Communication/ADPCM.gd"
+    },
+    {
+      "source": "Tests/test_voice_regressions.gd",
+      "target": "Persistence/Store.gd"
+    },
+    {
+      "source": "Tests/test_voice_regressions.gd",
+      "target": "UI/CommunicationPanel.gd"
+    },
+    {
+      "source": "Tests/test_voice_regressions.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tests/test_host_migration.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tests/test_host_migration.gd",
+      "target": "Character/Appearance.gd"
+    },
+    {
+      "source": "Tests/test_gameplay_regressions.gd",
+      "target": "Core/Inventory.gd"
+    },
+    {
+      "source": "Tests/test_gameplay_regressions.gd",
+      "target": "Items/Catalog.gd"
+    },
+    {
+      "source": "Tests/test_gameplay_regressions.gd",
+      "target": "Survival/Survival.gd"
+    },
+    {
+      "source": "Tests/test_gameplay_regressions.gd",
+      "target": "Player/Player.gd"
+    },
+    {
+      "source": "Tests/test_gameplay_regressions.gd",
+      "target": "Mining/System.gd"
+    },
+    {
+      "source": "Tests/test_gameplay_regressions.gd",
+      "target": "Animals/Director.gd"
+    },
+    {
+      "source": "Tests/test_gameplay_regressions.gd",
+      "target": "Animals/Animal.gd"
+    },
+    {
+      "source": "Tests/test_startup_processes.py",
+      "target": "qa_userdir.txt"
+    },
+    {
+      "source": "Tests/test_startup_processes.py",
+      "target": "qa_locate.gd"
+    },
+    {
+      "source": "Tests/test_startup_close.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tools/benchmark.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tools/benchmark.gd",
+      "target": "Character/Appearance.gd"
+    },
+    {
+      "source": "Tools/capture_screenshots.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tools/capture_screenshots.gd",
+      "target": "Persistence/Store.gd"
+    },
+    {
+      "source": "Tools/capture_v3.gd",
+      "target": "Scenes/Main.tscn"
+    },
+    {
+      "source": "Tools/capture_v3.gd",
+      "target": "Character/Appearance.gd"
+    },
+    {
+      "source": "Tools/make_icon.gd",
+      "target": "Assets/icon.svg"
+    },
+    {
+      "source": "UI/CharacterCreator.gd",
+      "target": "Character/Appearance.gd"
+    },
+    {
+      "source": "UI/CharacterCreator.gd",
+      "target": "World/Shapes.gd"
+    },
+    {
+      "source": "UI/CharacterCreator.gd",
+      "target": "Player/Player.gd"
+    },
+    {
+      "source": "UI/HUD.gd",
+      "target": "Assets/Fonts/NotoSansCJK-Regular.ttc"
+    },
+    {
+      "source": "UI/HUD.gd",
+      "target": "UI/CharacterCreator.gd"
+    },
+    {
+      "source": "UI/HUD.gd",
+      "target": "UI/GraphicsPanel.gd"
+    },
+    {
+      "source": "UI/HUD.gd",
+      "target": "UI/ControlsPanel.gd"
+    },
+    {
+      "source": "UI/HUD.gd",
+      "target": "UI/CommunicationPanel.gd"
+    },
+    {
+      "source": "UI/HUD.gd",
+      "target": "UI/InventoryPanel.gd"
+    },
+    {
+      "source": "UI/HUD.gd",
+      "target": "Items/Catalog.gd"
+    },
+    {
+      "source": "UI/InventoryPanel.gd",
+      "target": "Items/Catalog.gd"
+    },
+    {
+      "source": "UI/InventoryPanel.gd",
+      "target": "UI/InventorySlot.gd"
+    },
+    {
+      "source": "World/Tree.gd",
+      "target": "World/Shapes.gd"
+    },
+    {
+      "source": "World/Tree.gd",
+      "target": "Assets/Shaders/foliage.gdshader"
+    },
+    {
+      "source": "World/World.gd",
+      "target": "World/Shapes.gd"
+    },
+    {
+      "source": "World/World.gd",
+      "target": "World/Tree.gd"
+    },
+    {
+      "source": "World/World.gd",
+      "target": "Building/Campfire.gd"
+    },
+    {
+      "source": "World/World.gd",
+      "target": "Building/Shelter.gd"
+    },
+    {
+      "source": "World/World.gd",
+      "target": "Assets/Shaders/foliage.gdshader"
+    },
+    {
+      "source": "World/World.gd",
+      "target": "Assets/Shaders/water.gdshader"
+    },
+    {
+      "source": "World/World.gd",
+      "target": "Assets/Shaders/clouds.gdshader"
+    }
+  ],
+  "missing_literal_runtime_references": [
+    {
+      "source": "Tests/test_startup_processes.py",
+      "target": "qa_userdir.txt"
+    },
+    {
+      "source": "Tests/test_startup_processes.py",
+      "target": "qa_locate.gd"
+    }
+  ],
+  "duplicate_assets_sha256": [],
+  "asset_count": 28,
+  "autoloads": []
+}

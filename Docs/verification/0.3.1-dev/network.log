@@ -1,0 +1,16 @@
+--- Peer 0: exit=0 ---
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SESSION_SERVER_PASS clients=2 intents=2 actions=2 malicious_rejected=4
+
+--- Peer 1: exit=0 ---
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SESSION_CLIENT_PASS id=1320525522 authoritative_snapshot=true
+
+--- Peer 2: exit=0 ---
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SESSION_CLIENT_PASS id=1478271203 authoritative_snapshot=true
+
+NETWORK_PASS: 1 authoritative server, 2 clients, malformed input/admin actions rejected

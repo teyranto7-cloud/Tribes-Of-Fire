@@ -1,0 +1,85 @@
+name: Windows installer and runtime
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Downloads/**'
+      - 'Tools/Test-Windows.ps1'
+      - '.github/workflows/windows-qa.yml'
+  workflow_dispatch:
+    inputs:
+      package_version:
+        description: 'Package version; empty uses project.godot'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  native-windows:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out project and packaged game
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Select the version to validate
+        id: package
+        shell: pwsh
+        env:
+          REQUESTED_VERSION: ${{ inputs.package_version }}
+        run: |
+          $version = $env:REQUESTED_VERSION
+          if ([string]::IsNullOrWhiteSpace($version)) {
+            $match = [regex]::Match((Get-Content -Raw project.godot), 'config/version="([^"]+)"')
+            if (-not $match.Success) { throw 'Project version missing.' }
+            $version = $match.Groups[1].Value
+          }
+          if ($version -notmatch '^\d+\.\d+\.\d+(?:-[A-Za-z0-9.-]+)?$') { throw 'Invalid package version.' }
+          $directory = 'Downloads/' + $version
+          "PACKAGE_VERSION=$version" >> $env:GITHUB_ENV
+          "PACKAGE_DIRECTORY=$directory" >> $env:GITHUB_ENV
+          if (Test-Path "$directory/manifest.json") { 'available=true' >> $env:GITHUB_OUTPUT }
+          else {
+            'available=false' >> $env:GITHUB_OUTPUT
+            Write-Output "::warning::No package for $version. Native Windows validation was not executed."
+          }
+      - name: Verify all packaged checksums and ZIP documentation
+        if: steps.package.outputs.available == 'true'
+        shell: pwsh
+        run: |
+          trap { Write-Output "::error::$($_.Exception.Message)"; exit 1 }
+          $manifest = Get-Content -Raw "$env:PACKAGE_DIRECTORY/manifest.json" | ConvertFrom-Json
+          if ($manifest.version -ne $env:PACKAGE_VERSION) { throw 'Package version mismatch.' }
+          if (@($manifest.artifacts).Count -ne 5) { throw 'Expected five distribution artifacts.' }
+          foreach ($item in $manifest.artifacts) {
+            $path = Join-Path $env:PACKAGE_DIRECTORY $item.name
+            if ((Get-Item $path).Length -ne $item.size -or (Get-FileHash -Algorithm SHA256 $path).Hash.ToLowerInvariant() -ne $item.sha256) { throw "Artifact mismatch: $path" }
+            if ($item.name.EndsWith('.zip')) {
+              $zip = [IO.Compression.ZipFile]::OpenRead((Resolve-Path $path).ProviderPath)
+              try {
+                $ArchiveRoot = $zip.Entries[0].FullName.Split('/')[0]
+                foreach ($doc in @('README.md', 'Docs/COMMUNICATION.md', 'Tests/MANUAL.md', 'Tools/Test-Windows.ps1')) {
+                  if ($null -eq $zip.GetEntry($ArchiveRoot + '/' + $doc)) { throw "Missing ZIP documentation in $($item.name): $doc" }
+                }
+              } finally { $zip.Dispose() }
+            }
+          }
+          $artifact = @($manifest.artifacts | Where-Object { $_.name -eq ('TribesOfFire-' + $env:PACKAGE_VERSION + '-Windows-Setup.exe') })
+          if ($artifact.Count -ne 1) { throw 'Installer missing from manifest.' }
+          $file = Join-Path $env:PACKAGE_DIRECTORY $artifact[0].name
+          if ((Get-FileHash -Algorithm SHA256 $file).Hash.ToLowerInvariant() -ne $artifact[0].sha256) { throw 'Installer checksum mismatch.' }
+      - name: Install, run headless, restore, reinstall and uninstall on Windows
+        if: steps.package.outputs.available == 'true'
+        shell: pwsh
+        run: |
+          ./Tools/Test-Windows.ps1 -Installer (Join-Path $env:PACKAGE_DIRECTORY ('TribesOfFire-' + $env:PACKAGE_VERSION + '-Windows-Setup.exe')) -OutputDirectory (Join-Path $env:RUNNER_TEMP 'Tribes-QA') -Headless
+      - name: Publish native Windows test evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: windows-native-results
+          path: ${{ runner.temp }}/Tribes-QA/
+          if-no-files-found: warn
+          retention-days: 14

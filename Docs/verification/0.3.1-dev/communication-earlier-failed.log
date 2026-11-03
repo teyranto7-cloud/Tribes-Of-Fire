@@ -1,0 +1,45 @@
+server: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=48630 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1201822243 count=1
+PLAYER_JOINED id=937423270 count=2
+PLAYER_JOINED id=866370851 count=3
+PLAYER_LEFT id=1201822243
+PLAYER_LEFT id=866370851
+PLAYER_LEFT id=937423270
+COMMUNICATION_SERVER_PASS clients=3 routing=authority blocks=validated
+
+A: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1201822243 count=1
+PLAYER_JOINED id=937423270 count=2
+PLAYER_JOINED id=866370851 count=3
+COMMUNICATION_CLIENT_PASS role=A messages=7 audio_packets={  } played_samples=0 microphone_started=false
+
+B: exit=1
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1201822243 count=1
+PLAYER_JOINED id=937423270 count=2
+PLAYER_JOINED id=866370851 count=3
+COMMUNICATION_FAIL role=B messages=["global-proof", "local-proof", "private-proof", "group-proof", "tribe-proof"] audio={ "private": 4, "group": 4 } played=6400
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)
+ERROR: 3 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:810)
+
+C: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1201822243 count=1
+PLAYER_JOINED id=937423270 count=2
+PLAYER_JOINED id=866370851 count=3
+COMMUNICATION_CLIENT_PASS role=C messages=2 audio_packets={ "diplomacy": 3 } played_samples=1920 microphone_started=false
+
+Communication integration failed; inspect peer logs

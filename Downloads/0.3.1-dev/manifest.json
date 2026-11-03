@@ -1,0 +1,30 @@
+{
+  "version": "0.3.1-dev",
+  "artifacts": [
+    {
+      "name": "TribesOfFire-0.3.1-dev-Windows.zip",
+      "size": 53047072,
+      "sha256": "3c374ffee453bc5480e5628883429aea2042c66041fe51dc057fbaeea37a1833"
+    },
+    {
+      "name": "TribesOfFire-0.3.1-dev-Linux.zip",
+      "size": 44236440,
+      "sha256": "78ac67b70156747c5e149c951f2304edc7f8e45d81ed9088aed48e4a2b0235dc"
+    },
+    {
+      "name": "TribesOfFire-0.3.1-dev-Server-Linux.zip",
+      "size": 44236943,
+      "sha256": "ce53dc04bbf39d6452b382c8fc6f2d8346b289d4fa55343a2c28baa4c4f88495"
+    },
+    {
+      "name": "TribesOfFire-0.3.1-dev-Windows-Setup.exe",
+      "size": 42872739,
+      "sha256": "534634e6b35ce028a383328447f6c80a99e5ba3fee28a5c5b0e985732b1d6e25"
+    },
+    {
+      "name": "TribesOfFire-0.3.1-dev-Source.zip",
+      "size": 17670791,
+      "sha256": "22f8f84a78f0062ee339b04764d43439714c32afbb023cfaebb24d297db7fe62"
+    }
+  ]
+}

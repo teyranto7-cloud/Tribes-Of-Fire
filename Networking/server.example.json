@@ -1,0 +1,15 @@
+{
+  "name": "Tribes of Fire",
+  "port": 24567,
+  "password": "",
+  "max_players": 16,
+  "seed": 1337,
+  "pvp": "on",
+  "death_loss": 0.0,
+  "day_minutes": 30,
+  "night_minutes": 15,
+  "resource_rate": 1.0,
+  "difficulty": "normal",
+  "admins": [],
+  "bans": []
+}

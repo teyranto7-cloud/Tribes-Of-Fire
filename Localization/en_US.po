@@ -1,0 +1,703 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en_US\n"
+
+msgid "Play"
+msgstr "Play"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Back"
+msgstr "Back"
+
+msgid "Confirm"
+msgstr "Confirm"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Apply"
+msgstr "Apply"
+
+msgid "Reset defaults"
+msgstr "Reset defaults"
+
+msgid "Detect automatically"
+msgstr "Detect automatically"
+
+msgid "New local journey"
+msgstr "New local journey"
+
+msgid "Continue saved journey"
+msgstr "Continue saved journey"
+
+msgid "Host / Connect by IP"
+msgstr "Host / Connect by IP"
+
+msgid "Quit"
+msgstr "Quit"
+
+msgid "Resume journey"
+msgstr "Resume journey"
+
+msgid "Save [F5]"
+msgstr "Save [F5]"
+
+msgid "Load [F9]"
+msgstr "Load [F9]"
+
+msgid "Quit game"
+msgstr "Quit game"
+
+msgid "CAMP"
+msgstr "CAMP"
+
+msgid "Survival • exploration • building"
+msgstr "Survival • exploration • building"
+
+msgid "Graphics"
+msgstr "Graphics"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Controls"
+msgstr "Controls"
+
+msgid "Character"
+msgstr "Character"
+
+msgid "Create character"
+msgstr "Create character"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Body"
+msgstr "Body"
+
+msgid "Height"
+msgstr "Height"
+
+msgid "Shoulders"
+msgstr "Shoulders"
+
+msgid "Build"
+msgstr "Build"
+
+msgid "Skin"
+msgstr "Skin"
+
+msgid "Eyes"
+msgstr "Eyes"
+
+msgid "Eye color"
+msgstr "Eye color"
+
+msgid "Hair"
+msgstr "Hair"
+
+msgid "Hair color"
+msgstr "Hair color"
+
+msgid "Face"
+msgstr "Face"
+
+msgid "Beard"
+msgstr "Beard"
+
+msgid "Clothing"
+msgstr "Clothing"
+
+msgid "Randomize"
+msgstr "Randomize"
+
+msgid "Rotate"
+msgstr "Rotate"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Inventory"
+msgstr "Inventory"
+
+msgid "Crafting"
+msgstr "Crafting"
+
+msgid "Equip"
+msgstr "Equip"
+
+msgid "Unequip"
+msgstr "Unequip"
+
+msgid "Drop"
+msgstr "Drop"
+
+msgid "Split"
+msgstr "Split"
+
+msgid "Eat"
+msgstr "Eat"
+
+msgid "Drink"
+msgstr "Drink"
+
+msgid "Cook"
+msgstr "Cook"
+
+msgid "Respawn"
+msgstr "Respawn"
+
+msgid "You died"
+msgstr "You died"
+
+msgid "Wood"
+msgstr "Wood"
+
+msgid "Stone"
+msgstr "Stone"
+
+msgid "Campfire"
+msgstr "Campfire"
+
+msgid "Shelter"
+msgstr "Shelter"
+
+msgid "Axe"
+msgstr "Axe"
+
+msgid "Berries"
+msgstr "Berries"
+
+msgid "Raw meat"
+msgstr "Raw meat"
+
+msgid "Cooked meat"
+msgstr "Cooked meat"
+
+msgid "Water"
+msgstr "Water"
+
+msgid "Health"
+msgstr "Health"
+
+msgid "Hunger"
+msgstr "Hunger"
+
+msgid "Thirst"
+msgstr "Thirst"
+
+msgid "Tribe"
+msgstr "Tribe"
+
+msgid "Create tribe"
+msgstr "Create tribe"
+
+msgid "Invite"
+msgstr "Invite"
+
+msgid "Accept"
+msgstr "Accept"
+
+msgid "Leave"
+msgstr "Leave"
+
+msgid "Kick"
+msgstr "Kick"
+
+msgid "Transfer leadership"
+msgstr "Transfer leadership"
+
+msgid "Players"
+msgstr "Players"
+
+msgid "Communication"
+msgstr "Communication"
+
+msgid "Global"
+msgstr "Global"
+
+msgid "Local"
+msgstr "Local"
+
+msgid "Private"
+msgstr "Private"
+
+msgid "Group"
+msgstr "Group"
+
+msgid "Diplomacy"
+msgstr "Diplomacy"
+
+msgid "Send"
+msgstr "Send"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Voice chat"
+msgstr "Voice chat"
+
+msgid "Enable microphone"
+msgstr "Enable microphone"
+
+msgid "Push to talk"
+msgstr "Push to talk"
+
+msgid "Voice activation"
+msgstr "Voice activation"
+
+msgid "Input device"
+msgstr "Input device"
+
+msgid "Output device"
+msgstr "Output device"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Sensitivity"
+msgstr "Sensitivity"
+
+msgid "Test microphone"
+msgstr "Test microphone"
+
+msgid "Stop test"
+msgstr "Stop test"
+
+msgid "Mute"
+msgstr "Mute"
+
+msgid "Block"
+msgstr "Block"
+
+msgid "Call"
+msgstr "Call"
+
+msgid "No microphone available"
+msgstr "No microphone available"
+
+msgid "Action unavailable"
+msgstr "Action unavailable"
+
+msgid "Action completed"
+msgstr "Action completed"
+
+msgid "Not available"
+msgstr "Not available"
+
+msgid "Very Low"
+msgstr "Very Low"
+
+msgid "Low"
+msgstr "Low"
+
+msgid "Medium"
+msgstr "Medium"
+
+msgid "High"
+msgstr "High"
+
+msgid "Ultra"
+msgstr "Ultra"
+
+msgid "Custom"
+msgstr "Custom"
+
+msgid "Resolution"
+msgstr "Resolution"
+
+msgid "Render scale"
+msgstr "Render scale"
+
+msgid "Window mode"
+msgstr "Window mode"
+
+msgid "Windowed"
+msgstr "Windowed"
+
+msgid "Fullscreen"
+msgstr "Fullscreen"
+
+msgid "Borderless"
+msgstr "Borderless"
+
+msgid "Shadows"
+msgstr "Shadows"
+
+msgid "Vegetation"
+msgstr "Vegetation"
+
+msgid "View distance"
+msgstr "View distance"
+
+msgid "Particles"
+msgstr "Particles"
+
+msgid "Clouds"
+msgstr "Clouds"
+
+msgid "Rain"
+msgstr "Rain"
+
+msgid "Reflections"
+msgstr "Reflections"
+
+msgid "Lighting"
+msgstr "Lighting"
+
+msgid "Antialiasing"
+msgstr "Antialiasing"
+
+msgid "Postprocessing"
+msgstr "Postprocessing"
+
+msgid "Show performance"
+msgstr "Show performance"
+
+msgid "Keep these settings?"
+msgstr "Keep these settings?"
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Preparing the world…"
+msgstr "Preparing the world…"
+
+msgid "Connecting…"
+msgstr "Connecting…"
+
+msgid "Created by felipealx"
+msgstr "Created by felipealx"
+
+msgid "Sound"
+msgstr "Sound"
+
+msgid "Camera smoothing"
+msgstr "Camera smoothing"
+
+msgid "Accept call"
+msgstr "Accept call"
+
+msgid "End call"
+msgstr "End call"
+
+msgid "Accept group invitation"
+msgstr "Accept group invitation"
+
+msgid "Invite to group"
+msgstr "Invite to group"
+
+msgid "Leave group"
+msgstr "Leave group"
+
+msgid "Remove from group"
+msgstr "Remove from group"
+
+msgid "Create"
+msgstr "Create"
+
+msgid "Refresh"
+msgstr "Refresh"
+
+msgid "Player volume"
+msgstr "Player volume"
+
+msgid "Unblock"
+msgstr "Unblock"
+
+msgid "Unmute"
+msgstr "Unmute"
+
+msgid "Master"
+msgstr "Master"
+
+msgid "Music"
+msgstr "Music"
+
+msgid "Ambient"
+msgstr "Ambient"
+
+msgid "Effects"
+msgstr "Effects"
+
+msgid "UI"
+msgstr "UI"
+
+msgid "Vocalizations"
+msgstr "Vocalizations"
+
+msgid "Voice"
+msgstr "Voice"
+
+msgid "Proximity"
+msgstr "Proximity"
+
+msgid "Forward"
+msgstr "Forward"
+
+msgid "Left"
+msgstr "Left"
+
+msgid "Right"
+msgstr "Right"
+
+msgid "Sprint"
+msgstr "Sprint"
+
+msgid "Jump"
+msgstr "Jump"
+
+msgid "Crouch"
+msgstr "Crouch"
+
+msgid "Dodge"
+msgstr "Dodge"
+
+msgid "Heavy"
+msgstr "Heavy"
+
+msgid "Interact"
+msgstr "Interact"
+
+msgid "Chat"
+msgstr "Chat"
+
+msgid "Nose"
+msgstr "Nose"
+
+msgid "Mouth"
+msgstr "Mouth"
+
+msgid "Ears"
+msgstr "Ears"
+
+msgid "Eye size"
+msgstr "Eye size"
+
+msgid "Eye spacing"
+msgstr "Eye spacing"
+
+msgid "Body volume"
+msgstr "Body volume"
+
+msgid "Ambient occlusion"
+msgstr "Ambient occlusion"
+
+msgid "Volumetric fog"
+msgstr "Volumetric fog"
+
+msgid "Fiber"
+msgstr "Fiber"
+
+msgid "Coal"
+msgstr "Coal"
+
+msgid "Copper ore"
+msgstr "Copper ore"
+
+msgid "Tin ore"
+msgstr "Tin ore"
+
+msgid "Iron ore"
+msgstr "Iron ore"
+
+msgid "Silver ore"
+msgstr "Silver ore"
+
+msgid "Gold ore"
+msgstr "Gold ore"
+
+msgid "Sulfur"
+msgstr "Sulfur"
+
+msgid "Rare ore"
+msgstr "Rare ore"
+
+msgid "Copper ingot"
+msgstr "Copper ingot"
+
+msgid "Bronze ingot"
+msgstr "Bronze ingot"
+
+msgid "Iron ingot"
+msgstr "Iron ingot"
+
+msgid "Steel ingot"
+msgstr "Steel ingot"
+
+msgid "Leather"
+msgstr "Leather"
+
+msgid "Bone"
+msgstr "Bone"
+
+msgid "Arrow"
+msgstr "Arrow"
+
+msgid "Club"
+msgstr "Club"
+
+msgid "Spear"
+msgstr "Spear"
+
+msgid "Stone sword"
+msgstr "Stone sword"
+
+msgid "Copper sword"
+msgstr "Copper sword"
+
+msgid "Bronze sword"
+msgstr "Bronze sword"
+
+msgid "Iron sword"
+msgstr "Iron sword"
+
+msgid "Steel sword"
+msgstr "Steel sword"
+
+msgid "Bow"
+msgstr "Bow"
+
+msgid "Pickaxe"
+msgstr "Pickaxe"
+
+msgid "Iron pickaxe"
+msgstr "Iron pickaxe"
+
+msgid "Shield"
+msgstr "Shield"
+
+msgid "Leather armor"
+msgstr "Leather armor"
+
+msgid "Bone armor"
+msgstr "Bone armor"
+
+msgid "Copper armor"
+msgstr "Copper armor"
+
+msgid "Bronze armor"
+msgstr "Bronze armor"
+
+msgid "Iron armor"
+msgstr "Iron armor"
+
+msgid "Steel armor"
+msgstr "Steel armor"
+
+msgid "Hand"
+msgstr "Hand"
+
+msgid "Offhand"
+msgstr "Offhand"
+
+msgid "Armor"
+msgstr "Armor"
+
+msgid "Workbench"
+msgstr "Workbench"
+
+msgid "Furnace"
+msgstr "Furnace"
+
+msgid "A new flame. A new journey."
+msgstr "A new flame. A new journey."
+
+msgid "Development build. A new journey replaces local progress when saved."
+msgstr "Development build. A new journey replaces local progress when saved."
+
+msgid "MULTIPLAYER GAME"
+msgstr "MULTIPLAYER GAME"
+
+msgid "Direct IP connection. The host controls movement, gathering, building and weather."
+msgstr "Direct IP connection. The host controls movement, gathering, building and weather."
+
+msgid "Server address"
+msgstr "Server address"
+
+msgid "UDP port"
+msgstr "UDP port"
+
+msgid "Host on this computer"
+msgstr "Host on this computer"
+
+msgid "Connect to server"
+msgstr "Connect to server"
+
+msgid "Connecting to server…"
+msgstr "Connecting to server…"
+
+msgid "Starting server…"
+msgstr "Starting server…"
+
+msgid "Enter only the server IP or hostname."
+msgstr "Enter only the server IP or hostname."
+
+msgid "Experimental multiplayer; 100-player capacity has not been validated. Internet hosting requires forwarding the UDP port on your router."
+msgstr "Experimental multiplayer; 100-player capacity has not been validated. Internet hosting requires forwarding the UDP port on your router."
+
+msgid "The server saves the shared world."
+msgstr "The server saves the shared world."
+
+msgid "World time continues while the process is running."
+msgstr "World time continues while the process is running."
+
+msgid "Weather • administrator"
+msgstr "Weather • administrator"
+
+msgid "WEATHER • ADMINISTRATOR"
+msgstr "WEATHER • ADMINISTRATOR"
+
+msgid "Only the host can change the weather."
+msgstr "Only the host can change the weather."
+
+msgid "Gradual transitions. Rain causes its first damage after 55 continuous seconds without shelter."
+msgstr "Gradual transitions. Rain causes its first damage after 55 continuous seconds without shelter."
+
+msgid "Weather transition requested."
+msgstr "Weather transition requested."
+
+msgid "Seek shelter"
+msgstr "Seek shelter"
+
+msgid "Prolonged exposure"
+msgstr "Prolonged exposure"
+
+msgid "Warming"
+msgstr "Warming"
+
+msgid "Drying"
+msgstr "Drying"
+
+msgid "HEALTH %d / 100   STAMINA %d\nWOOD %d   %s   %s"
+msgstr "HEALTH %d / 100   STAMINA %d\nWOOD %d   %s   %s"
+
+msgid "RAIN %ds   WETNESS %d%%   %.1f°C\n%s • first damage at 55s"
+msgstr "RAIN %ds   WETNESS %d%%   %.1f°C\n%s • first damage at 55s"
+
+msgid "WETNESS %d%%   %.1f°C   %s"
+msgstr "WETNESS %d%%   %.1f°C   %s"
+
+msgid "WASD move • Mouse camera • Shift sprint • Space jump\n1 axe • 2 campfire • 3 shelter • Click use • Tab inventory • Esc menu"
+msgstr "WASD move • Mouse camera • Shift sprint • Space jump\n1 axe • 2 campfire • 3 shelter • Click use • Tab inventory • Esc menu"
+
+msgid "Clear"
+msgstr "Clear"
+
+msgid "Light rain"
+msgstr "Light rain"
+
+msgid "Heavy rain"
+msgstr "Heavy rain"
+
+msgid "Storm"
+msgstr "Storm"
+
+msgid "Fog"
+msgstr "Fog"

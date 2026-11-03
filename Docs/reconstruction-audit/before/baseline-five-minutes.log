@@ -1,0 +1,39 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+BASELINE_STARTED wall_usec=4025750 renderer=llvmpipe (LLVM 19.1.7, 256 bits) preset=0
+BASELINE_SCREENSHOT_CAPTURED
+BASELINE_SAMPLE {"average_fps":16.7409796761517,"current_fps":21.0,"draw_calls":169.0,"elapsed_s":10.035255,"frames":168,"godot_static_bytes":102095654,"hp":90,"node_count":2188,"position":[-4.62767028808594,-0.914847910404205,-30.7401905059814]}
+BASELINE_SAMPLE {"average_fps":19.2732068708833,"current_fps":22.0,"draw_calls":145.0,"elapsed_s":20.079689,"frames":387,"godot_static_bytes":102109510,"hp":92,"node_count":2188,"position":[-13.7384729385376,-2.7913646697998,-50.7500801086426]}
+BASELINE_SAMPLE {"average_fps":19.3774358899362,"current_fps":20.0,"draw_calls":195.0,"elapsed_s":30.08654,"frames":583,"godot_static_bytes":102152142,"hp":95,"node_count":2188,"position":[-40.0940704345703,-2.75023221969604,-60.0]}
+BASELINE_SAMPLE {"average_fps":20.0639339123427,"current_fps":23.0,"draw_calls":292.0,"elapsed_s":40.121743,"frames":805,"godot_static_bytes":102183886,"hp":99,"node_count":2188,"position":[-60.0,-0.147790402173996,-31.7140445709229]}
+BASELINE_SAMPLE {"average_fps":19.9498451724603,"current_fps":18.0,"draw_calls":468.0,"elapsed_s":50.175828,"frames":1001,"godot_static_bytes":102268990,"hp":100,"node_count":2188,"position":[-47.7741241455078,-0.526398003101349,-10.6779184341431]}
+BASELINE_SAMPLE {"average_fps":19.2585735006781,"current_fps":15.0,"draw_calls":522.0,"elapsed_s":60.180989,"frames":1159,"godot_static_bytes":102296498,"hp":90,"node_count":2188,"position":[-42.8400993347168,-1.07146525382996,23.0814075469971]}
+BASELINE_SAMPLE {"average_fps":18.7771226490024,"current_fps":17.0,"draw_calls":392.0,"elapsed_s":70.191798,"frames":1318,"godot_static_bytes":102326294,"hp":92,"node_count":2188,"position":[-8.57697677612305,0.516235888004303,16.0731620788574]}
+BASELINE_SAMPLE {"average_fps":18.5197551075204,"current_fps":17.0,"draw_calls":370.0,"elapsed_s":80.238642,"frames":1486,"godot_static_bytes":102334454,"hp":96,"node_count":2188,"position":[10.4677085876465,2.56195425987244,8.60580253601074]}
+BASELINE_SAMPLE {"average_fps":18.2372210009694,"current_fps":15.0,"draw_calls":382.0,"elapsed_s":90.309812,"frames":1647,"godot_static_bytes":102342754,"hp":92,"node_count":2188,"position":[31.6562252044678,3.42408633232117,-8.17134571075439]}
+BASELINE_SAMPLE {"average_fps":18.2068934507482,"current_fps":19.0,"draw_calls":314.0,"elapsed_s":100.346608,"frames":1827,"godot_static_bytes":102355582,"hp":95,"node_count":2188,"position":[1.94902765750885,0.0253744814544916,-26.9292678833008]}
+BASELINE_SAMPLE {"average_fps":18.1967255246158,"current_fps":18.0,"draw_calls":284.0,"elapsed_s":110.349524,"frames":2008,"godot_static_bytes":102363822,"hp":98,"node_count":2188,"position":[-19.9046058654785,-1.98204779624939,-30.5023574829102]}
+BASELINE_SAMPLE {"average_fps":18.3245215449565,"current_fps":20.0,"draw_calls":311.0,"elapsed_s":120.385135,"frames":2206,"godot_static_bytes":102363862,"hp":100,"node_count":2188,"position":[-52.3108596801758,-0.541337668895721,-22.2547512054443]}
+BASELINE_SAMPLE {"average_fps":18.3777137230161,"current_fps":17.0,"draw_calls":382.0,"elapsed_s":130.429717,"frames":2397,"godot_static_bytes":102372822,"hp":100,"node_count":2188,"position":[-43.0278053283691,-0.721415340900421,11.6148138046265]}
+BASELINE_SAMPLE {"average_fps":18.2100206098564,"current_fps":16.0,"draw_calls":461.0,"elapsed_s":140.472109,"frames":2558,"godot_static_bytes":102388198,"hp":100,"node_count":2188,"position":[-29.0554370880127,-1.26778149604797,28.0196571350098]}
+BASELINE_SAMPLE {"average_fps":18.0717837294363,"current_fps":17.0,"draw_calls":467.0,"elapsed_s":150.510876,"frames":2720,"godot_static_bytes":102403966,"hp":90,"node_count":2188,"position":[-0.679724097251892,0.0664215832948685,43.8281478881836]}
+BASELINE_SAMPLE {"average_fps":17.9602459580616,"current_fps":16.0,"draw_calls":388.0,"elapsed_s":160.521187,"frames":2883,"godot_static_bytes":102393974,"hp":93,"node_count":2188,"position":[15.3754110336304,2.90476512908936,13.2054529190063]}
+BASELINE_SAMPLE {"average_fps":17.8392557443738,"current_fps":18.0,"draw_calls":353.0,"elapsed_s":170.522809,"frames":3042,"godot_static_bytes":102375010,"hp":97,"node_count":2188,"position":[15.7857599258423,2.61719560623169,-8.93768787384033]}
+BASELINE_SAMPLE {"average_fps":17.8074212414176,"current_fps":18.0,"draw_calls":318.0,"elapsed_s":180.542705,"frames":3215,"godot_static_bytes":102386678,"hp":100,"node_count":2188,"position":[4.7021951675415,-0.756671786308289,-40.1293601989746]}
+BASELINE_SAMPLE {"average_fps":17.7924412819268,"current_fps":19.0,"draw_calls":296.0,"elapsed_s":190.58655,"frames":3391,"godot_static_bytes":102399706,"hp":100,"node_count":2188,"position":[-27.1584491729736,-2.04175400733948,-28.416675567627]}
+BASELINE_SAMPLE {"average_fps":17.8556800750246,"current_fps":20.0,"draw_calls":318.0,"elapsed_s":200.608433,"frames":3582,"godot_static_bytes":102410278,"hp":100,"node_count":2188,"position":[-41.7196044921875,-0.925793588161469,-11.7639141082764]}
+BASELINE_SAMPLE {"average_fps":17.8411606029137,"current_fps":17.0,"draw_calls":440.0,"elapsed_s":210.636521,"frames":3758,"godot_static_bytes":102396046,"hp":100,"node_count":2188,"position":[-54.4157943725586,-0.289947360754013,18.1357345581055]}
+BASELINE_SAMPLE {"average_fps":17.7439421282143,"current_fps":15.0,"draw_calls":451.0,"elapsed_s":220.695039,"frames":3916,"godot_static_bytes":102418150,"hp":100,"node_count":2188,"position":[-22.4083728790283,-1.12774610519409,31.700138092041]}
+BASELINE_SAMPLE {"average_fps":17.6830340078203,"current_fps":16.0,"draw_calls":432.0,"elapsed_s":230.729636,"frames":4080,"godot_static_bytes":102406958,"hp":100,"node_count":2188,"position":[-0.414785712957382,0.90138828754425,28.4859771728516]}
+BASELINE_SAMPLE {"average_fps":17.5965924491514,"current_fps":15.0,"draw_calls":431.0,"elapsed_s":240.785255,"frames":4237,"godot_static_bytes":102426030,"hp":100,"node_count":2188,"position":[28.9487190246582,3.44125366210938,15.0552930831909]}
+BASELINE_SAMPLE {"average_fps":17.4316099371954,"current_fps":14.0,"draw_calls":466.0,"elapsed_s":250.980834,"frames":4375,"godot_static_bytes":102416362,"hp":70,"node_count":2188,"position":[30.5203514099121,3.58942437171936,-2.85046195983887]}
+BASELINE_SAMPLE {"average_fps":17.1032393972097,"current_fps":7.0,"draw_calls":380.0,"elapsed_s":261.061656,"frames":4465,"godot_static_bytes":102424770,"hp":72,"node_count":2188,"position":[10.6326217651367,1.85705900192261,-14.1288557052612]}
+BASELINE_SAMPLE {"average_fps":17.0234663485392,"current_fps":17.0,"draw_calls":329.0,"elapsed_s":271.096374,"frames":4615,"godot_static_bytes":102435954,"hp":75,"node_count":2188,"position":[-18.6455841064453,-1.39720499515533,-22.5487995147705]}
+BASELINE_SAMPLE {"average_fps":17.0286567071329,"current_fps":18.0,"draw_calls":281.0,"elapsed_s":281.114364,"frames":4787,"godot_static_bytes":102434134,"hp":60,"node_count":2188,"position":[-28.2886638641357,-0.75616443157196,6.33186006546021]}
+BASELINE_SAMPLE {"average_fps":17.0322385311049,"current_fps":17.0,"draw_calls":309.0,"elapsed_s":291.153743,"frames":4959,"godot_static_bytes":102432134,"hp":61,"node_count":2188,"position":[-20.4698696136475,-0.820653319358826,27.0240135192871]}
+BASELINE_FIVE_MINUTES_PASS elapsed=300.049749 frames=5117 fps=17.0538386286069

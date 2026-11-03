@@ -1,0 +1,30 @@
+{
+  "commit": "b8bedca4810fabcc8ebca5d9224f8848d0cf6fd4",
+  "downloads": [
+    {
+      "name": "TribesOfFire-0.5.0-dev-Windows.zip",
+      "status": 200,
+      "content_length": "53253150"
+    },
+    {
+      "name": "TribesOfFire-0.5.0-dev-Linux.zip",
+      "status": 200,
+      "content_length": "44442145"
+    },
+    {
+      "name": "TribesOfFire-0.5.0-dev-Server-Linux.zip",
+      "status": 200,
+      "content_length": "44442882"
+    },
+    {
+      "name": "TribesOfFire-0.5.0-dev-Windows-Setup.exe",
+      "status": 200,
+      "content_length": "43017445"
+    },
+    {
+      "name": "TribesOfFire-0.5.0-dev-Source.zip",
+      "status": 200,
+      "content_length": "22665035"
+    }
+  ]
+}

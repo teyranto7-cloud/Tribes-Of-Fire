@@ -1,0 +1,136 @@
+{
+  "version": "0.3.1-dev",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "platform": "Linux x64",
+  "checks": 372,
+  "failed": 0,
+  "suites": [
+    {
+      "log": "test_rules.gd.log",
+      "checks": 61,
+      "failed": 0
+    },
+    {
+      "log": "test_world.gd.log",
+      "checks": 25,
+      "failed": 0
+    },
+    {
+      "log": "test_player.gd.log",
+      "checks": 11,
+      "failed": 0
+    },
+    {
+      "log": "test_input.gd.log",
+      "checks": 8,
+      "failed": 0
+    },
+    {
+      "log": "test_gameplay.gd.log",
+      "checks": 17,
+      "failed": 0
+    },
+    {
+      "log": "test_v3.gd.log",
+      "checks": 109,
+      "failed": 0
+    },
+    {
+      "log": "test_gameplay_regressions.gd.log",
+      "checks": 25,
+      "failed": 0
+    },
+    {
+      "log": "test_tribes_regression.gd.log",
+      "checks": 32,
+      "failed": 0
+    },
+    {
+      "log": "test_ui_regressions.gd.log",
+      "checks": 33,
+      "failed": 0
+    },
+    {
+      "log": "test_voice_regressions.gd.log",
+      "checks": 8,
+      "failed": 0
+    },
+    {
+      "log": "test_reliability.gd.log",
+      "checks": 21,
+      "failed": 0
+    },
+    {
+      "log": "test_startup_close.gd.log",
+      "checks": 2,
+      "failed": 0
+    },
+    {
+      "log": "persistence-process.log",
+      "checks": 4,
+      "failed": 0
+    },
+    {
+      "log": "startup-process.log",
+      "checks": 7,
+      "failed": 0
+    },
+    {
+      "log": "build-integrity.log",
+      "checks": 9,
+      "failed": 0
+    }
+  ],
+  "exports_checks": 6,
+  "scenarios": [
+    "network",
+    "multiplayer",
+    "reconnect",
+    "host-migration",
+    "communication-final",
+    "communication-rerun",
+    "exports",
+    "linux-opengl"
+  ],
+  "earlier_failed_scenario": "communication-earlier-failed.log",
+  "build": {
+    "source_sha256": "2d870fb77fae6583689ef5f658f43ae2694c358ccfdd47e2a65e7eba1307c5d3",
+    "targets": {
+      "windows/TribesOfFire.exe": "a2130ba0859f5c009690488ff1606ffbab9b7b9684b68896668ddc081070461b",
+      "linux/TribesOfFire.x86_64": "cff91440a8131d07074aeee94c130594677fc87c99bc2aaa3c3a927dcdfa94df",
+      "server/TribesOfFireServer.x86_64": "247c32b76762a84006f8f1a0fbdc777230dea6d12b71256a265e7c245cdbf31d"
+    }
+  },
+  "unvalidated": [
+    "Windows graphical gameplay",
+    "physical microphone",
+    "Ryzen 5 4600G performance",
+    "100 players",
+    "voice stability under load"
+  ],
+  "native_windows": {
+    "status": "Success",
+    "run_url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41394174603",
+    "commit": "908b647",
+    "observed_at_utc": "2026-11-02T05:30:29.032703+00:00",
+    "scope": [
+      "five artifact hashes and ZIP documentation",
+      "installation and all linked documents",
+      "desktop and Start menu shortcuts",
+      "headless exported game",
+      "save checksums and clean dedicated restart",
+      "same-version reinstall",
+      "uninstall preserving personal data and saves"
+    ],
+    "earlier_failed_runs": [
+      "41393773739",
+      "41394030410"
+    ],
+    "earlier_failure": "Workflow rejected the legitimate nested Assets/Audio/README.md; fixed exact archive-root lookup without changing packages."
+  },
+  "fresh_github_clone": {
+    "application_commit": "dcc279c3d90ffb841d65b03928512585e658723d",
+    "artifact_hashes_verified": 5,
+    "linux_zip_runtime": "Passed: GAME_READY, snapshot, released lock; editor not installed in extracted package."
+  }
+}

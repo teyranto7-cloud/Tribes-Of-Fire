@@ -1,0 +1,34 @@
+{
+  "elapsed_s": 300.049749,
+  "frames": 5117,
+  "average_fps": 17.0538386286069,
+  "preset": 0,
+  "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "sample_count": 29,
+  "draw_calls_range": [
+    145.0,
+    522.0
+  ],
+  "static_memory_bytes_range": [
+    102095654,
+    102435954
+  ],
+  "node_counts": [
+    2188
+  ],
+  "rss_kib_range": [
+    495716,
+    526348
+  ],
+  "rss_samples": 15,
+  "snapshot_slots": 2,
+  "latest_sequence": 7,
+  "world_version": 3,
+  "persisted_players": 1,
+  "lock_released": true,
+  "errors": [],
+  "warnings": [
+    "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+  ],
+  "screenshot": "builds/reconstruction-audit/baseline-gameplay.png"
+}

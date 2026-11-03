@@ -1,0 +1,19 @@
+linux-play: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PLAYER_JOINED id=1 count=1
+GAME_READY role=offline Godot=4.6.3-stable (official)
+
+dedicated: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=51928 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+
+Traceback (most recent call last):
+  File "/workspace/Tribes-Of-Fire/Tools/test_exports.py", line 113, in <module>
+    main()
+  File "/workspace/Tribes-Of-Fire/Tools/test_exports.py", line 97, in main
+    assert second_sequence > first_sequence and second['phase'] > first['phase'] + 1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

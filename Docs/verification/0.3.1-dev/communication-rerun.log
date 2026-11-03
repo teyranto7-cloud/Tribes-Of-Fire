@@ -1,0 +1,41 @@
+server: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=49163 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1389436885 count=1
+PLAYER_JOINED id=797617334 count=2
+PLAYER_JOINED id=2082559744 count=3
+PLAYER_LEFT id=1389436885
+PLAYER_LEFT id=797617334
+PLAYER_LEFT id=2082559744
+COMMUNICATION_SERVER_PASS clients=3 routing=authority blocks=validated
+
+A: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1389436885 count=1
+PLAYER_JOINED id=797617334 count=2
+PLAYER_JOINED id=2082559744 count=3
+COMMUNICATION_CLIENT_PASS role=A messages=7 audio_packets={  } played_samples=0 microphone_started=false
+
+B: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1389436885 count=1
+PLAYER_JOINED id=797617334 count=2
+PLAYER_JOINED id=2082559744 count=3
+COMMUNICATION_CLIENT_PASS role=B messages=5 audio_packets={ "proximity": 6, "private": 4, "tribe": 4, "group": 4 } played_samples=11520 microphone_started=false
+
+C: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1389436885 count=1
+PLAYER_JOINED id=797617334 count=2
+PLAYER_JOINED id=2082559744 count=3
+COMMUNICATION_CLIENT_PASS role=C messages=2 audio_packets={ "diplomacy": 4 } played_samples=2560 microphone_started=false
+
+COMMUNICATION_PASS: 3 clients, six text channels, spatial and remote encoded audio, privacy, block, receive playback; no microphone captured

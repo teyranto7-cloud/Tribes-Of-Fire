@@ -1,0 +1,703 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: fr\n"
+
+msgid "Play"
+msgstr "Jouer"
+
+msgid "Settings"
+msgstr "Paramètres"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "Back"
+msgstr "Retour"
+
+msgid "Confirm"
+msgstr "Confirmer"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Apply"
+msgstr "Appliquer"
+
+msgid "Reset defaults"
+msgstr "Valeurs par défaut"
+
+msgid "Detect automatically"
+msgstr "Détection automatique"
+
+msgid "New local journey"
+msgstr "Nouvelle partie locale"
+
+msgid "Continue saved journey"
+msgstr "Continuer la partie"
+
+msgid "Host / Connect by IP"
+msgstr "Héberger / Connexion par IP"
+
+msgid "Quit"
+msgstr "Quitter"
+
+msgid "Resume journey"
+msgstr "Reprendre la partie"
+
+msgid "Save [F5]"
+msgstr "Enregistrer [F5]"
+
+msgid "Load [F9]"
+msgstr "Charger [F9]"
+
+msgid "Quit game"
+msgstr "Quitter le jeu"
+
+msgid "CAMP"
+msgstr "CAMPEMENT"
+
+msgid "Survival • exploration • building"
+msgstr "Survie • exploration • construction"
+
+msgid "Graphics"
+msgstr "Graphismes"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Controls"
+msgstr "Commandes"
+
+msgid "Character"
+msgstr "Personnage"
+
+msgid "Create character"
+msgstr "Créer un personnage"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Body"
+msgstr "Corps"
+
+msgid "Height"
+msgstr "Taille"
+
+msgid "Shoulders"
+msgstr "Épaules"
+
+msgid "Build"
+msgstr "Construire"
+
+msgid "Skin"
+msgstr "Peau"
+
+msgid "Eyes"
+msgstr "Yeux"
+
+msgid "Eye color"
+msgstr "Couleur des yeux"
+
+msgid "Hair"
+msgstr "Coiffure"
+
+msgid "Hair color"
+msgstr "Couleur des cheveux"
+
+msgid "Face"
+msgstr "Visage"
+
+msgid "Beard"
+msgstr "Barbe"
+
+msgid "Clothing"
+msgstr "Vêtements"
+
+msgid "Randomize"
+msgstr "Aléatoire"
+
+msgid "Rotate"
+msgstr "Tourner"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Inventory"
+msgstr "Inventaire"
+
+msgid "Crafting"
+msgstr "Fabrication"
+
+msgid "Equip"
+msgstr "Équiper"
+
+msgid "Unequip"
+msgstr "Retirer"
+
+msgid "Drop"
+msgstr "Jeter"
+
+msgid "Split"
+msgstr "Diviser"
+
+msgid "Eat"
+msgstr "Manger"
+
+msgid "Drink"
+msgstr "Boire"
+
+msgid "Cook"
+msgstr "Cuisiner"
+
+msgid "Respawn"
+msgstr "Réapparaître"
+
+msgid "You died"
+msgstr "Vous êtes mort"
+
+msgid "Wood"
+msgstr "Bois"
+
+msgid "Stone"
+msgstr "Pierre"
+
+msgid "Campfire"
+msgstr "Feu de camp"
+
+msgid "Shelter"
+msgstr "Abri"
+
+msgid "Axe"
+msgstr "Hache"
+
+msgid "Berries"
+msgstr "Baies"
+
+msgid "Raw meat"
+msgstr "Viande crue"
+
+msgid "Cooked meat"
+msgstr "Viande cuite"
+
+msgid "Water"
+msgstr "Eau"
+
+msgid "Health"
+msgstr "Santé"
+
+msgid "Hunger"
+msgstr "Faim"
+
+msgid "Thirst"
+msgstr "Soif"
+
+msgid "Tribe"
+msgstr "Tribu"
+
+msgid "Create tribe"
+msgstr "Créer une tribu"
+
+msgid "Invite"
+msgstr "Inviter"
+
+msgid "Accept"
+msgstr "Accepter"
+
+msgid "Leave"
+msgstr "Quitter"
+
+msgid "Kick"
+msgstr "Expulser"
+
+msgid "Transfer leadership"
+msgstr "Transférer la direction"
+
+msgid "Players"
+msgstr "Joueurs"
+
+msgid "Communication"
+msgstr "Communication"
+
+msgid "Global"
+msgstr "Global"
+
+msgid "Local"
+msgstr "Local"
+
+msgid "Private"
+msgstr "Privé"
+
+msgid "Group"
+msgstr "Groupe"
+
+msgid "Diplomacy"
+msgstr "Diplomatie"
+
+msgid "Send"
+msgstr "Envoyer"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Voice chat"
+msgstr "Discussion vocale"
+
+msgid "Enable microphone"
+msgstr "Activer le microphone"
+
+msgid "Push to talk"
+msgstr "Appuyer pour parler"
+
+msgid "Voice activation"
+msgstr "Activation vocale"
+
+msgid "Input device"
+msgstr "Microphone"
+
+msgid "Output device"
+msgstr "Sortie audio"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Sensitivity"
+msgstr "Sensibilité"
+
+msgid "Test microphone"
+msgstr "Tester le microphone"
+
+msgid "Stop test"
+msgstr "Arrêter le test"
+
+msgid "Mute"
+msgstr "Couper le son"
+
+msgid "Block"
+msgstr "Bloquer"
+
+msgid "Call"
+msgstr "Appeler"
+
+msgid "No microphone available"
+msgstr "Aucun microphone disponible"
+
+msgid "Action unavailable"
+msgstr "Action indisponible"
+
+msgid "Action completed"
+msgstr "Action effectuée"
+
+msgid "Not available"
+msgstr "Indisponible"
+
+msgid "Very Low"
+msgstr "Très faible"
+
+msgid "Low"
+msgstr "Faible"
+
+msgid "Medium"
+msgstr "Moyen"
+
+msgid "High"
+msgstr "Élevé"
+
+msgid "Ultra"
+msgstr "Ultra"
+
+msgid "Custom"
+msgstr "Personnalisé"
+
+msgid "Resolution"
+msgstr "Résolution"
+
+msgid "Render scale"
+msgstr "Échelle de rendu"
+
+msgid "Window mode"
+msgstr "Mode de fenêtre"
+
+msgid "Windowed"
+msgstr "Fenêtré"
+
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+msgid "Borderless"
+msgstr "Sans bordure"
+
+msgid "Shadows"
+msgstr "Ombres"
+
+msgid "Vegetation"
+msgstr "Végétation"
+
+msgid "View distance"
+msgstr "Distance de vue"
+
+msgid "Particles"
+msgstr "Particules"
+
+msgid "Clouds"
+msgstr "Nuages"
+
+msgid "Rain"
+msgstr "Pluie"
+
+msgid "Reflections"
+msgstr "Reflets"
+
+msgid "Lighting"
+msgstr "Éclairage"
+
+msgid "Antialiasing"
+msgstr "Anticrénelage"
+
+msgid "Postprocessing"
+msgstr "Post-traitement"
+
+msgid "Show performance"
+msgstr "Afficher les performances"
+
+msgid "Keep these settings?"
+msgstr "Conserver ces paramètres ?"
+
+msgid "Preview"
+msgstr "Aperçu"
+
+msgid "Preparing the world…"
+msgstr "Préparation du monde…"
+
+msgid "Connecting…"
+msgstr "Connexion…"
+
+msgid "Created by felipealx"
+msgstr "Créé par felipealx"
+
+msgid "Sound"
+msgstr "Son"
+
+msgid "Camera smoothing"
+msgstr "Lissage de caméra"
+
+msgid "Accept call"
+msgstr "Accepter l'appel"
+
+msgid "End call"
+msgstr "Terminer l'appel"
+
+msgid "Accept group invitation"
+msgstr "Accepter l'invitation au groupe"
+
+msgid "Invite to group"
+msgstr "Inviter au groupe"
+
+msgid "Leave group"
+msgstr "Quitter le groupe"
+
+msgid "Remove from group"
+msgstr "Retirer du groupe"
+
+msgid "Create"
+msgstr "Créer"
+
+msgid "Refresh"
+msgstr "Actualiser"
+
+msgid "Player volume"
+msgstr "Volume du joueur"
+
+msgid "Unblock"
+msgstr "Débloquer"
+
+msgid "Unmute"
+msgstr "Rétablir la voix"
+
+msgid "Master"
+msgstr "Général"
+
+msgid "Music"
+msgstr "Musique"
+
+msgid "Ambient"
+msgstr "Ambiance"
+
+msgid "Effects"
+msgstr "Effets"
+
+msgid "UI"
+msgstr "Interface"
+
+msgid "Vocalizations"
+msgstr "Vocalisations"
+
+msgid "Voice"
+msgstr "Voix"
+
+msgid "Proximity"
+msgstr "Proximité"
+
+msgid "Forward"
+msgstr "Avancer"
+
+msgid "Left"
+msgstr "Gauche"
+
+msgid "Right"
+msgstr "Droite"
+
+msgid "Sprint"
+msgstr "Courir"
+
+msgid "Jump"
+msgstr "Sauter"
+
+msgid "Crouch"
+msgstr "S'accroupir"
+
+msgid "Dodge"
+msgstr "Esquiver"
+
+msgid "Heavy"
+msgstr "Attaque lourde"
+
+msgid "Interact"
+msgstr "Interagir"
+
+msgid "Chat"
+msgstr "Discussion"
+
+msgid "Nose"
+msgstr "Nez"
+
+msgid "Mouth"
+msgstr "Bouche"
+
+msgid "Ears"
+msgstr "Oreilles"
+
+msgid "Eye size"
+msgstr "Taille des yeux"
+
+msgid "Eye spacing"
+msgstr "Écart des yeux"
+
+msgid "Body volume"
+msgstr "Corpulence"
+
+msgid "Ambient occlusion"
+msgstr "Occlusion ambiante"
+
+msgid "Volumetric fog"
+msgstr "Brouillard volumétrique"
+
+msgid "Fiber"
+msgstr "Fibre"
+
+msgid "Coal"
+msgstr "Charbon"
+
+msgid "Copper ore"
+msgstr "Minerai de cuivre"
+
+msgid "Tin ore"
+msgstr "Minerai d'étain"
+
+msgid "Iron ore"
+msgstr "Minerai de fer"
+
+msgid "Silver ore"
+msgstr "Minerai d'argent"
+
+msgid "Gold ore"
+msgstr "Minerai d'or"
+
+msgid "Sulfur"
+msgstr "Soufre"
+
+msgid "Rare ore"
+msgstr "Minerai rare"
+
+msgid "Copper ingot"
+msgstr "Lingot de cuivre"
+
+msgid "Bronze ingot"
+msgstr "Lingot de bronze"
+
+msgid "Iron ingot"
+msgstr "Lingot de fer"
+
+msgid "Steel ingot"
+msgstr "Lingot d'acier"
+
+msgid "Leather"
+msgstr "Cuir"
+
+msgid "Bone"
+msgstr "Os"
+
+msgid "Arrow"
+msgstr "Flèche"
+
+msgid "Club"
+msgstr "Massue"
+
+msgid "Spear"
+msgstr "Lance"
+
+msgid "Stone sword"
+msgstr "Épée de pierre"
+
+msgid "Copper sword"
+msgstr "Épée de cuivre"
+
+msgid "Bronze sword"
+msgstr "Épée de bronze"
+
+msgid "Iron sword"
+msgstr "Épée de fer"
+
+msgid "Steel sword"
+msgstr "Épée d'acier"
+
+msgid "Bow"
+msgstr "Arc"
+
+msgid "Pickaxe"
+msgstr "Pioche"
+
+msgid "Iron pickaxe"
+msgstr "Pioche en fer"
+
+msgid "Shield"
+msgstr "Bouclier"
+
+msgid "Leather armor"
+msgstr "Armure de cuir"
+
+msgid "Bone armor"
+msgstr "Armure d'os"
+
+msgid "Copper armor"
+msgstr "Armure de cuivre"
+
+msgid "Bronze armor"
+msgstr "Armure de bronze"
+
+msgid "Iron armor"
+msgstr "Armure de fer"
+
+msgid "Steel armor"
+msgstr "Armure d'acier"
+
+msgid "Hand"
+msgstr "À la main"
+
+msgid "Offhand"
+msgstr "Main secondaire"
+
+msgid "Armor"
+msgstr "Armure"
+
+msgid "Workbench"
+msgstr "Établi"
+
+msgid "Furnace"
+msgstr "Fourneau"
+
+msgid "A new flame. A new journey."
+msgstr "Une nouvelle flamme. Un nouveau voyage."
+
+msgid "Development build. A new journey replaces local progress when saved."
+msgstr "Version en développement. Une nouvelle partie remplace la progression locale lors de la sauvegarde."
+
+msgid "MULTIPLAYER GAME"
+msgstr "PARTIE MULTIJOUEUR"
+
+msgid "Direct IP connection. The host controls movement, gathering, building and weather."
+msgstr "Connexion directe par IP. L'hôte contrôle déplacements, collecte, construction et météo."
+
+msgid "Server address"
+msgstr "Adresse du serveur"
+
+msgid "UDP port"
+msgstr "Port UDP"
+
+msgid "Host on this computer"
+msgstr "Héberger sur cet ordinateur"
+
+msgid "Connect to server"
+msgstr "Se connecter au serveur"
+
+msgid "Connecting to server…"
+msgstr "Connexion au serveur…"
+
+msgid "Starting server…"
+msgstr "Démarrage du serveur…"
+
+msgid "Enter only the server IP or hostname."
+msgstr "Saisissez uniquement l'IP ou le nom du serveur."
+
+msgid "Experimental multiplayer; 100-player capacity has not been validated. Internet hosting requires forwarding the UDP port on your router."
+msgstr "Multijoueur expérimental ; capacité de 100 joueurs non validée. Sur Internet, redirigez le port UDP du routeur."
+
+msgid "The server saves the shared world."
+msgstr "Le serveur sauvegarde le monde partagé."
+
+msgid "World time continues while the process is running."
+msgstr "Le temps du monde avance tant que le processus fonctionne."
+
+msgid "Weather • administrator"
+msgstr "Météo • administrateur"
+
+msgid "WEATHER • ADMINISTRATOR"
+msgstr "MÉTÉO • ADMINISTRATEUR"
+
+msgid "Only the host can change the weather."
+msgstr "Seul l'hôte peut changer la météo."
+
+msgid "Gradual transitions. Rain causes its first damage after 55 continuous seconds without shelter."
+msgstr "Transitions progressives. Premier dégât de pluie après 55 secondes continues sans abri."
+
+msgid "Weather transition requested."
+msgstr "Transition météo demandée."
+
+msgid "Seek shelter"
+msgstr "Cherchez un abri"
+
+msgid "Prolonged exposure"
+msgstr "Exposition prolongée"
+
+msgid "Warming"
+msgstr "Réchauffement"
+
+msgid "Drying"
+msgstr "Séchage"
+
+msgid "HEALTH %d / 100   STAMINA %d\nWOOD %d   %s   %s"
+msgstr "VIE %d / 100   ENDURANCE %d\nBOIS %d   %s   %s"
+
+msgid "RAIN %ds   WETNESS %d%%   %.1f°C\n%s • first damage at 55s"
+msgstr "PLUIE %ds   HUMIDITÉ %d%%   %.1f°C\n%s • premier dégât à 55s"
+
+msgid "WETNESS %d%%   %.1f°C   %s"
+msgstr "HUMIDITÉ %d%%   %.1f°C   %s"
+
+msgid "WASD move • Mouse camera • Shift sprint • Space jump\n1 axe • 2 campfire • 3 shelter • Click use • Tab inventory • Esc menu"
+msgstr "WASD déplacement • Souris caméra • Maj courir • Espace sauter\n1 outil • 2 feu • 3 abri • E interagir • Tab inventaire • Échap menu"
+
+msgid "Clear"
+msgstr "Dégagé"
+
+msgid "Light rain"
+msgstr "Pluie légère"
+
+msgid "Heavy rain"
+msgstr "Forte pluie"
+
+msgid "Storm"
+msgstr "Orage"
+
+msgid "Fog"
+msgstr "Brouillard"

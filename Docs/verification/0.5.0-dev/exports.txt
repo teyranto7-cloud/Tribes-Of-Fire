@@ -1,0 +1,19 @@
+linux-play: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PLAYER_JOINED id=1 count=1
+GAME_READY role=offline Godot=4.6.3-stable (official)
+
+dedicated: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=40736 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+
+dedicated-restart: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=54251 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+
+EXPORT CHECKS=6 FAILED=0 (Linux client, dedicated server, restart, snapshots, released locks)

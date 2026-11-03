@@ -1,0 +1,29 @@
+config_version=5
+
+[application]
+config/name="Tribes of Fire"
+config/description="Sobrevivência e aventura — criado por felipealx"
+config/version="0.5.0-dev"
+run/main_scene="res://Scenes/Main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://Assets/icon.svg"
+
+[autoload]
+Settings="*res://Settings/Manager.gd"
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.12, 0.2, 0.24, 1)
+
+[physics]
+common/physics_ticks_per_second=60
+common/max_physics_steps_per_frame=64
+
+[audio]
+driver/enable_input=true

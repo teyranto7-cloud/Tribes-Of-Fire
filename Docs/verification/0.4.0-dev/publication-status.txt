@@ -1,0 +1,9 @@
+Observed UTC: 2026-11-02T16:45:56.658396+00:00
+Destination: https://github.com/teyranto7-cloud/Tribes-Of-Fire
+Source branch: work
+Last confirmed public base: 18bb0cc6b7d7237be89cd3d3ace79803575e85e9
+GET https://api.github.com: curl exit56, CONNECT tunnel failed, proxy403; HTTP000 (no origin response).
+gh auth status: authentication could not be validated through the current environment. No credential value inspected or recorded.
+Managed network policy is enforced and excludes api.github.com.
+Publication stopped as required by REQUEST_CONTINUITY_MASTER.md. No push/release attempted after this denial.
+Re-enable api.github.com using supported environment settings; configure/revalidate GitHub write authentication via an environment secret. Do not commit or paste credentials.

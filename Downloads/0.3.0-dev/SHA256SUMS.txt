@@ -1,0 +1,5 @@
+88b1db26714ac91f38843748480efbaa96397347f75e571e49b90d00e1853a10  TribesOfFire-0.3.0-dev-Windows.zip
+905eba82a6262f277cb72f8f96eb6753a61baf3f2e3518f664af9d3fe94563b1  TribesOfFire-0.3.0-dev-Linux.zip
+76140dc31c73b21d59e7de820c452f2c411009dfbe02517b0773f18a609d7735  TribesOfFire-0.3.0-dev-Server-Linux.zip
+a1b0ad65975e3fa1f8f0663b655f819b19bb2597a20a6ddbe004894cdd5c51cd  TribesOfFire-0.3.0-dev-Windows-Setup.exe
+b42ca40ad3789c2cb94d26e2045a0e8a31e5dc6d917163936f6d88cd805a5b55  TribesOfFire-0.3.0-dev-Source.zip

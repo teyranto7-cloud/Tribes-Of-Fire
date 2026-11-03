@@ -1,0 +1,27 @@
+--- Game peer 0: exit=0 ---
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=34271 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1981513517 count=1
+PLAYER_JOINED id=640243350 count=2
+
+--- Game peer 1: exit=0 ---
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1981513517 count=1
+PLAYER_JOINED id=640243350 count=2
+MULTIPLAYER_SMOKE_OK client=1 players=2 snapshots=35 moved=true shared_tree=true wood=0
+NETWORK_FAILURE Servidor desconectado / Server disconnected.
+
+--- Game peer 2: exit=0 ---
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1981513517 count=1
+PLAYER_JOINED id=640243350 count=2
+MULTIPLAYER_SMOKE_OK client=2 players=2 snapshots=36 moved=true shared_tree=true wood=0
+NETWORK_FAILURE Servidor desconectado / Server disconnected.
+
+MULTIPLAYER_PASS: actual game scene, dedicated authority, 2 visible moving clients, shared harvest, clean logs, saved world

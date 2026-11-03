@@ -1,0 +1,38 @@
+TRIBES OF FIRE — PLANO COMPLETO DE EVOLUÇÃO
+Pacote de prompts para Codex • Versão existente • Godot 4.3
+Objetivo: transformar o projeto atual em um jogo de sobrevivência multiplayer bonito, jogável, consistente e expansível. NÃO começar outro projeto. Referências conceituais: The Survival Game (Roblox), ARK, Minecraft, Islands (Roblox), Albion Online, Rust e Valheim. Referências não autorizam copiar código, ícones, mapas, personagens, marcas ou interfaces literalmente: criar identidade original para Tribes of Fire.
+
+Como usar: envie o PROMPT MESTRE uma vez. Depois envie um prompt de fase por vez, em ordem. Só avance após receber evidências e conferir o checklist. Se uma fase for grande, oriente o Codex a quebrá-la em incrementos internos executáveis. Não peça tudo de uma vez.
+CONTRATO TÉCNICO INEGOCIÁVEL
+- Preservar o repositório, a cena principal real, as funcionalidades que já operam, os arquivos e dados existentes e os instaladores; localizar caminhos reais antes de propor caminhos novos. res://Scenes/Main.tscn e Godot 4.3 / GL Compatibility são referências históricas, e precisam ser verificados no projeto atual.
+- Antes de alterar, registrar branch/commit/checkpoint recuperável; nunca apagar conteúdo ou reescrever o jogo inteiro para simplificar.
+- Priorizar sistemas jogáveis e completos, não menus bonitos sem ação ou scripts que apenas dizem ter feito algo.
+- Não afirmar que abriu Godot, fez testes, viu o jogo ou gerou executáveis se não ocorreu; fornecer logs e comandos reais. Se não houver acesso ao Godot ou a renderização, dizer claramente e deixar os testes visuais pendentes.
+- Manter compatibilidade e renderização leve com presets Muito baixo, Baixo, Médio, Alto e Ultra; avaliar alternativas de renderizador apenas com comparação medida e opção de fallback.
+- Multiplayer: servidor autoritativo para inventário, crafting, combate, construção, energia, mundos e territórios; nunca aceitar o inventário ou dano informados pelo cliente como verdade.
+- Cada novo mundo recebe uma seed própria; ao carregar o mesmo mundo, usar a MESMA seed e as alterações persistidas. No multiplayer, o servidor é fonte única de seed e estado.
+- Manter nomes/tabelas de dados estáveis e migrações de saves. Escritas persistentes atômicas, backups e checagens de integridade.
+- Organizar catálogos orientados a dados para itens, receitas, estruturas, materiais, biomas e NPCs. Evitar dezenas de casos especiais ou duplicar scripts.
+- Observar licenças de assets. Usar modelos originais ou assets com licença permitida; registrar fonte, autoria e licença num manifesto. Não copiar propriedades intelectuais de jogos de referência.
+- No gameplay público, jogadores NÃO podem controlar clima nem usar opções de depuração; menus de desenvolvedor são inacessíveis em builds de produção.
+- Preservar regras previamente especificadas se confirmadas no projeto, principalmente: HP 100; recuperação de 1 HP/3s fora de dano; chuva com 40s de tolerância antes do frio e, sem proteção, 1 de dano/15s; clima visual menos agressivo; duração de dia/noite previamente definida, salvo ajuste motivado.
+- Qualquer sistema novo deve suportar teste com pelo menos dois clientes e servidor dedicado quando tocar no estado multiplayer.
+- Ao concluir cada fase: (a) arquivos alterados, (b) recursos realmente implementados, (c) testes com PASS/FAIL e seus logs, (d) capturas reais quando disponíveis, (e) problemas restantes, (f) instruções objetivas de execução, (g) commit ou checkpoint.
+PROMPT MESTRE — ENVIAR UMA ÚNICA VEZ ANTES DAS FASES
+Você é o engenheiro-chefe, diretor técnico, designer de sistemas e responsável por qualidade do jogo 3D multiplayer Tribes of Fire, feito em Godot. Sua missão é evoluir a versão que já existe, sem recomeçar do zero. Eu desejo um jogo com mundo procedural vivo, sobrevivência, exploração, criação de reinos, diplomacia, guerras, construção modular de bases e cidades, bancadas de fabricação, inventário simples estilo jogos de sobrevivência, progressão de armaduras, produção de energia por rios, fiação elétrica, iluminação e, futuramente, automação industrial leve. Inspirações: The Survival Game no Roblox (exploração, reinos e mapa), ARK (construção modular e interação), Minecraft (mochila e itens), Islands no Roblox (agricultura e automação), Albion Online (equipamentos, crafting e progressão). As inspirações são conceituais; o visual, a identidade, a organização e os recursos finais devem ser originais.
+
+LEIA O PROJETO INTEIRO ANTES DE ALTERÁ-LO. Identifique a versão do Godot, o renderizador, a cena inicial, recursos existentes, todos os autoloads, plugins, arquivos exportáveis, scripts, cenas, assets, rede, saves e instaladores. Compare o estado real com os requisitos, e classifique cada recurso como IMPLEMENTADO E TESTADO / PARCIAL / AUSENTE / QUEBRADO. Não invente resultados.
+
+Proponha a menor arquitetura sustentável que integre os sistemas sem destruir o que já está pronto. Use recursos data-driven com IDs estáveis, sinais/eventos documentados, testes automatizáveis, controlador de estado multiplayer autoritativo e persistência versionada. Corrija bugs antes de acrescentar funcionalidades dependentes. Trabalhe em pequenos incrementos verificáveis e torne o visual de cada recurso realmente utilizável. Crie um registro de riscos, critérios de aceitação e evidências de testes.
+
+Na fase atual, execute APENAS a fase que eu solicitar. Não tente implementar todo o roteiro silenciosamente. Se algum item for inviável na arquitetura atual, explique tecnicamente, ofereça solução equivalente e preserve a jogabilidade. Entregue os resultados modificados no próprio repositório, não apenas uma resposta textual. Não declare uma função concluída sem código integrado, interação no jogo e teste apropriado. Uma funcionalidade demonstrativa deve ser chamada DEMO, nunca COMPLETA.
+
+FASE 0 — AUDITORIA E ESTABILIZAÇÃO
+Prompt para Codex:
+Inspecione integralmente a versão atual do Tribes of Fire e produza um inventário confiável: árvore de cenas, autoloads, scripts, recursos, estrutura de pastas, assets, sistema de rede, saves, exportação e configurações. Descubra quais recursos descritos anteriormente realmente existem e funcionam: movimento, mundo 3D, céu, clima, ciclo dia/noite, coleta, combate, personagem, tribos, crafting, multiplayer, interface, menus, servidores e instalador. Não confie em descrições de conversas antigas sem conferir os arquivos.
+
+Faça backup e checkpoint de Git; execute a importação do Godot, análise sintática, inicialização headless e, se possível, jogo interativo. Resolva primeiramente erros fatais, recursos quebrados, referências ausentes, botões que não fazem nada, vazamentos de recursos e inconsistências de estado. Remova a tela de abertura de depuração inadequada da experiência do jogador; use tela de carregamento própria, sem ocultar erros reais durante desenvolvimento. Registre os bugs antes/depois.
+
+Reorganize APENAS onde necessário. Proponha docs/ARCHITECTURE.md, docs/FEATURE_MATRIX.md, docs/QA.md e docs/ROADMAP.md, com caminhos adequados à estrutura real. Providencie automações básicas de validação e testes smoke, em vez de uma reescrita. Ao final, apresente tabela de recursos existentes (funciona/parcial/quebrado/ausente) e PRÓXIMA FASE LIBERADA apenas se os testes básicos passaram.
+
+Aceitação: jogo abre no editor e na build disponível; zero erros fatais; menus existentes exercitados; evidência clara do estado real; checkpoint de recuperação.

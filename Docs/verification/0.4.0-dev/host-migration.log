@@ -1,0 +1,21 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PLAYER_JOINED id=1 count=1
+GAME_READY role=offline Godot=4.6.3-stable (official)
+HOST_MIGRATION_SEED_PASS inventory=37 bound_owner=true
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1108029787 count=1
+HOST_MIGRATION_OWNER_PASS inventory=37 tribe=true profile=1
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=41267 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1108029787 count=1
+PLAYER_LEFT id=1108029787
+HOST_MIGRATION_SERVER_PASS inventory=37 tribe=true profile=1
+
+HOST_MIGRATION_PASS: real local save -> dedicated; original owner, 37 wood and tribe restored

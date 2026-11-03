@@ -1,0 +1,1317 @@
+{
+  "application_source_sha256": "ae784b75629979b2acf132051df58f11453d0863e7108e35836d986417d66b71",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 125,
+      "sha256": "1c1a54b0588ef563d5c5f062a5efb9d56b0cb6fa31e80a065601dcdc196d1816"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "bytes": 3837,
+      "sha256": "eb3ea893d6d407f030026b89db95ec63b5999b3e64197b8d7d275330a5f87787"
+    },
+    {
+      "path": "Animals/Animal.gd",
+      "bytes": 9575,
+      "sha256": "a1ace257be789318827675b983178b74f525283605306a0cf4bc65330dfc6f27",
+      "lines": 227,
+      "literal_resource_references": [
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "Animals/Animal.gd.uid",
+      "bytes": 20,
+      "sha256": "2ddb77f513bc4300b6e1f3415c92055af610ad0c6c35af33c2d2b2309ccf9c6a"
+    },
+    {
+      "path": "Animals/Director.gd",
+      "bytes": 11809,
+      "sha256": "d3b02e3480742569b620fc90703f536759f9735033a4e69eac5d9099955ab979",
+      "lines": 233,
+      "literal_resource_references": [
+        "res://Animals/Animal.gd",
+        "res://Game/Balance.gd"
+      ]
+    },
+    {
+      "path": "Animals/Director.gd.uid",
+      "bytes": 20,
+      "sha256": "3bb6cff777e1d43417b09d7c861806c821387c9fd17348890b044dff1025d193"
+    },
+    {
+      "path": "Animals/Fish.gd",
+      "bytes": 1601,
+      "sha256": "71a00ba73c58137989b4558986ab44d5c84d4fbeacb0c3764cdeea8e1948284b",
+      "lines": 36,
+      "literal_resource_references": [
+        "res://Game/Balance.gd",
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "Animals/Fish.gd.uid",
+      "bytes": 19,
+      "sha256": "d53638aaa2f46109ced2847db3fc694a53f28c0926b70ee7613450006986594a"
+    },
+    {
+      "path": "Assets/Audio/README.md",
+      "bytes": 307,
+      "sha256": "a6eba1e8ed6911807841aa87fc87fa33b79b9d93b9659b52da825fb1c4973ab6"
+    },
+    {
+      "path": "Assets/Audio/build.wav",
+      "bytes": 9746,
+      "sha256": "176897ae593982f0988efe3c2cf1718b8472267380b69ef13cb3a399ae47de05"
+    },
+    {
+      "path": "Assets/Audio/build.wav.import",
+      "bytes": 486,
+      "sha256": "e2839cbe032b18b75e01b72796a67335d22e0051923c2cf64c10ab942048a57f"
+    },
+    {
+      "path": "Assets/Audio/combat.wav",
+      "bytes": 9746,
+      "sha256": "53034cba22f80056438339d829589f0d09e0995a9cbe706ab8c51cf84c715289"
+    },
+    {
+      "path": "Assets/Audio/combat.wav.import",
+      "bytes": 489,
+      "sha256": "cdb989ed3e140498bcbe5a7a9835a94df5093afea90db0c9cb97a4e7eac3b93e"
+    },
+    {
+      "path": "Assets/Audio/combat_music.wav",
+      "bytes": 352844,
+      "sha256": "562fec5dda8e3cc22008a29d39642bcbc735d03d463770a196242541d8fd687e"
+    },
+    {
+      "path": "Assets/Audio/combat_music.wav.import",
+      "bytes": 507,
+      "sha256": "f217b26fefc6263fdc63526281f43018703a5ea0b6bf6fa848b6a9129f43ef0b"
+    },
+    {
+      "path": "Assets/Audio/craft.wav",
+      "bytes": 9746,
+      "sha256": "e0a6b2d786fed237917b054bd0fda10852cd9451012da10b0454952232c1bffa"
+    },
+    {
+      "path": "Assets/Audio/craft.wav.import",
+      "bytes": 486,
+      "sha256": "ee5d1f1553bde6a736be200e9f8ce7cc3f1c0cc500244ebe1abad2150bc9487c"
+    },
+    {
+      "path": "Assets/Audio/creation.wav",
+      "bytes": 352844,
+      "sha256": "33285d16346d7fdadca514abe41b752b643d6e0e735fe0b234f798bdfb7ac485"
+    },
+    {
+      "path": "Assets/Audio/creation.wav.import",
+      "bytes": 495,
+      "sha256": "5183ca72eeddf6adb1d12d4426cbe013b31d20000df01c4277d56bac07f4d95d"
+    },
+    {
+      "path": "Assets/Audio/damage.wav",
+      "bytes": 9746,
+      "sha256": "661ce0b0b37271e34b9ff0d2f037584cb9294230996611e34ebf2e8a55b89e3c"
+    },
+    {
+      "path": "Assets/Audio/damage.wav.import",
+      "bytes": 489,
+      "sha256": "c7506503f4b2e836888e65dd204b358cffc53e7efb441bf40d952b108ff64f93"
+    },
+    {
+      "path": "Assets/Audio/exploration.wav",
+      "bytes": 352844,
+      "sha256": "a79c48970efe10561dd507da53d4ab33a60b0795b33388e837420434abba0f5f"
+    },
+    {
+      "path": "Assets/Audio/exploration.wav.import",
+      "bytes": 504,
+      "sha256": "563f810e2ca3b25ff4ac373afca36020b1e777757f3908728b1e937fea0dc800"
+    },
+    {
+      "path": "Assets/Audio/menu.wav",
+      "bytes": 352844,
+      "sha256": "0955f452e5b835e538cf2d6e4be8cefb4f346fdab9949cf99fc1c95daf9e24a9"
+    },
+    {
+      "path": "Assets/Audio/menu.wav.import",
+      "bytes": 482,
+      "sha256": "4cecb1c2a2990392b87a4a5dd63ee96e5ecbf104d14fd68e43596cf293886d15"
+    },
+    {
+      "path": "Assets/Audio/night.wav",
+      "bytes": 352844,
+      "sha256": "54e81acfdb16d32105b3aa7880807e1c429533ff11d3898e049f1dc721627f90"
+    },
+    {
+      "path": "Assets/Audio/night.wav.import",
+      "bytes": 485,
+      "sha256": "512e967c5b3f11d5a2a55af4b4b8db0b5abf77458ebc4169996b83d7f0d37e01"
+    },
+    {
+      "path": "Assets/Audio/pickup.wav",
+      "bytes": 9746,
+      "sha256": "5cdd19e7f595d0d191fb909855d5efc24f24e8e5c29a6ca696f07b3a034a8d77"
+    },
+    {
+      "path": "Assets/Audio/pickup.wav.import",
+      "bytes": 488,
+      "sha256": "37a303eb5b8a7f11272302867ac32c253e77cbd09b2af0de0f9a2b45bb644def"
+    },
+    {
+      "path": "Assets/Audio/step_dirt.wav",
+      "bytes": 6218,
+      "sha256": "a372966d27753ead480ae9b915d5afedfebdb539e6fb5ffb3547ff4f0ef8b2a4"
+    },
+    {
+      "path": "Assets/Audio/step_dirt.wav.import",
+      "bytes": 498,
+      "sha256": "440a4e7231af0edfddedebca3b66c852d70536fd089a6ccfb1c4d02a4c67e2d0"
+    },
+    {
+      "path": "Assets/Audio/step_grass.wav",
+      "bytes": 6218,
+      "sha256": "ff4cc81bf31d9fba8066c22288e2f87083769a746082c2488b610972474c683f"
+    },
+    {
+      "path": "Assets/Audio/step_grass.wav.import",
+      "bytes": 501,
+      "sha256": "1ce77539323ae8cc5e4f0cd8771a2323628332f57af60d129cf1759fd278516e"
+    },
+    {
+      "path": "Assets/Audio/step_sand.wav",
+      "bytes": 6218,
+      "sha256": "fbce9068fccffb6a1f7b9f48c82f22e4fcbeb0129a2ee270f8b9c5b094fd1c3d"
+    },
+    {
+      "path": "Assets/Audio/step_sand.wav.import",
+      "bytes": 497,
+      "sha256": "67ea80bee3ea8bc55fcd10cad4fdcc4f7ce2d010d78e4c866468846446f66f50"
+    },
+    {
+      "path": "Assets/Audio/step_stone.wav",
+      "bytes": 6218,
+      "sha256": "ed3e75c20e1e2e1bbf69c7d4498d18a0873c73a9dee28303c6bcc9b5f4ac786b"
+    },
+    {
+      "path": "Assets/Audio/step_stone.wav.import",
+      "bytes": 501,
+      "sha256": "926d26bb06b676094420778f8b8d5a974f03bd6e6106508ebdbd4c7a8c2ea380"
+    },
+    {
+      "path": "Assets/Audio/step_water.wav",
+      "bytes": 6218,
+      "sha256": "cbff4cc49a568edd4415b9ec7bc8b46c7bede18a070407f0b543933b4449966c"
+    },
+    {
+      "path": "Assets/Audio/step_water.wav.import",
+      "bytes": 500,
+      "sha256": "164dd5f270518a6f36c0efc6dae315b757eccda1e05016305cd485fb751422c0"
+    },
+    {
+      "path": "Assets/Audio/step_wood.wav",
+      "bytes": 6218,
+      "sha256": "a84941f622784091ef045d22025a8c6b92cfda4409ff8622debd056b86a80b13"
+    },
+    {
+      "path": "Assets/Audio/step_wood.wav.import",
+      "bytes": 498,
+      "sha256": "f185fef75a450640cefce407937e9f28da4400b45d9b9dedc1c9e5234b194de3"
+    },
+    {
+      "path": "Assets/Audio/stone.wav",
+      "bytes": 9746,
+      "sha256": "4146fbee0fb4773ca91c339926b410ea04907a00c52357b96c11d4a8bf2596ff"
+    },
+    {
+      "path": "Assets/Audio/stone.wav.import",
+      "bytes": 486,
+      "sha256": "7fa0314f31e11ec93e1bdf4cae125f29dd26124f9ea99abd89e254dc720d142d"
+    },
+    {
+      "path": "Assets/Audio/ui.wav",
+      "bytes": 9746,
+      "sha256": "c8e3297b92ccc0d2e290a5a95f59abfaf29af1a65a58a14451bfab31974766d4"
+    },
+    {
+      "path": "Assets/Audio/ui.wav.import",
+      "bytes": 477,
+      "sha256": "b738beb9352c3c042f70a8c1368743363caed58d540a330edcd14acd498fc877"
+    },
+    {
+      "path": "Assets/Audio/wind.wav",
+      "bytes": 176444,
+      "sha256": "f8aad5be4d22bcc8bd22e5529886b3b0311e4208fee899a9d3451312bebf7238"
+    },
+    {
+      "path": "Assets/Audio/wind.wav.import",
+      "bytes": 483,
+      "sha256": "70bfd9807163ffa44073661f7c16b8280ae33fc87382a5c43693ff3db246ec70"
+    },
+    {
+      "path": "Assets/Audio/wood.wav",
+      "bytes": 9746,
+      "sha256": "2b23cdbe994a4eb03510466196ebac6244409c8edab5cfb5cedfa84dd7c9dca4"
+    },
+    {
+      "path": "Assets/Audio/wood.wav.import",
+      "bytes": 483,
+      "sha256": "76eb7aa5fadb814544215db2574b6efcd7822c1c78b8ae2ec4520a9adecb4f64"
+    },
+    {
+      "path": "Assets/Fonts/NotoSansCJK-Regular.ttc",
+      "bytes": 19484784,
+      "sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a"
+    },
+    {
+      "path": "Assets/Fonts/NotoSansCJK-Regular.ttc.import",
+      "bytes": 795,
+      "sha256": "4f1221a1fbf19f580cf7687a6572b05c7c5b2b0a645878e68aff9f1733b9391a"
+    },
+    {
+      "path": "Assets/Shaders/clouds.gdshader",
+      "bytes": 696,
+      "sha256": "3bacacd9654f9df21547ee7ee0e547f1909eb501c53e710b26015cf467d7a4d2",
+      "lines": 16,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Assets/Shaders/clouds.gdshader.uid",
+      "bytes": 20,
+      "sha256": "8ce541c4aa7e6ece993fe01ce4c9a3ea3df11e0267c6887b5485f4a0772dd0c2"
+    },
+    {
+      "path": "Assets/Shaders/color_grade.gdshader",
+      "bytes": 397,
+      "sha256": "8254a310e095607d4434081c94c6702f7d379fa65168b10bff6610edea47f2a6",
+      "lines": 9,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Assets/Shaders/color_grade.gdshader.uid",
+      "bytes": 20,
+      "sha256": "6cf2595bad65f3c9dc5f232322638023e0d7caf02a59364e64569cc6b0ea0fe6"
+    },
+    {
+      "path": "Assets/Shaders/distant_forest.gdshader",
+      "bytes": 338,
+      "sha256": "a70b591184491ac7f8397b4c8b66c823cb04110a0ded8ba2e0634347181a7fea",
+      "lines": 12,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Assets/Shaders/distant_forest.gdshader.uid",
+      "bytes": 20,
+      "sha256": "ea50df2e4cae07c2a8481bbc1707a1a52437e213ee9ce55ab1cea1a6f66af768"
+    },
+    {
+      "path": "Assets/Shaders/distant_terrain.gdshader",
+      "bytes": 270,
+      "sha256": "45a03285494c602a08a1b28a196f839c389c6157211fcbfc2646de772db91e64",
+      "lines": 10,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Assets/Shaders/distant_terrain.gdshader.uid",
+      "bytes": 20,
+      "sha256": "08e9e790ab7c5bf7ec0ae95c74dea14816d3402f714b21b143bc38eed35f006f"
+    },
+    {
+      "path": "Assets/Shaders/foliage.gdshader",
+      "bytes": 466,
+      "sha256": "c7630364137d49df52e0382aaff4a8d509621d30c1596eb2be49ddcdb66b3ab9",
+      "lines": 14,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Assets/Shaders/foliage.gdshader.uid",
+      "bytes": 20,
+      "sha256": "e8dfc7955bfa22abe2960c015d3cdec7f2a3b98126fd9812731a92f7c9bfc7e2"
+    },
+    {
+      "path": "Assets/Shaders/hide.gdshader",
+      "bytes": 708,
+      "sha256": "a68decf873734e9380916920983ee2df70f1c951a8a20b25e1aa6d374c8402ef",
+      "lines": 18,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Assets/Shaders/hide.gdshader.uid",
+      "bytes": 20,
+      "sha256": "efa9645fa80c9aec4d99c8351e1b3206b4ab3bd5c58cad8a875637250b7870ea"
+    },
+    {
+      "path": "Assets/Shaders/water.gdshader",
+      "bytes": 1336,
+      "sha256": "0b2f1d24d3f8819b9f9da3fd195717463393655d254b26cf75dd16aa86e83f88",
+      "lines": 27,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Assets/Shaders/water.gdshader.uid",
+      "bytes": 20,
+      "sha256": "66ce016a3b27d8e7bf570b7c591c7c39ecb8de39e5b45a10cede5ad520470b09"
+    },
+    {
+      "path": "Assets/icon.ico",
+      "bytes": 25456,
+      "sha256": "6cac36195b8d1915437b4d6b226bbf42a8bb80ce3842055bab4745b25e27c498"
+    },
+    {
+      "path": "Assets/icon.svg",
+      "bytes": 473,
+      "sha256": "f46931b030bc18b88da804c67da2f3b265bc992405f828ac2e9a4dbca83b5052"
+    },
+    {
+      "path": "Assets/icon.svg.import",
+      "bytes": 1020,
+      "sha256": "2b739e6e50a0216dff3cc0829d775437808a66f96582c25ccb79c62e0b017c14"
+    },
+    {
+      "path": "Audio/Manager.gd",
+      "bytes": 4512,
+      "sha256": "3b1416a8ad8db18b11e8013d7f0b3648683290b49be4c25a871d2c9758b60ed2",
+      "lines": 112,
+      "literal_resource_references": [
+        "res://Assets/Audio/%s.wav"
+      ]
+    },
+    {
+      "path": "Audio/Manager.gd.uid",
+      "bytes": 20,
+      "sha256": "790f42a77ec5870a47852684615908c8288831bdeb348756e4239c1a5a4d23fa"
+    },
+    {
+      "path": "Building/Campfire.gd",
+      "bytes": 5072,
+      "sha256": "c10764f8a9677d75a2c475b9e92d6a11ee53345f89cef6c71423391265706ba1",
+      "lines": 151,
+      "literal_resource_references": [
+        "res://Game/Balance.gd",
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "Building/Campfire.gd.uid",
+      "bytes": 20,
+      "sha256": "f8568dc6ca9f069033b9376c85a1e7f48575e46d25c887286452b464d5fd8337"
+    },
+    {
+      "path": "Building/Factory.gd",
+      "bytes": 2028,
+      "sha256": "32a8c5a15aeeb6b467638a92b3f14a8250d75f3c2e8a7e03f2b99c1158dab425",
+      "lines": 29,
+      "literal_resource_references": [
+        "res://Items/Catalog.gd"
+      ]
+    },
+    {
+      "path": "Building/Factory.gd.uid",
+      "bytes": 20,
+      "sha256": "cbf43b05f4825699b23152e487cdf59cdfa348400ebe87427f84bb76a7ebcae2"
+    },
+    {
+      "path": "Building/Piece.gd",
+      "bytes": 7356,
+      "sha256": "acbad6f38017dac02520f5a445dc42b70892bce0c6d6f4800a18b689c39f71c8",
+      "lines": 149,
+      "literal_resource_references": [
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "Building/Piece.gd.uid",
+      "bytes": 19,
+      "sha256": "a2814c7dc45af10beccc079ec2bbb077368ee2643c1cb19a8659047f0a8dff5c"
+    },
+    {
+      "path": "Building/Shelter.gd",
+      "bytes": 1665,
+      "sha256": "6c23e78c95d36d8588a3170fa256e1268f06c0983adbf304b349f4987e37ca86",
+      "lines": 40,
+      "literal_resource_references": [
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "Building/Shelter.gd.uid",
+      "bytes": 20,
+      "sha256": "4f35c841f78664888a7638a387eb9892d93b867d4a08041ed0edec1e22158cd5"
+    },
+    {
+      "path": "Building/Workshop.gd",
+      "bytes": 2108,
+      "sha256": "565a8a7c7fcd9ef4cb74e3b866c795eb87260e02de0c6c100c5e3440b1b6f01f",
+      "lines": 43,
+      "literal_resource_references": [
+        "res://Building/Factory.gd",
+        "res://Items/Catalog.gd",
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "Building/Workshop.gd.uid",
+      "bytes": 20,
+      "sha256": "f8106ed946bfdc076b905361f1b474c8cc9ab62733b5b5918ae079d9736c4bcc"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 2668,
+      "sha256": "b12f7059ea714eb6036677653af282e8d5271934e0f0467f66bf842c4b900632"
+    },
+    {
+      "path": "CREDITS.md",
+      "bytes": 1143,
+      "sha256": "b07d1f77c3b3951eaa3c7071d02f2dddb9a7f812a11319e80884ad2f5d41ac05"
+    },
+    {
+      "path": "Character/Appearance.gd",
+      "bytes": 2706,
+      "sha256": "0292b4bccb7fd52965640a359396ceb6dc1ea02cd539c3843cbc1257fb52d514",
+      "lines": 48,
+      "literal_resource_references": [
+        "res://Assets/Fonts/NotoSansCJK-Regular.ttc",
+        "res://Character/Model.gd",
+        "res://Character/Rig.gd",
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "Character/Appearance.gd.uid",
+      "bytes": 20,
+      "sha256": "8b35853b8c60612b8eecda1e4a7f862ed4b22a2c9ba721ca31c896d20fc41bda"
+    },
+    {
+      "path": "Character/Equipment.gd",
+      "bytes": 2430,
+      "sha256": "5594ce663acd07231072aa2a540947fb350dd034f274ecb2f7baa23cffc61c0d",
+      "lines": 55,
+      "literal_resource_references": [
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "Character/Equipment.gd.uid",
+      "bytes": 19,
+      "sha256": "a729c150d41ef0afbc6ca230acf5e92afdaabbb74e5652015396f658a1fb0c94"
+    },
+    {
+      "path": "Character/Model.gd",
+      "bytes": 6939,
+      "sha256": "83e6a3984e4cc041af183b778a8fd732d38726d57ae28f4f59aba5c406dc0e91",
+      "lines": 119,
+      "literal_resource_references": [
+        "res://Assets/Shaders/hide.gdshader",
+        "res://Character/Appearance.gd",
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "Character/Model.gd.uid",
+      "bytes": 19,
+      "sha256": "e779c0af88065818cf3556b309536be76905614a5fcdf2401299716a425ae81e"
+    },
+    {
+      "path": "Character/Rig.gd",
+      "bytes": 2775,
+      "sha256": "af85fed77040114affebc3a61ce7c49ea9c696b8a1407ce3111614fb815c8359",
+      "lines": 72,
+      "literal_resource_references": [
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "Character/Rig.gd.uid",
+      "bytes": 20,
+      "sha256": "6762d1f8c24d77d4798c45ba663f4eeba3e27906ab84d82aaa70ed872bc53cc7"
+    },
+    {
+      "path": "Combat/Rules.gd",
+      "bytes": 4246,
+      "sha256": "b7ec66b7615fb9a67f7098d7c2e5caf51223bf590d752b5b50928d5d2b3ba7dd",
+      "lines": 109,
+      "literal_resource_references": [
+        "res://Items/Catalog.gd"
+      ]
+    },
+    {
+      "path": "Combat/Rules.gd.uid",
+      "bytes": 19,
+      "sha256": "75434324300bc0604aa8b3565e023697e66e69b073131bedc05a061afb7e11c3"
+    },
+    {
+      "path": "Communication/ADPCM.gd",
+      "bytes": 2465,
+      "sha256": "e6fd58e7c6ea9d50c73645266b0aa08e55aa42f0b94fa4d12ba9440f6c9821a7",
+      "lines": 51,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Communication/ADPCM.gd.uid",
+      "bytes": 20,
+      "sha256": "16de3d5a8a86012fa1cc248a4f4cdf0baaf852ce762313f37be6a32ae90736c6"
+    },
+    {
+      "path": "Communication/Channels.gd",
+      "bytes": 7807,
+      "sha256": "180ebf33e9de7896df9e3cbee6cd4bda4473651f0261283aaae8801af06cfaf9",
+      "lines": 191,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Communication/Channels.gd.uid",
+      "bytes": 20,
+      "sha256": "d939dae751b0cbae52ad86f170afe9aae20978f787da658621577ad808502b26"
+    },
+    {
+      "path": "Communication/Voice.gd",
+      "bytes": 8823,
+      "sha256": "2bb3b600a442519cb287f5e305113e3f9d7cf09f09b3af4b4d73ca678ab61bbd",
+      "lines": 226,
+      "literal_resource_references": [
+        "res://Communication/ADPCM.gd"
+      ]
+    },
+    {
+      "path": "Communication/Voice.gd.uid",
+      "bytes": 19,
+      "sha256": "ade6b14637e0a9ab91aea01617675edad495c6553309870548a32d8a823c474a"
+    },
+    {
+      "path": "Core/Inventory.gd",
+      "bytes": 8110,
+      "sha256": "8547d9e2c959480cc31130043a5cc8d18d2cbed09c21f17d7f46344610198510",
+      "lines": 236,
+      "literal_resource_references": [
+        "res://Game/Balance.gd",
+        "res://Items/Catalog.gd"
+      ]
+    },
+    {
+      "path": "Core/Inventory.gd.uid",
+      "bytes": 19,
+      "sha256": "dc05209d6ec0c2c8cf00080ae49c1dc527055390ff8721ead32e48e7e24b6a10"
+    },
+    {
+      "path": "Core/Vitals.gd",
+      "bytes": 1065,
+      "sha256": "50c11b9645a8cf7c77aa7f452051de7e04306b27bc3b0934208a8ed59b7139ce",
+      "lines": 32,
+      "literal_resource_references": [
+        "res://Game/Balance.gd"
+      ]
+    },
+    {
+      "path": "Core/Vitals.gd.uid",
+      "bytes": 20,
+      "sha256": "f8e585b3f5f051f4f23212b918bb4ab8051f02fc1bd5b99f5e0a0eec4dc2d548"
+    },
+    {
+      "path": "Crafting/Activities.gd",
+      "bytes": 2372,
+      "sha256": "6b8482fe8ed19f0bb1a12a50a37064630c4a64e71ffea9ae238a58bc849c0d37",
+      "lines": 42,
+      "literal_resource_references": [
+        "res://Game/Balance.gd",
+        "res://Items/Catalog.gd"
+      ]
+    },
+    {
+      "path": "Crafting/Activities.gd.uid",
+      "bytes": 20,
+      "sha256": "b4a00bce400eac7de6e2d37f960a452205e10460f80e39c2ee8781beac056726"
+    },
+    {
+      "path": "DESIGN.md",
+      "bytes": 5328,
+      "sha256": "7cfb7b05f809d13869bfd9646d4911bb9db39f57bf32d6ea723a2c3cc5daf94c"
+    },
+    {
+      "path": "Data/Balance.json",
+      "bytes": 12791,
+      "sha256": "28ba1611369928bdb8eb538e6fb963dce8d2ed00d200165ed940989902d96601",
+      "lines": 688,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Game/Balance.gd",
+      "bytes": 851,
+      "sha256": "9bcda505fcb9698838fe4aae65e50dc1b5524311fc4764bcbae2fa55593d2327",
+      "lines": 16,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Game/Balance.gd.uid",
+      "bytes": 20,
+      "sha256": "4dc9a83ac96dba7d9c14bf6d6be4ca33569351032224d95efb4de86acf9d4af7"
+    },
+    {
+      "path": "Game/Diagnostics.gd",
+      "bytes": 840,
+      "sha256": "10f325d017b086fbd142bfa12b6f1719da0e80300a4e7fc110e0dfdf0face64f",
+      "lines": 12,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Game/Diagnostics.gd.uid",
+      "bytes": 20,
+      "sha256": "cc9b42db8ae1f4e31c7209fe198f4c666d3a110c15f83945ab07d74b4d740d93"
+    },
+    {
+      "path": "Game/Journal.gd",
+      "bytes": 5478,
+      "sha256": "b60304139d468744c0d628e70999c46cb0f2cc6c09461cbb25512f310fb54f8d",
+      "lines": 101,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Game/Journal.gd.uid",
+      "bytes": 19,
+      "sha256": "d65d92501c1c0cd920c8e2a40ec2b3fce912444374ad1a6645a202831fc3640a"
+    },
+    {
+      "path": "Game/Runtime.gd",
+      "bytes": 37847,
+      "sha256": "e2fed91b2d2f0c2b026b7d5b5dda3c3e5f973cf6b8e09924773ebbf83a34295c",
+      "lines": 730,
+      "literal_resource_references": [
+        "res://Animals/Director.gd",
+        "res://Audio/Manager.gd",
+        "res://Building/Factory.gd",
+        "res://Building/Workshop.gd",
+        "res://Character/Appearance.gd",
+        "res://Combat/Rules.gd",
+        "res://Communication/ADPCM.gd",
+        "res://Communication/Channels.gd",
+        "res://Communication/Voice.gd",
+        "res://Crafting/Activities.gd",
+        "res://Game/Balance.gd",
+        "res://Items/Catalog.gd",
+        "res://Mining/System.gd",
+        "res://Persistence/Store.gd",
+        "res://Progression/Profile.gd",
+        "res://Survival/Survival.gd",
+        "res://Tribes/System.gd",
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "Game/Runtime.gd.uid",
+      "bytes": 19,
+      "sha256": "9d169f420bc2175ad140e7a0899a86b693a6b0ba1d3996dc528857072a3eda29"
+    },
+    {
+      "path": "Graphics/Settings.gd",
+      "bytes": 10222,
+      "sha256": "c2badea2a3d487b3ab0d53f2cc038ec68474c2961046f90a214f9a613894405c",
+      "lines": 215,
+      "literal_resource_references": [
+        "res://Assets/Shaders/color_grade.gdshader",
+        "res://Settings/ConfigStore.gd"
+      ]
+    },
+    {
+      "path": "Graphics/Settings.gd.uid",
+      "bytes": 20,
+      "sha256": "4d1ad191456d03a9a9bfc890a523b3e32b30c8fdcdccb30b04ee15ea1564a934"
+    },
+    {
+      "path": "Items/Catalog.gd",
+      "bytes": 6354,
+      "sha256": "7c29103801c6057ddc5368dd25174049cacf6ca5c10aec48b4fc5d8982d7853a",
+      "lines": 63,
+      "literal_resource_references": [
+        "res://Game/Balance.gd"
+      ]
+    },
+    {
+      "path": "Items/Catalog.gd.uid",
+      "bytes": 20,
+      "sha256": "5d6dd35497f8d3f92814df99f14c5a82210341bbb884e867af12fd7060cb0f07"
+    },
+    {
+      "path": "Localization/Manager.gd",
+      "bytes": 2221,
+      "sha256": "5d8671995290e36194dd76aa047102e09e90ec74e5709189d5a4b62d0dae9f40",
+      "lines": 50,
+      "literal_resource_references": [
+        "res://Localization/%s.po",
+        "res://Settings/ConfigStore.gd"
+      ]
+    },
+    {
+      "path": "Localization/Manager.gd.uid",
+      "bytes": 20,
+      "sha256": "c5f9769478365d960d33668877ac5b52cf67bf0fa95f38e67d109bdbae99b67f"
+    },
+    {
+      "path": "Localization/de.po",
+      "bytes": 10916,
+      "sha256": "5f003e21c67550b561c3d3d181b5f699ba64d7fa3c44042e6fa627d885e0632f"
+    },
+    {
+      "path": "Localization/en_US.po",
+      "bytes": 10481,
+      "sha256": "0946e3326a3fcd0d0d4844ef0a416bac551c481642c595c9a8b3a9e978eebcbf"
+    },
+    {
+      "path": "Localization/es.po",
+      "bytes": 11081,
+      "sha256": "f53fdf7f91aeaf36f22a0b73753f815c2929e3f8b7b2be2d57313ccc6b46fab0"
+    },
+    {
+      "path": "Localization/fr.po",
+      "bytes": 11077,
+      "sha256": "31d41ab3f7e754b6a1da93fa32db6461be243a5bd04c2eb4bd0faa21b218b834"
+    },
+    {
+      "path": "Localization/ja.po",
+      "bytes": 11380,
+      "sha256": "4fb4747c8b4c70809e06d983f8440afef007b1040800dc7309367fb50c906da6"
+    },
+    {
+      "path": "Localization/pt_BR.po",
+      "bytes": 11035,
+      "sha256": "05d11788a8c046e6fe1ac1037e493e8a7099ec23fc60edc562909756670c5904"
+    },
+    {
+      "path": "Main.gd",
+      "bytes": 38368,
+      "sha256": "4f1a8f21ccdd0b05a4dca0697999eaa7e80842a6ebb675af5b8ae49d119d69af",
+      "lines": 940,
+      "literal_resource_references": [
+        "res://Core/Inventory.gd",
+        "res://Game/Diagnostics.gd",
+        "res://Game/Journal.gd",
+        "res://Game/Runtime.gd",
+        "res://Graphics/Settings.gd",
+        "res://Localization/Manager.gd",
+        "res://Networking/ServerConfig.gd",
+        "res://Networking/Session.gd",
+        "res://Persistence/Store.gd",
+        "res://Player/Player.gd",
+        "res://UI/ChatWidget.gd",
+        "res://UI/ControlsPanel.gd",
+        "res://UI/HUD.gd",
+        "res://UI/PerformanceOverlay.gd",
+        "res://Weather/Exposure.gd",
+        "res://Weather/Weather.gd",
+        "res://World/Clock.gd",
+        "res://World/World.gd"
+      ]
+    },
+    {
+      "path": "Main.gd.uid",
+      "bytes": 20,
+      "sha256": "c87dc287f1323461a8be5e52abe34954d02040ce97ece236708bda94a1a8f354"
+    },
+    {
+      "path": "Mining/System.gd",
+      "bytes": 7057,
+      "sha256": "50b21600e37298434feccbf93502c7770a106a06e3d4dc3b88128408208d27d6",
+      "lines": 156,
+      "literal_resource_references": [
+        "res://Game/Balance.gd",
+        "res://Items/Catalog.gd",
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "Mining/System.gd.uid",
+      "bytes": 20,
+      "sha256": "683d9f6d4d83ea356fcd544669515ff6c447c8b430f03abe6c2e7004564c900f"
+    },
+    {
+      "path": "Networking/ServerConfig.gd",
+      "bytes": 3350,
+      "sha256": "8ae4395017b60bc2229a960302f3bc6b9707e382cfdc67eb1602f3d04b5389a0",
+      "lines": 67,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Networking/ServerConfig.gd.uid",
+      "bytes": 19,
+      "sha256": "fc2c8b34f0adee394755fe1b1715d9005ea6ff4f6e7c8596bd2a99890c5a34c5"
+    },
+    {
+      "path": "Networking/Session.gd",
+      "bytes": 33499,
+      "sha256": "5c07678ed50b87b73de3f7b2e2e920ec9be10c639f10e5e3342a90d8b0f56c8a",
+      "lines": 764,
+      "literal_resource_references": [
+        "res://Character/Appearance.gd",
+        "res://Networking/ServerConfig.gd",
+        "res://Networking/SnapshotCodec.gd"
+      ]
+    },
+    {
+      "path": "Networking/Session.gd.uid",
+      "bytes": 20,
+      "sha256": "0b2625144603f3f9116d8b4cc366e480606410bf1d690c282a8cde97f309405c"
+    },
+    {
+      "path": "Networking/SnapshotCodec.gd",
+      "bytes": 1339,
+      "sha256": "48eac1659247394b5a2633e903349991a42cd334462a9fae7a52d232c7f93829",
+      "lines": 26,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Networking/SnapshotCodec.gd.uid",
+      "bytes": 20,
+      "sha256": "1683f6487357f3c92d8cc9dfdc664de0e2ef35115bb725301e4fd9048adc71f5"
+    },
+    {
+      "path": "Networking/server.example.json",
+      "bytes": 263,
+      "sha256": "ef495b520a045b869900edb8b8af79735d14696726e2ada2d462aa80f94fc969",
+      "lines": 15,
+      "literal_resource_references": []
+    },
+    {
+      "path": "PROGRESS.md",
+      "bytes": 5890,
+      "sha256": "c5a1500cfc44a8b812d81741f4f5213f4073a5aa03e2c0bc7efb039ba6dcdf9b"
+    },
+    {
+      "path": "Persistence/SaveSchema.gd",
+      "bytes": 5991,
+      "sha256": "90afaaf0832197e8fcd3cdad6e969ed73e71738d7c07fbfa2693f7b078a94f3f",
+      "lines": 90,
+      "literal_resource_references": [
+        "res://Crafting/Activities.gd",
+        "res://Game/Journal.gd",
+        "res://Items/Catalog.gd",
+        "res://Progression/Profile.gd"
+      ]
+    },
+    {
+      "path": "Persistence/SaveSchema.gd.uid",
+      "bytes": 20,
+      "sha256": "b94b2614ecde1f172f365fe86c3fe4459e130003a6907122ab2c0d4875d21c9d"
+    },
+    {
+      "path": "Persistence/Store.gd",
+      "bytes": 13064,
+      "sha256": "c45c0e73252d31cee6d2e0e4298ff7449b684b66efefeb939840427dcff5c85c",
+      "lines": 287,
+      "literal_resource_references": [
+        "res://Animals/Director.gd",
+        "res://Building/Factory.gd",
+        "res://Character/Appearance.gd",
+        "res://Communication/Channels.gd",
+        "res://Core/Inventory.gd",
+        "res://Items/Catalog.gd",
+        "res://Persistence/SaveSchema.gd",
+        "res://Survival/Survival.gd",
+        "res://Tribes/System.gd",
+        "res://Weather/Exposure.gd",
+        "res://Weather/Weather.gd"
+      ]
+    },
+    {
+      "path": "Persistence/Store.gd.uid",
+      "bytes": 20,
+      "sha256": "ba586c90cbcc3b5d74f0c51a4217c624be3aa502af85dad7a4355e72c0d25bd0"
+    },
+    {
+      "path": "Player/Player.gd",
+      "bytes": 18441,
+      "sha256": "eb728ed1a476c63a5c16e086fbfb9404ac3dceedcbc680ea085546583623171d",
+      "lines": 505,
+      "literal_resource_references": [
+        "res://Character/Appearance.gd",
+        "res://Character/Equipment.gd",
+        "res://Core/Vitals.gd",
+        "res://Game/Balance.gd"
+      ]
+    },
+    {
+      "path": "Player/Player.gd.uid",
+      "bytes": 20,
+      "sha256": "0a2496d76ee1a99f087065158204a334a32b00133a477e7c2b5b881d9d57e33e"
+    },
+    {
+      "path": "Progression/Profile.gd",
+      "bytes": 1855,
+      "sha256": "cf1c2994de2d1ac9c39990c640c327712463dcd7b475341cec16997575f2081d",
+      "lines": 36,
+      "literal_resource_references": [
+        "res://Game/Balance.gd"
+      ]
+    },
+    {
+      "path": "Progression/Profile.gd.uid",
+      "bytes": 20,
+      "sha256": "58fc7b27a11914cc69eef9bd7aa30bd13c6b79979b1f0e9b360a8438525ae7d2"
+    },
+    {
+      "path": "README.md",
+      "bytes": 12073,
+      "sha256": "47e68af98c057b8034d208dd68e6464b6e4a68c67e9529094e8a03f5b0ec54ac"
+    },
+    {
+      "path": "Scenes/Main.tscn",
+      "bytes": 157,
+      "sha256": "7a1899ca67a407320e423049d75cf3f5f0713f6ea8041a009450fe1c555113c0",
+      "lines": 6,
+      "literal_resource_references": [
+        "res://Main.gd"
+      ]
+    },
+    {
+      "path": "Settings/ConfigStore.gd",
+      "bytes": 2042,
+      "sha256": "cc6d15d2fd186b11dd26a7d58a5ddd66ed839b50717ca9150cf9720dd1eb5e0f",
+      "lines": 46,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Settings/ConfigStore.gd.uid",
+      "bytes": 19,
+      "sha256": "c822654ed1910ee1ccaae692de38afc66acd84418ec4e974ab9dfd9580279053"
+    },
+    {
+      "path": "Settings/Manager.gd",
+      "bytes": 919,
+      "sha256": "70cc0703ca71b7438a9992c7d97180531246c38b463fad7fed8b208c492696f9",
+      "lines": 17,
+      "literal_resource_references": [
+        "res://Graphics/Settings.gd",
+        "res://Settings/ConfigStore.gd"
+      ]
+    },
+    {
+      "path": "Settings/Manager.gd.uid",
+      "bytes": 20,
+      "sha256": "173f5725a6945a046958d4969f0e50d626f465eeab7d027224a6eabf6b2d5008"
+    },
+    {
+      "path": "Survival/Survival.gd",
+      "bytes": 3573,
+      "sha256": "481946a55955f5dd31701c63559033a7595c05cad185c9d737ab937cd36ce728",
+      "lines": 100,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Survival/Survival.gd.uid",
+      "bytes": 20,
+      "sha256": "284e4bbd05e385d0cdb654705425c076286201e5e54c6f43e160620d69254568"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "bytes": 1719,
+      "sha256": "1c88e6ce43cb221f846cd2b552d75e3a95fddf012611f55497d30c4dd5ec3f59"
+    },
+    {
+      "path": "Tribes/System.gd",
+      "bytes": 8351,
+      "sha256": "85e10b1e1a7fef87d1e654f4611edb6a16e8d419c8cd2fb9207c72bd207f2119",
+      "lines": 177,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Tribes/System.gd.uid",
+      "bytes": 19,
+      "sha256": "43b64a73e2a61df5d05b76140f3efe3000fce31d53cca4220eb0ddbf14b85565"
+    },
+    {
+      "path": "UI/CharacterCreator.gd",
+      "bytes": 5598,
+      "sha256": "7699631fa44a02a0689c9d6ac87dcc09698a356de171586f64c8649ef70b3b28",
+      "lines": 157,
+      "literal_resource_references": [
+        "res://Character/Appearance.gd",
+        "res://Player/Player.gd",
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "UI/CharacterCreator.gd.uid",
+      "bytes": 19,
+      "sha256": "90e7623d988dd2583a52fdd9c7932fd2b1e6241da921242e4cb5fd1e0bf62171"
+    },
+    {
+      "path": "UI/ChatWidget.gd",
+      "bytes": 5929,
+      "sha256": "671a460c31880df819a7d77ab6336b9e74b04feac02662513ce6eb8f6fa9de59",
+      "lines": 176,
+      "literal_resource_references": []
+    },
+    {
+      "path": "UI/ChatWidget.gd.uid",
+      "bytes": 20,
+      "sha256": "878cb0b77f7c113dedee96fb082e9857d137e04aa07a522dedd094b1040cb7fa"
+    },
+    {
+      "path": "UI/CommunicationPanel.gd",
+      "bytes": 8567,
+      "sha256": "21444d0479482beaaaf98bf427943421250416f9eaacf8deb5ec0fa4fb14126c",
+      "lines": 195,
+      "literal_resource_references": []
+    },
+    {
+      "path": "UI/CommunicationPanel.gd.uid",
+      "bytes": 20,
+      "sha256": "a3bd1adfce2c1df605cdea1f0db90259d7c70477b4dfb1328db0fc376bca30ce"
+    },
+    {
+      "path": "UI/ControlsPanel.gd",
+      "bytes": 3585,
+      "sha256": "23cb2cddc16ea7aa2bbad4d728eec87741f2a034c8e1b958b01469bfe0d3046c",
+      "lines": 81,
+      "literal_resource_references": [
+        "res://Settings/ConfigStore.gd"
+      ]
+    },
+    {
+      "path": "UI/ControlsPanel.gd.uid",
+      "bytes": 20,
+      "sha256": "a7c903fbaee5d8d5f469b8c6d096eee9c801e0d7cb374b8bf427ae5bb17e5576"
+    },
+    {
+      "path": "UI/GraphicsPanel.gd",
+      "bytes": 7293,
+      "sha256": "4b1d4e16a463386b35d1db82e01734703f895df6c62751b9fae43505c28f84ae",
+      "lines": 143,
+      "literal_resource_references": []
+    },
+    {
+      "path": "UI/GraphicsPanel.gd.uid",
+      "bytes": 20,
+      "sha256": "c37146fb7acee6b2bf1f2c1819e03241c98e3130130d63ac4ef8a46dec8c82f0"
+    },
+    {
+      "path": "UI/HUD.gd",
+      "bytes": 26247,
+      "sha256": "b844cfc84338f31e22105d0181caccd167ba50730f8adc1e0a0a98c01d3f24f6",
+      "lines": 571,
+      "literal_resource_references": [
+        "res://Assets/Fonts/NotoSansCJK-Regular.ttc",
+        "res://Assets/icon.svg",
+        "res://Building/Factory.gd",
+        "res://Items/Catalog.gd",
+        "res://UI/CharacterCreator.gd",
+        "res://UI/CommunicationPanel.gd",
+        "res://UI/ControlsPanel.gd",
+        "res://UI/GraphicsPanel.gd",
+        "res://UI/InventoryPanel.gd",
+        "res://UI/WorldMap.gd"
+      ]
+    },
+    {
+      "path": "UI/HUD.gd.uid",
+      "bytes": 20,
+      "sha256": "121f5b678fb329edc7c99972e73ffe446d0f5a0a08b5c2a820d4b67e24d4f548"
+    },
+    {
+      "path": "UI/InventoryPanel.gd",
+      "bytes": 7293,
+      "sha256": "2072e863b589fc044c5ed8e339667983ac740096a1ccca0a9acc0d7edb708387",
+      "lines": 110,
+      "literal_resource_references": [
+        "res://Game/Balance.gd",
+        "res://Items/Catalog.gd",
+        "res://UI/InventorySlot.gd"
+      ]
+    },
+    {
+      "path": "UI/InventoryPanel.gd.uid",
+      "bytes": 20,
+      "sha256": "efed129934efac1e20b85d786687818138200c18cb3e5e334fc312d93ba441ac"
+    },
+    {
+      "path": "UI/InventorySlot.gd",
+      "bytes": 709,
+      "sha256": "a71ddacbe9a220cb03accab5d0db1b40a6508a378f76fa9cac6167d1256438ff",
+      "lines": 15,
+      "literal_resource_references": []
+    },
+    {
+      "path": "UI/InventorySlot.gd.uid",
+      "bytes": 20,
+      "sha256": "d1860ad624e46510a1e8ad14ac6b101014f824052f28b6210cd936ac48ff4a77"
+    },
+    {
+      "path": "UI/PerformanceOverlay.gd",
+      "bytes": 1237,
+      "sha256": "3085cb0bd64c17df5ff962d1424029721a7ed8381dd16b94801167a65960524a",
+      "lines": 35,
+      "literal_resource_references": []
+    },
+    {
+      "path": "UI/PerformanceOverlay.gd.uid",
+      "bytes": 19,
+      "sha256": "a9aac34e02cc9ec8ed3c34b8a77e38fbaac126aa3e23405160a9c5f8245d7364"
+    },
+    {
+      "path": "UI/WorldMap.gd",
+      "bytes": 3832,
+      "sha256": "2b3d4df631e0df5b7a25820cf68a7abab55a875d147b0120e28cc2261a366fb1",
+      "lines": 79,
+      "literal_resource_references": [
+        "res://Game/Journal.gd"
+      ]
+    },
+    {
+      "path": "UI/WorldMap.gd.uid",
+      "bytes": 19,
+      "sha256": "7f7b06550cb0d6dadd9a3f5175eb124fd559ebb213ab1ba64de153e1ad0bbdd2"
+    },
+    {
+      "path": "Weather/Exposure.gd",
+      "bytes": 3461,
+      "sha256": "d3604466b9e7995d0b1e0ac43901bd31ac4bc3bb7e5876a026213c50cf178451",
+      "lines": 85,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Weather/Exposure.gd.uid",
+      "bytes": 20,
+      "sha256": "b879f018d99fa1c615dcb59eeece4bb0add3fbbc1bbdc71f55bda9e920fe92c2"
+    },
+    {
+      "path": "Weather/Weather.gd",
+      "bytes": 3190,
+      "sha256": "4316c9aa4c6c952f4c05ce0bf817a6d1e3ae511f7e94dfdf3720107c593ef9e8",
+      "lines": 86,
+      "literal_resource_references": []
+    },
+    {
+      "path": "Weather/Weather.gd.uid",
+      "bytes": 20,
+      "sha256": "7ea5e769f18d71edb5fa4e1c06fb644eef4dbea1be45762a784014e52b18fdcb"
+    },
+    {
+      "path": "World/Clock.gd",
+      "bytes": 672,
+      "sha256": "b9f910f83534597df49bf7b342a296c13a403b30593335c11737bc4574036d37",
+      "lines": 24,
+      "literal_resource_references": []
+    },
+    {
+      "path": "World/Clock.gd.uid",
+      "bytes": 20,
+      "sha256": "ccd33b87e3defabee1612b784ee8d666635ce9564db969857b0978eaf85a0977"
+    },
+    {
+      "path": "World/Shapes.gd",
+      "bytes": 6463,
+      "sha256": "b97b4d54cb2eb32d80b3e052165e6460128ba2572c70fd494f2ee0270089acc8",
+      "lines": 144,
+      "literal_resource_references": []
+    },
+    {
+      "path": "World/Shapes.gd.uid",
+      "bytes": 20,
+      "sha256": "419956a20d32600f56c0328aba7949e7589b440259676da6b2ae0527d7910cd0"
+    },
+    {
+      "path": "World/Terrain.gd",
+      "bytes": 7548,
+      "sha256": "d1d99a9475d95c18839ac962535cb94506a4c9269bc1f17bdc108bcab1d09b7d",
+      "lines": 150,
+      "literal_resource_references": []
+    },
+    {
+      "path": "World/Terrain.gd.uid",
+      "bytes": 20,
+      "sha256": "08560ea874e0b71b8500c9b02cbc19cb217a85a117294a67bc86e8c0bd1af2c2"
+    },
+    {
+      "path": "World/Tree.gd",
+      "bytes": 6120,
+      "sha256": "28c6086492a9cfc812a96ce812411ebc31174a739d770b75e564410d3044f435",
+      "lines": 136,
+      "literal_resource_references": [
+        "res://Assets/Shaders/foliage.gdshader",
+        "res://World/Shapes.gd"
+      ]
+    },
+    {
+      "path": "World/Tree.gd.uid",
+      "bytes": 20,
+      "sha256": "7c8f0f28d708646be024fc1a46d8961dbaa44353a97cf01283eff0e3ef0f0a23"
+    },
+    {
+      "path": "World/World.gd",
+      "bytes": 43490,
+      "sha256": "d9f86f71f2c07ca0e10f1b84d842a6ef1be15adb0b58fa42927617535911c0ef",
+      "lines": 961,
+      "literal_resource_references": [
+        "res://Animals/Fish.gd",
+        "res://Assets/Shaders/clouds.gdshader",
+        "res://Assets/Shaders/distant_forest.gdshader",
+        "res://Assets/Shaders/distant_terrain.gdshader",
+        "res://Assets/Shaders/foliage.gdshader",
+        "res://Assets/Shaders/water.gdshader",
+        "res://Building/Campfire.gd",
+        "res://Building/Piece.gd",
+        "res://Building/Shelter.gd",
+        "res://Game/Balance.gd",
+        "res://World/Shapes.gd",
+        "res://World/Terrain.gd",
+        "res://World/Tree.gd"
+      ]
+    },
+    {
+      "path": "World/World.gd.uid",
+      "bytes": 19,
+      "sha256": "59965d98d9d18645b02a2ce2c0b1e6ba627f88fd2a7e368e0a8c7338eb04b3ac"
+    },
+    {
+      "path": "export_presets.cfg",
+      "bytes": 2591,
+      "sha256": "b5e00a67091489503d68950623d0c5f9207cb5f9514085f91cd2d0c84ca8ded0",
+      "lines": 77,
+      "literal_resource_references": []
+    },
+    {
+      "path": "project.godot",
+      "bytes": 752,
+      "sha256": "79bc8b28f78ee7e0707c87e37db895cd3c33155d465de56c7558b45652039193",
+      "lines": 29,
+      "literal_resource_references": []
+    }
+  ],
+  "extension_counts": {
+    "": 1,
+    ".md": 8,
+    ".gd": 57,
+    ".uid": 64,
+    ".wav": 20,
+    ".import": 22,
+    ".ttc": 1,
+    ".gdshader": 7,
+    ".ico": 1,
+    ".svg": 1,
+    ".json": 2,
+    ".po": 6,
+    ".tscn": 1,
+    ".cfg": 1,
+    ".godot": 1
+  },
+  "scenes": {
+    "Scenes/Main.tscn": [
+      "[node name=\"TribesOfFire\" type=\"Node\"]"
+    ]
+  },
+  "autoloads": {
+    "Settings": "res://Settings/Manager.gd"
+  },
+  "editor_plugins": [],
+  "missing_literal_resources": [],
+  "dynamic_resource_patterns": [
+    {
+      "from": "Audio/Manager.gd",
+      "pattern": "res://Assets/Audio/%s.wav"
+    },
+    {
+      "from": "Localization/Manager.gd",
+      "pattern": "res://Localization/%s.po"
+    }
+  ],
+  "scope": "Static inventory; runtime-created nodes and dynamic paths require integration tests."
+}

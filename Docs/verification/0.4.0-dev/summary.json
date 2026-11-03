@@ -1,0 +1,31 @@
+{
+  "version": "0.4.0-dev",
+  "build_checks": 458,
+  "build_failed": 0,
+  "export_checks": 6,
+  "startup_cycles": 50,
+  "startup_failed": 0,
+  "settings_presets": 6,
+  "settings_minimum_wait_seconds": 120,
+  "settings_restart_processes": 6,
+  "published": false,
+  "publication_block": "api.github.com CONNECT 403; authentication not validated",
+  "pending": [
+    "Windows native 0.4",
+    "30-minute session",
+    "8-16-client load",
+    "physical microphone",
+    "target GPU benchmark",
+    "complete content and translations"
+  ],
+  "generated_targets": [
+    "Windows x64",
+    "Linux x64",
+    "Linux Dedicated Server x64"
+  ],
+  "local_packages_generated": true,
+  "native_windows_tested": false,
+  "source_sha256": "1b3f0bcee08ae59de45212935832f823b4e847fbfded863c6ea80a301f1c3715",
+  "source_package_checks": 2,
+  "source_package_failed": 0
+}

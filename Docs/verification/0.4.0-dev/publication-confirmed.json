@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/teyranto7-cloud/Tribes-Of-Fire",
+  "published_commit": "f37881dd0fe1075355e1fc77915780629661c386",
+  "release": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/releases/tag/v0.4.0-dev",
+  "prerelease": true,
+  "draft": false,
+  "windows_run": 41493048214,
+  "windows_conclusion": "success",
+  "windows_required_steps": "all executed, none skipped",
+  "download_mode": "versioned repository files linked from release; optional upload endpoint returned401"
+}

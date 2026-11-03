@@ -1,0 +1,739 @@
+Engine: 4.6.3.stable.official.7d41c59c4
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --editor --import
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+[  66% ] first_scan_filesystem | Initializing plugins...
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started Registering global classes... (7 steps)
+[   0% ] update_scripts_classes | 
+[  12% ] update_scripts_classes | 
+[  25% ] update_scripts_classes | 
+[  37% ] update_scripts_classes | 
+[  50% ] update_scripts_classes | 
+[  62% ] update_scripts_classes | 
+[  75% ] update_scripts_classes | 
+[ DONE ] update_scripts_classes
+
+[   0% ] _update_scan_actions | Started Scanning actions... (10 steps)
+[   0% ] _update_scan_actions | 01-languages.png
+[   9% ] _update_scan_actions | 02-menu.png
+[  18% ] _update_scan_actions | 03-character-creator.png
+[  27% ] _update_scan_actions | 04-custom-character.png
+[  36% ] _update_scan_actions | 05-japanese.png
+[  45% ] _update_scan_actions | 05-world-day.png
+[  54% ] _update_scan_actions | 06-graphics.png
+[  63% ] _update_scan_actions | 06-world-night.png
+[  72% ] _update_scan_actions | 07-inventory.png
+[  81% ] _update_scan_actions | 08-world-map.png
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started (Re)Importing Assets (10 steps)
+[   0% ] reimport | Preparing files to reimport...
+[   9% ] reimport | Preparing files to reimport...
+[  18% ] reimport | Preparing files to reimport...
+[  27% ] reimport | Preparing files to reimport...
+[  36% ] reimport | Preparing files to reimport...
+[  45% ] reimport | Preparing files to reimport...
+[  54% ] reimport | Preparing files to reimport...
+[  63% ] reimport | Preparing files to reimport...
+[  72% ] reimport | Preparing files to reimport...
+[  81% ] reimport | Preparing files to reimport...
+[   0% ] reimport | Executing pre-reimport operations...
+[   0% ] reimport | 01-languages.png
+[   9% ] reimport | 02-menu.png
+[  18% ] reimport | 03-character-creator.png
+[  27% ] reimport | 04-custom-character.png
+[  36% ] reimport | 05-japanese.png
+[  45% ] reimport | 05-world-day.png
+[  54% ] reimport | 06-graphics.png
+[  63% ] reimport | 06-world-night.png
+[  72% ] reimport | 07-inventory.png
+[  81% ] reimport | 08-world-map.png
+[  90% ] reimport | Finalizing Asset Import...
+[ DONE ] reimport
+
+[   0% ] reimport | Started (Re)Importing Assets (10 steps)
+[   0% ] reimport | Executing post-reimport operations...
+[ DONE ] reimport
+
+[   0% ] loading_editor_layout | Started Loading editor (5 steps)
+[   0% ] loading_editor_layout | Loading editor layout...
+[  16% ] loading_editor_layout | Loading docks...
+[ DONE ] loading_editor_layout
+
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_rules.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+RULES CHECKS=61 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_world.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WORLD CHECKS=25 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_player.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PLAYER_CHECKS=11 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_input.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+INPUT CHECKS=8 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_gameplay.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+GAMEPLAY CHECKS=17 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_v3.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+V3 CHECKS=109 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_gameplay_regressions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAMEPLAY_REGRESSIONS CHECKS=25 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_tribes_regression.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+TRIBES CHECKS=32 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_ui_regressions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+NETWORK_FAILURE simulated connection failure for regression test
+PLAYER_JOINED id=1 count=1
+UI_REGRESSIONS CHECKS=33 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_voice_regressions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+VOICE_REGRESSION CHECKS=8 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_reliability.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+RELIABILITY CHECKS=21 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_startup_close.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+STARTUP_CLOSE CHECKS=2 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_reconstruction.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=2 count=2
+PLAYER_LEFT id=2
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+RECONSTRUCTION CHECKS=83 FAILED=0
+PERSISTENCE_PROCESS CHECKS=4 FAILED=0 (forced termination, refusal, explicit recovery, release)
+STARTUP_PROCESS CHECKS=7 FAILED=0 (real isolated startup, safe mode, corrupt-save refusal)
+test_binary_stages_include_all_linked_local_documentation (__main__.BuildIntegrityTests.test_binary_stages_include_all_linked_local_documentation) ... ok
+test_checksum_link_is_external_without_editing_source_readme (__main__.BuildIntegrityTests.test_checksum_link_is_external_without_editing_source_readme) ... ok
+test_failed_new_full_build_does_not_leave_previous_receipt (__main__.BuildIntegrityTests.test_failed_new_full_build_does_not_leave_previous_receipt) ... ok
+test_git_source_zip_respects_ignore_and_keeps_new_public_sources (__main__.BuildIntegrityTests.test_git_source_zip_respects_ignore_and_keeps_new_public_sources) ... ok
+test_runtime_signature_does_not_hash_export_credentials (__main__.BuildIntegrityTests.test_runtime_signature_does_not_hash_export_credentials) ... ok
+test_source_changed_after_windows_export_stops_other_exports (__main__.BuildIntegrityTests.test_source_changed_after_windows_export_stops_other_exports) ... ok
+test_source_changed_at_last_export_cannot_write_receipt (__main__.BuildIntegrityTests.test_source_changed_at_last_export_cannot_write_receipt) ... ok
+test_source_changed_during_rules_rejects_the_cohort (__main__.BuildIntegrityTests.test_source_changed_during_rules_rejects_the_cohort) ... ok
+test_stable_import_tests_and_exports_share_one_receipt (__main__.BuildIntegrityTests.test_stable_import_tests_and_exports_share_one_receipt) ... ok
+test_standalone_source_zip_excludes_profiles_credentials_and_builds (__main__.BuildIntegrityTests.test_standalone_source_zip_excludes_profiles_credentials_and_builds) ... ok
+test_test_only_does_not_export_or_create_receipt (__main__.BuildIntegrityTests.test_test_only_does_not_export_or_create_receipt) ... ok
+test_test_only_source_change_also_invalidates_old_receipt (__main__.BuildIntegrityTests.test_test_only_source_change_also_invalidates_old_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.071s
+
+OK
+BUILD_INTEGRITY CHECKS=12 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --export-release Windows Desktop /workspace/Tribes-Of-Fire/builds/windows/TribesOfFire.exe
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+[  66% ] first_scan_filesystem | Initializing plugins...
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+[   0% ] savepack | Started Packing (102 steps)
+[   1% ] savepack | Storing File: res://Animals/Animal.gdc
+[   2% ] savepack | Storing File: res://Animals/Director.gdc
+[   3% ] savepack | Storing File: res://Animals/Fish.gdc
+[   4% ] savepack | Storing File: res://.godot/imported/build.wav-db75013a7f22b6c51f71db13ee0436eb.sample
+[   4% ] savepack | Storing File: res://Assets/Audio/build.wav.import
+[   5% ] savepack | Storing File: res://.godot/imported/combat.wav-52812756ca2e682823fb7c7ea5bfe584.sample
+[   5% ] savepack | Storing File: res://Assets/Audio/combat.wav.import
+[   6% ] savepack | Storing File: res://.godot/imported/combat_music.wav-f882030b303cb9fbadace76f8a5fe628.sample
+[   6% ] savepack | Storing File: res://Assets/Audio/combat_music.wav.import
+[   7% ] savepack | Storing File: res://.godot/imported/craft.wav-a05beac1a2c1e1f8e74904abf754931f.sample
+[   7% ] savepack | Storing File: res://Assets/Audio/craft.wav.import
+[   8% ] savepack | Storing File: res://.godot/imported/creation.wav-7ef6b1bed7d7d223da26d2a26f951528.sample
+[   8% ] savepack | Storing File: res://Assets/Audio/creation.wav.import
+[   9% ] savepack | Storing File: res://.godot/imported/damage.wav-43079643dc331808cc736026ba57b086.sample
+[   9% ] savepack | Storing File: res://Assets/Audio/damage.wav.import
+[  10% ] savepack | Storing File: res://.godot/imported/exploration.wav-52937d88746c9538933c04fe20dd3d06.sample
+[  10% ] savepack | Storing File: res://Assets/Audio/exploration.wav.import
+[  11% ] savepack | Storing File: res://.godot/imported/menu.wav-97a1895bc9823b712cac9992039c3ea2.sample
+[  11% ] savepack | Storing File: res://Assets/Audio/menu.wav.import
+[  12% ] savepack | Storing File: res://.godot/imported/night.wav-1adebe0e322805f63bba2a980e3a9277.sample
+[  12% ] savepack | Storing File: res://Assets/Audio/night.wav.import
+[  13% ] savepack | Storing File: res://.godot/imported/pickup.wav-4518a50ecad6c3fc15a4ed4880f2f1e1.sample
+[  13% ] savepack | Storing File: res://Assets/Audio/pickup.wav.import
+[  14% ] savepack | Storing File: res://.godot/imported/step_dirt.wav-c2cb5d8d83a5ec6a6fe4072871cab4cb.sample
+[  14% ] savepack | Storing File: res://Assets/Audio/step_dirt.wav.import
+[  16% ] savepack | Storing File: res://.godot/imported/step_grass.wav-226477e073dd6a7d02426ad4c6b2695e.sample
+[  16% ] savepack | Storing File: res://Assets/Audio/step_grass.wav.import
+[  17% ] savepack | Storing File: res://.godot/imported/step_sand.wav-0f9a3917df58721e9a96f40364ba5eab.sample
+[  17% ] savepack | Storing File: res://Assets/Audio/step_sand.wav.import
+[  18% ] savepack | Storing File: res://.godot/imported/step_stone.wav-3986d5f63470a6ff125ea75ae76a14c5.sample
+[  18% ] savepack | Storing File: res://Assets/Audio/step_stone.wav.import
+[  19% ] savepack | Storing File: res://.godot/imported/step_water.wav-ba707488b5051e9923591563fd68c0a0.sample
+[  19% ] savepack | Storing File: res://Assets/Audio/step_water.wav.import
+[  20% ] savepack | Storing File: res://.godot/imported/step_wood.wav-031cbc87d0016c33847bbdaa036d9639.sample
+[  20% ] savepack | Storing File: res://Assets/Audio/step_wood.wav.import
+[  21% ] savepack | Storing File: res://.godot/imported/stone.wav-808c9839f2e1fcc9d21d9179bfe4dbce.sample
+[  21% ] savepack | Storing File: res://Assets/Audio/stone.wav.import
+[  22% ] savepack | Storing File: res://.godot/imported/ui.wav-b65c598c9d6db3626ea804df96b7c08d.sample
+[  22% ] savepack | Storing File: res://Assets/Audio/ui.wav.import
+[  23% ] savepack | Storing File: res://.godot/imported/wind.wav-d52ae88b167fb5c7140fb0e8b584074d.sample
+[  23% ] savepack | Storing File: res://Assets/Audio/wind.wav.import
+[  24% ] savepack | Storing File: res://.godot/imported/wood.wav-92354adbfa1922b42bd99966c029eae7.sample
+[  24% ] savepack | Storing File: res://Assets/Audio/wood.wav.import
+[  25% ] savepack | Storing File: res://.godot/imported/NotoSansCJK-Regular.ttc-c6741816368b725511fbf54ead93f17e.fontdata
+[  25% ] savepack | Storing File: res://Assets/Fonts/NotoSansCJK-Regular.ttc.import
+[  26% ] savepack | Storing File: res://Assets/Shaders/clouds.gdshader
+[  27% ] savepack | Storing File: res://Assets/Shaders/color_grade.gdshader
+[  28% ] savepack | Storing File: res://Assets/Shaders/foliage.gdshader
+[  30% ] savepack | Storing File: res://Assets/Shaders/hide.gdshader
+[  31% ] savepack | Storing File: res://Assets/Shaders/water.gdshader
+[  32% ] savepack | Storing File: res://Assets/icon.ico
+[  33% ] savepack | Storing File: res://.godot/imported/icon.svg-8193eb3d66a1b5143b8bb4c28c1dc139.ctex
+[  33% ] savepack | Storing File: res://Assets/icon.svg.import
+[  33% ] savepack | Storing File: res://Audio/Manager.gdc
+[  34% ] savepack | Storing File: res://Building/Campfire.gdc
+[  35% ] savepack | Storing File: res://Building/Piece.gdc
+[  36% ] savepack | Storing File: res://Building/Shelter.gdc
+[  37% ] savepack | Storing File: res://Building/Workshop.gdc
+[  38% ] savepack | Storing File: res://Localization/fr.po
+[  39% ] savepack | Storing File: res://Networking/server.example.json
+[  40% ] savepack | Storing File: res://Localization/ja.po
+[  41% ] savepack | Storing File: res://Localization/Manager.gdc
+[  43% ] savepack | Storing File: res://Localization/pt_BR.po
+[  44% ] savepack | Storing File: res://Mining/System.gdc
+[  45% ] savepack | Storing File: res://UI/ControlsPanel.gdc
+[  46% ] savepack | Storing File: res://UI/CommunicationPanel.gdc
+[  47% ] savepack | Storing File: res://UI/WorldMap.gdc
+[  48% ] savepack | Storing File: res://Weather/Exposure.gdc
+[  49% ] savepack | Storing File: res://Weather/Weather.gdc
+[  50% ] savepack | Storing File: res://Tribes/System.gdc
+[  51% ] savepack | Storing File: res://UI/CharacterCreator.gdc
+[  52% ] savepack | Storing File: res://World/Clock.gdc
+[  53% ] savepack | Storing File: res://World/Shapes.gdc
+[  54% ] savepack | Storing File: res://Survival/Survival.gdc
+[  55% ] savepack | Storing File: res://Settings/ConfigStore.gdc
+[  56% ] savepack | Storing File: res://Settings/Manager.gdc
+[  58% ] savepack | Storing File: res://Networking/Session.gdc
+[  59% ] savepack | Storing File: res://Persistence/Store.gdc
+[  60% ] savepack | Storing File: res://Player/Player.gdc
+[  61% ] savepack | Storing File: res://Progression/Profile.gdc
+[  62% ] savepack | Storing File: res://.godot/exported/133200997/export-a8e1520d83f25710dd4e3da8c6f32601-Main.scn
+[  63% ] savepack | Storing File: res://Networking/SnapshotCodec.gdc
+[  64% ] savepack | Storing File: res://Persistence/SaveSchema.gdc
+[  65% ] savepack | Storing File: res://UI/InventoryPanel.gdc
+[  66% ] savepack | Storing File: res://UI/GraphicsPanel.gdc
+[  66% ] savepack | Storing File: res://UI/InventorySlot.gdc
+[  67% ] savepack | Storing File: res://UI/PerformanceOverlay.gdc
+[  68% ] savepack | Storing File: res://UI/ChatWidget.gdc
+[  69% ] savepack | Storing File: res://UI/HUD.gdc
+[  71% ] savepack | Storing File: res://Networking/ServerConfig.gdc
+[  72% ] savepack | Storing File: res://Character/Appearance.gdc
+[  73% ] savepack | Storing File: res://Character/Equipment.gdc
+[  74% ] savepack | Storing File: res://Character/Model.gdc
+[  75% ] savepack | Storing File: res://Character/Rig.gdc
+[  76% ] savepack | Storing File: res://Combat/Rules.gdc
+[  77% ] savepack | Storing File: res://Communication/ADPCM.gdc
+[  78% ] savepack | Storing File: res://Communication/Channels.gdc
+[  79% ] savepack | Storing File: res://Communication/Voice.gdc
+[  80% ] savepack | Storing File: res://Core/Inventory.gdc
+[  81% ] savepack | Storing File: res://Core/Vitals.gdc
+[  82% ] savepack | Storing File: res://Crafting/Activities.gdc
+[  83% ] savepack | Storing File: res://Data/Balance.json
+[  85% ] savepack | Storing File: res://Localization/es.po
+[  86% ] savepack | Storing File: res://World/Tree.gdc
+[  87% ] savepack | Storing File: res://World/World.gdc
+[  88% ] savepack | Storing File: res://Main.gdc
+[  89% ] savepack | Storing File: res://World/Terrain.gdc
+[  90% ] savepack | Storing File: res://Game/Balance.gdc
+[  91% ] savepack | Storing File: res://Game/Diagnostics.gdc
+[  92% ] savepack | Storing File: res://Game/Journal.gdc
+[  93% ] savepack | Storing File: res://Game/Runtime.gdc
+[  94% ] savepack | Storing File: res://Graphics/Settings.gdc
+[  95% ] savepack | Storing File: res://Items/Catalog.gdc
+[  96% ] savepack | Storing File: res://Localization/de.po
+[  97% ] savepack | Storing File: res://Localization/en_US.po
+[  97% ] savepack | Storing File: res://Animals/Animal.gd.remap
+[  97% ] savepack | Storing File: res://Animals/Director.gd.remap
+[  97% ] savepack | Storing File: res://Animals/Fish.gd.remap
+[  97% ] savepack | Storing File: res://Audio/Manager.gd.remap
+[  97% ] savepack | Storing File: res://Building/Campfire.gd.remap
+[  97% ] savepack | Storing File: res://Building/Piece.gd.remap
+[  97% ] savepack | Storing File: res://Building/Shelter.gd.remap
+[  97% ] savepack | Storing File: res://Building/Workshop.gd.remap
+[  97% ] savepack | Storing File: res://Localization/Manager.gd.remap
+[  97% ] savepack | Storing File: res://Mining/System.gd.remap
+[  97% ] savepack | Storing File: res://UI/ControlsPanel.gd.remap
+[  97% ] savepack | Storing File: res://UI/CommunicationPanel.gd.remap
+[  97% ] savepack | Storing File: res://UI/WorldMap.gd.remap
+[  97% ] savepack | Storing File: res://Weather/Exposure.gd.remap
+[  97% ] savepack | Storing File: res://Weather/Weather.gd.remap
+[  97% ] savepack | Storing File: res://Tribes/System.gd.remap
+[  97% ] savepack | Storing File: res://UI/CharacterCreator.gd.remap
+[  97% ] savepack | Storing File: res://World/Clock.gd.remap
+[  97% ] savepack | Storing File: res://World/Shapes.gd.remap
+[  97% ] savepack | Storing File: res://Survival/Survival.gd.remap
+[  97% ] savepack | Storing File: res://Settings/ConfigStore.gd.remap
+[  97% ] savepack | Storing File: res://Settings/Manager.gd.remap
+[  97% ] savepack | Storing File: res://Networking/Session.gd.remap
+[  97% ] savepack | Storing File: res://Persistence/Store.gd.remap
+[  97% ] savepack | Storing File: res://Player/Player.gd.remap
+[  97% ] savepack | Storing File: res://Progression/Profile.gd.remap
+[  97% ] savepack | Storing File: res://Scenes/Main.tscn.remap
+[  97% ] savepack | Storing File: res://Networking/SnapshotCodec.gd.remap
+[  97% ] savepack | Storing File: res://Persistence/SaveSchema.gd.remap
+[  97% ] savepack | Storing File: res://UI/InventoryPanel.gd.remap
+[  97% ] savepack | Storing File: res://UI/GraphicsPanel.gd.remap
+[  97% ] savepack | Storing File: res://UI/InventorySlot.gd.remap
+[  97% ] savepack | Storing File: res://UI/PerformanceOverlay.gd.remap
+[  97% ] savepack | Storing File: res://UI/ChatWidget.gd.remap
+[  97% ] savepack | Storing File: res://UI/HUD.gd.remap
+[  97% ] savepack | Storing File: res://Networking/ServerConfig.gd.remap
+[  97% ] savepack | Storing File: res://Character/Appearance.gd.remap
+[  97% ] savepack | Storing File: res://Character/Equipment.gd.remap
+[  97% ] savepack | Storing File: res://Character/Model.gd.remap
+[  97% ] savepack | Storing File: res://Character/Rig.gd.remap
+[  97% ] savepack | Storing File: res://Combat/Rules.gd.remap
+[  97% ] savepack | Storing File: res://Communication/ADPCM.gd.remap
+[  97% ] savepack | Storing File: res://Communication/Channels.gd.remap
+[  97% ] savepack | Storing File: res://Communication/Voice.gd.remap
+[  97% ] savepack | Storing File: res://Core/Inventory.gd.remap
+[  97% ] savepack | Storing File: res://Core/Vitals.gd.remap
+[  97% ] savepack | Storing File: res://Crafting/Activities.gd.remap
+[  97% ] savepack | Storing File: res://World/Tree.gd.remap
+[  97% ] savepack | Storing File: res://World/World.gd.remap
+[  97% ] savepack | Storing File: res://Main.gd.remap
+[  97% ] savepack | Storing File: res://World/Terrain.gd.remap
+[  97% ] savepack | Storing File: res://Game/Balance.gd.remap
+[  97% ] savepack | Storing File: res://Game/Diagnostics.gd.remap
+[  97% ] savepack | Storing File: res://Game/Journal.gd.remap
+[  97% ] savepack | Storing File: res://Game/Runtime.gd.remap
+[  97% ] savepack | Storing File: res://Graphics/Settings.gd.remap
+[  97% ] savepack | Storing File: res://Items/Catalog.gd.remap
+[  97% ] savepack | Storing File: res://.godot/global_script_class_cache.cfg
+[  97% ] savepack | Storing File: res://Assets/icon.svg
+[  97% ] savepack | Storing File: res://.godot/uid_cache.bin
+[  97% ] savepack | Storing File: res://project.binary
+[ DONE ] savepack
+
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --export-release Linux /workspace/Tribes-Of-Fire/builds/linux/TribesOfFire.x86_64
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+[  66% ] first_scan_filesystem | Initializing plugins...
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+[   0% ] savepack | Started Packing (102 steps)
+[   1% ] savepack | Storing File: res://Animals/Animal.gdc
+[   2% ] savepack | Storing File: res://Animals/Director.gdc
+[   3% ] savepack | Storing File: res://Animals/Fish.gdc
+[   4% ] savepack | Storing File: res://.godot/imported/build.wav-db75013a7f22b6c51f71db13ee0436eb.sample
+[   4% ] savepack | Storing File: res://Assets/Audio/build.wav.import
+[   5% ] savepack | Storing File: res://.godot/imported/combat.wav-52812756ca2e682823fb7c7ea5bfe584.sample
+[   5% ] savepack | Storing File: res://Assets/Audio/combat.wav.import
+[   6% ] savepack | Storing File: res://.godot/imported/combat_music.wav-f882030b303cb9fbadace76f8a5fe628.sample
+[   6% ] savepack | Storing File: res://Assets/Audio/combat_music.wav.import
+[   7% ] savepack | Storing File: res://.godot/imported/craft.wav-a05beac1a2c1e1f8e74904abf754931f.sample
+[   7% ] savepack | Storing File: res://Assets/Audio/craft.wav.import
+[   8% ] savepack | Storing File: res://.godot/imported/creation.wav-7ef6b1bed7d7d223da26d2a26f951528.sample
+[   8% ] savepack | Storing File: res://Assets/Audio/creation.wav.import
+[   9% ] savepack | Storing File: res://.godot/imported/damage.wav-43079643dc331808cc736026ba57b086.sample
+[   9% ] savepack | Storing File: res://Assets/Audio/damage.wav.import
+[  10% ] savepack | Storing File: res://.godot/imported/exploration.wav-52937d88746c9538933c04fe20dd3d06.sample
+[  10% ] savepack | Storing File: res://Assets/Audio/exploration.wav.import
+[  11% ] savepack | Storing File: res://.godot/imported/menu.wav-97a1895bc9823b712cac9992039c3ea2.sample
+[  11% ] savepack | Storing File: res://Assets/Audio/menu.wav.import
+[  12% ] savepack | Storing File: res://.godot/imported/night.wav-1adebe0e322805f63bba2a980e3a9277.sample
+[  12% ] savepack | Storing File: res://Assets/Audio/night.wav.import
+[  13% ] savepack | Storing File: res://.godot/imported/pickup.wav-4518a50ecad6c3fc15a4ed4880f2f1e1.sample
+[  13% ] savepack | Storing File: res://Assets/Audio/pickup.wav.import
+[  14% ] savepack | Storing File: res://.godot/imported/step_dirt.wav-c2cb5d8d83a5ec6a6fe4072871cab4cb.sample
+[  14% ] savepack | Storing File: res://Assets/Audio/step_dirt.wav.import
+[  16% ] savepack | Storing File: res://.godot/imported/step_grass.wav-226477e073dd6a7d02426ad4c6b2695e.sample
+[  16% ] savepack | Storing File: res://Assets/Audio/step_grass.wav.import
+[  17% ] savepack | Storing File: res://.godot/imported/step_sand.wav-0f9a3917df58721e9a96f40364ba5eab.sample
+[  17% ] savepack | Storing File: res://Assets/Audio/step_sand.wav.import
+[  18% ] savepack | Storing File: res://.godot/imported/step_stone.wav-3986d5f63470a6ff125ea75ae76a14c5.sample
+[  18% ] savepack | Storing File: res://Assets/Audio/step_stone.wav.import
+[  19% ] savepack | Storing File: res://.godot/imported/step_water.wav-ba707488b5051e9923591563fd68c0a0.sample
+[  19% ] savepack | Storing File: res://Assets/Audio/step_water.wav.import
+[  20% ] savepack | Storing File: res://.godot/imported/step_wood.wav-031cbc87d0016c33847bbdaa036d9639.sample
+[  20% ] savepack | Storing File: res://Assets/Audio/step_wood.wav.import
+[  21% ] savepack | Storing File: res://.godot/imported/stone.wav-808c9839f2e1fcc9d21d9179bfe4dbce.sample
+[  21% ] savepack | Storing File: res://Assets/Audio/stone.wav.import
+[  22% ] savepack | Storing File: res://.godot/imported/ui.wav-b65c598c9d6db3626ea804df96b7c08d.sample
+[  22% ] savepack | Storing File: res://Assets/Audio/ui.wav.import
+[  23% ] savepack | Storing File: res://.godot/imported/wind.wav-d52ae88b167fb5c7140fb0e8b584074d.sample
+[  23% ] savepack | Storing File: res://Assets/Audio/wind.wav.import
+[  24% ] savepack | Storing File: res://.godot/imported/wood.wav-92354adbfa1922b42bd99966c029eae7.sample
+[  24% ] savepack | Storing File: res://Assets/Audio/wood.wav.import
+[  25% ] savepack | Storing File: res://.godot/imported/NotoSansCJK-Regular.ttc-c6741816368b725511fbf54ead93f17e.fontdata
+[  25% ] savepack | Storing File: res://Assets/Fonts/NotoSansCJK-Regular.ttc.import
+[  26% ] savepack | Storing File: res://Assets/Shaders/clouds.gdshader
+[  27% ] savepack | Storing File: res://Assets/Shaders/color_grade.gdshader
+[  28% ] savepack | Storing File: res://Assets/Shaders/foliage.gdshader
+[  30% ] savepack | Storing File: res://Assets/Shaders/hide.gdshader
+[  31% ] savepack | Storing File: res://Assets/Shaders/water.gdshader
+[  32% ] savepack | Storing File: res://Assets/icon.ico
+[  33% ] savepack | Storing File: res://.godot/imported/icon.svg-8193eb3d66a1b5143b8bb4c28c1dc139.ctex
+[  33% ] savepack | Storing File: res://Assets/icon.svg.import
+[  33% ] savepack | Storing File: res://Audio/Manager.gdc
+[  34% ] savepack | Storing File: res://Building/Campfire.gdc
+[  35% ] savepack | Storing File: res://Building/Piece.gdc
+[  36% ] savepack | Storing File: res://Building/Shelter.gdc
+[  37% ] savepack | Storing File: res://Building/Workshop.gdc
+[  38% ] savepack | Storing File: res://Localization/fr.po
+[  39% ] savepack | Storing File: res://Networking/server.example.json
+[  40% ] savepack | Storing File: res://Localization/ja.po
+[  41% ] savepack | Storing File: res://Localization/Manager.gdc
+[  43% ] savepack | Storing File: res://Localization/pt_BR.po
+[  44% ] savepack | Storing File: res://Mining/System.gdc
+[  45% ] savepack | Storing File: res://UI/ControlsPanel.gdc
+[  46% ] savepack | Storing File: res://UI/CommunicationPanel.gdc
+[  47% ] savepack | Storing File: res://UI/WorldMap.gdc
+[  48% ] savepack | Storing File: res://Weather/Exposure.gdc
+[  49% ] savepack | Storing File: res://Weather/Weather.gdc
+[  50% ] savepack | Storing File: res://Tribes/System.gdc
+[  51% ] savepack | Storing File: res://UI/CharacterCreator.gdc
+[  52% ] savepack | Storing File: res://World/Clock.gdc
+[  53% ] savepack | Storing File: res://World/Shapes.gdc
+[  54% ] savepack | Storing File: res://Survival/Survival.gdc
+[  55% ] savepack | Storing File: res://Settings/ConfigStore.gdc
+[  56% ] savepack | Storing File: res://Settings/Manager.gdc
+[  58% ] savepack | Storing File: res://Networking/Session.gdc
+[  59% ] savepack | Storing File: res://Persistence/Store.gdc
+[  60% ] savepack | Storing File: res://Player/Player.gdc
+[  61% ] savepack | Storing File: res://Progression/Profile.gdc
+[  62% ] savepack | Storing File: res://.godot/exported/133200997/export-a8e1520d83f25710dd4e3da8c6f32601-Main.scn
+[  63% ] savepack | Storing File: res://Networking/SnapshotCodec.gdc
+[  64% ] savepack | Storing File: res://Persistence/SaveSchema.gdc
+[  65% ] savepack | Storing File: res://UI/InventoryPanel.gdc
+[  66% ] savepack | Storing File: res://UI/GraphicsPanel.gdc
+[  66% ] savepack | Storing File: res://UI/InventorySlot.gdc
+[  67% ] savepack | Storing File: res://UI/PerformanceOverlay.gdc
+[  68% ] savepack | Storing File: res://UI/ChatWidget.gdc
+[  69% ] savepack | Storing File: res://UI/HUD.gdc
+[  71% ] savepack | Storing File: res://Networking/ServerConfig.gdc
+[  72% ] savepack | Storing File: res://Character/Appearance.gdc
+[  73% ] savepack | Storing File: res://Character/Equipment.gdc
+[  74% ] savepack | Storing File: res://Character/Model.gdc
+[  75% ] savepack | Storing File: res://Character/Rig.gdc
+[  76% ] savepack | Storing File: res://Combat/Rules.gdc
+[  77% ] savepack | Storing File: res://Communication/ADPCM.gdc
+[  78% ] savepack | Storing File: res://Communication/Channels.gdc
+[  79% ] savepack | Storing File: res://Communication/Voice.gdc
+[  80% ] savepack | Storing File: res://Core/Inventory.gdc
+[  81% ] savepack | Storing File: res://Core/Vitals.gdc
+[  82% ] savepack | Storing File: res://Crafting/Activities.gdc
+[  83% ] savepack | Storing File: res://Data/Balance.json
+[  85% ] savepack | Storing File: res://Localization/es.po
+[  86% ] savepack | Storing File: res://World/Tree.gdc
+[  87% ] savepack | Storing File: res://World/World.gdc
+[  88% ] savepack | Storing File: res://Main.gdc
+[  89% ] savepack | Storing File: res://World/Terrain.gdc
+[  90% ] savepack | Storing File: res://Game/Balance.gdc
+[  91% ] savepack | Storing File: res://Game/Diagnostics.gdc
+[  92% ] savepack | Storing File: res://Game/Journal.gdc
+[  93% ] savepack | Storing File: res://Game/Runtime.gdc
+[  94% ] savepack | Storing File: res://Graphics/Settings.gdc
+[  95% ] savepack | Storing File: res://Items/Catalog.gdc
+[  96% ] savepack | Storing File: res://Localization/de.po
+[  97% ] savepack | Storing File: res://Localization/en_US.po
+[  97% ] savepack | Storing File: res://Animals/Animal.gd.remap
+[  97% ] savepack | Storing File: res://Animals/Director.gd.remap
+[  97% ] savepack | Storing File: res://Animals/Fish.gd.remap
+[  97% ] savepack | Storing File: res://Audio/Manager.gd.remap
+[  97% ] savepack | Storing File: res://Building/Campfire.gd.remap
+[  97% ] savepack | Storing File: res://Building/Piece.gd.remap
+[  97% ] savepack | Storing File: res://Building/Shelter.gd.remap
+[  97% ] savepack | Storing File: res://Building/Workshop.gd.remap
+[  97% ] savepack | Storing File: res://Localization/Manager.gd.remap
+[  97% ] savepack | Storing File: res://Mining/System.gd.remap
+[  97% ] savepack | Storing File: res://UI/ControlsPanel.gd.remap
+[  97% ] savepack | Storing File: res://UI/CommunicationPanel.gd.remap
+[  97% ] savepack | Storing File: res://UI/WorldMap.gd.remap
+[  97% ] savepack | Storing File: res://Weather/Exposure.gd.remap
+[  97% ] savepack | Storing File: res://Weather/Weather.gd.remap
+[  97% ] savepack | Storing File: res://Tribes/System.gd.remap
+[  97% ] savepack | Storing File: res://UI/CharacterCreator.gd.remap
+[  97% ] savepack | Storing File: res://World/Clock.gd.remap
+[  97% ] savepack | Storing File: res://World/Shapes.gd.remap
+[  97% ] savepack | Storing File: res://Survival/Survival.gd.remap
+[  97% ] savepack | Storing File: res://Settings/ConfigStore.gd.remap
+[  97% ] savepack | Storing File: res://Settings/Manager.gd.remap
+[  97% ] savepack | Storing File: res://Networking/Session.gd.remap
+[  97% ] savepack | Storing File: res://Persistence/Store.gd.remap
+[  97% ] savepack | Storing File: res://Player/Player.gd.remap
+[  97% ] savepack | Storing File: res://Progression/Profile.gd.remap
+[  97% ] savepack | Storing File: res://Scenes/Main.tscn.remap
+[  97% ] savepack | Storing File: res://Networking/SnapshotCodec.gd.remap
+[  97% ] savepack | Storing File: res://Persistence/SaveSchema.gd.remap
+[  97% ] savepack | Storing File: res://UI/InventoryPanel.gd.remap
+[  97% ] savepack | Storing File: res://UI/GraphicsPanel.gd.remap
+[  97% ] savepack | Storing File: res://UI/InventorySlot.gd.remap
+[  97% ] savepack | Storing File: res://UI/PerformanceOverlay.gd.remap
+[  97% ] savepack | Storing File: res://UI/ChatWidget.gd.remap
+[  97% ] savepack | Storing File: res://UI/HUD.gd.remap
+[  97% ] savepack | Storing File: res://Networking/ServerConfig.gd.remap
+[  97% ] savepack | Storing File: res://Character/Appearance.gd.remap
+[  97% ] savepack | Storing File: res://Character/Equipment.gd.remap
+[  97% ] savepack | Storing File: res://Character/Model.gd.remap
+[  97% ] savepack | Storing File: res://Character/Rig.gd.remap
+[  97% ] savepack | Storing File: res://Combat/Rules.gd.remap
+[  97% ] savepack | Storing File: res://Communication/ADPCM.gd.remap
+[  97% ] savepack | Storing File: res://Communication/Channels.gd.remap
+[  97% ] savepack | Storing File: res://Communication/Voice.gd.remap
+[  97% ] savepack | Storing File: res://Core/Inventory.gd.remap
+[  97% ] savepack | Storing File: res://Core/Vitals.gd.remap
+[  97% ] savepack | Storing File: res://Crafting/Activities.gd.remap
+[  97% ] savepack | Storing File: res://World/Tree.gd.remap
+[  97% ] savepack | Storing File: res://World/World.gd.remap
+[  97% ] savepack | Storing File: res://Main.gd.remap
+[  97% ] savepack | Storing File: res://World/Terrain.gd.remap
+[  97% ] savepack | Storing File: res://Game/Balance.gd.remap
+[  97% ] savepack | Storing File: res://Game/Diagnostics.gd.remap
+[  97% ] savepack | Storing File: res://Game/Journal.gd.remap
+[  97% ] savepack | Storing File: res://Game/Runtime.gd.remap
+[  97% ] savepack | Storing File: res://Graphics/Settings.gd.remap
+[  97% ] savepack | Storing File: res://Items/Catalog.gd.remap
+[  97% ] savepack | Storing File: res://.godot/global_script_class_cache.cfg
+[  97% ] savepack | Storing File: res://Assets/icon.svg
+[  97% ] savepack | Storing File: res://.godot/uid_cache.bin
+[  97% ] savepack | Storing File: res://project.binary
+[ DONE ] savepack
+
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --export-release Linux Dedicated Server /workspace/Tribes-Of-Fire/builds/server/TribesOfFireServer.x86_64
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started Project initialization (5 steps)
+[   0% ] first_scan_filesystem | Scanning file structure...
+[  16% ] first_scan_filesystem | Loading global class names...
+[  33% ] first_scan_filesystem | Verifying GDExtensions...
+[  50% ] first_scan_filesystem | Creating autoload scripts...
+[  66% ] first_scan_filesystem | Initializing plugins...
+[  83% ] first_scan_filesystem | Starting file scan...
+[ DONE ] first_scan_filesystem
+
+[   0% ] savepack | Started Packing (102 steps)
+[   1% ] savepack | Storing File: res://Animals/Animal.gdc
+[   2% ] savepack | Storing File: res://Animals/Director.gdc
+[   3% ] savepack | Storing File: res://Animals/Fish.gdc
+[   4% ] savepack | Storing File: res://.godot/imported/build.wav-db75013a7f22b6c51f71db13ee0436eb.sample
+[   4% ] savepack | Storing File: res://Assets/Audio/build.wav.import
+[   5% ] savepack | Storing File: res://.godot/imported/combat.wav-52812756ca2e682823fb7c7ea5bfe584.sample
+[   5% ] savepack | Storing File: res://Assets/Audio/combat.wav.import
+[   6% ] savepack | Storing File: res://.godot/imported/combat_music.wav-f882030b303cb9fbadace76f8a5fe628.sample
+[   6% ] savepack | Storing File: res://Assets/Audio/combat_music.wav.import
+[   7% ] savepack | Storing File: res://.godot/imported/craft.wav-a05beac1a2c1e1f8e74904abf754931f.sample
+[   7% ] savepack | Storing File: res://Assets/Audio/craft.wav.import
+[   8% ] savepack | Storing File: res://.godot/imported/creation.wav-7ef6b1bed7d7d223da26d2a26f951528.sample
+[   8% ] savepack | Storing File: res://Assets/Audio/creation.wav.import
+[   9% ] savepack | Storing File: res://.godot/imported/damage.wav-43079643dc331808cc736026ba57b086.sample
+[   9% ] savepack | Storing File: res://Assets/Audio/damage.wav.import
+[  10% ] savepack | Storing File: res://.godot/imported/exploration.wav-52937d88746c9538933c04fe20dd3d06.sample
+[  10% ] savepack | Storing File: res://Assets/Audio/exploration.wav.import
+[  11% ] savepack | Storing File: res://.godot/imported/menu.wav-97a1895bc9823b712cac9992039c3ea2.sample
+[  11% ] savepack | Storing File: res://Assets/Audio/menu.wav.import
+[  12% ] savepack | Storing File: res://.godot/imported/night.wav-1adebe0e322805f63bba2a980e3a9277.sample
+[  12% ] savepack | Storing File: res://Assets/Audio/night.wav.import
+[  13% ] savepack | Storing File: res://.godot/imported/pickup.wav-4518a50ecad6c3fc15a4ed4880f2f1e1.sample
+[  13% ] savepack | Storing File: res://Assets/Audio/pickup.wav.import
+[  14% ] savepack | Storing File: res://.godot/imported/step_dirt.wav-c2cb5d8d83a5ec6a6fe4072871cab4cb.sample
+[  14% ] savepack | Storing File: res://Assets/Audio/step_dirt.wav.import
+[  16% ] savepack | Storing File: res://.godot/imported/step_grass.wav-226477e073dd6a7d02426ad4c6b2695e.sample
+[  16% ] savepack | Storing File: res://Assets/Audio/step_grass.wav.import
+[  17% ] savepack | Storing File: res://.godot/imported/step_sand.wav-0f9a3917df58721e9a96f40364ba5eab.sample
+[  17% ] savepack | Storing File: res://Assets/Audio/step_sand.wav.import
+[  18% ] savepack | Storing File: res://.godot/imported/step_stone.wav-3986d5f63470a6ff125ea75ae76a14c5.sample
+[  18% ] savepack | Storing File: res://Assets/Audio/step_stone.wav.import
+[  19% ] savepack | Storing File: res://.godot/imported/step_water.wav-ba707488b5051e9923591563fd68c0a0.sample
+[  19% ] savepack | Storing File: res://Assets/Audio/step_water.wav.import
+[  20% ] savepack | Storing File: res://.godot/imported/step_wood.wav-031cbc87d0016c33847bbdaa036d9639.sample
+[  20% ] savepack | Storing File: res://Assets/Audio/step_wood.wav.import
+[  21% ] savepack | Storing File: res://.godot/imported/stone.wav-808c9839f2e1fcc9d21d9179bfe4dbce.sample
+[  21% ] savepack | Storing File: res://Assets/Audio/stone.wav.import
+[  22% ] savepack | Storing File: res://.godot/imported/ui.wav-b65c598c9d6db3626ea804df96b7c08d.sample
+[  22% ] savepack | Storing File: res://Assets/Audio/ui.wav.import
+[  23% ] savepack | Storing File: res://.godot/imported/wind.wav-d52ae88b167fb5c7140fb0e8b584074d.sample
+[  23% ] savepack | Storing File: res://Assets/Audio/wind.wav.import
+[  24% ] savepack | Storing File: res://.godot/imported/wood.wav-92354adbfa1922b42bd99966c029eae7.sample
+[  24% ] savepack | Storing File: res://Assets/Audio/wood.wav.import
+[  25% ] savepack | Storing File: res://.godot/imported/NotoSansCJK-Regular.ttc-c6741816368b725511fbf54ead93f17e.fontdata
+[  25% ] savepack | Storing File: res://Assets/Fonts/NotoSansCJK-Regular.ttc.import
+[  26% ] savepack | Storing File: res://Assets/Shaders/clouds.gdshader
+[  27% ] savepack | Storing File: res://Assets/Shaders/color_grade.gdshader
+[  28% ] savepack | Storing File: res://Assets/Shaders/foliage.gdshader
+[  30% ] savepack | Storing File: res://Assets/Shaders/hide.gdshader
+[  31% ] savepack | Storing File: res://Assets/Shaders/water.gdshader
+[  32% ] savepack | Storing File: res://Assets/icon.ico
+[  33% ] savepack | Storing File: res://.godot/imported/icon.svg-8193eb3d66a1b5143b8bb4c28c1dc139.ctex
+[  33% ] savepack | Storing File: res://Assets/icon.svg.import
+[  33% ] savepack | Storing File: res://Audio/Manager.gdc
+[  34% ] savepack | Storing File: res://Building/Campfire.gdc
+[  35% ] savepack | Storing File: res://Building/Piece.gdc
+[  36% ] savepack | Storing File: res://Building/Shelter.gdc
+[  37% ] savepack | Storing File: res://Building/Workshop.gdc
+[  38% ] savepack | Storing File: res://Localization/fr.po
+[  39% ] savepack | Storing File: res://Networking/server.example.json
+[  40% ] savepack | Storing File: res://Localization/ja.po
+[  41% ] savepack | Storing File: res://Localization/Manager.gdc
+[  43% ] savepack | Storing File: res://Localization/pt_BR.po
+[  44% ] savepack | Storing File: res://Mining/System.gdc
+[  45% ] savepack | Storing File: res://UI/ControlsPanel.gdc
+[  46% ] savepack | Storing File: res://UI/CommunicationPanel.gdc
+[  47% ] savepack | Storing File: res://UI/WorldMap.gdc
+[  48% ] savepack | Storing File: res://Weather/Exposure.gdc
+[  49% ] savepack | Storing File: res://Weather/Weather.gdc
+[  50% ] savepack | Storing File: res://Tribes/System.gdc
+[  51% ] savepack | Storing File: res://UI/CharacterCreator.gdc
+[  52% ] savepack | Storing File: res://World/Clock.gdc
+[  53% ] savepack | Storing File: res://World/Shapes.gdc
+[  54% ] savepack | Storing File: res://Survival/Survival.gdc
+[  55% ] savepack | Storing File: res://Settings/ConfigStore.gdc
+[  56% ] savepack | Storing File: res://Settings/Manager.gdc
+[  58% ] savepack | Storing File: res://Networking/Session.gdc
+[  59% ] savepack | Storing File: res://Persistence/Store.gdc
+[  60% ] savepack | Storing File: res://Player/Player.gdc
+[  61% ] savepack | Storing File: res://Progression/Profile.gdc
+[  62% ] savepack | Storing File: res://.godot/exported/133200997/export-a8e1520d83f25710dd4e3da8c6f32601-Main.scn
+[  63% ] savepack | Storing File: res://Networking/SnapshotCodec.gdc
+[  64% ] savepack | Storing File: res://Persistence/SaveSchema.gdc
+[  65% ] savepack | Storing File: res://UI/InventoryPanel.gdc
+[  66% ] savepack | Storing File: res://UI/GraphicsPanel.gdc
+[  66% ] savepack | Storing File: res://UI/InventorySlot.gdc
+[  67% ] savepack | Storing File: res://UI/PerformanceOverlay.gdc
+[  68% ] savepack | Storing File: res://UI/ChatWidget.gdc
+[  69% ] savepack | Storing File: res://UI/HUD.gdc
+[  71% ] savepack | Storing File: res://Networking/ServerConfig.gdc
+[  72% ] savepack | Storing File: res://Character/Appearance.gdc
+[  73% ] savepack | Storing File: res://Character/Equipment.gdc
+[  74% ] savepack | Storing File: res://Character/Model.gdc
+[  75% ] savepack | Storing File: res://Character/Rig.gdc
+[  76% ] savepack | Storing File: res://Combat/Rules.gdc
+[  77% ] savepack | Storing File: res://Communication/ADPCM.gdc
+[  78% ] savepack | Storing File: res://Communication/Channels.gdc
+[  79% ] savepack | Storing File: res://Communication/Voice.gdc
+[  80% ] savepack | Storing File: res://Core/Inventory.gdc
+[  81% ] savepack | Storing File: res://Core/Vitals.gdc
+[  82% ] savepack | Storing File: res://Crafting/Activities.gdc
+[  83% ] savepack | Storing File: res://Data/Balance.json
+[  85% ] savepack | Storing File: res://Localization/es.po
+[  86% ] savepack | Storing File: res://World/Tree.gdc
+[  87% ] savepack | Storing File: res://World/World.gdc
+[  88% ] savepack | Storing File: res://Main.gdc
+[  89% ] savepack | Storing File: res://World/Terrain.gdc
+[  90% ] savepack | Storing File: res://Game/Balance.gdc
+[  91% ] savepack | Storing File: res://Game/Diagnostics.gdc
+[  92% ] savepack | Storing File: res://Game/Journal.gdc
+[  93% ] savepack | Storing File: res://Game/Runtime.gdc
+[  94% ] savepack | Storing File: res://Graphics/Settings.gdc
+[  95% ] savepack | Storing File: res://Items/Catalog.gdc
+[  96% ] savepack | Storing File: res://Localization/de.po
+[  97% ] savepack | Storing File: res://Localization/en_US.po
+[  97% ] savepack | Storing File: res://Animals/Animal.gd.remap
+[  97% ] savepack | Storing File: res://Animals/Director.gd.remap
+[  97% ] savepack | Storing File: res://Animals/Fish.gd.remap
+[  97% ] savepack | Storing File: res://Audio/Manager.gd.remap
+[  97% ] savepack | Storing File: res://Building/Campfire.gd.remap
+[  97% ] savepack | Storing File: res://Building/Piece.gd.remap
+[  97% ] savepack | Storing File: res://Building/Shelter.gd.remap
+[  97% ] savepack | Storing File: res://Building/Workshop.gd.remap
+[  97% ] savepack | Storing File: res://Localization/Manager.gd.remap
+[  97% ] savepack | Storing File: res://Mining/System.gd.remap
+[  97% ] savepack | Storing File: res://UI/ControlsPanel.gd.remap
+[  97% ] savepack | Storing File: res://UI/CommunicationPanel.gd.remap
+[  97% ] savepack | Storing File: res://UI/WorldMap.gd.remap
+[  97% ] savepack | Storing File: res://Weather/Exposure.gd.remap
+[  97% ] savepack | Storing File: res://Weather/Weather.gd.remap
+[  97% ] savepack | Storing File: res://Tribes/System.gd.remap
+[  97% ] savepack | Storing File: res://UI/CharacterCreator.gd.remap
+[  97% ] savepack | Storing File: res://World/Clock.gd.remap
+[  97% ] savepack | Storing File: res://World/Shapes.gd.remap
+[  97% ] savepack | Storing File: res://Survival/Survival.gd.remap
+[  97% ] savepack | Storing File: res://Settings/ConfigStore.gd.remap
+[  97% ] savepack | Storing File: res://Settings/Manager.gd.remap
+[  97% ] savepack | Storing File: res://Networking/Session.gd.remap
+[  97% ] savepack | Storing File: res://Persistence/Store.gd.remap
+[  97% ] savepack | Storing File: res://Player/Player.gd.remap
+[  97% ] savepack | Storing File: res://Progression/Profile.gd.remap
+[  97% ] savepack | Storing File: res://Scenes/Main.tscn.remap
+[  97% ] savepack | Storing File: res://Networking/SnapshotCodec.gd.remap
+[  97% ] savepack | Storing File: res://Persistence/SaveSchema.gd.remap
+[  97% ] savepack | Storing File: res://UI/InventoryPanel.gd.remap
+[  97% ] savepack | Storing File: res://UI/GraphicsPanel.gd.remap
+[  97% ] savepack | Storing File: res://UI/InventorySlot.gd.remap
+[  97% ] savepack | Storing File: res://UI/PerformanceOverlay.gd.remap
+[  97% ] savepack | Storing File: res://UI/ChatWidget.gd.remap
+[  97% ] savepack | Storing File: res://UI/HUD.gd.remap
+[  97% ] savepack | Storing File: res://Networking/ServerConfig.gd.remap
+[  97% ] savepack | Storing File: res://Character/Appearance.gd.remap
+[  97% ] savepack | Storing File: res://Character/Equipment.gd.remap
+[  97% ] savepack | Storing File: res://Character/Model.gd.remap
+[  97% ] savepack | Storing File: res://Character/Rig.gd.remap
+[  97% ] savepack | Storing File: res://Combat/Rules.gd.remap
+[  97% ] savepack | Storing File: res://Communication/ADPCM.gd.remap
+[  97% ] savepack | Storing File: res://Communication/Channels.gd.remap
+[  97% ] savepack | Storing File: res://Communication/Voice.gd.remap
+[  97% ] savepack | Storing File: res://Core/Inventory.gd.remap
+[  97% ] savepack | Storing File: res://Core/Vitals.gd.remap
+[  97% ] savepack | Storing File: res://Crafting/Activities.gd.remap
+[  97% ] savepack | Storing File: res://World/Tree.gd.remap
+[  97% ] savepack | Storing File: res://World/World.gd.remap
+[  97% ] savepack | Storing File: res://Main.gd.remap
+[  97% ] savepack | Storing File: res://World/Terrain.gd.remap
+[  97% ] savepack | Storing File: res://Game/Balance.gd.remap
+[  97% ] savepack | Storing File: res://Game/Diagnostics.gd.remap
+[  97% ] savepack | Storing File: res://Game/Journal.gd.remap
+[  97% ] savepack | Storing File: res://Game/Runtime.gd.remap
+[  97% ] savepack | Storing File: res://Graphics/Settings.gd.remap
+[  97% ] savepack | Storing File: res://Items/Catalog.gd.remap
+[  97% ] savepack | Storing File: res://.godot/global_script_class_cache.cfg
+[  97% ] savepack | Storing File: res://Assets/icon.svg
+[  97% ] savepack | Storing File: res://.godot/uid_cache.bin
+[  97% ] savepack | Storing File: res://project.binary
+[ DONE ] savepack
+
+Exports generated. Run platform smoke checks before distribution.

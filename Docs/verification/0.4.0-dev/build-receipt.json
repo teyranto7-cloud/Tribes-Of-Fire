@@ -1,0 +1,8 @@
+{
+  "source_sha256": "1b3f0bcee08ae59de45212935832f823b4e847fbfded863c6ea80a301f1c3715",
+  "targets": {
+    "windows/TribesOfFire.exe": "0c8c44936bcef0ef5f9e5dcd5f64c02222512b73c22766911fbf974aea53c6d5",
+    "linux/TribesOfFire.x86_64": "3944f43ae39d9d04291c05e5482ad8b8659503d86b280927c309b91ee386af08",
+    "server/TribesOfFireServer.x86_64": "1360a8d1c87bce24f1c8cc00aaa025fc8b263554e1a94bc48985e087314592f5"
+  }
+}

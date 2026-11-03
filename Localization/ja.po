@@ -1,0 +1,703 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ja\n"
+
+msgid "Play"
+msgstr "プレイ"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "Back"
+msgstr "戻る"
+
+msgid "Confirm"
+msgstr "決定"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Apply"
+msgstr "適用"
+
+msgid "Reset defaults"
+msgstr "初期設定に戻す"
+
+msgid "Detect automatically"
+msgstr "自動検出"
+
+msgid "New local journey"
+msgstr "新しいローカルゲーム"
+
+msgid "Continue saved journey"
+msgstr "続きから"
+
+msgid "Host / Connect by IP"
+msgstr "ホスト／IPで接続"
+
+msgid "Quit"
+msgstr "終了"
+
+msgid "Resume journey"
+msgstr "ゲームに戻る"
+
+msgid "Save [F5]"
+msgstr "保存 [F5]"
+
+msgid "Load [F9]"
+msgstr "読み込み [F9]"
+
+msgid "Quit game"
+msgstr "ゲームを終了"
+
+msgid "CAMP"
+msgstr "キャンプ"
+
+msgid "Survival • exploration • building"
+msgstr "サバイバル・探索・建築"
+
+msgid "Graphics"
+msgstr "グラフィック"
+
+msgid "Audio"
+msgstr "オーディオ"
+
+msgid "Controls"
+msgstr "操作"
+
+msgid "Character"
+msgstr "キャラクター"
+
+msgid "Create character"
+msgstr "キャラクター作成"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Body"
+msgstr "体型"
+
+msgid "Height"
+msgstr "身長"
+
+msgid "Shoulders"
+msgstr "肩幅"
+
+msgid "Build"
+msgstr "建築"
+
+msgid "Skin"
+msgstr "肌"
+
+msgid "Eyes"
+msgstr "目"
+
+msgid "Eye color"
+msgstr "瞳の色"
+
+msgid "Hair"
+msgstr "髪型"
+
+msgid "Hair color"
+msgstr "髪の色"
+
+msgid "Face"
+msgstr "顔"
+
+msgid "Beard"
+msgstr "ひげ"
+
+msgid "Clothing"
+msgstr "服装"
+
+msgid "Randomize"
+msgstr "ランダム"
+
+msgid "Rotate"
+msgstr "回転"
+
+msgid "Zoom"
+msgstr "ズーム"
+
+msgid "Inventory"
+msgstr "インベントリ"
+
+msgid "Crafting"
+msgstr "クラフト"
+
+msgid "Equip"
+msgstr "装備"
+
+msgid "Unequip"
+msgstr "装備を外す"
+
+msgid "Drop"
+msgstr "捨てる"
+
+msgid "Split"
+msgstr "分割"
+
+msgid "Eat"
+msgstr "食べる"
+
+msgid "Drink"
+msgstr "飲む"
+
+msgid "Cook"
+msgstr "調理"
+
+msgid "Respawn"
+msgstr "リスポーン"
+
+msgid "You died"
+msgstr "死亡しました"
+
+msgid "Wood"
+msgstr "木材"
+
+msgid "Stone"
+msgstr "石"
+
+msgid "Campfire"
+msgstr "焚き火"
+
+msgid "Shelter"
+msgstr "避難所"
+
+msgid "Axe"
+msgstr "斧"
+
+msgid "Berries"
+msgstr "ベリー"
+
+msgid "Raw meat"
+msgstr "生肉"
+
+msgid "Cooked meat"
+msgstr "調理した肉"
+
+msgid "Water"
+msgstr "水"
+
+msgid "Health"
+msgstr "体力"
+
+msgid "Hunger"
+msgstr "空腹"
+
+msgid "Thirst"
+msgstr "渇き"
+
+msgid "Tribe"
+msgstr "部族"
+
+msgid "Create tribe"
+msgstr "部族を作る"
+
+msgid "Invite"
+msgstr "招待"
+
+msgid "Accept"
+msgstr "承認"
+
+msgid "Leave"
+msgstr "退出"
+
+msgid "Kick"
+msgstr "追放"
+
+msgid "Transfer leadership"
+msgstr "リーダーを譲る"
+
+msgid "Players"
+msgstr "プレイヤー"
+
+msgid "Communication"
+msgstr "コミュニケーション"
+
+msgid "Global"
+msgstr "全体"
+
+msgid "Local"
+msgstr "周辺"
+
+msgid "Private"
+msgstr "個人"
+
+msgid "Group"
+msgstr "グループ"
+
+msgid "Diplomacy"
+msgstr "外交"
+
+msgid "Send"
+msgstr "送信"
+
+msgid "Message"
+msgstr "メッセージ"
+
+msgid "Voice chat"
+msgstr "ボイスチャット"
+
+msgid "Enable microphone"
+msgstr "マイクを有効にする"
+
+msgid "Push to talk"
+msgstr "プッシュトゥトーク"
+
+msgid "Voice activation"
+msgstr "音声検出"
+
+msgid "Input device"
+msgstr "入力デバイス"
+
+msgid "Output device"
+msgstr "出力デバイス"
+
+msgid "Volume"
+msgstr "音量"
+
+msgid "Sensitivity"
+msgstr "感度"
+
+msgid "Test microphone"
+msgstr "マイクのテスト"
+
+msgid "Stop test"
+msgstr "テストを停止"
+
+msgid "Mute"
+msgstr "ミュート"
+
+msgid "Block"
+msgstr "ブロック"
+
+msgid "Call"
+msgstr "通話"
+
+msgid "No microphone available"
+msgstr "マイクを利用できません"
+
+msgid "Action unavailable"
+msgstr "操作できません"
+
+msgid "Action completed"
+msgstr "操作が完了しました"
+
+msgid "Not available"
+msgstr "利用不可"
+
+msgid "Very Low"
+msgstr "最低"
+
+msgid "Low"
+msgstr "低"
+
+msgid "Medium"
+msgstr "中"
+
+msgid "High"
+msgstr "高"
+
+msgid "Ultra"
+msgstr "最高"
+
+msgid "Custom"
+msgstr "カスタム"
+
+msgid "Resolution"
+msgstr "解像度"
+
+msgid "Render scale"
+msgstr "レンダリング解像度"
+
+msgid "Window mode"
+msgstr "画面モード"
+
+msgid "Windowed"
+msgstr "ウィンドウ"
+
+msgid "Fullscreen"
+msgstr "フルスクリーン"
+
+msgid "Borderless"
+msgstr "ボーダーレス"
+
+msgid "Shadows"
+msgstr "影"
+
+msgid "Vegetation"
+msgstr "植生"
+
+msgid "View distance"
+msgstr "描画距離"
+
+msgid "Particles"
+msgstr "パーティクル"
+
+msgid "Clouds"
+msgstr "雲"
+
+msgid "Rain"
+msgstr "雨"
+
+msgid "Reflections"
+msgstr "反射"
+
+msgid "Lighting"
+msgstr "ライティング"
+
+msgid "Antialiasing"
+msgstr "アンチエイリアス"
+
+msgid "Postprocessing"
+msgstr "ポストプロセス"
+
+msgid "Show performance"
+msgstr "パフォーマンス表示"
+
+msgid "Keep these settings?"
+msgstr "この設定を維持しますか？"
+
+msgid "Preview"
+msgstr "プレビュー"
+
+msgid "Preparing the world…"
+msgstr "ワールドを準備中…"
+
+msgid "Connecting…"
+msgstr "接続中…"
+
+msgid "Created by felipealx"
+msgstr "制作者 felipealx"
+
+msgid "Sound"
+msgstr "サウンド"
+
+msgid "Camera smoothing"
+msgstr "カメラの平滑化"
+
+msgid "Accept call"
+msgstr "通話を受ける"
+
+msgid "End call"
+msgstr "通話を終了"
+
+msgid "Accept group invitation"
+msgstr "グループ招待を承認"
+
+msgid "Invite to group"
+msgstr "グループに招待"
+
+msgid "Leave group"
+msgstr "グループから退出"
+
+msgid "Remove from group"
+msgstr "グループから除外"
+
+msgid "Create"
+msgstr "作成"
+
+msgid "Refresh"
+msgstr "更新"
+
+msgid "Player volume"
+msgstr "プレイヤーの音量"
+
+msgid "Unblock"
+msgstr "ブロックを解除"
+
+msgid "Unmute"
+msgstr "ミュートを解除"
+
+msgid "Master"
+msgstr "全体"
+
+msgid "Music"
+msgstr "音楽"
+
+msgid "Ambient"
+msgstr "環境音"
+
+msgid "Effects"
+msgstr "効果音"
+
+msgid "UI"
+msgstr "インターフェース"
+
+msgid "Vocalizations"
+msgstr "鳴き声"
+
+msgid "Voice"
+msgstr "ボイス"
+
+msgid "Proximity"
+msgstr "近接"
+
+msgid "Forward"
+msgstr "前進"
+
+msgid "Left"
+msgstr "左"
+
+msgid "Right"
+msgstr "右"
+
+msgid "Sprint"
+msgstr "ダッシュ"
+
+msgid "Jump"
+msgstr "ジャンプ"
+
+msgid "Crouch"
+msgstr "しゃがむ"
+
+msgid "Dodge"
+msgstr "回避"
+
+msgid "Heavy"
+msgstr "強攻撃"
+
+msgid "Interact"
+msgstr "操作"
+
+msgid "Chat"
+msgstr "チャット"
+
+msgid "Nose"
+msgstr "鼻"
+
+msgid "Mouth"
+msgstr "口"
+
+msgid "Ears"
+msgstr "耳"
+
+msgid "Eye size"
+msgstr "目の大きさ"
+
+msgid "Eye spacing"
+msgstr "目の間隔"
+
+msgid "Body volume"
+msgstr "体格"
+
+msgid "Ambient occlusion"
+msgstr "アンビエントオクルージョン"
+
+msgid "Volumetric fog"
+msgstr "ボリュームフォグ"
+
+msgid "Fiber"
+msgstr "繊維"
+
+msgid "Coal"
+msgstr "石炭"
+
+msgid "Copper ore"
+msgstr "銅鉱石"
+
+msgid "Tin ore"
+msgstr "スズ鉱石"
+
+msgid "Iron ore"
+msgstr "鉄鉱石"
+
+msgid "Silver ore"
+msgstr "銀鉱石"
+
+msgid "Gold ore"
+msgstr "金鉱石"
+
+msgid "Sulfur"
+msgstr "硫黄"
+
+msgid "Rare ore"
+msgstr "希少鉱石"
+
+msgid "Copper ingot"
+msgstr "銅インゴット"
+
+msgid "Bronze ingot"
+msgstr "青銅インゴット"
+
+msgid "Iron ingot"
+msgstr "鉄インゴット"
+
+msgid "Steel ingot"
+msgstr "鋼インゴット"
+
+msgid "Leather"
+msgstr "革"
+
+msgid "Bone"
+msgstr "骨"
+
+msgid "Arrow"
+msgstr "矢"
+
+msgid "Club"
+msgstr "こん棒"
+
+msgid "Spear"
+msgstr "槍"
+
+msgid "Stone sword"
+msgstr "石の剣"
+
+msgid "Copper sword"
+msgstr "銅の剣"
+
+msgid "Bronze sword"
+msgstr "青銅の剣"
+
+msgid "Iron sword"
+msgstr "鉄の剣"
+
+msgid "Steel sword"
+msgstr "鋼の剣"
+
+msgid "Bow"
+msgstr "弓"
+
+msgid "Pickaxe"
+msgstr "つるはし"
+
+msgid "Iron pickaxe"
+msgstr "鉄のつるはし"
+
+msgid "Shield"
+msgstr "盾"
+
+msgid "Leather armor"
+msgstr "革の防具"
+
+msgid "Bone armor"
+msgstr "骨の防具"
+
+msgid "Copper armor"
+msgstr "銅の防具"
+
+msgid "Bronze armor"
+msgstr "青銅の防具"
+
+msgid "Iron armor"
+msgstr "鉄の防具"
+
+msgid "Steel armor"
+msgstr "鋼の防具"
+
+msgid "Hand"
+msgstr "手作業"
+
+msgid "Offhand"
+msgstr "副装備"
+
+msgid "Armor"
+msgstr "防具"
+
+msgid "Workbench"
+msgstr "作業台"
+
+msgid "Furnace"
+msgstr "溶鉱炉"
+
+msgid "A new flame. A new journey."
+msgstr "新たな炎。新たな旅。"
+
+msgid "Development build. A new journey replaces local progress when saved."
+msgstr "開発版。新しい旅を保存するとローカルの進行状況が置き換わります。"
+
+msgid "MULTIPLAYER GAME"
+msgstr "マルチプレイ"
+
+msgid "Direct IP connection. The host controls movement, gathering, building and weather."
+msgstr "IPで直接接続。ホストが移動、採集、建築、天候を管理します。"
+
+msgid "Server address"
+msgstr "サーバーアドレス"
+
+msgid "UDP port"
+msgstr "UDPポート"
+
+msgid "Host on this computer"
+msgstr "このPCでホスト"
+
+msgid "Connect to server"
+msgstr "サーバーに接続"
+
+msgid "Connecting to server…"
+msgstr "サーバーに接続中…"
+
+msgid "Starting server…"
+msgstr "サーバー起動中…"
+
+msgid "Enter only the server IP or hostname."
+msgstr "サーバーのIPまたはホスト名のみ入力してください。"
+
+msgid "Experimental multiplayer; 100-player capacity has not been validated. Internet hosting requires forwarding the UDP port on your router."
+msgstr "実験版マルチプレイ。100人同時接続は未検証です。インターネットでホストするにはルーターのUDPポートを転送してください。"
+
+msgid "The server saves the shared world."
+msgstr "共有ワールドはサーバーが保存します。"
+
+msgid "World time continues while the process is running."
+msgstr "プロセスの稼働中はワールドの時間が進みます。"
+
+msgid "Weather • administrator"
+msgstr "天候 • 管理者"
+
+msgid "WEATHER • ADMINISTRATOR"
+msgstr "天候 • 管理者"
+
+msgid "Only the host can change the weather."
+msgstr "天候を変更できるのはホストのみです。"
+
+msgid "Gradual transitions. Rain causes its first damage after 55 continuous seconds without shelter."
+msgstr "天候は徐々に変化します。雨の中で55秒間連続して屋外にいると最初のダメージを受けます。"
+
+msgid "Weather transition requested."
+msgstr "天候の変更を要求しました。"
+
+msgid "Seek shelter"
+msgstr "雨宿りを探す"
+
+msgid "Prolonged exposure"
+msgstr "長時間の雨"
+
+msgid "Warming"
+msgstr "温まっています"
+
+msgid "Drying"
+msgstr "乾燥中"
+
+msgid "HEALTH %d / 100   STAMINA %d\nWOOD %d   %s   %s"
+msgstr "体力 %d / 100   スタミナ %d\n木材 %d   %s   %s"
+
+msgid "RAIN %ds   WETNESS %d%%   %.1f°C\n%s • first damage at 55s"
+msgstr "雨 %d秒   濡れ %d%%   %.1f°C\n%s • 55秒で最初のダメージ"
+
+msgid "WETNESS %d%%   %.1f°C   %s"
+msgstr "濡れ %d%%   %.1f°C   %s"
+
+msgid "WASD move • Mouse camera • Shift sprint • Space jump\n1 axe • 2 campfire • 3 shelter • Click use • Tab inventory • Esc menu"
+msgstr "WASD 移動 • マウス カメラ • Shift ダッシュ • Space ジャンプ\n1 道具 • 2 焚き火 • 3 避難所 • E 操作 • Tab 所持品 • Esc メニュー"
+
+msgid "Clear"
+msgstr "晴れ"
+
+msgid "Light rain"
+msgstr "小雨"
+
+msgid "Heavy rain"
+msgstr "大雨"
+
+msgid "Storm"
+msgstr "嵐"
+
+msgid "Fog"
+msgstr "霧"
