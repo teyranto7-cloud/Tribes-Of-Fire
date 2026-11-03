@@ -1,0 +1,32 @@
+{
+  "version": "0.7.0-dev",
+  "items": 100,
+  "recipes": 89,
+  "stations": 17,
+  "suite": {
+    "checks": 4200,
+    "failed": 0,
+    "runners": 20
+  },
+  "phase3_checks": 804,
+  "exports": {
+    "checks": 6,
+    "failed": 0
+  },
+  "render": {
+    "checks": 4,
+    "failed": 0,
+    "resolutions": [
+      "1280x720",
+      "960x540"
+    ],
+    "renderer": "Mesa llvmpipe"
+  },
+  "network": "two ENet clients; both production cycles, duplicate requests, transport reconnect, paid escrow and clean server restart passed",
+  "windows_native": "pending new package workflow",
+  "limits": [
+    "Software-rendered screenshots do not certify physical GPU performance.",
+    "Equipment durability remains per item type.",
+    "Station and pickup visuals are procedural families, not final art."
+  ]
+}

@@ -51,6 +51,7 @@ var world_signature: int = 0
 var cli: Dictionary = {}
 var smoke_elapsed: float = 0.0
 var snapshots_received: int = 0
+var auto_appearance_sent: bool = false
 var smoke_origin: Vector3
 var smoke_seen: bool = false
 var smoke_action_sent: bool = false
@@ -210,6 +211,7 @@ func _begin_authority(data: Dictionary) -> bool:
 	weather.restore(data.get("weather", {}))
 	running = true
 	_last_wall_usec = Time.get_ticks_usec()
+	runtime._activities_usec = _last_wall_usec
 	autosave = 0.0
 	return true
 
@@ -258,6 +260,7 @@ func _start_host(port: int, dedicated: bool) -> void:
 	print("SERVER_LISTENING port=%d dedicated=%s" % [port, dedicated])
 
 func join_game(address: String, port: int = 24567, password: String = "") -> void:
+	auto_appearance_sent=false
 	if running and session.is_authority():
 		if not save_game():
 			return
@@ -427,7 +430,7 @@ func _receive_action(id: int, action: String) -> void:
 		"attack":
 			if inv.equipped_item()=="shovel":
 				runtime.command(id,"dig",{});return
-			if inv.equipped_item() in ["pickaxe", "iron_pickaxe"]:
+			if Inventory.Catalog.tool(inv.equipped_item())=="pickaxe":
 				runtime.command(id, "mine", {})
 				return
 			if inv.equipped_item() != "axe" or world.nearest_tree(body) == null:
@@ -550,9 +553,10 @@ func _receive_state(data: Dictionary) -> void:
 		smoke_elapsed=0.0;_last_wall_usec=Time.get_ticks_usec()
 	if player != null:
 		if player.creation_pending:
-			if DisplayServer.get_name() == "headless":
+			if DisplayServer.get_name() == "headless" and not auto_appearance_sent:
+				auto_appearance_sent=true
 				session.send_command("appearance", PlayerScript.Appearance.DEFAULT.duplicate(true))
-			elif hud.mode != "character":
+			elif DisplayServer.get_name() != "headless" and hud.mode != "character":
 				hud.show_panel("character")
 		elif hud.mode in ["loading", "character"]:
 			hud.show_panel("")
@@ -862,6 +866,8 @@ func _notification(what: int) -> void:
 		quit_game()
 
 func request_command(command: String, data: Dictionary = {}) -> void:
+	if command=="craft" and not data.has("request_id"):
+		data=data.duplicate(true);data["request_id"]="%d-%d"%[OS.get_process_id(),Time.get_ticks_usec()]
 	session.send_command(command, data)
 
 func load_audio_levels() -> void:
@@ -957,7 +963,7 @@ func use_quick_slot(index: int) -> void:
 	var slots: Array = inventory.serialize()["slots"]
 	for i in range(slots.size()):
 		if slots[i].get("id") == item:
-			if Inventory.Catalog.WEAPONS.has(item) or Inventory.Catalog.ARMOR.has(item) or item == "shield":
+			if not Inventory.Catalog.get_item(item).get("equipment_slot","").is_empty():
 				request_command("equip",{"slot":i});tool=1;build_piece=""
 			else: request_command("eat",{"item":item})
 			return

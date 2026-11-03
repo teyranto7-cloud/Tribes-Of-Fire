@@ -1,0 +1,4637 @@
+{
+  "schema": 1,
+  "items": {
+    "axe": {
+      "id": "axe",
+      "name": {
+        "en": "Axe",
+        "pt_BR": "Machado",
+        "ja": "斧",
+        "es": "Hacha",
+        "fr": "Hache",
+        "de": "Axt",
+        "en_US": "Axe"
+      },
+      "type": "tools",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/axe.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 10,
+        "tool": "axe",
+        "harvest_power": 1
+      },
+      "tags": [
+        "tools"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "wood": {
+      "id": "wood",
+      "name": {
+        "en": "Wood",
+        "pt_BR": "Madeira",
+        "ja": "木材",
+        "es": "Madera",
+        "fr": "Bois",
+        "de": "Holz",
+        "en_US": "Wood"
+      },
+      "type": "wood",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/wood.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "wood"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "gather"
+    },
+    "campfire": {
+      "id": "campfire",
+      "name": {
+        "en": "Campfire",
+        "pt_BR": "Fogueira",
+        "ja": "焚き火",
+        "es": "Hoguera",
+        "fr": "Feu de camp",
+        "de": "Lagerfeuer",
+        "en_US": "Campfire"
+      },
+      "type": "building",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/campfire.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "building"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "shelter": {
+      "id": "shelter",
+      "name": {
+        "en": "Shelter",
+        "pt_BR": "Abrigo",
+        "ja": "避難所",
+        "es": "Refugio",
+        "fr": "Abri",
+        "de": "Unterstand",
+        "en_US": "Shelter"
+      },
+      "type": "building",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/shelter.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "building"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "medical_kit": {
+      "id": "medical_kit",
+      "name": {
+        "en": "Medical kit",
+        "pt_BR": "Kit medicinal"
+      },
+      "type": "medicine",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/medical_kit.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {
+        "heal": 50
+      },
+      "tags": [
+        "medicine"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "herb": {
+      "id": "herb",
+      "name": {
+        "en": "Herb",
+        "pt_BR": "Erva medicinal"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/herb.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "gather"
+    },
+    "petals": {
+      "id": "petals",
+      "name": {
+        "en": "Petals",
+        "pt_BR": "Flores"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/petals.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "gather"
+    },
+    "clay": {
+      "id": "clay",
+      "name": {
+        "en": "Clay",
+        "pt_BR": "Argila"
+      },
+      "type": "mineral",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/clay.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "mineral"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "gather"
+    },
+    "sand": {
+      "id": "sand",
+      "name": {
+        "en": "Sand",
+        "pt_BR": "Areia"
+      },
+      "type": "mineral",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/sand.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "mineral"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "gather"
+    },
+    "soil": {
+      "id": "soil",
+      "name": {
+        "en": "Soil",
+        "pt_BR": "Terra"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/soil.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "gather"
+    },
+    "plank": {
+      "id": "plank",
+      "name": {
+        "en": "Plank",
+        "pt_BR": "Tábuas"
+      },
+      "type": "wood",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/plank.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "wood"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "cloth": {
+      "id": "cloth",
+      "name": {
+        "en": "Cloth",
+        "pt_BR": "Tecido"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/cloth.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "rope": {
+      "id": "rope",
+      "name": {
+        "en": "Rope",
+        "pt_BR": "Corda"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/rope.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "brick": {
+      "id": "brick",
+      "name": {
+        "en": "Brick",
+        "pt_BR": "Tijolos"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/brick.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "glass": {
+      "id": "glass",
+      "name": {
+        "en": "Glass",
+        "pt_BR": "Vidro"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/glass.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "silver_ingot": {
+      "id": "silver_ingot",
+      "name": {
+        "en": "Silver ingot",
+        "pt_BR": "Lingote de prata"
+      },
+      "type": "metal",
+      "rarity": "rare",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/silver_ingot.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "metal"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "gold_ingot": {
+      "id": "gold_ingot",
+      "name": {
+        "en": "Gold ingot",
+        "pt_BR": "Lingote de ouro"
+      },
+      "type": "metal",
+      "rarity": "rare",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/gold_ingot.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "metal"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "bandage": {
+      "id": "bandage",
+      "name": {
+        "en": "Bandage",
+        "pt_BR": "Curativo"
+      },
+      "type": "medicine",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/bandage.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {
+        "heal": 20
+      },
+      "tags": [
+        "medicine"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "herbal_tea": {
+      "id": "herbal_tea",
+      "name": {
+        "en": "Herbal tea",
+        "pt_BR": "Chá de ervas"
+      },
+      "type": "medicine",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/herbal_tea.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {
+        "heal": 10,
+        "thirst": 25
+      },
+      "tags": [
+        "medicine"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "stone": {
+      "id": "stone",
+      "name": {
+        "en": "Stone",
+        "pt_BR": "Pedra",
+        "ja": "石",
+        "es": "Piedra",
+        "fr": "Pierre",
+        "de": "Stein",
+        "en_US": "Stone"
+      },
+      "type": "mineral",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/stone.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "mineral"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "gather"
+    },
+    "fiber": {
+      "id": "fiber",
+      "name": {
+        "en": "Fiber",
+        "pt_BR": "Fibra",
+        "ja": "繊維",
+        "es": "Fibra",
+        "fr": "Fibre",
+        "de": "Faser",
+        "en_US": "Fiber"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/fiber.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "gather"
+    },
+    "coal": {
+      "id": "coal",
+      "name": {
+        "en": "Coal",
+        "pt_BR": "Carvão",
+        "ja": "石炭",
+        "es": "Carbón",
+        "fr": "Charbon",
+        "de": "Kohle",
+        "en_US": "Coal"
+      },
+      "type": "fuel",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/coal.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "fuel"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "mine"
+    },
+    "copper_ore": {
+      "id": "copper_ore",
+      "name": {
+        "en": "Copper ore",
+        "pt_BR": "Minério de cobre",
+        "ja": "銅鉱石",
+        "es": "Mineral de cobre",
+        "fr": "Minerai de cuivre",
+        "de": "Kupfererz",
+        "en_US": "Copper ore"
+      },
+      "type": "mineral",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/copper_ore.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "mineral"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "mine"
+    },
+    "tin_ore": {
+      "id": "tin_ore",
+      "name": {
+        "en": "Tin ore",
+        "pt_BR": "Minério de estanho",
+        "ja": "スズ鉱石",
+        "es": "Mineral de estaño",
+        "fr": "Minerai d'étain",
+        "de": "Zinnerz",
+        "en_US": "Tin ore"
+      },
+      "type": "mineral",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/tin_ore.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "mineral"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "mine"
+    },
+    "iron_ore": {
+      "id": "iron_ore",
+      "name": {
+        "en": "Iron ore",
+        "pt_BR": "Minério de ferro",
+        "ja": "鉄鉱石",
+        "es": "Mineral de hierro",
+        "fr": "Minerai de fer",
+        "de": "Eisenerz",
+        "en_US": "Iron ore"
+      },
+      "type": "mineral",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/iron_ore.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "mineral"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "mine"
+    },
+    "silver_ore": {
+      "id": "silver_ore",
+      "name": {
+        "en": "Silver ore",
+        "pt_BR": "Minério de prata",
+        "ja": "銀鉱石",
+        "es": "Mineral de plata",
+        "fr": "Minerai d'argent",
+        "de": "Silbererz",
+        "en_US": "Silver ore"
+      },
+      "type": "mineral",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/silver_ore.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "mineral"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "mine"
+    },
+    "gold_ore": {
+      "id": "gold_ore",
+      "name": {
+        "en": "Gold ore",
+        "pt_BR": "Minério de ouro",
+        "ja": "金鉱石",
+        "es": "Mineral de oro",
+        "fr": "Minerai d'or",
+        "de": "Golderz",
+        "en_US": "Gold ore"
+      },
+      "type": "mineral",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/gold_ore.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "mineral"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "mine"
+    },
+    "sulfur": {
+      "id": "sulfur",
+      "name": {
+        "en": "Sulfur",
+        "pt_BR": "Enxofre",
+        "ja": "硫黄",
+        "es": "Azufre",
+        "fr": "Soufre",
+        "de": "Schwefel",
+        "en_US": "Sulfur"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/sulfur.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "mine"
+    },
+    "rare_ore": {
+      "id": "rare_ore",
+      "name": {
+        "en": "Rare ore",
+        "pt_BR": "Minério raro",
+        "ja": "希少鉱石",
+        "es": "Mineral raro",
+        "fr": "Minerai rare",
+        "de": "Seltenes Erz",
+        "en_US": "Rare ore"
+      },
+      "type": "mineral",
+      "rarity": "rare",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/rare_ore.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "mineral"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "mine"
+    },
+    "copper_ingot": {
+      "id": "copper_ingot",
+      "name": {
+        "en": "Copper ingot",
+        "pt_BR": "Lingote de cobre",
+        "ja": "銅インゴット",
+        "es": "Lingote de cobre",
+        "fr": "Lingot de cuivre",
+        "de": "Kupferbarren",
+        "en_US": "Copper ingot"
+      },
+      "type": "metal",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/copper_ingot.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "metal"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "bronze_ingot": {
+      "id": "bronze_ingot",
+      "name": {
+        "en": "Bronze ingot",
+        "pt_BR": "Lingote de bronze",
+        "ja": "青銅インゴット",
+        "es": "Lingote de bronce",
+        "fr": "Lingot de bronze",
+        "de": "Bronzebarren",
+        "en_US": "Bronze ingot"
+      },
+      "type": "metal",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/bronze_ingot.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "metal"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "iron_ingot": {
+      "id": "iron_ingot",
+      "name": {
+        "en": "Iron ingot",
+        "pt_BR": "Lingote de ferro",
+        "ja": "鉄インゴット",
+        "es": "Lingote de hierro",
+        "fr": "Lingot de fer",
+        "de": "Eisenbarren",
+        "en_US": "Iron ingot"
+      },
+      "type": "metal",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/iron_ingot.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "metal"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "steel_ingot": {
+      "id": "steel_ingot",
+      "name": {
+        "en": "Steel ingot",
+        "pt_BR": "Lingote de aço",
+        "ja": "鋼インゴット",
+        "es": "Lingote de acero",
+        "fr": "Lingot d'acier",
+        "de": "Stahlbarren",
+        "en_US": "Steel ingot"
+      },
+      "type": "metal",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/steel_ingot.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "metal"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "raw_meat": {
+      "id": "raw_meat",
+      "name": {
+        "en": "Raw meat",
+        "pt_BR": "Carne crua",
+        "ja": "生肉",
+        "es": "Carne cruda",
+        "fr": "Viande crue",
+        "de": "Rohes Fleisch",
+        "en_US": "Raw meat"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/raw_meat.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "hunt"
+    },
+    "cooked_meat": {
+      "id": "cooked_meat",
+      "name": {
+        "en": "Cooked meat",
+        "pt_BR": "Carne cozida",
+        "ja": "調理した肉",
+        "es": "Carne cocinada",
+        "fr": "Viande cuite",
+        "de": "Gebratenes Fleisch",
+        "en_US": "Cooked meat"
+      },
+      "type": "food",
+      "rarity": "common",
+      "weight": 0.2,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/cooked_meat.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {
+        "hunger": 40
+      },
+      "tags": [
+        "food"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "raw_fish": {
+      "id": "raw_fish",
+      "name": {
+        "en": "Raw fish",
+        "pt_BR": "Raw fish"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/raw_fish.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "cooked_fish": {
+      "id": "cooked_fish",
+      "name": {
+        "en": "Cooked fish",
+        "pt_BR": "Cooked fish"
+      },
+      "type": "food",
+      "rarity": "common",
+      "weight": 0.2,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/cooked_fish.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {
+        "hunger": 28
+      },
+      "tags": [
+        "food"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "berries": {
+      "id": "berries",
+      "name": {
+        "en": "Berries",
+        "pt_BR": "Frutas",
+        "ja": "ベリー",
+        "es": "Bayas",
+        "fr": "Baies",
+        "de": "Beeren",
+        "en_US": "Berries"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/berries.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {
+        "hunger": 12
+      },
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "gather"
+    },
+    "water": {
+      "id": "water",
+      "name": {
+        "en": "Water",
+        "pt_BR": "Água",
+        "ja": "水",
+        "es": "Agua",
+        "fr": "Eau",
+        "de": "Wasser",
+        "en_US": "Water"
+      },
+      "type": "container",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/water.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "container"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "leather": {
+      "id": "leather",
+      "name": {
+        "en": "Leather",
+        "pt_BR": "Couro",
+        "ja": "革",
+        "es": "Cuero",
+        "fr": "Cuir",
+        "de": "Leder",
+        "en_US": "Leather"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/leather.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "hunt"
+    },
+    "bone": {
+      "id": "bone",
+      "name": {
+        "en": "Bone",
+        "pt_BR": "Osso",
+        "ja": "骨",
+        "es": "Hueso",
+        "fr": "Os",
+        "de": "Knochen",
+        "en_US": "Bone"
+      },
+      "type": "materials",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/bone.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "hunt"
+    },
+    "arrow": {
+      "id": "arrow",
+      "name": {
+        "en": "Arrow",
+        "pt_BR": "Flecha",
+        "ja": "矢",
+        "es": "Flecha",
+        "fr": "Flèche",
+        "de": "Pfeil",
+        "en_US": "Arrow"
+      },
+      "type": "tools",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/arrow.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "tools"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    },
+    "silver_sword": {
+      "id": "silver_sword",
+      "name": {
+        "en": "Silver sword",
+        "pt_BR": "Espada de prata"
+      },
+      "type": "weapons",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/silver_sword.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 30
+      },
+      "tags": [
+        "weapons"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "shovel": {
+      "id": "shovel",
+      "name": {
+        "en": "Shovel",
+        "pt_BR": "Pá"
+      },
+      "type": "weapons",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/shovel.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 5
+      },
+      "tags": [
+        "weapons"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "club": {
+      "id": "club",
+      "name": {
+        "en": "Club",
+        "pt_BR": "Clava",
+        "ja": "こん棒",
+        "es": "Garrote",
+        "fr": "Massue",
+        "de": "Keule",
+        "en_US": "Club"
+      },
+      "type": "weapons",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/club.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 10
+      },
+      "tags": [
+        "weapons"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "spear": {
+      "id": "spear",
+      "name": {
+        "en": "Spear",
+        "pt_BR": "Lança",
+        "ja": "槍",
+        "es": "Lanza",
+        "fr": "Lance",
+        "de": "Speer",
+        "en_US": "Spear"
+      },
+      "type": "weapons",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/spear.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 15
+      },
+      "tags": [
+        "weapons"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "stone_sword": {
+      "id": "stone_sword",
+      "name": {
+        "en": "Stone sword",
+        "pt_BR": "Espada de pedra",
+        "ja": "石の剣",
+        "es": "Espada de piedra",
+        "fr": "Épée de pierre",
+        "de": "Steinschwert",
+        "en_US": "Stone sword"
+      },
+      "type": "weapons",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/stone_sword.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 12
+      },
+      "tags": [
+        "weapons"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "copper_sword": {
+      "id": "copper_sword",
+      "name": {
+        "en": "Copper sword",
+        "pt_BR": "Espada de cobre",
+        "ja": "銅の剣",
+        "es": "Espada de cobre",
+        "fr": "Épée de cuivre",
+        "de": "Kupferschwert",
+        "en_US": "Copper sword"
+      },
+      "type": "weapons",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/copper_sword.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 17
+      },
+      "tags": [
+        "weapons"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "bronze_sword": {
+      "id": "bronze_sword",
+      "name": {
+        "en": "Bronze sword",
+        "pt_BR": "Espada de bronze",
+        "ja": "青銅の剣",
+        "es": "Espada de bronce",
+        "fr": "Épée de bronze",
+        "de": "Bronzeschwert",
+        "en_US": "Bronze sword"
+      },
+      "type": "weapons",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/bronze_sword.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 22
+      },
+      "tags": [
+        "weapons"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "iron_sword": {
+      "id": "iron_sword",
+      "name": {
+        "en": "Iron sword",
+        "pt_BR": "Espada de ferro",
+        "ja": "鉄の剣",
+        "es": "Espada de hierro",
+        "fr": "Épée de fer",
+        "de": "Eisenschwert",
+        "en_US": "Iron sword"
+      },
+      "type": "weapons",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/iron_sword.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 28
+      },
+      "tags": [
+        "weapons"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "steel_sword": {
+      "id": "steel_sword",
+      "name": {
+        "en": "Steel sword",
+        "pt_BR": "Espada de aço",
+        "ja": "鋼の剣",
+        "es": "Espada de acero",
+        "fr": "Épée d'acier",
+        "de": "Stahlschwert",
+        "en_US": "Steel sword"
+      },
+      "type": "weapons",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/steel_sword.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 35
+      },
+      "tags": [
+        "weapons"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "bow": {
+      "id": "bow",
+      "name": {
+        "en": "Bow",
+        "pt_BR": "Arco",
+        "ja": "弓",
+        "es": "Arco",
+        "fr": "Arc",
+        "de": "Bogen",
+        "en_US": "Bow"
+      },
+      "type": "weapons",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/bow.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 16
+      },
+      "tags": [
+        "weapons"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "pickaxe": {
+      "id": "pickaxe",
+      "name": {
+        "en": "Pickaxe",
+        "pt_BR": "Picareta",
+        "ja": "つるはし",
+        "es": "Pico",
+        "fr": "Pioche",
+        "de": "Spitzhacke",
+        "en_US": "Pickaxe"
+      },
+      "type": "tools",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/pickaxe.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 5,
+        "tool": "pickaxe",
+        "harvest_power": 1
+      },
+      "tags": [
+        "tools"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "iron_pickaxe": {
+      "id": "iron_pickaxe",
+      "name": {
+        "en": "Iron pickaxe",
+        "pt_BR": "Picareta de ferro",
+        "ja": "鉄のつるはし",
+        "es": "Pico de hierro",
+        "fr": "Pioche en fer",
+        "de": "Eisenspitzhacke",
+        "en_US": "Iron pickaxe"
+      },
+      "type": "tools",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/iron_pickaxe.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 8,
+        "tool": "pickaxe",
+        "harvest_power": 3
+      },
+      "tags": [
+        "tools"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "shield": {
+      "id": "shield",
+      "name": {
+        "en": "Shield",
+        "pt_BR": "Escudo",
+        "ja": "盾",
+        "es": "Escudo",
+        "fr": "Bouclier",
+        "de": "Schild",
+        "en_US": "Shield"
+      },
+      "type": "armor",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/shield.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {},
+      "tags": [
+        "armor"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "offhand"
+    },
+    "gold_armor": {
+      "id": "gold_armor",
+      "name": {
+        "en": "Gold armor",
+        "pt_BR": "Armadura de ouro"
+      },
+      "type": "armor",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/gold_armor.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "armor": 0.42
+      },
+      "tags": [
+        "armor"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "armor"
+    },
+    "leather_armor": {
+      "id": "leather_armor",
+      "name": {
+        "en": "Leather armor",
+        "pt_BR": "Armadura de couro",
+        "ja": "革の防具",
+        "es": "Armadura de cuero",
+        "fr": "Armure de cuir",
+        "de": "Lederrüstung",
+        "en_US": "Leather armor"
+      },
+      "type": "armor",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/leather_armor.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "armor": 0.12
+      },
+      "tags": [
+        "armor"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "armor"
+    },
+    "bone_armor": {
+      "id": "bone_armor",
+      "name": {
+        "en": "Bone armor",
+        "pt_BR": "Armadura de osso",
+        "ja": "骨の防具",
+        "es": "Armadura de hueso",
+        "fr": "Armure d'os",
+        "de": "Knochenrüstung",
+        "en_US": "Bone armor"
+      },
+      "type": "armor",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/bone_armor.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "armor": 0.18
+      },
+      "tags": [
+        "armor"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "armor"
+    },
+    "copper_armor": {
+      "id": "copper_armor",
+      "name": {
+        "en": "Copper armor",
+        "pt_BR": "Armadura de cobre",
+        "ja": "銅の防具",
+        "es": "Armadura de cobre",
+        "fr": "Armure de cuivre",
+        "de": "Kupferrüstung",
+        "en_US": "Copper armor"
+      },
+      "type": "armor",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/copper_armor.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "armor": 0.25
+      },
+      "tags": [
+        "armor"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "armor"
+    },
+    "bronze_armor": {
+      "id": "bronze_armor",
+      "name": {
+        "en": "Bronze armor",
+        "pt_BR": "Armadura de bronze",
+        "ja": "青銅の防具",
+        "es": "Armadura de bronce",
+        "fr": "Armure de bronze",
+        "de": "Bronzerüstung",
+        "en_US": "Bronze armor"
+      },
+      "type": "armor",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/bronze_armor.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "armor": 0.32
+      },
+      "tags": [
+        "armor"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "armor"
+    },
+    "iron_armor": {
+      "id": "iron_armor",
+      "name": {
+        "en": "Iron armor",
+        "pt_BR": "Armadura de ferro",
+        "ja": "鉄の防具",
+        "es": "Armadura de hierro",
+        "fr": "Armure de fer",
+        "de": "Eisenrüstung",
+        "en_US": "Iron armor"
+      },
+      "type": "armor",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/iron_armor.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "armor": 0.45
+      },
+      "tags": [
+        "armor"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "armor"
+    },
+    "steel_armor": {
+      "id": "steel_armor",
+      "name": {
+        "en": "Steel armor",
+        "pt_BR": "Armadura de aço",
+        "ja": "鋼の防具",
+        "es": "Armadura de acero",
+        "fr": "Armure d'acier",
+        "de": "Stahlrüstung",
+        "en_US": "Steel armor"
+      },
+      "type": "armor",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/steel_armor.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "armor": 0.55
+      },
+      "tags": [
+        "armor"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft",
+      "equipment_slot": "armor"
+    },
+    "log": {
+      "id": "log",
+      "name": {
+        "en": "Log",
+        "pt_BR": "Tronco"
+      },
+      "type": "wood",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/log.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "wood"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "stick": {
+      "id": "stick",
+      "name": {
+        "en": "Stick",
+        "pt_BR": "Graveto"
+      },
+      "type": "wood",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/stick.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "wood"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "gravel": {
+      "id": "gravel",
+      "name": {
+        "en": "Gravel",
+        "pt_BR": "Cascalho"
+      },
+      "type": "mineral",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/gravel.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "mineral"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "mine"
+    },
+    "limestone": {
+      "id": "limestone",
+      "name": {
+        "en": "Limestone",
+        "pt_BR": "Calcário"
+      },
+      "type": "mineral",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/limestone.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "mineral"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "mine"
+    },
+    "seed": {
+      "id": "seed",
+      "name": {
+        "en": "Seed",
+        "pt_BR": "Semente"
+      },
+      "type": "food",
+      "rarity": "common",
+      "weight": 0.3,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/seed.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "food"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "water_container": {
+      "id": "water_container",
+      "name": {
+        "en": "Water container",
+        "pt_BR": "Recipiente vazio"
+      },
+      "type": "container",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/water_container.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "container"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "charcoal": {
+      "id": "charcoal",
+      "name": {
+        "en": "Charcoal",
+        "pt_BR": "Carvão vegetal"
+      },
+      "type": "fuel",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/charcoal.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "fuel"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "nail": {
+      "id": "nail",
+      "name": {
+        "en": "Nail",
+        "pt_BR": "Pregos"
+      },
+      "type": "mechanical",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/nail.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "mechanical"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "gear": {
+      "id": "gear",
+      "name": {
+        "en": "Gear",
+        "pt_BR": "Engrenagem"
+      },
+      "type": "mechanical",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/gear.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "mechanical"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "shaft": {
+      "id": "shaft",
+      "name": {
+        "en": "Shaft",
+        "pt_BR": "Eixo"
+      },
+      "type": "mechanical",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/shaft.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "mechanical"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "wire": {
+      "id": "wire",
+      "name": {
+        "en": "Wire",
+        "pt_BR": "Fio de cobre"
+      },
+      "type": "electrical",
+      "rarity": "common",
+      "weight": 0.3,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/wire.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "electrical"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "circuit": {
+      "id": "circuit",
+      "name": {
+        "en": "Circuit",
+        "pt_BR": "Circuito simples"
+      },
+      "type": "electrical",
+      "rarity": "common",
+      "weight": 0.3,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/circuit.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "electrical"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "cement": {
+      "id": "cement",
+      "name": {
+        "en": "Cement",
+        "pt_BR": "Cimento"
+      },
+      "type": "construction",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/cement.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "construction"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "concrete": {
+      "id": "concrete",
+      "name": {
+        "en": "Concrete",
+        "pt_BR": "Concreto"
+      },
+      "type": "construction",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/concrete.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "construction"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "chair": {
+      "id": "chair",
+      "name": {
+        "en": "Chair",
+        "pt_BR": "Cadeira"
+      },
+      "type": "furniture",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/chair.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "furniture"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "table": {
+      "id": "table",
+      "name": {
+        "en": "Table",
+        "pt_BR": "Mesa"
+      },
+      "type": "furniture",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/table.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "furniture"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "vase": {
+      "id": "vase",
+      "name": {
+        "en": "Vase",
+        "pt_BR": "Vaso"
+      },
+      "type": "decoration",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/vase.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "decoration"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft"
+    },
+    "copper_pickaxe": {
+      "id": "copper_pickaxe",
+      "name": {
+        "en": "Copper pickaxe",
+        "pt_BR": "Picareta de cobre"
+      },
+      "type": "tools",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/copper_pickaxe.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 100,
+      "statistics": {
+        "damage": 7,
+        "harvest_power": 2,
+        "tool": "pickaxe"
+      },
+      "tags": [
+        "tools"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft",
+      "equipment_slot": "hand"
+    },
+    "wall_kit": {
+      "id": "wall_kit",
+      "name": {
+        "en": "Wall kit",
+        "pt_BR": "Parede de tábuas"
+      },
+      "type": "construction",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/wall_kit.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "construction"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft",
+      "place": "wall"
+    },
+    "chest_kit": {
+      "id": "chest_kit",
+      "name": {
+        "en": "Chest kit",
+        "pt_BR": "Baú de tábuas"
+      },
+      "type": "construction",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/chest_kit.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "construction"
+      ],
+      "description": {
+        "en": "Used in survival and workshop production.",
+        "pt_BR": "Usado na sobrevivência e produção nas bancadas."
+      },
+      "source": "craft",
+      "place": "chest"
+    },
+    "workbench": {
+      "id": "workbench",
+      "name": {
+        "pt_BR": "Bancada",
+        "en": "Workbench",
+        "ja": "作業台",
+        "es": "Banco de trabajo",
+        "fr": "Établi",
+        "de": "Werkbank",
+        "en_US": "Workbench"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/workbench.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "wood"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "workbench"
+    },
+    "carpenter": {
+      "id": "carpenter",
+      "name": {
+        "pt_BR": "Bancada de carpinteiro",
+        "en": "Carpenter"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/carpenter.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "wood"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "carpenter"
+    },
+    "mason": {
+      "id": "mason",
+      "name": {
+        "pt_BR": "Bancada de pedreiro",
+        "en": "Mason"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/mason.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "stone"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "mason"
+    },
+    "sawmill": {
+      "id": "sawmill",
+      "name": {
+        "pt_BR": "Serraria",
+        "en": "Sawmill"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/sawmill.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "wood"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "sawmill"
+    },
+    "furnace": {
+      "id": "furnace",
+      "name": {
+        "pt_BR": "Fornalha",
+        "en": "Furnace",
+        "ja": "溶鉱炉",
+        "es": "Horno",
+        "fr": "Fourneau",
+        "de": "Schmelzofen",
+        "en_US": "Furnace"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/furnace.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "stone"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "furnace"
+    },
+    "anvil": {
+      "id": "anvil",
+      "name": {
+        "pt_BR": "Bigorna",
+        "en": "Anvil"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/anvil.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "metal"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "anvil"
+    },
+    "tannery": {
+      "id": "tannery",
+      "name": {
+        "pt_BR": "Curtume",
+        "en": "Tannery"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/tannery.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "wood"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "tannery"
+    },
+    "loom": {
+      "id": "loom",
+      "name": {
+        "pt_BR": "Tear",
+        "en": "Loom"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/loom.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "wood"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "loom"
+    },
+    "kitchen": {
+      "id": "kitchen",
+      "name": {
+        "pt_BR": "Cozinha",
+        "en": "Kitchen"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/kitchen.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "stone"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "kitchen"
+    },
+    "alchemy": {
+      "id": "alchemy",
+      "name": {
+        "pt_BR": "Bancada de ervas",
+        "en": "Alchemy"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/alchemy.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "wood"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "alchemy"
+    },
+    "mechanical_workshop": {
+      "id": "mechanical_workshop",
+      "name": {
+        "pt_BR": "Oficina mecânica",
+        "en": "Mechanical workshop"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/mechanical_workshop.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "metal"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "mechanical_workshop"
+    },
+    "electrical_bench": {
+      "id": "electrical_bench",
+      "name": {
+        "pt_BR": "Bancada elétrica",
+        "en": "Electrical bench"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/electrical_bench.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "metal"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "electrical_bench"
+    },
+    "concrete_mixer": {
+      "id": "concrete_mixer",
+      "name": {
+        "pt_BR": "Misturador de concreto",
+        "en": "Concrete mixer"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/concrete_mixer.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "metal"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "concrete_mixer"
+    },
+    "smelter": {
+      "id": "smelter",
+      "name": {
+        "pt_BR": "Fundição",
+        "en": "Smelter"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/smelter.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "stone"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "smelter"
+    },
+    "advanced_workshop": {
+      "id": "advanced_workshop",
+      "name": {
+        "pt_BR": "Oficina avançada",
+        "en": "Advanced workshop"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/advanced_workshop.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "metal"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "advanced_workshop"
+    },
+    "crusher": {
+      "id": "crusher",
+      "name": {
+        "pt_BR": "Britador",
+        "en": "Crusher"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/crusher.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "stone"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "crusher"
+    },
+    "cooking_fire": {
+      "id": "cooking_fire",
+      "name": {
+        "pt_BR": "Fogueira com inventário",
+        "en": "Cooking fire"
+      },
+      "type": "station",
+      "rarity": "common",
+      "weight": 8.0,
+      "stack": 1,
+      "icon": "res://Assets/UI/Items/cooking_fire.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "station",
+        "stone"
+      ],
+      "description": {
+        "pt_BR": "Bancada construível com inventário de entrada e saída.",
+        "en": "Buildable workshop with input and output storage."
+      },
+      "source": "craft",
+      "place": "cooking_fire"
+    },
+    "tin_ingot": {
+      "id": "tin_ingot",
+      "name": {
+        "pt_BR": "Lingote de estanho",
+        "en": "Tin ingot"
+      },
+      "type": "metal",
+      "rarity": "common",
+      "weight": 1.0,
+      "stack": 99,
+      "icon": "res://Assets/UI/Items/tin_ingot.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "materials",
+        "metal"
+      ],
+      "description": {
+        "en": "A survival resource or crafted item.",
+        "pt_BR": "Recurso de sobrevivência ou item fabricado."
+      },
+      "source": "craft"
+    }
+  },
+  "recipes": {
+    "medical_kit": {
+      "station": "workbench",
+      "era": 2,
+      "time": 4,
+      "category": "medicine",
+      "outputs": {
+        "medical_kit": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "cloth": 2,
+        "herb": 2
+      }
+    },
+    "silver_sword": {
+      "station": "workbench",
+      "era": 4,
+      "time": 4,
+      "category": "weapons",
+      "outputs": {
+        "silver_sword": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "silver_ingot": 3,
+        "rare_ore": 1,
+        "wood": 2
+      }
+    },
+    "gold_armor": {
+      "station": "workbench",
+      "era": 4,
+      "time": 4,
+      "category": "clothing",
+      "outputs": {
+        "gold_armor": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "gold_ingot": 6,
+        "leather": 3
+      }
+    },
+    "plank": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 0,
+      "category": "materials",
+      "yield": 2,
+      "outputs": {
+        "plank": 2
+      },
+      "unlocks": [],
+      "inputs": {
+        "wood": 1
+      }
+    },
+    "cloth": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 2,
+      "category": "materials",
+      "yield": 1,
+      "outputs": {
+        "cloth": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "fiber": 3
+      }
+    },
+    "rope": {
+      "station": "hand",
+      "time": 2.5,
+      "era": 0,
+      "category": "materials",
+      "yield": 1,
+      "outputs": {
+        "rope": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "fiber": 2
+      }
+    },
+    "brick": {
+      "station": "furnace",
+      "time": 2.5,
+      "era": 1,
+      "category": "materials",
+      "yield": 2,
+      "outputs": {
+        "brick": 2
+      },
+      "unlocks": [],
+      "inputs": {
+        "clay": 2
+      }
+    },
+    "glass": {
+      "station": "furnace",
+      "time": 2.5,
+      "era": 2,
+      "category": "materials",
+      "yield": 1,
+      "outputs": {
+        "glass": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "sand": 2,
+        "coal": 1
+      }
+    },
+    "silver_ingot": {
+      "station": "furnace",
+      "time": 2.5,
+      "era": 4,
+      "category": "materials",
+      "yield": 1,
+      "outputs": {
+        "silver_ingot": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "silver_ore": 2,
+        "coal": 1
+      }
+    },
+    "gold_ingot": {
+      "station": "furnace",
+      "time": 2.5,
+      "era": 4,
+      "category": "materials",
+      "yield": 1,
+      "outputs": {
+        "gold_ingot": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "gold_ore": 2,
+        "coal": 1
+      }
+    },
+    "bandage": {
+      "station": "hand",
+      "time": 2.5,
+      "era": 0,
+      "category": "medicine",
+      "yield": 1,
+      "outputs": {
+        "bandage": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "fiber": 3,
+        "herb": 1
+      }
+    },
+    "herbal_tea": {
+      "station": "campfire",
+      "time": 2.5,
+      "era": 0,
+      "category": "medicine",
+      "yield": 1,
+      "outputs": {
+        "herbal_tea": 1,
+        "water_container": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "petals": 1,
+        "herb": 1,
+        "water": 1
+      }
+    },
+    "shovel": {
+      "station": "hand",
+      "time": 2.5,
+      "era": 0,
+      "category": "weapons",
+      "yield": 1,
+      "outputs": {
+        "shovel": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "wood": 3,
+        "stone": 3
+      }
+    },
+    "axe": {
+      "station": "hand",
+      "time": 2.5,
+      "era": 0,
+      "category": "tools",
+      "outputs": {
+        "axe": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "wood": 2,
+        "stone": 3
+      }
+    },
+    "campfire": {
+      "station": "hand",
+      "time": 2.5,
+      "era": 0,
+      "category": "building",
+      "outputs": {
+        "campfire": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "wood": 8
+      }
+    },
+    "shelter": {
+      "station": "hand",
+      "time": 4.0,
+      "era": 0,
+      "category": "building",
+      "outputs": {
+        "shelter": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "wood": 12
+      }
+    },
+    "pickaxe": {
+      "station": "hand",
+      "time": 2.5,
+      "era": 0,
+      "category": "tools",
+      "outputs": {
+        "pickaxe": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "wood": 4,
+        "stone": 4
+      }
+    },
+    "club": {
+      "station": "hand",
+      "time": 2.5,
+      "era": 0,
+      "category": "weapons",
+      "outputs": {
+        "club": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "wood": 3
+      }
+    },
+    "spear": {
+      "station": "hand",
+      "time": 2.5,
+      "era": 0,
+      "category": "weapons",
+      "outputs": {
+        "spear": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "wood": 5,
+        "stone": 3
+      }
+    },
+    "stone_sword": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 0,
+      "category": "weapons",
+      "outputs": {
+        "stone_sword": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "wood": 3,
+        "stone": 6
+      }
+    },
+    "copper_ingot": {
+      "station": "furnace",
+      "time": 2.5,
+      "era": 0,
+      "category": "materials",
+      "outputs": {
+        "copper_ingot": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "copper_ore": 2,
+        "charcoal": 1
+      }
+    },
+    "bronze_ingot": {
+      "station": "furnace",
+      "time": 2.5,
+      "era": 4,
+      "category": "materials",
+      "outputs": {
+        "bronze_ingot": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "copper_ingot": 2,
+        "tin_ore": 1,
+        "coal": 1
+      }
+    },
+    "iron_ingot": {
+      "station": "furnace",
+      "time": 2.5,
+      "era": 0,
+      "category": "materials",
+      "outputs": {
+        "iron_ingot": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "iron_ore": 2,
+        "charcoal": 1
+      }
+    },
+    "steel_ingot": {
+      "station": "furnace",
+      "time": 2.5,
+      "era": 4,
+      "category": "materials",
+      "outputs": {
+        "steel_ingot": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "iron_ingot": 2,
+        "coal": 2
+      }
+    },
+    "copper_sword": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 4,
+      "category": "weapons",
+      "outputs": {
+        "copper_sword": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "copper_ingot": 3,
+        "wood": 2
+      }
+    },
+    "bronze_sword": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 4,
+      "category": "weapons",
+      "outputs": {
+        "bronze_sword": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "bronze_ingot": 3,
+        "wood": 2
+      }
+    },
+    "iron_sword": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 4,
+      "category": "weapons",
+      "outputs": {
+        "iron_sword": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "iron_ingot": 3,
+        "wood": 2
+      }
+    },
+    "steel_sword": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 4,
+      "category": "weapons",
+      "outputs": {
+        "steel_sword": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "steel_ingot": 3,
+        "wood": 2
+      }
+    },
+    "bow": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 2,
+      "category": "weapons",
+      "outputs": {
+        "bow": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "wood": 6,
+        "fiber": 4
+      }
+    },
+    "arrow": {
+      "station": "hand",
+      "time": 2.5,
+      "era": 0,
+      "category": "tools",
+      "outputs": {
+        "arrow": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "wood": 1,
+        "stone": 1
+      }
+    },
+    "shield": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 2,
+      "category": "tools",
+      "outputs": {
+        "shield": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "wood": 6,
+        "leather": 2
+      }
+    },
+    "leather_armor": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 3,
+      "category": "clothing",
+      "outputs": {
+        "leather_armor": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "leather": 6,
+        "fiber": 2
+      }
+    },
+    "bone_armor": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 3,
+      "category": "clothing",
+      "outputs": {
+        "bone_armor": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "bone": 6,
+        "leather": 3
+      }
+    },
+    "iron_armor": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 4,
+      "category": "clothing",
+      "outputs": {
+        "iron_armor": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "iron_ingot": 6,
+        "leather": 3
+      }
+    },
+    "iron_pickaxe": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 0,
+      "category": "tools",
+      "outputs": {
+        "iron_pickaxe": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "iron_ingot": 3,
+        "wood": 4
+      }
+    },
+    "copper_armor": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 4,
+      "category": "clothing",
+      "outputs": {
+        "copper_armor": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "copper_ingot": 3,
+        "leather": 3
+      }
+    },
+    "bronze_armor": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 4,
+      "category": "clothing",
+      "outputs": {
+        "bronze_armor": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "bronze_ingot": 3,
+        "leather": 3
+      }
+    },
+    "steel_armor": {
+      "station": "workbench",
+      "time": 2.5,
+      "era": 4,
+      "category": "clothing",
+      "outputs": {
+        "steel_armor": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "steel_ingot": 3,
+        "leather": 3
+      }
+    },
+    "cooked_fish": {
+      "station": "campfire",
+      "time": 1.5,
+      "era": 0,
+      "category": "food",
+      "outputs": {
+        "cooked_fish": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "raw_fish": 1
+      }
+    },
+    "cooked_meat": {
+      "station": "campfire",
+      "time": 1.5,
+      "era": 0,
+      "category": "food",
+      "outputs": {
+        "cooked_meat": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "raw_meat": 1
+      }
+    },
+    "workbench": {
+      "station": "hand",
+      "time": 4.0,
+      "outputs": {
+        "workbench": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "wood": 8,
+        "stone": 4
+      }
+    },
+    "carpenter": {
+      "station": "workbench",
+      "time": 4.0,
+      "outputs": {
+        "carpenter": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "plank": 4,
+        "stone": 2
+      }
+    },
+    "mason": {
+      "station": "workbench",
+      "time": 4.0,
+      "outputs": {
+        "mason": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "stone": 8,
+        "plank": 2
+      }
+    },
+    "sawmill": {
+      "station": "carpenter",
+      "time": 4.0,
+      "outputs": {
+        "sawmill": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "plank": 8,
+        "iron_ingot": 2
+      }
+    },
+    "furnace": {
+      "station": "workbench",
+      "time": 4.0,
+      "outputs": {
+        "furnace": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "stone": 10,
+        "clay": 4
+      }
+    },
+    "anvil": {
+      "station": "workbench",
+      "time": 4.0,
+      "outputs": {
+        "anvil": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "copper_ingot": 4,
+        "stone": 4
+      }
+    },
+    "tannery": {
+      "station": "workbench",
+      "time": 4.0,
+      "outputs": {
+        "tannery": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "wood": 6,
+        "leather": 2
+      }
+    },
+    "loom": {
+      "station": "workbench",
+      "time": 4.0,
+      "outputs": {
+        "loom": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "wood": 6,
+        "fiber": 6
+      }
+    },
+    "kitchen": {
+      "station": "workbench",
+      "time": 4.0,
+      "outputs": {
+        "kitchen": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "stone": 8,
+        "plank": 4
+      }
+    },
+    "alchemy": {
+      "station": "workbench",
+      "time": 4.0,
+      "outputs": {
+        "alchemy": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "plank": 4,
+        "clay": 3,
+        "herb": 2
+      }
+    },
+    "mechanical_workshop": {
+      "station": "anvil",
+      "time": 4.0,
+      "outputs": {
+        "mechanical_workshop": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "iron_ingot": 6,
+        "plank": 6
+      }
+    },
+    "electrical_bench": {
+      "station": "mechanical_workshop",
+      "time": 4.0,
+      "outputs": {
+        "electrical_bench": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "wire": 6,
+        "plank": 4
+      }
+    },
+    "concrete_mixer": {
+      "station": "mechanical_workshop",
+      "time": 4.0,
+      "outputs": {
+        "concrete_mixer": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "iron_ingot": 4,
+        "gear": 2
+      }
+    },
+    "smelter": {
+      "station": "mason",
+      "time": 4.0,
+      "outputs": {
+        "smelter": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "brick": 8,
+        "iron_ingot": 4
+      }
+    },
+    "advanced_workshop": {
+      "station": "electrical_bench",
+      "time": 4.0,
+      "outputs": {
+        "advanced_workshop": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "gear": 4,
+        "circuit": 2,
+        "steel_ingot": 4
+      }
+    },
+    "crusher": {
+      "station": "workbench",
+      "time": 4.0,
+      "outputs": {
+        "crusher": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "stone": 8,
+        "wood": 8
+      }
+    },
+    "cooking_fire": {
+      "station": "hand",
+      "time": 4.0,
+      "outputs": {
+        "cooking_fire": 1
+      },
+      "era": 0,
+      "category": "stations",
+      "unlocks": [],
+      "inputs": {
+        "wood": 8,
+        "stone": 2
+      }
+    },
+    "log": {
+      "station": "hand",
+      "time": 3.0,
+      "outputs": {
+        "log": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "wood",
+      "unlocks": [],
+      "inputs": {
+        "wood": 3
+      }
+    },
+    "stick": {
+      "station": "hand",
+      "time": 3.0,
+      "outputs": {
+        "stick": 4
+      },
+      "yield": 4,
+      "era": 0,
+      "category": "wood",
+      "unlocks": [],
+      "inputs": {
+        "wood": 1
+      }
+    },
+    "gravel": {
+      "station": "mason",
+      "time": 3.0,
+      "outputs": {
+        "gravel": 2
+      },
+      "yield": 2,
+      "era": 0,
+      "category": "mineral",
+      "unlocks": [],
+      "inputs": {
+        "stone": 1
+      }
+    },
+    "limestone": {
+      "station": "mason",
+      "time": 3.0,
+      "outputs": {
+        "limestone": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "mineral",
+      "unlocks": [],
+      "inputs": {
+        "stone": 2
+      }
+    },
+    "seed": {
+      "station": "hand",
+      "time": 3.0,
+      "outputs": {
+        "seed": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "food",
+      "unlocks": [],
+      "inputs": {
+        "berries": 2
+      }
+    },
+    "water_container": {
+      "station": "hand",
+      "time": 3.0,
+      "outputs": {
+        "water_container": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "container",
+      "unlocks": [],
+      "inputs": {
+        "clay": 2,
+        "fiber": 1
+      }
+    },
+    "charcoal": {
+      "station": "cooking_fire",
+      "time": 3.0,
+      "outputs": {
+        "charcoal": 2
+      },
+      "yield": 2,
+      "era": 0,
+      "category": "fuel",
+      "unlocks": [],
+      "inputs": {
+        "wood": 2
+      }
+    },
+    "wall_kit": {
+      "station": "carpenter",
+      "time": 3.0,
+      "outputs": {
+        "wall_kit": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "construction",
+      "unlocks": [],
+      "inputs": {
+        "plank": 4,
+        "rope": 1
+      }
+    },
+    "chest_kit": {
+      "station": "carpenter",
+      "time": 3.0,
+      "outputs": {
+        "chest_kit": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "construction",
+      "unlocks": [],
+      "inputs": {
+        "plank": 4,
+        "rope": 2
+      }
+    },
+    "copper_pickaxe": {
+      "station": "anvil",
+      "time": 3.0,
+      "outputs": {
+        "copper_pickaxe": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "tools",
+      "unlocks": [],
+      "inputs": {
+        "copper_ingot": 3,
+        "stick": 2
+      }
+    },
+    "nail": {
+      "station": "anvil",
+      "time": 3.0,
+      "outputs": {
+        "nail": 8
+      },
+      "yield": 8,
+      "era": 0,
+      "category": "mechanical",
+      "unlocks": [],
+      "inputs": {
+        "copper_ingot": 1
+      }
+    },
+    "gear": {
+      "station": "mechanical_workshop",
+      "time": 3.0,
+      "outputs": {
+        "gear": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "mechanical",
+      "unlocks": [],
+      "inputs": {
+        "iron_ingot": 2
+      }
+    },
+    "shaft": {
+      "station": "mechanical_workshop",
+      "time": 3.0,
+      "outputs": {
+        "shaft": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "mechanical",
+      "unlocks": [],
+      "inputs": {
+        "iron_ingot": 1
+      }
+    },
+    "wire": {
+      "station": "mechanical_workshop",
+      "time": 3.0,
+      "outputs": {
+        "wire": 4
+      },
+      "yield": 4,
+      "era": 0,
+      "category": "electrical",
+      "unlocks": [],
+      "inputs": {
+        "copper_ingot": 1
+      }
+    },
+    "circuit": {
+      "station": "electrical_bench",
+      "time": 3.0,
+      "outputs": {
+        "circuit": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "electrical",
+      "unlocks": [],
+      "inputs": {
+        "wire": 2,
+        "glass": 1
+      }
+    },
+    "cement": {
+      "station": "furnace",
+      "time": 3.0,
+      "outputs": {
+        "cement": 2
+      },
+      "yield": 2,
+      "era": 0,
+      "category": "construction",
+      "unlocks": [],
+      "inputs": {
+        "limestone": 2,
+        "clay": 1
+      }
+    },
+    "concrete": {
+      "station": "concrete_mixer",
+      "time": 3.0,
+      "outputs": {
+        "concrete": 2,
+        "water_container": 1
+      },
+      "yield": 2,
+      "era": 0,
+      "category": "construction",
+      "unlocks": [],
+      "inputs": {
+        "cement": 1,
+        "sand": 2,
+        "water": 1
+      }
+    },
+    "chair": {
+      "station": "carpenter",
+      "time": 3.0,
+      "outputs": {
+        "chair": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "furniture",
+      "unlocks": [],
+      "inputs": {
+        "plank": 3,
+        "nail": 4
+      }
+    },
+    "table": {
+      "station": "carpenter",
+      "time": 3.0,
+      "outputs": {
+        "table": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "furniture",
+      "unlocks": [],
+      "inputs": {
+        "plank": 5,
+        "nail": 4
+      }
+    },
+    "vase": {
+      "station": "mason",
+      "time": 3.0,
+      "outputs": {
+        "vase": 1
+      },
+      "yield": 1,
+      "era": 0,
+      "category": "decoration",
+      "unlocks": [],
+      "inputs": {
+        "clay": 3
+      }
+    },
+    "sawmill_planks": {
+      "station": "sawmill",
+      "time": 6,
+      "outputs": {
+        "plank": 6,
+        "stick": 2
+      },
+      "era": 0,
+      "category": "wood",
+      "unlocks": [],
+      "inputs": {
+        "log": 1
+      }
+    },
+    "tanned_leather": {
+      "station": "tannery",
+      "time": 6,
+      "outputs": {
+        "leather": 3,
+        "water_container": 1
+      },
+      "era": 0,
+      "category": "materials",
+      "unlocks": [],
+      "inputs": {
+        "leather": 2,
+        "water": 1
+      }
+    },
+    "loom_cloth": {
+      "station": "loom",
+      "time": 7,
+      "outputs": {
+        "cloth": 1
+      },
+      "era": 0,
+      "category": "materials",
+      "unlocks": [],
+      "inputs": {
+        "fiber": 3
+      }
+    },
+    "crushed_sand": {
+      "station": "crusher",
+      "time": 5,
+      "outputs": {
+        "sand": 2
+      },
+      "era": 0,
+      "category": "materials",
+      "unlocks": [],
+      "inputs": {
+        "stone": 1
+      }
+    },
+    "kitchen_meal": {
+      "station": "kitchen",
+      "time": 4,
+      "outputs": {
+        "cooked_meat": 2
+      },
+      "era": 0,
+      "category": "food",
+      "unlocks": [],
+      "inputs": {
+        "raw_meat": 1,
+        "berries": 1
+      }
+    },
+    "smelt_iron": {
+      "station": "smelter",
+      "time": 6,
+      "outputs": {
+        "iron_ingot": 1
+      },
+      "era": 0,
+      "category": "metal",
+      "unlocks": [],
+      "inputs": {
+        "iron_ore": 2,
+        "charcoal": 1
+      }
+    },
+    "advanced_gear": {
+      "station": "advanced_workshop",
+      "time": 4,
+      "outputs": {
+        "gear": 3
+      },
+      "era": 0,
+      "category": "mechanical",
+      "unlocks": [],
+      "inputs": {
+        "steel_ingot": 1
+      }
+    },
+    "iron_ingot_charcoal": {
+      "station": "furnace",
+      "time": 2.5,
+      "era": 0,
+      "category": "materials",
+      "outputs": {
+        "iron_ingot": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "iron_ore": 2,
+        "charcoal": 1
+      }
+    },
+    "copper_ingot_charcoal": {
+      "station": "furnace",
+      "time": 2.5,
+      "era": 0,
+      "category": "materials",
+      "outputs": {
+        "copper_ingot": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "copper_ore": 2,
+        "charcoal": 1
+      }
+    },
+    "anvil_iron_pickaxe": {
+      "station": "anvil",
+      "time": 2.5,
+      "era": 0,
+      "category": "tools",
+      "outputs": {
+        "iron_pickaxe": 1
+      },
+      "unlocks": [],
+      "inputs": {
+        "iron_ingot": 3,
+        "wood": 4
+      }
+    },
+    "tin_ingot": {
+      "inputs": {
+        "tin_ore": 2,
+        "charcoal": 1
+      },
+      "outputs": {
+        "tin_ingot": 1
+      },
+      "station": "furnace",
+      "time": 4,
+      "era": 0,
+      "category": "metal",
+      "unlocks": []
+    },
+    "herbal_kit": {
+      "inputs": {
+        "herb": 4,
+        "cloth": 2
+      },
+      "outputs": {
+        "medical_kit": 2
+      },
+      "station": "alchemy",
+      "time": 5,
+      "era": 0,
+      "category": "medicine",
+      "unlocks": []
+    }
+  },
+  "stations": {
+    "workbench": {
+      "name": {
+        "pt_BR": "Bancada simples",
+        "en": "Workbench"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "wood",
+      "provides": [
+        "workbench"
+      ],
+      "default_recipe": "plank"
+    },
+    "carpenter": {
+      "name": {
+        "pt_BR": "Bancada de carpinteiro",
+        "en": "Carpenter"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "wood",
+      "provides": [
+        "carpenter"
+      ],
+      "default_recipe": "sawmill"
+    },
+    "mason": {
+      "name": {
+        "pt_BR": "Bancada de pedreiro",
+        "en": "Mason"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "stone",
+      "provides": [
+        "mason"
+      ],
+      "default_recipe": "smelter"
+    },
+    "sawmill": {
+      "name": {
+        "pt_BR": "Serraria",
+        "en": "Sawmill"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "wood",
+      "provides": [
+        "sawmill"
+      ],
+      "default_recipe": "sawmill_planks"
+    },
+    "furnace": {
+      "name": {
+        "pt_BR": "Fornalha",
+        "en": "Furnace"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "stone",
+      "provides": [
+        "furnace"
+      ],
+      "default_recipe": "copper_ingot_charcoal"
+    },
+    "anvil": {
+      "name": {
+        "pt_BR": "Bigorna",
+        "en": "Anvil"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "metal",
+      "provides": [
+        "anvil"
+      ],
+      "default_recipe": "copper_pickaxe"
+    },
+    "tannery": {
+      "name": {
+        "pt_BR": "Curtume",
+        "en": "Tannery"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "wood",
+      "provides": [
+        "tannery"
+      ],
+      "default_recipe": "tanned_leather"
+    },
+    "loom": {
+      "name": {
+        "pt_BR": "Tear",
+        "en": "Loom"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "wood",
+      "provides": [
+        "loom"
+      ],
+      "default_recipe": "loom_cloth"
+    },
+    "kitchen": {
+      "name": {
+        "pt_BR": "Cozinha",
+        "en": "Kitchen"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "stone",
+      "provides": [
+        "kitchen",
+        "campfire"
+      ],
+      "default_recipe": "kitchen_meal"
+    },
+    "alchemy": {
+      "name": {
+        "pt_BR": "Bancada de ervas",
+        "en": "Alchemy"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "wood",
+      "provides": [
+        "alchemy"
+      ],
+      "default_recipe": "herbal_kit"
+    },
+    "mechanical_workshop": {
+      "name": {
+        "pt_BR": "Oficina mecânica",
+        "en": "Mechanical workshop"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "metal",
+      "provides": [
+        "mechanical_workshop"
+      ],
+      "default_recipe": "electrical_bench"
+    },
+    "electrical_bench": {
+      "name": {
+        "pt_BR": "Bancada elétrica",
+        "en": "Electrical bench"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "metal",
+      "provides": [
+        "electrical_bench"
+      ],
+      "default_recipe": "advanced_workshop"
+    },
+    "concrete_mixer": {
+      "name": {
+        "pt_BR": "Misturador de concreto",
+        "en": "Concrete mixer"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "metal",
+      "provides": [
+        "concrete_mixer"
+      ],
+      "default_recipe": "concrete"
+    },
+    "smelter": {
+      "name": {
+        "pt_BR": "Fundição",
+        "en": "Smelter"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "stone",
+      "provides": [
+        "smelter"
+      ],
+      "default_recipe": "smelt_iron"
+    },
+    "advanced_workshop": {
+      "name": {
+        "pt_BR": "Oficina avançada",
+        "en": "Advanced workshop"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "metal",
+      "provides": [
+        "advanced_workshop"
+      ],
+      "default_recipe": "advanced_gear"
+    },
+    "crusher": {
+      "name": {
+        "pt_BR": "Britador",
+        "en": "Crusher"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "stone",
+      "provides": [
+        "crusher"
+      ],
+      "default_recipe": "crushed_sand"
+    },
+    "cooking_fire": {
+      "name": {
+        "pt_BR": "Fogueira com inventário",
+        "en": "Cooking fire"
+      },
+      "reach": 4.0,
+      "capacity": 8,
+      "style": "stone",
+      "provides": [
+        "cooking_fire",
+        "campfire"
+      ],
+      "default_recipe": "charcoal"
+    }
+  },
+  "gathering": {
+    "wood": {
+      "tool": "hand",
+      "hardness": 1,
+      "regrow_seconds": 600,
+      "yield": 1,
+      "required_power": 0
+    },
+    "stone": {
+      "tool": "hand",
+      "hardness": 1,
+      "regrow_seconds": 600,
+      "yield": 1,
+      "required_power": 0
+    },
+    "fiber": {
+      "tool": "hand",
+      "hardness": 1,
+      "regrow_seconds": 600,
+      "yield": 1,
+      "required_power": 0
+    },
+    "berries": {
+      "tool": "hand",
+      "hardness": 1,
+      "regrow_seconds": 600,
+      "yield": 1,
+      "required_power": 0
+    },
+    "herb": {
+      "tool": "hand",
+      "hardness": 1,
+      "regrow_seconds": 600,
+      "yield": 1,
+      "required_power": 0
+    },
+    "petals": {
+      "tool": "hand",
+      "hardness": 1,
+      "regrow_seconds": 600,
+      "yield": 1,
+      "required_power": 0
+    },
+    "clay": {
+      "tool": "hand",
+      "hardness": 1,
+      "regrow_seconds": 600,
+      "yield": 1,
+      "required_power": 0
+    },
+    "sand": {
+      "tool": "hand",
+      "hardness": 1,
+      "regrow_seconds": 600,
+      "yield": 1,
+      "required_power": 0
+    },
+    "soil": {
+      "tool": "hand",
+      "hardness": 1,
+      "regrow_seconds": 600,
+      "yield": 1,
+      "required_power": 0
+    },
+    "coal": {
+      "tool": "pickaxe",
+      "hardness": 2,
+      "regrow_seconds": 1200,
+      "yield": 1,
+      "required_power": 1
+    },
+    "copper_ore": {
+      "tool": "pickaxe",
+      "hardness": 2,
+      "regrow_seconds": 1200,
+      "yield": 1,
+      "required_power": 1
+    },
+    "tin_ore": {
+      "tool": "pickaxe",
+      "hardness": 2,
+      "regrow_seconds": 1200,
+      "yield": 1,
+      "required_power": 1
+    },
+    "iron_ore": {
+      "tool": "pickaxe",
+      "hardness": 4,
+      "regrow_seconds": 1200,
+      "yield": 1,
+      "required_power": 2
+    },
+    "silver_ore": {
+      "tool": "pickaxe",
+      "hardness": 6,
+      "regrow_seconds": 1200,
+      "yield": 1,
+      "required_power": 3
+    },
+    "gold_ore": {
+      "tool": "pickaxe",
+      "hardness": 6,
+      "regrow_seconds": 1200,
+      "yield": 1,
+      "required_power": 3
+    },
+    "sulfur": {
+      "tool": "pickaxe",
+      "hardness": 2,
+      "regrow_seconds": 1200,
+      "yield": 1,
+      "required_power": 1
+    },
+    "rare_ore": {
+      "tool": "pickaxe",
+      "hardness": 6,
+      "regrow_seconds": 1200,
+      "yield": 1,
+      "required_power": 3
+    },
+    "gravel": {
+      "tool": "pickaxe",
+      "hardness": 1,
+      "regrow_seconds": 1200,
+      "yield": 1,
+      "required_power": 1
+    },
+    "limestone": {
+      "tool": "pickaxe",
+      "hardness": 1,
+      "regrow_seconds": 1200,
+      "yield": 1,
+      "required_power": 1
+    }
+  },
+  "trees": {
+    "oak": {
+      "hits": 3,
+      "outputs": {
+        "wood": 4
+      }
+    },
+    "pine": {
+      "hits": 3,
+      "outputs": {
+        "wood": 4
+      }
+    },
+    "birch": {
+      "hits": 3,
+      "outputs": {
+        "wood": 4
+      }
+    },
+    "fruit": {
+      "hits": 3,
+      "outputs": {
+        "wood": 4
+      }
+    },
+    "palm": {
+      "hits": 3,
+      "outputs": {
+        "wood": 4
+      }
+    },
+    "fallen": {
+      "hits": 3,
+      "outputs": {
+        "wood": 4
+      }
+    },
+    "burnt": {
+      "hits": 3,
+      "outputs": {
+        "wood": 4
+      }
+    }
+  },
+  "guide": {
+    "pt_BR": [
+      "1. Recolha madeira e pedra; fabrique machado e picareta de pedra.",
+      "2. Fabrique e posicione a bancada simples. Faça tábuas e cordas; monte a bancada de carpinteiro.",
+      "3. No carpinteiro, fabrique kits de parede e baú. Selecione o kit na mochila e clique Posicionar.",
+      "4. Monte a fogueira com inventário e transforme madeira em carvão vegetal.",
+      "5. Use a picareta de pedra em cobre/estanho. Construa a fornalha e funda os minérios com combustível.",
+      "6. Monte a bigorna; transforme cobre e gravetos em uma picareta de cobre. Ela alcança o ferro.",
+      "7. Fundir ferro permite serraria e oficina mecânica; fios, circuitos e concreto abrem as oficinas seguintes.",
+      "Filas guardam materiais reservados. Sem espaço, a entrega aguarda; cancelar também espera espaço para devolver tudo.",
+      "Bancadas possuem entradas/saídas próprias e continuam produzindo enquanto o servidor está aberto, mesmo sem o dono conectado."
+    ],
+    "en": [
+      "Gather wood and stone, then craft an axe and a stone pickaxe.",
+      "Craft and place a workbench, make planks and rope, then a carpenter bench.",
+      "Craft wall/chest kits; select them in the backpack and choose Place.",
+      "Build a cooking fire and turn wood into charcoal.",
+      "Mine copper/tin with a stone pickaxe, then build a furnace and smelt metal.",
+      "Build an anvil and craft a copper pickaxe from copper and sticks; use it to mine iron.",
+      "Iron enables sawmills and mechanics; wire, circuits and concrete unlock further workshops.",
+      "Escrow waits safely when full; cancellation also needs room for a complete refund.",
+      "Stations keep producing on a running server when their owner disconnects."
+    ]
+  },
+  "legacy_machines": {
+    "sawmill": {
+      "input": {
+        "wood": 1
+      },
+      "output": {
+        "plank": 2
+      },
+      "seconds": 6
+    },
+    "loom": {
+      "input": {
+        "fiber": 3
+      },
+      "output": {
+        "cloth": 1
+      },
+      "seconds": 7
+    },
+    "crusher": {
+      "input": {
+        "stone": 1
+      },
+      "output": {
+        "sand": 2
+      },
+      "seconds": 5
+    }
+  },
+  "categories": {
+    "tools": {
+      "pt_BR": "Ferramentas",
+      "en": "Tools"
+    },
+    "materials": {
+      "pt_BR": "Materiais",
+      "en": "Materials"
+    },
+    "mineral": {
+      "pt_BR": "Minerais",
+      "en": "Mineral"
+    },
+    "medicine": {
+      "pt_BR": "Medicina",
+      "en": "Medicine"
+    },
+    "container": {
+      "pt_BR": "Recipientes",
+      "en": "Container"
+    },
+    "construction": {
+      "pt_BR": "Construção",
+      "en": "Construction"
+    },
+    "clothing": {
+      "pt_BR": "Roupas",
+      "en": "Clothing"
+    },
+    "wood": {
+      "pt_BR": "Madeira",
+      "en": "Wood"
+    },
+    "fuel": {
+      "pt_BR": "Combustível",
+      "en": "Fuel"
+    },
+    "building": {
+      "pt_BR": "Construção",
+      "en": "Building"
+    },
+    "decoration": {
+      "pt_BR": "Decoração",
+      "en": "Decoration"
+    },
+    "furniture": {
+      "pt_BR": "Móveis",
+      "en": "Furniture"
+    },
+    "metal": {
+      "pt_BR": "Metais",
+      "en": "Metal"
+    },
+    "stations": {
+      "pt_BR": "Bancadas",
+      "en": "Stations"
+    },
+    "food": {
+      "pt_BR": "Alimentos",
+      "en": "Food"
+    },
+    "electrical": {
+      "pt_BR": "Componentes elétricos",
+      "en": "Electrical"
+    },
+    "mechanical": {
+      "pt_BR": "Componentes mecânicos",
+      "en": "Mechanical"
+    },
+    "weapons": {
+      "pt_BR": "Armas",
+      "en": "Weapons"
+    }
+  },
+  "resource_nodes": [
+    "stone",
+    "coal",
+    "copper_ore",
+    "tin_ore",
+    "iron_ore",
+    "silver_ore",
+    "gold_ore",
+    "sulfur",
+    "rare_ore",
+    "berries",
+    "fiber",
+    "wood",
+    "stone",
+    "coal",
+    "copper_ore",
+    "tin_ore",
+    "iron_ore",
+    "silver_ore",
+    "gold_ore",
+    "sulfur",
+    "rare_ore",
+    "berries",
+    "herb",
+    "petals",
+    "clay",
+    "sand",
+    "soil",
+    "herb",
+    "petals",
+    "clay",
+    "sand",
+    "soil",
+    "herb",
+    "petals",
+    "clay",
+    "sand",
+    "soil",
+    "herb",
+    "petals",
+    "clay",
+    "sand",
+    "soil",
+    "herb",
+    "petals",
+    "clay",
+    "sand",
+    "soil",
+    "herb",
+    "petals",
+    "clay",
+    "sand",
+    "soil",
+    "herb",
+    "petals",
+    "clay",
+    "sand",
+    "soil",
+    "herb",
+    "petals",
+    "clay",
+    "sand",
+    "soil",
+    "stone",
+    "coal",
+    "copper_ore",
+    "tin_ore",
+    "iron_ore",
+    "silver_ore",
+    "gold_ore",
+    "sulfur",
+    "rare_ore",
+    "berries",
+    "fiber",
+    "wood",
+    "stone",
+    "coal",
+    "copper_ore",
+    "tin_ore",
+    "iron_ore",
+    "silver_ore",
+    "gold_ore",
+    "sulfur",
+    "rare_ore",
+    "berries",
+    "fiber",
+    "wood",
+    "stone",
+    "coal",
+    "copper_ore",
+    "tin_ore",
+    "iron_ore",
+    "silver_ore",
+    "gold_ore",
+    "sulfur",
+    "rare_ore",
+    "berries",
+    "fiber",
+    "wood",
+    "stone",
+    "coal",
+    "copper_ore",
+    "tin_ore",
+    "iron_ore",
+    "silver_ore",
+    "gold_ore",
+    "sulfur",
+    "rare_ore",
+    "berries",
+    "fiber",
+    "wood",
+    "stone",
+    "coal",
+    "copper_ore",
+    "tin_ore",
+    "iron_ore",
+    "silver_ore",
+    "gold_ore",
+    "sulfur",
+    "rare_ore",
+    "berries",
+    "fiber",
+    "wood",
+    "stone",
+    "coal",
+    "copper_ore",
+    "tin_ore",
+    "iron_ore",
+    "silver_ore",
+    "gold_ore",
+    "sulfur",
+    "rare_ore",
+    "berries",
+    "fiber",
+    "wood",
+    "stone",
+    "coal",
+    "copper_ore",
+    "tin_ore",
+    "iron_ore",
+    "silver_ore",
+    "gold_ore",
+    "sulfur",
+    "rare_ore",
+    "berries",
+    "fiber",
+    "wood",
+    "stone",
+    "coal",
+    "copper_ore",
+    "tin_ore",
+    "iron_ore",
+    "silver_ore",
+    "gold_ore",
+    "sulfur",
+    "rare_ore",
+    "berries",
+    "fiber",
+    "wood",
+    "gravel",
+    "limestone",
+    "gravel",
+    "limestone",
+    "gravel",
+    "limestone",
+    "gravel",
+    "limestone",
+    "gravel",
+    "limestone",
+    "gravel",
+    "limestone",
+    "gravel",
+    "limestone",
+    "gravel",
+    "limestone"
+  ]
+}

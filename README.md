@@ -1,11 +1,23 @@
 # Tribes of Fire
 
-Criado por **felipealx** · código em desenvolvimento **0.6.0-dev** · Godot 4.6.3 · Windows/Linux x64
+Criado por **felipealx** · código em desenvolvimento **0.7.0-dev** · Godot 4.6.3 · Windows/Linux x64
 
 Jogo de sobrevivência 3D em terceira pessoa, com modo solo, hospedagem por jogador
 e servidor dedicado autoritativo. A reconstrução continua a base existente; não é
 uma versão 1.0 concluída. Funcionalidades, resultados observados e critérios ainda
 pendentes estão em [PROGRESS.md](PROGRESS.md) e [Docs/PENDENCIAS.md](Docs/PENDENCIAS.md).
+
+## Fase 3 — itens e fabricação 0.7.0-dev
+
+100 itens, 89 receitas e 17 bancadas em [Data/Items.json](Data/Items.json), com
+coleta por ferramenta/dureza, stacks e peso, filas atômicas, cancelamento com
+reembolso, produção persistida e proteção contra pedidos repetidos. Dois ciclos
+completos chegam a parede/baú e a uma ferramenta de cobre capaz de minerar ferro.
+
+I abre a mochila; Fabricação contém busca, categorias e guia de progressão.
+Selecione um kit e use Posicionar. E abre a estação para selecionar receita,
+abastecer e retirar produtos. Consulte o [relatório da Fase 3](Docs/PHASE3_REPORT.md).
+[Pacotes 0.7.0-dev](Downloads/0.7.0-dev); entregas anteriores permanecem preservadas.
 
 ## Continuidade 0.6.0-dev
 

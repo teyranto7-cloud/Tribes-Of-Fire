@@ -104,7 +104,7 @@ def main() -> None:
     expected_source = source_signature()
     tests = [name for name in ('test_rules.gd', 'test_world.gd', 'test_player.gd', 'test_input.gd',
                               'test_gameplay.gd', 'test_v3.gd', 'test_gameplay_regressions.gd',
-                              'test_tribes_regression.gd', 'test_ui_regressions.gd', 'test_phase2.gd', 'test_frontier.gd',
+                              'test_tribes_regression.gd', 'test_ui_regressions.gd', 'test_phase2.gd', 'test_phase3.gd', 'test_frontier.gd',
                               'test_voice_regressions.gd', 'test_reliability.gd',
                               'test_startup_close.gd', 'test_playability.gd', 'test_reconstruction.gd', 'test_runner.gd')
              if (ROOT / 'Tests' / name).is_file()]

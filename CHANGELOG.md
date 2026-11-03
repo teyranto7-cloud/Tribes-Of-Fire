@@ -1,5 +1,12 @@
 # Mudanças — Tribes of Fire
 
+## 0.7.0-dev — itens, receitas, coleta e bancadas
+
+Catálogo de 100 itens e 89 receitas em JSON, 17 bancadas com buffers persistidos,
+coleta por dureza/ferramenta, stacks e peso. Fabricação e entrega atômicas com
+deduplicação, cancelamento integral e retomada após desconexão/reinício.
+Dois ciclos reais e evidências em Docs/PHASE3_REPORT.md.
+
 ## 0.6.0-dev — continuidade das Fases 1 e 2
 
 Gerador 3 preservando saves anteriores, streaming de todo o mapa e transição de

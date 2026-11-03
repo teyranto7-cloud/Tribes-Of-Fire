@@ -38,9 +38,16 @@ with tempfile.TemporaryDirectory(prefix='Tribes startup Joao ') as temporary:
     logs.mkdir(parents=True, exist_ok=True)
 
     def run(name, options, expected=0):
-        result = subprocess.run([engine, '--headless', '--path', str(project), *options],
-                                env=env, cwd=project, stdout=subprocess.PIPE,
-                                stderr=subprocess.STDOUT, text=True, timeout=45)
+        try:
+            result = subprocess.run([engine, '--headless', '--path', str(project), *options],
+                                    env=env, cwd=project, stdout=subprocess.PIPE,
+                                    stderr=subprocess.STDOUT, text=True, timeout=45)
+        except subprocess.TimeoutExpired as error:
+            output = error.stdout or ''
+            if isinstance(output, bytes):
+                output = output.decode('utf-8', errors='replace')
+            (logs / (name + '.log')).write_text(output, encoding='utf-8')
+            raise
         (logs / (name + '.log')).write_text(result.stdout, encoding='utf-8')
         assert result.returncode == expected, result.stdout
         assert not ERROR.search(result.stdout), result.stdout

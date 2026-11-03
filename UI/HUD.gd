@@ -531,15 +531,7 @@ func _factory() -> void:
 	var info:Dictionary=game.runtime.factory_view
 	if info.is_empty():return
 	_heading(t("Oficina de produção","Production workshop"))
-	text(preload("res://Items/Catalog.gd").display_name(info["kind"]),24)
-	var recipe:Dictionary=preload("res://Building/Factory.gd").RECIPES[info["kind"]]
-	for item in recipe["input"]:text(t("Entrada: ","Input: ")+preload("res://Items/Catalog.gd").display_name(item)+" ×%d"%recipe["input"][item])
-	for item in recipe["output"]:text(t("Saída: ","Output: ")+preload("res://Items/Catalog.gd").display_name(item)+" ×%d"%recipe["output"][item])
-	text(t("Tempo por ciclo: ","Time per cycle: ")+str(recipe["seconds"])+"s")
-	text(t("Reservas: ","Storage: ")+str(info["state"]["input"])+" → "+str(info["state"]["output"]))
-	button(t("Abastecer para 5 ciclos","Supply 5 cycles"),func():game.request_command("factory_load",{"station":int(info["station"])}) )
-	button(t("Retirar produção","Collect production"),func():game.request_command("factory_take",{"station":int(info["station"])}) )
-	button(t("Atualizar","Refresh"),func():game.request_command("interact",{}))
+	_add_panel(preload("res://UI/StationPanel.gd"))
 	button(tr("Back"),func():show_panel(""))
 
 func _clans() -> void:

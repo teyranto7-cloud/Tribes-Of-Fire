@@ -123,9 +123,9 @@ static func valid(data: Variant) -> bool:
 		for record in data[field]:
 			if not record is Dictionary or not position_valid(record.get("position"), extent):
 				return false
-			if field == "workshops" and (record.get("kind") not in ["workbench", "furnace", "sawmill", "loom", "crusher"] or not record.get("owner") is String or record["owner"].length() > 128):
+			if field == "workshops" and (not Catalog.station_ids().has(record.get("kind")) or not record.get("owner") is String or record["owner"].length() > 128):
 				return false
-			if field=="workshops" and record.has("machine") and not preload("res://Building/Factory.gd").valid(record["machine"]): return false
+			if field=="workshops" and record.has("machine") and not preload("res://Building/Factory.gd").valid(record["machine"],record["kind"]): return false
 			if field == "drops" and (not record.get("id") is String or not Catalog.known(record["id"]) or not integer(record.get("count"), 1, 9999)):
 				return false
 			if field == "drops" and record.has("durability") and not integer(record["durability"], 0, 100):

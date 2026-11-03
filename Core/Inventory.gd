@@ -19,21 +19,34 @@ func can_add(item: String, amount: int) -> bool:
 	_ensure_slots()
 	if not Catalog.known(item) or amount <= 0 or count(item) > MAX_STACK - amount:
 		return false
-	return item in slots.map(func(s): return s.get("id", "")) or slots.any(func(s): return s.is_empty())
+	var limit:=int(Catalog.get_item(item).get("stack",99))
+	var space:=0
+	for slot in slots:
+		if slot.is_empty():space+=limit
+		elif slot["id"]==item:space+=maxi(0,limit-int(slot["count"]))
+	return space>=amount
 
 func add(item: String, amount: int, wear: int = -1) -> bool:
 	if wear < -1 or wear > 100:
 		return false
 	if not can_add(item, amount):
 		return false
-	if Catalog.WEAPONS.has(item) or Catalog.ARMOR.has(item) or item == "shield":
+	if int(Catalog.get_item(item).get("durability",0))>0:
 		var received_wear := 100 if wear < 0 else wear
 		# Durability is currently shared per item type. Receiving another copy must
 		# never repair a worn copy already carried or equipped.
 		durability[item] = received_wear if count(item) == 0 else mini(int(durability.get(item, 100)), received_wear)
-	items[item] = count(item) + amount
-	_signature = 0
-	_ensure_slots()
+	var left:=amount
+	var limit:=int(Catalog.get_item(item).get("stack",99))
+	for slot in slots:
+		if not slot.is_empty() and slot["id"]==item:
+			var accepted:=mini(left,maxi(0,limit-int(slot["count"])))
+			slot["count"]+=accepted;left-=accepted
+	for i in range(slots.size()):
+		if left<=0:break
+		if slots[i].is_empty():
+			var accepted:=mini(left,limit);slots[i]={"id":item,"count":accepted};left-=accepted
+	_sync_counts()
 	return true
 
 func consume(item: String, amount: int) -> bool:
@@ -135,7 +148,7 @@ static func valid_state(data: Dictionary) -> bool:
 		return false
 	for key in ["hand", "offhand", "armor"]:
 		var id: Variant = data["equipment"].get(key)
-		if not id is String or (id != "" and (not totals.has(id) or (key == "hand" and not Catalog.WEAPONS.has(id)) or (key == "armor" and not Catalog.ARMOR.has(id)) or (key == "offhand" and id != "shield"))):
+		if not id is String or (id != "" and (not totals.has(id) or Catalog.get_item(id).get("equipment_slot","")!=key)):
 			return false
 	var wear: Variant = data.get("durability", {})
 	if not wear is Dictionary or wear.size() > Catalog.ids().size():
@@ -158,7 +171,7 @@ func move_slot(source: int, target: int, amount: int = 9999) -> bool:
 		slots[target] = a
 	else:
 		var quantity := mini(amount, int(a["count"]))
-		quantity = mini(quantity, MAX_STACK - int(b.get("count", 0)))
+		quantity = mini(quantity, int(Catalog.get_item(a["id"]).get("stack",99)) - int(b.get("count", 0)))
 		if quantity <= 0:
 			return false
 		slots[target] = {"id": a["id"], "count": int(b.get("count", 0)) + quantity}
@@ -173,8 +186,8 @@ func equip(index: int) -> bool:
 	if index < 0 or index >= slots.size() or slots[index].is_empty():
 		return false
 	var id: String = slots[index]["id"]
-	var key := "armor" if Catalog.ARMOR.has(id) else ("offhand" if id == "shield" else "hand")
-	if key == "hand" and not Catalog.WEAPONS.has(id):
+	var key:String=Catalog.get_item(id).get("equipment_slot","")
+	if not equipment.has(key):
 		return false
 	equipment[key] = id
 	return true
@@ -185,7 +198,7 @@ func take_slot(index: int, amount: int) -> Dictionary:
 		return {}
 	var result := {"id": slots[index]["id"], "count": amount}
 	var id: String = result["id"]
-	if Catalog.WEAPONS.has(id) or Catalog.ARMOR.has(id) or id == "shield":
+	if int(Catalog.get_item(id).get("durability",0))>0:
 		result["durability"] = int(durability.get(id, 100))
 	slots[index]["count"] -= amount
 	if slots[index]["count"] == 0:
@@ -236,7 +249,7 @@ func craft_recipe(id: String, stations: Array = []) -> bool:
 	var recipe: Dictionary = Catalog.recipe(id)
 	if recipe["station"] != "hand" and not recipe["station"] in stations:
 		return false
-	return transact(recipe["cost"], {id: 1})
+	return transact(recipe["cost"], recipe["outputs"])
 
 # Sorting is an authority command; the UI never rewrites inventory state.
 func organize() -> bool:
@@ -248,3 +261,8 @@ func organize() -> bool:
 		slots.append({})
 	_sync_counts()
 	return true
+
+func weight() -> float:
+	var total:=0.0
+	for id in items:total+=count(id)*float(Catalog.get_item(id).get("weight",0))
+	return total

@@ -4,7 +4,7 @@ extends RefCounted
 const HUNGER_SECONDS := 1800.0
 const THIRST_SECONDS := 1200.0
 const DAMAGE_INTERVAL := 15.0
-const FOOD := {"berries": 12.0, "cooked_meat": 40.0, "cooked_fish": 28.0}
+static var FOOD:Dictionary=preload("res://Items/Catalog.gd")._statistics("hunger")
 var hunger: float = 100.0
 var thirst: float = 100.0
 var starvation: float = 0.0

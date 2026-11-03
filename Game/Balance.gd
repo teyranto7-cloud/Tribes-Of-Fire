@@ -1,4 +1,5 @@
 extends RefCounted
+const Catalog=preload("res://Items/Catalog.gd")
 ## Shared immutable balance data. Rules own authority; JSON only defines values.
 static var _data: Dictionary = {}
 static func data() -> Dictionary:
@@ -7,6 +8,12 @@ static func data() -> Dictionary:
 		if parsed is Dictionary: _data = parsed
 	return _data
 static func section(name: String) -> Dictionary:
+	if name=="recipes":
+		var recipes:Dictionary={}
+		for id in Catalog.RECIPES:recipes[id]=Catalog.recipe(id)
+		return recipes
+	if name=="weapons":return Catalog.WEAPONS.duplicate(true)
+	if name=="armor":return Catalog.ARMOR.duplicate(true)
 	var value: Variant = data().get(name, {})
 	return value.duplicate(true) if value is Dictionary else {}
 static func number(group: String, key: String, fallback: float) -> float:

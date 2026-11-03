@@ -123,10 +123,10 @@ func restore_cut(value: bool) -> void:
 	crown.rotation = Vector3(0, 0, PI * 0.48 if species == "fallen" else 0.0)
 	crown.position = Vector3(0, 0.2 if species == "fallen" else 0.0, 0)
 
-func hit() -> bool:
+func hit(power: int = 1) -> bool:
 	if felled: return false
-	hits += 1
-	if hits < 3: return false
+	hits += maxi(1,power)
+	if hits < int(preload("res://Items/Catalog.gd").database().get("trees",{}).get(species,{}).get("hits",3)): return false
 	felled = true
 	collision_layer = 0
 	fall_tween = create_tween()

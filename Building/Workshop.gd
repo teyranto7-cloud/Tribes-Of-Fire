@@ -9,10 +9,11 @@ func setup(type: String, at: Vector3, key: String) -> void:
 	owner_key = key
 	position = at
 	add_to_group(type)
+	var label:=Label3D.new();label.text=preload("res://Items/Catalog.gd").display_name(type);label.position.y=2.0;label.billboard=BaseMaterial3D.BILLBOARD_ENABLED;label.font_size=26;label.pixel_size=0.007;label.visibility_range_end=15;add_child(label)
 	var shape := BoxShape3D.new()
 	shape.size = Vector3(1.7, 1.2, 1.0)
 	Shapes.collider(self, shape, Vector3(0, 0.6, 0))
-	if kind in ["workbench","sawmill","loom","crusher"]:
+	if preload("res://Items/Catalog.gd").station(kind).get("style","wood") in ["wood","metal"]:
 		Shapes.box(self, Vector3(1.7, 0.14, 1.0), Vector3(0, 1.1, 0), Color("#785336"))
 		for x in [-0.65, 0.65]:
 			for z in [-0.35, 0.35]:
@@ -31,7 +32,7 @@ func setup(type: String, at: Vector3, key: String) -> void:
 		add_child(light)
 
 func _process(delta: float) -> void:
-	if kind not in ["sawmill","loom","crusher"]:return
+	if kind not in ["sawmill","loom","crusher","mechanical_workshop","concrete_mixer"]:return
 	if _wheel==null:
 		_wheel=Node3D.new();_wheel.position=Vector3(-0.5,1.35,0);add_child(_wheel)
 		var gear:=Shapes.cylinder(_wheel,0.32,0.10,Vector3.ZERO,Color("#b59b68"));gear.rotation.x=PI/2
@@ -40,4 +41,5 @@ func _process(delta: float) -> void:
 			Shapes.box(_wheel,Vector3(0.09,0.09,0.14),Vector3(cos(a)*0.32,sin(a)*0.32,0),Color("#71684f"))
 		var title:=Label3D.new();title.text=preload("res://Items/Catalog.gd").display_name(kind);title.position.y=2.0
 		title.billboard=BaseMaterial3D.BILLBOARD_ENABLED;title.font_size=26;title.pixel_size=0.007;title.visibility_range_end=15;add_child(title)
-	if preload("res://Building/Factory.gd").RECIPES[kind]["input"].keys().all(func(item):return int(machine["input"].get(item,0))>=preload("res://Building/Factory.gd").RECIPES[kind]["input"][item]):_wheel.rotation.z+=delta*1.8
+	var recipe:=preload("res://Building/Factory.gd").definition(kind,machine)
+	if not recipe.is_empty() and recipe["input"].keys().all(func(item):return int(machine["input"].get(item,0))>=recipe["input"][item]):_wheel.rotation.z+=delta*1.8

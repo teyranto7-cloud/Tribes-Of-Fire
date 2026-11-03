@@ -1,8 +1,7 @@
 extends Node3D
 const Balance = preload("res://Game/Balance.gd")
 const Shapes = preload("res://World/Shapes.gd")
-const KINDS := ["stone", "coal", "copper_ore", "tin_ore", "iron_ore", "silver_ore", "gold_ore", "sulfur", "rare_ore", "berries", "fiber", "wood"]
-const EXTRA_KINDS := ["herb", "petals", "clay", "sand", "soil"]
+const Catalog=preload("res://Items/Catalog.gd")
 var visibility_left:float=0.0
 var world
 var regrowth: Array = []
@@ -12,7 +11,7 @@ var hits: Array[int] = []
 var _cooldowns: Dictionary = {}
 func setup(value) -> void:
 	world = value
-	for i in range(158):
+	for i in range(Catalog.database()["resource_nodes"].size()):
 		var kind: String = resource_kind(i)
 		var p := Vector3(4, 0, -1) if i == 0 else Vector3(sin(i * 2.4) * (8 + i * 1.6), 0, cos(i * 2.4) * (8 + i * 1.6))
 		if i == 9:
@@ -66,7 +65,7 @@ func setup(value) -> void:
 func closest(body: Node3D, reach: float = 3.0, facing: bool = false, hand_only: bool = false) -> int:
 	var chosen := -1
 	for i in range(nodes.size()):
-		if hand_only and resource_kind(i) not in ["stone","wood","fiber","berries","herb","petals","clay","sand","soil"]: continue
+		if hand_only and Catalog.gathering(resource_kind(i)).get("tool","")!="hand":continue
 		var offset := nodes[i].global_position - body.global_position
 		if stocks[i] <= 0 or not nodes[i].visible or offset.length() > reach:
 			continue
@@ -84,9 +83,11 @@ func mine(body, inventory, id: int, hand: bool = false, ground_reward: bool = fa
 	if not get_world_3d().direct_space_state.intersect_ray(query).is_empty():
 		return false
 	var kind: String = resource_kind(id)
-	if hand and kind not in ["berries", "fiber", "stone", "wood", "herb", "petals", "clay", "sand", "soil"]:
+	var rule:=Catalog.gathering(kind)
+	if rule.is_empty():return false
+	if hand and rule["tool"]!="hand":
 		return false
-	if not hand and inventory.equipped_item() not in ["pickaxe", "iron_pickaxe"]:
+	if not hand and (Catalog.tool(inventory.equipped_item())!="pickaxe" or Catalog.harvest_power(inventory.equipped_item())<int(rule.get("required_power",1))):
 		return false
 	var now := Time.get_ticks_msec()
 	var key: int = body.get_instance_id()
@@ -99,10 +100,12 @@ func mine(body, inventory, id: int, hand: bool = false, ground_reward: bool = fa
 	body.attack_time = 0.55
 	if not hand:
 		inventory.wear_equipment("hand", 1)
+	hits[id]+=1 if hand else maxi(1,Catalog.harvest_power(inventory.equipped_item()))
+	if hits[id]<int(rule.get("hardness",1)):return false
+	hits[id]=0
 	if not ground_reward: inventory.add(kind, 1)
 	stocks[id] -= 1
-	if stocks[id] == 0: regrowth[id] = Time.get_unix_time_from_system() + Balance.number("gathering", "resource_regrow_seconds", 600)
-	hits[id] += 1
+	if stocks[id] == 0: regrowth[id] = Time.get_unix_time_from_system() + float(rule.get("regrow_seconds",600))
 	_refresh(id)
 	return true
 func capture() -> Array:
@@ -153,9 +156,8 @@ func reposition() -> void:
 				node.position.x+=2.0
 		node.position.y=world.terrain_height(node.position.x,node.position.z)
 func resource_kind(id: int) -> String:
-	if id<22: return KINDS[id%KINDS.size()]
-	if id<62: return EXTRA_KINDS[(id-22)%EXTRA_KINDS.size()]
-	return KINDS[(id-62)%KINDS.size()]
+	var records:Array=Catalog.database().get("resource_nodes",[])
+	return str(records[id]) if id>=0 and id<records.size() else ""
 
 func _process(delta: float) -> void:
 	visibility_left-=delta

@@ -16,8 +16,8 @@ signal voice_received(id: int, sequence: int, packet: PackedByteArray, channel: 
 signal admin_requested(id: int, action: String, data: Dictionary)
 const ServerConfig = preload("res://Networking/ServerConfig.gd")
 const SnapshotCodec = preload("res://Networking/SnapshotCodec.gd")
-const PROTOCOL_VERSION := 5
-const COMMANDS := ["tribe_war","tribe_alliance","tribe_accept_alliance","tribe_break_alliance","tribe_peace","tribe_accept_peace","factory_load","factory_take","dig","appearance", "eat", "drink", "cook", "respawn", "inventory_sort", "inventory_move", "inventory_drop", "equip", "unequip", "craft", "interact", "combat", "mine", "build", "tribe_create", "tribe_invite", "tribe_accept", "tribe_leave", "tribe_kick", "tribe_leader", "chat", "group_create", "group_invite", "group_accept", "group_leave", "group_kick", "call_invite", "call_accept", "call_leave", "block", "chest_transfer", "refuel", "research", "craft_cancel", "repair", "plant", "harvest_crop", "fish", "tame", "map_mark", "map_remove"]
+const PROTOCOL_VERSION := 6
+const COMMANDS := ["station_select","station_load","station_refund","tribe_war","tribe_alliance","tribe_accept_alliance","tribe_break_alliance","tribe_peace","tribe_accept_peace","factory_load","factory_take","dig","appearance", "eat", "drink", "cook", "respawn", "inventory_sort", "inventory_move", "inventory_drop", "equip", "unequip", "craft", "interact", "combat", "mine", "build", "tribe_create", "tribe_invite", "tribe_accept", "tribe_leave", "tribe_kick", "tribe_leader", "chat", "group_create", "group_invite", "group_accept", "group_leave", "group_kick", "call_invite", "call_accept", "call_leave", "block", "chest_transfer", "refuel", "research", "craft_cancel", "repair", "plant", "harvest_crop", "fish", "tame", "map_mark", "map_remove"]
 
 const DEFAULT_PORT := 24567
 const MAX_PLAYERS := 100
@@ -455,15 +455,19 @@ static func valid_command(command: String, data: Dictionary) -> bool:
 		if not _number(expected.get("count")) or expected["count"] < 1 or expected["count"] > 9999 or expected["count"] != floorf(expected["count"]): return false
 		var base := data.duplicate(true); base.erase("expected")
 		return valid_command(command, base)
+	if command=="craft" and data.has("request_id"):
+		if not data["request_id"] is String or data["request_id"].is_empty() or data["request_id"].length()>64:return false
+		var base:=data.duplicate();base.erase("request_id")
+		return valid_command(command,base)
 	if command == "appearance":
 		return preload("res://Character/Appearance.gd").valid(data)
-	var fields: Dictionary = {"tribe_war":["target"],"tribe_alliance":["target"],"tribe_accept_alliance":["target"],"tribe_break_alliance":["target"],"tribe_peace":["target"],"tribe_accept_peace":["target"],"factory_load":["station"],"factory_take":["station"],"dig":[],
+	var fields: Dictionary = {"station_select":["station","recipe"],"station_load":["station","amount"],"station_refund":["station"],"tribe_war":["target"],"tribe_alliance":["target"],"tribe_accept_alliance":["target"],"tribe_break_alliance":["target"],"tribe_peace":["target"],"tribe_accept_peace":["target"],"factory_load":["station"],"factory_take":["station"],"dig":[],
 		"eat": ["item"], "drink": [], "cook": [], "respawn": [], "inventory_sort": [], "inventory_move": ["from", "to", "amount"], "inventory_drop": ["slot", "amount"], "equip": ["slot"], "unequip": ["equipment"], "craft": ["recipe"], "interact": [], "mine": [], "combat": ["kind"],
 		"tribe_create": ["name"], "tribe_invite": ["target"], "tribe_accept": [], "tribe_leave": [], "tribe_kick": ["target"], "tribe_leader": ["target"],
 		"chat": ["channel","target","text"], "group_create": ["name","kind"], "group_invite": ["id","target"], "group_accept": [], "group_leave": ["id"], "group_kick": ["id","target"], "call_invite": ["target"], "call_accept": ["id"], "call_leave": ["id"], "block": ["target","enabled"],
 		"chest_transfer": ["structure","slot","amount","to_chest"], "refuel": [], "research": ["technology"], "craft_cancel": ["index"], "repair": ["slot"], "plant": ["structure","crop"], "harvest_crop": ["structure"], "fish": [], "tame": ["animal"], "map_mark": ["position","name","color","shared"], "map_remove": ["id"]}
 	if command == "build":
-		if not data.get("piece") is String or data["piece"] not in ["foundation","floor","wall","window","door","roof","stairs","fence","bed","chest","garden","lantern","torch","raft","totem","workbench","furnace","sawmill","loom","crusher"]: return false
+		if not data.get("piece") is String or (not data["piece"] in ["foundation","floor","wall","window","door","roof","stairs","fence","bed","chest","garden","lantern","torch","raft","totem"] and not preload("res://Items/Catalog.gd").station_ids().has(data["piece"])): return false
 		if data.size() != (2 if data.has("rotation") else 1): return false
 		return not data.has("rotation") or (_number(data["rotation"]) and data["rotation"] == floorf(float(data["rotation"])) and data["rotation"] >= 0 and data["rotation"] <= 3)
 	if not fields.has(command) or data.size() != fields[command].size(): return false

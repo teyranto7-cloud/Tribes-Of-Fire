@@ -17,6 +17,8 @@ var drop_zone
 var _refresh_left: float = 0.0
 var material_rows: Dictionary = {}
 var quickbar_slot: OptionButton
+var recipe_category:OptionButton
+var recipe_categories:Array=[""]
 func label(pt: String,en: String) -> String: return game.hud.t(pt,en)
 func configure(value, _language: int = 0) -> void:
 	game=value
@@ -48,8 +50,8 @@ func configure(value, _language: int = 0) -> void:
 		grid.add_child(b);buttons.append(b)
 	detail=Label.new();detail.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;inventory.add_child(detail)
 	var actions:=GridContainer.new();actions.columns=3;inventory.add_child(actions)
-	for action in ["Equip","Unequip","Eat","Drop","Repair","Split","Sort"]:
-		var b:=Button.new();b.text=label({"Equip":"Equipar","Unequip":"Desequipar","Eat":"Consumir","Drop":"Descartar","Repair":"Reparar","Split":"Dividir pilha","Sort":"Organizar"}.get(action,action),action);b.pressed.connect(func():_action(action));actions.add_child(b)
+	for action in ["Equip","Unequip","Eat","Drop","Repair","Split","Sort","Place"]:
+		var b:=Button.new();b.text=label({"Equip":"Equipar","Unequip":"Desequipar","Eat":"Consumir","Drop":"Descartar","Repair":"Reparar","Split":"Dividir pilha","Sort":"Organizar","Place":"Posicionar"}.get(action,action),action);b.pressed.connect(func():_action(action));actions.add_child(b)
 	var quick := HBoxContainer.new();inventory.add_child(quick)
 	quickbar_slot=OptionButton.new()
 	for i in range(9):quickbar_slot.add_item(label("Atalho ","Shortcut ")+str(i+1))
@@ -62,6 +64,15 @@ func configure(value, _language: int = 0) -> void:
 	var craft:=VBoxContainer.new();craft.name=label("Fabricação","Crafting");tabs.add_child(craft)
 	search=LineEdit.new();search.placeholder_text=label("Buscar item ou material…","Search item or material…")
 	search.text_changed.connect(func(_text):_refresh_recipes());craft.add_child(search)
+	recipe_category=OptionButton.new();recipe_category.add_item(label("Todas as categorias","All categories"))
+	for id in Catalog.RECIPES:
+		var type:String=Catalog.recipe(id).get("category","materials")
+		if type not in recipe_categories:recipe_categories.append(type);recipe_category.add_item(Catalog.localized(Catalog.database()["categories"].get(type,{"en":type})))
+	recipe_category.item_selected.connect(func(_index):_refresh_recipes());craft.add_child(recipe_category)
+	var guide:=RichTextLabel.new();guide.fit_content=true;guide.add_theme_font_size_override("normal_font_size",13)
+	var steps:Array=Catalog.database()["guide"].get("pt_BR" if TranslationServer.get_locale().begins_with("pt") else "en",[])
+	guide.text="\n".join(PackedStringArray(steps));guide.visible=false;craft.add_child(guide)
+	var toggle:=Button.new();toggle.text=label("Guia de progressão","Progression guide");toggle.pressed.connect(func():guide.visible=not guide.visible);craft.add_child(toggle)
 	var technology:=Button.new();technology.text=label("Pesquisa e tecnologias →","Research and technology →")
 	technology.pressed.connect(func():game.hud.show_panel("technology"));craft.add_child(technology)
 	for i in range(5):
@@ -131,6 +142,9 @@ func _action(action: String) -> void:
 			if not payload.is_empty(): payload["amount"] = 1; drop_zone.request_drop(payload)
 		"Split": split_selected()
 		"Sort": game.request_command("inventory_sort", {})
+		"Place":
+			var kind:String=Catalog.get_item(slot.get("id","")).get("place","")
+			if not kind.is_empty():game.select_building(kind);game.hud.show_panel("")
 func _refresh(force: bool=false) -> void:
 	if game==null or game.inventory==null:return
 	var state:Dictionary=game.inventory.serialize()
@@ -141,9 +155,10 @@ func _refresh(force: bool=false) -> void:
 		buttons[i].visible = inventory_search.text.is_empty() and category.selected == 0 if slot.is_empty() else _matches(slot["id"])
 		buttons[i].text="·" if slot.is_empty() else item_name(slot["id"])+"\n×%d"%slot["count"]
 		buttons[i].icon = null if slot.is_empty() else preload("res://UI/ItemIcons.gd").icon(slot["id"])
-		buttons[i].tooltip_text="" if slot.is_empty() else item_name(slot["id"])+"\n"+Catalog.source_hint(slot["id"])
+		buttons[i].tooltip_text="" if slot.is_empty() else item_name(slot["id"])+"\n"+Catalog.source_hint(slot["id"])+"\n"+Catalog.localized(Catalog.get_item(slot["id"]).get("description",{}))+" · %.1f kg"%float(Catalog.get_item(slot["id"]).get("weight",0))
 		buttons[i].modulate=Color("#ffe3a2") if i==selected else Color.WHITE
 	capacity.text = label("Espaços ocupados: %d / 36", "Slots used: %d / 36") % state["slots"].filter(func(slot): return not slot.is_empty()).size()
+	capacity.text+=" · %.1f kg"%game.inventory.weight()
 	var current:Dictionary=state["slots"][selected]
 	detail.text=label("Selecione um item.","Select an item.") if current.is_empty() else item_name(current["id"])+" — "+Catalog.source_hint(current["id"])
 	if not current.is_empty():
@@ -159,11 +174,12 @@ func _refresh_recipes() -> void:
 	var jobs:Array=game.runtime.activities.queue(id)
 	for i in range(queue_labels.size()):
 		var b:=queue_labels[i];b.visible=i<jobs.size()
-		if b.visible:b.text=item_name(jobs[i]["recipe"])+" · %.1fs · "%jobs[i]["remaining"]+label("Cancelar e devolver materiais","Cancel and refund")
+		if b.visible:b.text=(label("Pronto; libere espaço · ","Ready; free space · ") if float(jobs[i]["remaining"])<=0 else "")+item_name(jobs[i]["recipe"])+" · %.1fs · "%jobs[i]["remaining"]+label("Cancelar e devolver materiais","Cancel and refund")
 	for recipe in recipes:
 		var b:Button=recipes[recipe];var data:Dictionary=Catalog.recipe(recipe)
 		var needle:=search.text.strip_edges().to_lower()
-		b.visible=needle.is_empty() or needle in item_name(recipe).to_lower() or needle in cost_text(data["cost"]).to_lower()
+		b.visible=needle.is_empty() or needle in item_name(recipe).to_lower() or needle in cost_text(data["cost"]).to_lower() or needle in str(data.get("category","")).to_lower() or needle in Catalog.localized(Catalog.database()["categories"].get(data.get("category","materials"),{})).to_lower() or needle in item_name(data["station"]).to_lower()
+		b.visible=b.visible and (recipe_category.selected==0 or data.get("category","")==recipe_categories[recipe_category.selected])
 		var materials: RichTextLabel = material_rows[recipe]
 		materials.visible = b.visible
 		var lines := PackedStringArray()
@@ -175,7 +191,9 @@ func _refresh_recipes() -> void:
 		materials.text = "  ·  ".join(lines)
 		var reason:String=game.runtime.craft_reason(id,recipe)
 		b.disabled=not reason.is_empty()
-		b.text=item_name(recipe)+" ×%d · %.1fs"%[int(data.get("yield",1)),float(data.get("time",2.5))]+"\n"+tr(str(data["station"]).capitalize())+(" · "+reason_text(reason) if not reason.is_empty() else " · "+label("Pronto para fabricar","Ready to craft"))
+		var outputs:=PackedStringArray()
+		for item in data["outputs"]:outputs.append("%s ×%d"%[item_name(item),data["outputs"][item]])
+		b.text=" + ".join(outputs)+" · %.1fs"%float(data.get("time",2.5))+"\n"+item_name(str(data["station"]))+(" · "+reason_text(reason) if not reason.is_empty() else " · "+label("Pronto para fabricar","Ready to craft"))
 		var hints:=PackedStringArray()
 		for material in data["cost"]:hints.append(item_name(material)+": "+Catalog.source_hint(material))
 		b.tooltip_text="\n".join(hints)

@@ -35,6 +35,11 @@ static func extra(data: Dictionary, extent: float) -> bool:
 		elif key=="resource_rate":
 			if not number(rules[key],0.25,4): return false
 		else: return false
+	for player in data.get("players",{}).values():
+		var requests:Variant=player.get("craft_requests",[])
+		if not requests is Array or requests.size()>128:return false
+		for request in requests:
+			if not request is String or request.is_empty() or request.length()>64:return false
 	var pieces: Variant = data.get("structures",[])
 	if not pieces is Array or pieces.size() > 512: return false
 	var ids := {}

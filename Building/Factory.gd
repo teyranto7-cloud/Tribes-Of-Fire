@@ -1,16 +1,26 @@
 extends RefCounted
-## Authoritative machine inventory. Time advances even when its owner disconnects.
+## The server updates input/output together. Old automatic machines keep their recipe.
 const Catalog=preload("res://Items/Catalog.gd")
-const RECIPES={"sawmill":{"input":{"wood":1},"output":{"plank":2},"seconds":6.0},"loom":{"input":{"fiber":3},"output":{"cloth":1},"seconds":7.0},"crusher":{"input":{"stone":1},"output":{"sand":2},"seconds":5.0}}
+static var RECIPES:Dictionary=Catalog.database().get("legacy_machines",{}).duplicate(true)
 static func empty() -> Dictionary:return {"input":{},"output":{},"progress":0.0}
+static func definition(kind: String,state: Dictionary) -> Dictionary:
+	var id:String=state.get("recipe","")
+	if id.is_empty() and RECIPES.has(kind):return RECIPES[kind].duplicate(true)
+	if id.is_empty():id=str(Catalog.station(kind).get("default_recipe",""))
+	var recipe:=Catalog.recipe(id)
+	if recipe.is_empty() or recipe["station"]!=kind:return {}
+	return {"input":recipe["cost"],"output":recipe["outputs"],"seconds":recipe["time"]}
 static func advance(state: Dictionary,kind: String,delta: float) -> void:
-	if not RECIPES.has(kind) or delta<=0:return
-	var recipe:Dictionary=RECIPES[kind]
+	var recipe:=definition(kind,state)
+	if recipe.is_empty() or not is_finite(delta) or delta<=0:return
 	for item in recipe["input"]:
 		if int(state["input"].get(item,0))<recipe["input"][item]:return
+	var output_keys:Dictionary=state["output"].duplicate()
 	for item in recipe["output"]:
+		output_keys[item]=true
 		if int(state["output"].get(item,0))+int(recipe["output"][item])>9999:return
-	state["progress"]=float(state["progress"])+minf(delta,60)
+	if output_keys.size()>8:return
+	state["progress"]=minf(120,float(state["progress"])+minf(delta,60))
 	var cycles:=mini(10,floori(float(state["progress"])/float(recipe["seconds"])))
 	for item in recipe["input"]:cycles=mini(cycles,int(state["input"].get(item,0))/int(recipe["input"][item]))
 	for item in recipe["output"]:cycles=mini(cycles,(9999-int(state["output"].get(item,0)))/int(recipe["output"][item]))
@@ -18,8 +28,10 @@ static func advance(state: Dictionary,kind: String,delta: float) -> void:
 	for item in recipe["input"]:state["input"][item]=int(state["input"].get(item,0))-int(recipe["input"][item])*cycles
 	for item in recipe["output"]:state["output"][item]=int(state["output"].get(item,0))+int(recipe["output"][item])*cycles
 	state["progress"]-=cycles*float(recipe["seconds"])
-static func valid(state: Variant) -> bool:
-	if not state is Dictionary or state.size()!=3:return false
+	if recipe["input"].keys().any(func(item):return int(state["input"].get(item,0))<int(recipe["input"][item])):state["progress"]=0.0
+static func valid(state: Variant,kind: String="") -> bool:
+	if not state is Dictionary or state.size() not in [3,4]:return false
+	if state.has("recipe") and (not state["recipe"] is String or not Catalog.RECIPES.has(state["recipe"]) or (not kind.is_empty() and Catalog.recipe(state["recipe"])["station"]!=kind)):return false
 	for field in ["input","output"]:
 		if not state.get(field) is Dictionary or state[field].size()>8:return false
 		for item in state[field]:
