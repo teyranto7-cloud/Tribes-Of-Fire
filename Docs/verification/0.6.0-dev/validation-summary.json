@@ -1,0 +1,22 @@
+{
+  "version": "0.6.0-dev",
+  "source_repository": "teyranto7-cloud/Tribes-Of-Fire222222222",
+  "source_commit": "3a2d32ed192225e65d639b6009163b8dd93dd51b",
+  "development_commit": "cb36efd",
+  "main_suite": {
+    "checks": 3358,
+    "failed": 0,
+    "runners": 19
+  },
+  "linux_export_checks": 6,
+  "ui_render_checks": 24,
+  "three_seed_screenshots": 9,
+  "ui_screenshots": 9,
+  "network": "server and two clients passed",
+  "multiplayer": "movement and shared harvest passed",
+  "reconnect": "same inventory after reconnect and server restart",
+  "install_script_repeat": "passed",
+  "windows_native_validation": "not executed locally; GitHub workflow will validate pushed package",
+  "physical_gpu_validation": "not executed",
+  "package_artifacts_verified": 5
+}
