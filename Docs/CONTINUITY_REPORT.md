@@ -53,6 +53,7 @@ Suíte principal final: **3.358 verificações, zero falhas, 19 runners**.
 Três exportações geradas; seis verificações dos binários Linux passaram.
 Os cinco artefatos em Downloads/0.6.0-dev tiveram tamanho e SHA256 conferidos.
 O install_script salvo foi reexecutado com sucesso e dependências existentes.
+O ZIP de fontes passou importação limpa e execução/salvamento sem caches (2 checks).
 
 - `Tests/test_frontier.gd`: 2.758 verificações; três seeds, 300 spawns com colisão,
   travessias, streaming remoto e reload de seed/recursos/construção/escavação.

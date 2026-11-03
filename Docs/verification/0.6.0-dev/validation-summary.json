@@ -18,5 +18,8 @@
   "install_script_repeat": "passed",
   "windows_native_validation": "not executed locally; GitHub workflow will validate pushed package",
   "physical_gpu_validation": "not executed",
-  "package_artifacts_verified": 5
+  "package_artifacts_verified": 5,
+  "source_package_checks": 2,
+  "source_package": "fresh import and play/save passed",
+  "package_commit": "e4fb3e3"
 }
