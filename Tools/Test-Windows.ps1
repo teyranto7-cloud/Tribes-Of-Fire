@@ -72,8 +72,8 @@ function Read-WorldSnapshot([string]$Directory) {
         $MaximumY = 40
         if ($Data.version -eq 4) {
             $World = $Data.world
-            if ($World -isnot [pscustomobject] -or $World.seed -ne $Data.seed -or $World.generator -notin @(0, 1, 2)) { throw 'Invalid world descriptor.' }
-            if (($World.generator -eq 0 -and ($World.size -ne 128 -or $World.seed -ne 1337)) -or ($World.generator -eq 1 -and $World.size -ne 320) -or ($World.generator -eq 2 -and $World.size -ne 1536)) { throw 'Unsupported generator dimensions.' }
+            if ($World -isnot [pscustomobject] -or $World.seed -ne $Data.seed -or $World.generator -notin @(0, 1, 2, 3)) { throw 'Invalid world descriptor.' }
+            if (($World.generator -eq 0 -and ($World.size -ne 128 -or $World.seed -ne 1337)) -or ($World.generator -eq 1 -and $World.size -ne 320) -or ($World.generator -in @(2, 3) -and $World.size -ne 1536)) { throw 'Unsupported generator dimensions.' }
             if ($World.generator -gt 0) { $Extent = $World.size / 2 + 1; $MinimumY = -30; $MaximumY = 120 }
         } elseif ($Data.seed -ne 1337 -or $Data.phase -gt 2700) { throw 'Invalid legacy world.' }
         $Players = @($Data.players.PSObject.Properties)

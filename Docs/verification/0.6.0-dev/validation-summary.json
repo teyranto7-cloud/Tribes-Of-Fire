@@ -16,7 +16,7 @@
   "multiplayer": "movement and shared harvest passed",
   "reconnect": "same inventory after reconnect and server restart",
   "install_script_repeat": "passed",
-  "windows_native_validation": "not executed locally; GitHub workflow will validate pushed package",
+  "windows_native_validation": "initial run rejected generator 3 in an outdated test validator; validator updated, final run pending",
   "physical_gpu_validation": "not executed",
   "package_artifacts_verified": 5,
   "source_package_checks": 2,

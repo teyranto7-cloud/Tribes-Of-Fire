@@ -75,6 +75,20 @@ jobs:
         shell: pwsh
         run: |
           ./Tools/Test-Windows.ps1 -Installer (Join-Path $env:PACKAGE_DIRECTORY ('TribesOfFire-' + $env:PACKAGE_VERSION + '-Windows-Setup.exe')) -OutputDirectory (Join-Path $env:RUNNER_TEMP 'Tribes-QA') -Headless
+      - name: Annotate failed native assertions
+        if: failure() && steps.package.outputs.available == 'true'
+        shell: pwsh
+        run: |
+          $reportPath = Join-Path $env:RUNNER_TEMP 'Tribes-QA/windows-report.json'
+          if (Test-Path $reportPath) {
+            $report = Get-Content -Raw $reportPath | ConvertFrom-Json
+            foreach ($check in $report.ExecutedChecks) {
+              if ($check.Result -eq 'Failed') {
+                $message = ($check.Check + ': ' + $check.Detail).Replace('%', '%25').Replace("`r", '%0D').Replace("`n", '%0A')
+                Write-Output "::error::$message"
+              }
+            }
+          }
       - name: Publish native Windows test evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
