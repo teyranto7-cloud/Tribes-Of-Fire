@@ -25,5 +25,17 @@
   "source_package": {
     "checks": 2,
     "failed": 0
+  },
+  "native_windows": {
+    "checks": 24,
+    "failed": 0,
+    "mode": "headless; graphical checks pending",
+    "workflow": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41803077369",
+    "commit": "d070220f40b66248bf0388d1429953e986f47fa6"
+  },
+  "downloads": {
+    "artifacts": 5,
+    "http_status": 200,
+    "sizes_match": true
   }
 }

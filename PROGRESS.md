@@ -10,8 +10,8 @@ tradução inglesa e viewport adaptado à janela real.
 Suíte completa: **4209 checks / 0 falhas**. As nove regressões novas passaram;
 ENet com dois clientes, replay, reconexão e reinício passou; binários Linux/servidor
 passaram seis checks. GUI: 34 checks, sete capturas reais e três resoluções.
-Instalador e ZIPs são vinculados ao recibo de fontes/binários; resultados de pacote
-extraído e QA Windows estão em [Docs/DELIVERY_0.7.md](Docs/DELIVERY_0.7.md).
+Instalador e ZIPs vinculados ao recibo: fontes extraídas 2/0; QA nativo Windows
+24/0 (runtime headless). Cinco downloads públicos conferidos. Resultados em [Docs/DELIVERY_0.7.md](Docs/DELIVERY_0.7.md).
 
 O histórico abaixo é preservado. Esta entrega não conclui 1.0, arte final,
 energia/esteiras, hardware físico ou carga de 100 jogadores.

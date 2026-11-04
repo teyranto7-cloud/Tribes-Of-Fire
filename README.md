@@ -22,7 +22,7 @@ abastecer e retirar produtos. Consulte o [relatório da Fase 3](Docs/PHASE3_REPO
 No Windows, execute o instalador ou extraia o ZIP e abra `TribesOfFire.exe`.
 No Linux, extraia o ZIP e execute `chmod +x TribesOfFire.x86_64` seguido de
 `./TribesOfFire.x86_64`. O jogo exportado não exige o editor Godot.
-[Hashes SHA256](Downloads/0.7.0-dev/SHA256SUMS.txt) · [Verificação desta entrega](Docs/DELIVERY_0.7.md).
+[Hashes SHA256](Downloads/0.7.0-dev/SHA256SUMS.txt) · [Verificação desta entrega](Docs/DELIVERY_0.7.md) · [Teste Windows aprovado](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41803077369).
 A versão permanece em desenvolvimento; os pacotes anteriores estão preservados.
 
 ## Continuidade 0.6.0-dev

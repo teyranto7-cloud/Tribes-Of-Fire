@@ -1,0 +1,32 @@
+[
+  {
+    "name": "TribesOfFire-0.7.0-dev-Windows.zip",
+    "status": 200,
+    "content_length": "53374504",
+    "url": "https://raw.githubusercontent.com/teyranto7-cloud/Tribes-Of-Fire/d070220f40b66248bf0388d1429953e986f47fa6/Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Windows.zip"
+  },
+  {
+    "name": "TribesOfFire-0.7.0-dev-Linux.zip",
+    "status": 200,
+    "content_length": "44563574",
+    "url": "https://raw.githubusercontent.com/teyranto7-cloud/Tribes-Of-Fire/d070220f40b66248bf0388d1429953e986f47fa6/Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Linux.zip"
+  },
+  {
+    "name": "TribesOfFire-0.7.0-dev-Server-Linux.zip",
+    "status": 200,
+    "content_length": "44564379",
+    "url": "https://raw.githubusercontent.com/teyranto7-cloud/Tribes-Of-Fire/d070220f40b66248bf0388d1429953e986f47fa6/Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Server-Linux.zip"
+  },
+  {
+    "name": "TribesOfFire-0.7.0-dev-Windows-Setup.exe",
+    "status": 200,
+    "content_length": "43097325",
+    "url": "https://raw.githubusercontent.com/teyranto7-cloud/Tribes-Of-Fire/d070220f40b66248bf0388d1429953e986f47fa6/Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Windows-Setup.exe"
+  },
+  {
+    "name": "TribesOfFire-0.7.0-dev-Source.zip",
+    "status": 200,
+    "content_length": "29859140",
+    "url": "https://raw.githubusercontent.com/teyranto7-cloud/Tribes-Of-Fire/d070220f40b66248bf0388d1429953e986f47fa6/Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Source.zip"
+  }
+]

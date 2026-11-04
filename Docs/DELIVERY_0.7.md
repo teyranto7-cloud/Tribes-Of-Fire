@@ -28,7 +28,8 @@ O gerador publicado, os saves e os 100 itens/89 receitas/17 bancadas foram manti
 | Exportações | Windows x64, Linux x64 e servidor Linux; recibo fonte/binários |
 | Pacotes | Instalador NSIS + 4 ZIPs; 5 hashes e tamanhos conferidos |
 | ZIP de fontes extraído em diretório limpo | 2/0: importação e jogo/save reais |
-| QA Windows nativo | Resultado do workflow desta revisão é registrado após o envio |
+| QA Windows nativo | **24/0**, instalação/atalhos/runtime headless/save/reinício/reinstalação/desinstalação |
+| Downloads públicos | 5 arquivos, HTTP 200 e tamanhos corretos |
 
 Logs, capturas e recibo: [verification/0.7.0-dev/delivery](verification/0.7.0-dev/delivery).
 Os registros anteriores dessa pasta pertencem à base da Fase 3, antes destas correções.
@@ -57,3 +58,17 @@ Continuam pendentes sessões prolongadas em hardware físico, Windows gráfico,
 voz/microfone reais, multiplayer com perda/latência externa e carga de 100 jogadores.
 Arte final, conteúdo integral, energia/esteiras e integração Steam não são declarados
 concluídos. O instalador e o ZIP não transformam a versão de desenvolvimento em 1.0.
+
+
+## Publicação confirmada
+
+Código e cinco pacotes enviados normalmente para main no commit
+`d070220f40b66248bf0388d1429953e986f47fa6`, descendente da base remota preservada.
+[Workflow Windows aprovado](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41803077369):
+todas as etapas obrigatórias executaram e passaram. As 24 verificações constam
+no JSON/CSV anexados; não foram puladas por ausência de pacote.
+
+Instalador e ZIPs: [Downloads/0.7.0-dev](../Downloads/0.7.0-dev), com manifesto e
+SHA256. A página da versão usa links fixados nesse commit, correspondentes aos
+mesmos arquivos testados. Os relatórios presentes dentro dos pacotes foram gravados
+antes do QA Windows; este registro no repositório contém a confirmação posterior.
