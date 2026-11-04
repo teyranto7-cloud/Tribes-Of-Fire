@@ -1,3 +1,21 @@
+# Entrega 0.7.0-dev — 04/11/2026
+
+Criado por **felipealx**. A base atual do GitHub (634f07e) foi preservada, incluindo
+100 itens, 89 receitas, 17 bancadas, gerador 3, navegação e progressão da Fase 3.
+
+Correções desta revisão: pacotes tardios de rede/áudio ignorados ao sair, pickup
+mais próximo acessível junto de baú, contexto do baú mantido ao atualizar canais,
+tradução inglesa e viewport adaptado à janela real.
+
+Suíte completa: **4209 checks / 0 falhas**. As nove regressões novas passaram;
+ENet com dois clientes, replay, reconexão e reinício passou; binários Linux/servidor
+passaram seis checks. GUI: 34 checks, sete capturas reais e três resoluções.
+Instalador e ZIPs são vinculados ao recibo de fontes/binários; resultados de pacote
+extraído e QA Windows estão em [Docs/DELIVERY_0.7.md](Docs/DELIVERY_0.7.md).
+
+O histórico abaixo é preservado. Esta entrega não conclui 1.0, arte final,
+energia/esteiras, hardware físico ou carga de 100 jogadores.
+
 # Progresso — 0.5.0-dev
 
 Criado por **felipealx**. Continuação da 0.4.0-dev no mesmo projeto Godot 4.6.3.

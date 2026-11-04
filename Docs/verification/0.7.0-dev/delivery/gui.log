@@ -1,0 +1,42 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+DELIVERY_GUI PASS E opens an actual production station
+DELIVERY_GUI PASS Production has a functional supply control
+DELIVERY_GUI PASS Mouse click supplies exactly one cycle
+DELIVERY_GUI PASS Timed production creates actual outputs
+DELIVERY_GUI PASS Mouse click collects produced planks
+DELIVERY_GUI PASS Native responsive viewport (1280, 720)
+DELIVERY_GUI PASS I opens backpack (1280, 720)
+DELIVERY_GUI PASS Panel stays inside window (1280, 720)
+DELIVERY_GUI PASS Captured pixels match actual window inventory-1280x720
+DELIVERY_GUI PASS Saved inventory-1280x720
+DELIVERY_GUI PASS I closes backpack (1280, 720)
+DELIVERY_GUI PASS M opens navigation (1280, 720)
+DELIVERY_GUI PASS Captured pixels match actual window map-1280x720
+DELIVERY_GUI PASS Saved map-1280x720
+DELIVERY_GUI PASS Native responsive viewport (1920, 1080)
+DELIVERY_GUI PASS I opens backpack (1920, 1080)
+DELIVERY_GUI PASS Panel stays inside window (1920, 1080)
+DELIVERY_GUI PASS Captured pixels match actual window inventory-1920x1080
+DELIVERY_GUI PASS Saved inventory-1920x1080
+DELIVERY_GUI PASS I closes backpack (1920, 1080)
+DELIVERY_GUI PASS M opens navigation (1920, 1080)
+DELIVERY_GUI PASS Captured pixels match actual window map-1920x1080
+DELIVERY_GUI PASS Saved map-1920x1080
+DELIVERY_GUI PASS Native responsive viewport (800, 600)
+DELIVERY_GUI PASS I opens backpack (800, 600)
+DELIVERY_GUI PASS Panel stays inside window (800, 600)
+DELIVERY_GUI PASS Captured pixels match actual window inventory-800x600
+DELIVERY_GUI PASS Saved inventory-800x600
+DELIVERY_GUI PASS I closes backpack (800, 600)
+DELIVERY_GUI PASS M opens navigation (800, 600)
+DELIVERY_GUI PASS Captured pixels match actual window map-800x600
+DELIVERY_GUI PASS Saved map-800x600
+DELIVERY_GUI PASS Captured pixels match actual window world-1280x720
+DELIVERY_GUI PASS Saved world-1280x720
+DELIVERY_GUI CHECKS=34 FAILED=0

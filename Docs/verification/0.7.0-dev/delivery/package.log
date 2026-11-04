@@ -1,0 +1,32 @@
+MakeNSIS v3.11-1 - Copyright 1999-2025 Contributors
+See the file COPYING for license details.
+Credits can be found in the Users Manual.
+
+Command line defined: "SOURCE_DIR=/tmp/tribes-package-qbkl2xa4/TribesOfFire-0.7.0-dev-Windows"
+Command line defined: "OUTPUT_FILE=/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.7.0-dev-Windows-Setup.exe"
+Command line defined: "PRODUCT_VERSION=0.7.0-dev"
+Command line defined: "PRODUCT_FILE_VERSION=0.7.0.0"
+Processing script file: "/workspace/Tribes-Of-Fire/Tools/windows_installer.nsi" (UTF8)
+
+Processed 1 file, writing output (x86-unicode):
+
+Output: "/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.7.0-dev-Windows-Setup.exe"
+Install: 5 pages (320 bytes), 1 section (4120 bytes), 510 instructions (14280 bytes), 534 strings (27830 bytes), 6 language tables (1884 bytes).
+Uninstall: 2 pages (192 bytes), 1 section (4120 bytes), 136 instructions (3808 bytes), 366 strings (16188 bytes), 6 language tables (1524 bytes).
+Datablock optimizer saved 26498 bytes (~0.0%).
+
+Using lzma (compress whole) compression.
+
+EXE header size:              117760 / 102400 bytes
+Install code:                          (46850 bytes)
+Install data:                          (122381152 bytes)
+Uninstall code+data:                   (46856 bytes)
+Compressed data:            42979561 / 122474858 bytes
+CRC (0x936770F4):                  4 / 4 bytes
+
+Total size:                 43097325 / 122577262 bytes (35.1%)
+/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.7.0-dev-Windows.zip 53374504 bytes
+/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.7.0-dev-Linux.zip 44563574 bytes
+/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.7.0-dev-Server-Linux.zip 44564379 bytes
+/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.7.0-dev-Windows-Setup.exe 43097325 bytes
+/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.7.0-dev-Source.zip 29859140 bytes

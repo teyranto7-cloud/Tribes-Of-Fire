@@ -44,6 +44,7 @@ func select(code: String) -> bool:
 	TranslationServer.set_locale(code)
 	return true
 func text(english: String, portuguese: String = "") -> String:
+	if locale == "en_US": return english
 	var translated := TranslationServer.translate(english)
 	if translated == english and locale == "pt_BR" and portuguese != "":
 		return portuguese

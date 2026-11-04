@@ -17,7 +17,13 @@ completos chegam a parede/baú e a uma ferramenta de cobre capaz de minerar ferr
 I abre a mochila; Fabricação contém busca, categorias e guia de progressão.
 Selecione um kit e use Posicionar. E abre a estação para selecionar receita,
 abastecer e retirar produtos. Consulte o [relatório da Fase 3](Docs/PHASE3_REPORT.md).
-[Pacotes 0.7.0-dev](Downloads/0.7.0-dev); entregas anteriores permanecem preservadas.
+**Baixar:** [Instalador Windows](Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Windows-Setup.exe?raw=true) · [ZIP Windows](Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Windows.zip?raw=true) · [ZIP Linux](Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Linux.zip?raw=true) · [Servidor Linux](Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Server-Linux.zip?raw=true) · [Fontes ZIP](Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Source.zip?raw=true).
+
+No Windows, execute o instalador ou extraia o ZIP e abra `TribesOfFire.exe`.
+No Linux, extraia o ZIP e execute `chmod +x TribesOfFire.x86_64` seguido de
+`./TribesOfFire.x86_64`. O jogo exportado não exige o editor Godot.
+[Hashes SHA256](Downloads/0.7.0-dev/SHA256SUMS.txt) · [Verificação desta entrega](Docs/DELIVERY_0.7.md).
+A versão permanece em desenvolvimento; os pacotes anteriores estão preservados.
 
 ## Continuidade 0.6.0-dev
 

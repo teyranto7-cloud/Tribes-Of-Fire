@@ -57,3 +57,13 @@ O empacotamento exige recibo de fontes/binários; NSIS e ZIPs incluem atribuiç�
 Não há WAL/fsync nem garantia contra queda de energia. Rede ainda ENet experimental,
 sem capacidade 100 jogadores comprovada ou autenticação comercial. Limites completos
 em PROGRESS.md e Docs/PENDENCIAS.md. A arquitetura anterior está no histórico Git.
+
+
+## Continuidade da entrega 0.7
+
+A base GitHub 634f07e permanece fonte de verdade para gerador, itens, receitas,
+estações e APIs da Fase 3. Runtime prioriza pickups acessíveis mais próximos de
+estruturas; atualizações de canais conservam o baú aberto. Após Main.quitting,
+snapshots/eventos/playback são descartados antes de acessar emissores liberados.
+O viewport acompanha o tamanho real da janela. Tests/test_delivery_regressions.gd
+reproduz esses limites; Tools/capture_delivery.gd verifica entrada real e produção.

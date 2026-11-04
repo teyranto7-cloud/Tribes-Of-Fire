@@ -106,7 +106,7 @@ def main() -> None:
                               'test_gameplay.gd', 'test_v3.gd', 'test_gameplay_regressions.gd',
                               'test_tribes_regression.gd', 'test_ui_regressions.gd', 'test_phase2.gd', 'test_phase3.gd', 'test_frontier.gd',
                               'test_voice_regressions.gd', 'test_reliability.gd',
-                              'test_startup_close.gd', 'test_playability.gd', 'test_reconstruction.gd', 'test_runner.gd')
+                              'test_startup_close.gd', 'test_delivery_regressions.gd', 'test_playability.gd', 'test_reconstruction.gd', 'test_runner.gd')
              if (ROOT / 'Tests' / name).is_file()]
     if not tests:
         raise SystemExit('No test runner found; refusing to export an untested build')

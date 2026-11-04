@@ -1,0 +1,14 @@
+{
+	"captures": [
+		"res://builds/delivery/screenshots/inventory-1280x720.png",
+		"res://builds/delivery/screenshots/map-1280x720.png",
+		"res://builds/delivery/screenshots/inventory-1920x1080.png",
+		"res://builds/delivery/screenshots/map-1920x1080.png",
+		"res://builds/delivery/screenshots/inventory-800x600.png",
+		"res://builds/delivery/screenshots/map-800x600.png",
+		"res://builds/delivery/screenshots/world-1280x720.png"
+	],
+	"checks": 34,
+	"failed": 0,
+	"method": "Xorg/Mesa llvmpipe, actual window pixels and Input.parse_input_event keys/mouse. UI interactions disable 3D drawing only; world capture enables 3D. Fixture items for UI; authoritative resource collection is independently tested in phase3 ENet."
+}

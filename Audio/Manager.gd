@@ -48,6 +48,7 @@ func stream(kind: String, loop: bool = false) -> AudioStreamWAV:
 		cache[kind] = value
 	return cache[kind]
 func play(kind: String, at: Vector3) -> void:
+	if game == null or game.quitting or pool.is_empty(): return
 	if game.graphics.applied.get("captions",false) and game.hud != null and kind in ["wood","stone","combat","damage","pickup","build"]:
 		game.hud.notify_message(TranslationServer.translate({"wood":"Wood cutting","stone":"Mining","combat":"Impact","damage":"Pain","pickup":"Item collected","build":"Building"}[kind]))
 	if game.session.role == "dedicated" or not is_instance_valid(game.player) or game.player.position.distance_to(at) > 24: return
@@ -59,6 +60,7 @@ func play(kind: String, at: Vector3) -> void:
 	player.volume_db = -17 if not kind.begins_with("step") else -24
 	player.play()
 func click() -> void:
+	if game == null or game.quitting or not is_instance_valid(ui): return
 	ui.stream = stream("ui")
 	ui.play()
 func _process(delta: float) -> void:

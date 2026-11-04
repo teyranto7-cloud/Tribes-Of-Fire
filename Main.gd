@@ -72,6 +72,8 @@ var _last_wall_usec: int = Time.get_ticks_usec()
 
 func _ready() -> void:
 	get_tree().auto_accept_quit = false
+	get_window().size_changed.connect(_resize_interface)
+	_resize_interface()
 	for arg in OS.get_cmdline_user_args():
 		var parts := arg.trim_prefix("--").split("=", true, 1)
 		cli[parts[0]] = parts[1] if parts.size() > 1 else "true"
@@ -509,7 +511,7 @@ func network_state(recipient_id: int = 0) -> Dictionary:
 	return data
 
 func _receive_state(data: Dictionary) -> void:
-	if session.is_authority() or not ready_world:
+	if quitting or session.is_authority() or not ready_world:
 		return
 	snapshots_received += 1
 	running = true
@@ -967,3 +969,7 @@ func use_quick_slot(index: int) -> void:
 				request_command("equip",{"slot":i});tool=1;build_piece=""
 			else: request_command("eat",{"item":item})
 			return
+
+func _resize_interface() -> void:
+	var window := get_window()
+	if window.content_scale_size != window.size: window.content_scale_size = window.size

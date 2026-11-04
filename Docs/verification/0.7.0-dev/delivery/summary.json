@@ -1,0 +1,29 @@
+{
+  "version": "0.7.0-dev",
+  "base_commit": "634f07e",
+  "suite": {
+    "checks": 4209,
+    "failed": 0,
+    "runners": 21
+  },
+  "regressions": 9,
+  "exports": {
+    "checks": 6,
+    "failed": 0
+  },
+  "gui": {
+    "checks": 34,
+    "failed": 0,
+    "resolutions": [
+      "1280x720",
+      "1920x1080",
+      "800x600"
+    ]
+  },
+  "phase3_network": "passed: two clients, cycles, replay, transport reconnect and clean restart",
+  "source_sha256": "b1b896c3ab31028a832bb0cc27173dc681f40ff2ebda85b8021d51de26e0fd2b",
+  "source_package": {
+    "checks": 2,
+    "failed": 0
+  }
+}

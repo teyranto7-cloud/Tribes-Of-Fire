@@ -406,6 +406,7 @@ func publish_channels() -> void:
 	for id in game.players:
 		game.session.notify(id, "channels", channels.public_state(key(id)))
 func _event(kind: String, data: Dictionary) -> void:
+	if game.quitting: return
 	if kind=="factory":
 		factory_view=data.duplicate(true);game.hud.show_panel("factory");return
 	if kind == "chat":
@@ -419,9 +420,11 @@ func _event(kind: String, data: Dictionary) -> void:
 		game.hud.notify_message(TranslationServer.translate("Action completed" if data.get("ok",false) else "Action unavailable"))
 	elif kind == "storage":
 		channel_state["storage"] = data
-		game.hud.show_panel("storage")
+		if game.hud.mode != "storage": game.hud.show_panel("storage")
 	elif kind == "channels":
-		channel_state = data
+		var storage: Dictionary = channel_state.get("storage", {})
+		channel_state = data.duplicate(true)
+		if not storage.is_empty(): channel_state["storage"] = storage
 	elif kind == "notice":
 		game.hud.notify_message(game.localization.text(str(data["key"])))
 	elif kind == "sound":
@@ -615,20 +618,21 @@ func _interact(id: int) -> bool:
 	if _accessible(id,vessel) and not game.players.values().any(func(other):return other.boat==vessel):
 		body.boat=vessel;body.position=vessel.position+Vector3.UP*0.25;body.velocity=Vector3.ZERO;return true
 	var piece = game.world.structure_near(body)
+	var pickup = nearby_pickup(id)
+	if pickup != null and not activities.actions.has(id) and (not _accessible(id,piece) or pickup.position.distance_to(body.position) < piece.position.distance_to(body.position)):
+		if activities.start_action(id,"pickup",0.55,{"drop":pickup.get_instance_id()}):
+			body.play_action("gather",0.55)
+			return true
 	if _accessible(id,piece):
 		if piece.kind=="door": return game.world.toggle_door(piece.structure_id)
 		if piece.kind=="bed": piece.bound_to=key(id);body.respawn_position=game.world.bed_spawn(key(id));return true
 		if piece.kind=="chest":
 			game.session.notify(id,"storage",{"id":piece.structure_id,"storage":piece.storage.duplicate(true)})
-			if id==game.session.local_id: game.hud.show_panel("storage")
 			return true
 	if activities.actions.has(id): return false
 	for animal in wildlife.animals:
 		if animal.hp<=0 and not animal.harvested and body.position.distance_to(animal.position)<3:
 			if activities.start_action(id,"corpse",1.2,{"animal":animal.animal_id}): body.play_action("gather",1.2);return true
-	for drop in drops:
-		if body.position.distance_to(drop.position)<2.5 and _clear_interaction(body,drop.position+Vector3.UP*0.2):
-			if activities.start_action(id,"pickup",0.55,{"drop":drop.get_instance_id()}): body.play_action("gather",0.55);return true
 	for index in range(workshops.size()):
 		var station=workshops[index]
 		if _station_accessible(id,station):
@@ -786,3 +790,15 @@ func _station_accessible(id: int,station) -> bool:
 	if station==null or not game.players.has(id) or not Catalog.station_ids().has(station.kind):return false
 	var body=game.players[id]
 	return body.position.distance_to(station.position)<float(Catalog.station(station.kind).get("reach",4)) and (station.owner_key.is_empty() or tribes.can_build(station.owner_key,key(id))) and _clear_interaction(body,station.position+Vector3.UP,[station.get_rid()])
+
+func nearby_pickup(id: int):
+	if not game.players.has(id): return null
+	var body = game.players[id]
+	var result = null
+	var distance := 2.5
+	for drop in drops:
+		var next_distance: float = body.position.distance_to(drop.position)
+		if next_distance < distance and _clear_interaction(body,drop.position+Vector3.UP*0.2):
+			result = drop
+			distance = next_distance
+	return result
