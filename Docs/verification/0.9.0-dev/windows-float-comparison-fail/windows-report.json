@@ -1,0 +1,84 @@
+{
+  "System": "Microsoft Windows NT 10.0.26100.0",
+  "ExecutionMode": "headless; graphical validation remains pending",
+  "PreviousInstallerTested": "D:\\a\\Tribes-Of-Fire\\Tribes-Of-Fire\\Downloads\\0.8.0-dev\\TribesOfFire-0.8.0-dev-Windows-Setup.exe",
+  "CrossVersionUpgradeTested": true,
+  "PersistenceExecutionMode": "headless dedicated server restart",
+  "ExecutedChecks": [
+    {
+      "Check": "Previous released installer succeeds before upgrade",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Previous released Windows game starts and exits successfully",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Previous released Windows game initializes resources without script errors",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Previous version creates a real persisted profile",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Installer exits successfully",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Game executable installed",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Upgrade replaces the old game binary",
+      "Result": "Passed"
+    },
+    {
+      "Check": "All linked documentation installed",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Desktop shortcut created by default",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Shortcut points to the installed game",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Shortcut working directory is correct",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Start menu shortcut created",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Exported Windows game starts and exits successfully",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Exported Windows game initializes resources without script errors",
+      "Result": "Passed"
+    },
+    {
+      "Check": "Cross-version upgrade preserves every saved player field",
+      "Result": "Failed"
+    },
+    {
+      "Check": "Execution failure",
+      "Result": "Failed",
+      "Detail": "Cross-version upgrade preserves every saved player field"
+    }
+  ],
+  "ManualPending": [
+    "Installer language chooser and all six languages",
+    "Launch through the desktop shortcut without arguments",
+    "Rendered gameplay and graphical first-run language selection",
+    "Interactive character creation and persistence",
+    "Microphone and speakers",
+    "Multiplayer with real remote peers",
+    "Windows 10 and Windows 11 separate machines",
+    "Target hardware benchmark"
+  ]
+}

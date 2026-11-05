@@ -132,7 +132,7 @@ aprovação da 0.8 substitui os testes desta revisão.
 | Binários Linux/dedicado/reinício | **6/0**, executados fora do editor |
 | Comunicação e áudio sintético | Repetição com diagnóstico PASS: três clientes, canais/ganho/privacidade/bloqueio; nenhum microfone |
 | Instalador Windows/upgrade 0.8→0.9 | PENDENTE do workflow desta build |
-| Windows gráfico exportado | PENDENTE da prova gráfica desta build |
+| Windows gráfico exportado | **PASS**, captura após autosave, saída normal, VM via ANGLE; EXE idêntico ao export final por SHA256 |
 | ZIP de fontes extraído | **2/0**, importação e execução/save do projeto extraído |
 
 Fonte de aplicação congelada:
@@ -208,3 +208,10 @@ O relatório e as evidências do repositório registram os resultados confirmado
 Os testes de coleta/comunicação precedem apenas o ajuste do caminho da jangada e
 da rejeição de altura fora do schema. Esses cenários não exercitam os ramos alterados;
 a suíte completa e os testes da jangada/binários cobrem a revisão final.
+
+A primeira atualização Windows foi reprovada por igualdade estrita de double em
+`quiet_seconds`: diferença de ~7e-18 s no round-trip JSON. O diff confirmou que
+contagens, IDs, strings e os demais campos não mudaram. O comparador de QA mantém
+inteiros exatos e usa oito epsilons de máquina somente entre frações finitas;
+oito casos de comparação protegem mudança real, campo ausente e NaN. Os logs
+do FAIL foram preservados; o instalador é revalidado após atualizar o script.

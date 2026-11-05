@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41987315882",
+  "only_non_type_player_difference": {
+    "path": "players.1.quiet_seconds",
+    "before": 0.000882999999999967,
+    "after": 0.00088299999999996
+  },
+  "integer_counts_ids_and_strings": "unchanged",
+  "cause": "Strict double equality rejected Godot JSON decimal round-trip noise. No meaningful player-field difference."
+}

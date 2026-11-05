@@ -34,7 +34,16 @@ function Number-InRange($Value, [double]$Minimum, [double]$Maximum, [bool]$Integ
 function Json-Equal($Left, $Right) {
     if ($null -eq $Left -or $null -eq $Right) { return ($null -eq $Left -and $null -eq $Right) }
     # JSON may read the same integer as 1 or 1.0 on successive Godot saves.
-    if ((Is-Number $Left) -and (Is-Number $Right)) { return ([double]$Left -eq [double]$Right) }
+    if ((Is-Number $Left) -and (Is-Number $Right)) {
+        $A = [double]$Left
+        $B = [double]$Right
+        if ([double]::IsNaN($A) -or [double]::IsNaN($B) -or [double]::IsInfinity($A) -or [double]::IsInfinity($B)) { return $false }
+        # Counts/IDs and any integral side remain exact. Only fractional values
+        # tolerate eight machine epsilons for Godot JSON decimal round trips.
+        if ($A -eq [math]::Floor($A) -or $B -eq [math]::Floor($B)) { return ($A -eq $B) }
+        $Scale = [math]::Max(1.0, [math]::Max([math]::Abs($A), [math]::Abs($B)))
+        return ([math]::Abs($A - $B) -le (8.0 * [math]::Pow(2.0, -52.0) * $Scale))
+    }
     if ($Left -is [pscustomobject] -and $Right -is [pscustomobject]) {
         $Properties = @($Left.PSObject.Properties)
         if ($Properties.Count -ne @($Right.PSObject.Properties).Count) { return $false }

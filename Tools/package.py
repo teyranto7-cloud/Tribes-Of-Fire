@@ -29,7 +29,7 @@ DOCS = ('README.md', 'ARCHITECTURE.md', 'PROGRESS.md', 'CREDITS.md', 'CHANGELOG.
         'Docs/REQUEST_CONTENT.md', 'Docs/REQUEST_CONTINUITY_MASTER.md',
         'Docs/CONTINUITY_REPORT.md', 'Docs/PHASE3_REPORT.md', 'Docs/DELIVERY_0.7.md', 'Docs/AUDIT_PHASES_1_3.md', 'Docs/SETTLEMENT_REPORT.md', 'Docs/REQUEST_TRACEABILITY.md', 'Docs/ASSET_MANIFEST_0.8.md', 'Docs/BUILDING_PHASE4.md', 'Docs/ASSET_MANIFEST_0.9.md', 'Data/Biomes.json',
         'Docs/verification/0.6.0-dev/frontier-performance.json',
-        'Tests/MANUAL.md', 'Tools/Test-Windows.ps1')
+        'Tests/MANUAL.md', 'Tools/Test-Windows.ps1', 'Tools/Test-JsonComparison.ps1')
 
 
 def stage(target: str, destination: Path) -> Path:

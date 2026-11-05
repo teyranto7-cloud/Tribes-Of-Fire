@@ -52,8 +52,15 @@
     "first": "FAIL: C received one of four diplomatic packets; cause not isolated",
     "diagnostic_repeat": "PASS: unchanged assertions, all four diplomatic packets received; synthetic only"
   },
-  "windows_native": "pending final raft-adjusted installer",
-  "windows_graphics": "pending final raft-adjusted installer",
+  "windows_native": "pending revalidation: fractional JSON comparator corrected; first failure and diff preserved",
+  "windows_graphics": {
+    "url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41987374784",
+    "package_commit": "bbaec0f51eae749fd15359a3f0d58cea121bd145",
+    "executed_game_sha256": "c293151d62d6a4ff39b08f71593ecc0e088a7cffb8801a3daa993eceb1e8e30f",
+    "identity_verified_against_final_export": true,
+    "note": "The subsequent packaging changes only PowerShell QA/documents; the game executable is byte-identical.",
+    "result": "PASS: exported graphical game, actual screenshot and normal exit after autosave"
+  },
   "source_zip": {
     "checks": 2,
     "failed": 0
@@ -61,28 +68,28 @@
   "artifacts": [
     {
       "name": "TribesOfFire-0.9.0-dev-Windows.zip",
-      "size": 53521323,
-      "sha256": "d04b82b5355c09f793e5a7e2f825bac44f62705c50facf9c475ebd1c58523657"
+      "size": 53522608,
+      "sha256": "f67a3683201d93e6e6f51afcc8fdb996aea0a815327a80f1aa5bfe8d20024695"
     },
     {
       "name": "TribesOfFire-0.9.0-dev-Linux.zip",
-      "size": 44710392,
-      "sha256": "f68dd5e670f68191f90d34dc1da3dfce28a4e6ac26d4ce3969123af243b78084"
+      "size": 44711673,
+      "sha256": "414517066b792ebfd0f22403145b002bde2ca2c0289fd42ed36790b4f722c63b"
     },
     {
       "name": "TribesOfFire-0.9.0-dev-Server-Linux.zip",
-      "size": 44711281,
-      "sha256": "053f0807c7b7cb645dce6ae9d0b78b8c5091a4557f186839ea21a6ac26e14bc2"
+      "size": 44712576,
+      "sha256": "0e4a0add9fb676cce68c9a6882424fb0bedaff552f4a4227bb641c77dde4ca90"
     },
     {
       "name": "TribesOfFire-0.9.0-dev-Windows-Setup.exe",
-      "size": 43215836,
-      "sha256": "5fcb571dc3cc560a089f151f1852adaed14cf8f8c2f2e5e6f424d6e83a7634ce"
+      "size": 43217225,
+      "sha256": "25b2c8e65a9b46b992f7becf9e99f13c15de76f294dbd3bc26d59cb3155e6b24"
     },
     {
       "name": "TribesOfFire-0.9.0-dev-Source.zip",
-      "size": 34128662,
-      "sha256": "f82d9102774d91a2c3670d6d8433911f1d8dbce9376c274ac4dd2b3c2502a51e"
+      "size": 34542382,
+      "sha256": "d76834d8c97fb68f54735ab2b0b22186a8890debfe97e33a881508bec6d1fbfa"
     }
   ]
 }

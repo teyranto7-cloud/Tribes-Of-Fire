@@ -2,7 +2,7 @@ MakeNSIS v3.11-1 - Copyright 1999-2025 Contributors
 See the file COPYING for license details.
 Credits can be found in the Users Manual.
 
-Command line defined: "SOURCE_DIR=/tmp/tribes-package-tst1w1pe/TribesOfFire-0.9.0-dev-Windows"
+Command line defined: "SOURCE_DIR=/tmp/tribes-package-k85eje42/TribesOfFire-0.9.0-dev-Windows"
 Command line defined: "OUTPUT_FILE=/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.9.0-dev-Windows-Setup.exe"
 Command line defined: "PRODUCT_VERSION=0.9.0-dev"
 Command line defined: "PRODUCT_FILE_VERSION=0.9.0.0"
@@ -19,14 +19,14 @@ Using lzma (compress whole) compression.
 
 EXE header size:              117760 / 102400 bytes
 Install code:                          (46850 bytes)
-Install data:                          (122541711 bytes)
+Install data:                          (122542273 bytes)
 Uninstall code+data:                   (46856 bytes)
-Compressed data:            43098072 / 122635417 bytes
-CRC (0x87B77963):                  4 / 4 bytes
+Compressed data:            43099461 / 122635979 bytes
+CRC (0x8170566B):                  4 / 4 bytes
 
-Total size:                 43215836 / 122737821 bytes (35.2%)
-/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.9.0-dev-Windows.zip 53521323 bytes
-/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.9.0-dev-Linux.zip 44710392 bytes
-/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.9.0-dev-Server-Linux.zip 44711281 bytes
-/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.9.0-dev-Windows-Setup.exe 43215836 bytes
-/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.9.0-dev-Source.zip 34128662 bytes
+Total size:                 43217225 / 122738383 bytes (35.2%)
+/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.9.0-dev-Windows.zip 53522608 bytes
+/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.9.0-dev-Linux.zip 44711673 bytes
+/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.9.0-dev-Server-Linux.zip 44712576 bytes
+/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.9.0-dev-Windows-Setup.exe 43217225 bytes
+/workspace/Tribes-Of-Fire/dist/TribesOfFire-0.9.0-dev-Source.zip 34542382 bytes

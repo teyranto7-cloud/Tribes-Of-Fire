@@ -1,0 +1,7 @@
+{
+  "url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41987374784",
+  "package_commit": "bbaec0f51eae749fd15359a3f0d58cea121bd145",
+  "executed_game_sha256": "c293151d62d6a4ff39b08f71593ecc0e088a7cffb8801a3daa993eceb1e8e30f",
+  "identity_verified_against_final_export": true,
+  "note": "The subsequent packaging changes only PowerShell QA/documents; the game executable is byte-identical."
+}
