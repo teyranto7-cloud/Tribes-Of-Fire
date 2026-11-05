@@ -1,0 +1,8 @@
+{
+  "url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/42062707271",
+  "package_commit": "8ccd50fb8e2362825540c8519e43059780ac3393",
+  "result": "Passed",
+  "executed_game_sha256": "51fecb9af429290486239d6c6ab046f01c3b5c6abb8d83bf4f99066a64205cc6",
+  "identity_matches_final_export": true,
+  "mode": "Windows hosted VM, ANGLE/D3D11 software renderer; no human interaction or physical GPU; screenshot after actual autosave"
+}

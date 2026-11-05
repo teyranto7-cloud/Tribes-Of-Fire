@@ -17,8 +17,9 @@ perder suporte pode derrubar dependentes. Baús destruídos mantêm o saque pers
 [Resultados, comandos, arquivos e limites](Docs/LIFECYCLE_0.10.md) ·
 [Instalador e ZIPs 0.10.0-dev](https://github.com/teyranto7-cloud/Tribes-Of-Fire/releases/tag/v0.10.0-dev).
 Suíte **4.778/0**, GUI **21/0**, dois clientes/dedicado/reinício, regressões ENet
-das Fases 3/4 e binários Linux/dedicado **6/0** passaram nesta revisão. O roteiro
-integral do jogo e a arte final continuam em desenvolvimento.
+das Fases 3/4 e binários Linux/dedicado **6/0** passaram nesta revisão. Instalador
+Windows **34/0** com atualização 0.9→0.10; captura gráfica real do EXE em VM.
+O roteiro integral do jogo e a arte final continuam em desenvolvimento.
 
 ## Fase 4 — construção modular — 0.9.0-dev
 

@@ -1,0 +1,16 @@
+{
+  "SampledColors": 381,
+  "Status": "Passed",
+  "Renderer": [
+    "OpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)"
+  ],
+  "PhysicalGpuTest": false,
+  "Mode": "Native Windows exported graphical startup on hosted VM; no human interaction",
+  "InstallerSha256": "47d7ef040507c41c9b9dc10a607c4e2169992f1b93fd135815736e7c78014689",
+  "WindowSize": [
+    960,
+    650
+  ],
+  "CaptureTiming": "After a valid automatic world snapshot and five extra seconds, with the window inside the hosted desktop",
+  "WaitedForReadiness": true
+}

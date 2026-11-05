@@ -20,7 +20,8 @@ Resultados finais e hashes: `verification/0.10.0-dev` (matriz atualizada após o
 | Regressão ENet Fase 4 | **36/0 + 6/0**, três clientes e **52/0 por execução** |
 | Binários Linux/dedicado fora do editor | **6/0**, saves, reinício e liberação de locks |
 | ZIP de fontes extraído | **2/0**, importação nova e execução/save reais |
-| Windows nativo/upgrade e gráfico | Pendente do CI dos pacotes desta revisão |
+| Windows nativo/upgrade 0.9→0.10 | **34/0**, reinstalação, desinstalação e saves; comparador **8/0** |
+| Windows gráfico exportado | **PASS**, captura após autosave e saída normal em VM via ANGLE/D3D11 |
 
 Fonte congelada de aplicação:
 `756008ee311ddce9378d7c20bba7e5b57cde85bede091ad267b626b93978e345`.
@@ -144,3 +145,15 @@ pedidos está em `REQUEST_TRACEABILITY.md`; não se converte ausência de testes
 um recurso de transição em conclusão do jogo inteiro.
 
 Os documentos empacotados antecedem o QA Windows pós-publicação. O relatório e as evidências do repositório contêm os resultados finais.
+
+## Verificação dos pacotes publicados
+
+- [Windows nativo — 34/0 + comparador 8/0](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/42062465686): atualização **0.9→0.10**, perfil/seed/mundo preservados, reinstalação e desinstalação.
+- [Windows gráfico — captura real](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/42062707271): executável instalado abriu, criou snapshot automático e encerrou normalmente; VM via ANGLE/D3D11, sem GPU física.
+- Cinco downloads públicos HTTP 200 e tamanhos corretos, fixados no commit `8ccd50fb8e2362825540c8519e43059780ac3393`. Os cinco SHA256 foram verificados no workflow Windows.
+- A identidade do EXE executado foi comparada ao recibo final de build: `51fecb9af429290486239d6c6ab046f01c3b5c6abb8d83bf4f99066a64205cc6`.
+
+Relatórios brutos, proveniência e PNGs estão em `verification/0.10.0-dev`.
+Nenhum save/perfil privado dos artefatos de teste foi publicado. O relatório
+nativo é headless e enumera pendências humanas; a captura separada comprova
+renderização/startup/autosave na VM, sem aprovar todas essas pendências manuais.
