@@ -1,0 +1,6 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1742670082 count=1
+LIFECYCLE_CLIENT_READY merchant
+LIFECYCLE_CLIENT_PASS role=merchant checks=18 failed=0

@@ -1,0 +1,13 @@
+{
+	"checks": 21,
+	"failed": 0,
+	"method": "Actual mouse/keyboard and framebuffer; fixture resources and machine; industrial confirmations/cancel/refund, three resolutions, combat and physical debris.",
+	"renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+	"screenshots": [
+		"res://builds/lifecycle/screenshots/industry-manager-1280x720.png",
+		"res://builds/lifecycle/screenshots/industry-1920x1080.png",
+		"res://builds/lifecycle/screenshots/industry-800x600.png",
+		"res://builds/lifecycle/screenshots/before-destruction-fixture.png",
+		"res://builds/lifecycle/screenshots/physical-debris-fixture.png"
+	]
+}

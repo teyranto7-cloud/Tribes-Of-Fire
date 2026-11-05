@@ -6,6 +6,7 @@ on:
     paths:
       - 'Downloads/**'
       - 'Tools/Test-Windows.ps1'
+      - 'Tools/Test-JsonComparison.ps1'
       - '.github/workflows/windows-qa.yml'
   workflow_dispatch:
     inputs:
@@ -75,7 +76,7 @@ jobs:
         shell: pwsh
         run: |
           ./Tools/Test-JsonComparison.ps1
-          $previousVersion = if ([version](($env:PACKAGE_VERSION -split '-')[0]) -ge [version]'0.9.0') { '0.8.0-dev' } else { '0.7.1-dev' }
+          $previousVersion = if ([version](($env:PACKAGE_VERSION -split '-')[0]) -ge [version]'0.10.0') { '0.9.0-dev' } elseif ([version](($env:PACKAGE_VERSION -split '-')[0]) -ge [version]'0.9.0') { '0.8.0-dev' } else { '0.7.1-dev' }
           $previous = 'Downloads/' + $previousVersion + '/TribesOfFire-' + $previousVersion + '-Windows-Setup.exe'
           $upgrade = @{}
           if ([version](($env:PACKAGE_VERSION -split '-')[0]) -gt [version]'0.7.1' -and (Test-Path $previous)) { $upgrade.PreviousInstaller = $previous }

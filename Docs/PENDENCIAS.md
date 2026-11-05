@@ -1,3 +1,7 @@
+# Atualização — 0.10.0-dev
+
+Retirada de motor, demolição de bancada vazia, recolocação/remoção elétrica e dano estrutural básico agora têm implementação integrada. Isso substitui essas ausências da 0.9, sem concluir combate industrial, cargas estruturais ou cercos completos. [Relatório e pendências atuais](LIFECYCLE_0.10.md). As listas abaixo são históricas.
+
 # Atualização de construção — 0.9.0-dev
 
 A Fase 4 acrescentou catálogo, materiais, gerenciamento seguro, suporte configurável

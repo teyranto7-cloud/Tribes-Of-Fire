@@ -13,6 +13,21 @@ var nearby: OptionButton
 var selected_row: Dictionary={}
 var details: VBoxContainer
 var materials: Array=[]
+var _refresh_left:=0.0
+var _industry_signature:=0
+func _process(delta:float) -> void:
+	_refresh_left-=delta
+	if _refresh_left>0 or nearby==null or nearby.item_count==0:return
+	_refresh_left=.25
+	var selection:Variant=nearby.get_item_metadata(nearby.selected)
+	if not selection is String:return
+	# Industrial controls contain no editable text; refresh after replicated edits.
+	if find_children("*","ConfirmationDialog",true,false).any(func(d):return d.visible):return
+	var index:=int(selection.trim_prefix("w"))
+	if index>=game.runtime.workshops.size() or game.runtime.workshops[index].retired():refresh_nearby();return
+	var station=game.runtime.workshops[index]
+	var signature:int=hash([station.building,station.machine,game.runtime.grid.state(),game.runtime.automation.routes,game.inventory.items])
+	if signature!=_industry_signature:_industry_signature=signature;show_selected()
 func t(pt: String,en: String) -> String: return game.hud.t(pt,en)
 func configure(value, _language: int=0) -> void:
 	game=value
@@ -89,6 +104,7 @@ func refresh_nearby() -> void:
 			nearby.set_item_metadata(nearby.item_count-1,int(row["id"]))
 		for i in range(game.runtime.workshops.size()):
 			var station=game.runtime.workshops[i]
+			if station.retired(): continue
 			if station.position.distance_to(game.player.position)>9: continue
 			nearby.add_item("w%d %s"%[i,Items.display_name(station.kind)]); nearby.set_item_metadata(nearby.item_count-1,"w%d"%i)
 	show_selected()
@@ -103,9 +119,18 @@ func show_selected() -> void:
 	if selection is String:
 		var index:=int(selection.trim_prefix("w")); var station=game.runtime.workshops[index]
 		var info:=Label.new(); info.text=Items.display_name(station.kind)+" · r%d"%int(station.building.get("revision",1)); details.add_child(info)
-		var help:=Label.new(); help.text=t("Esvazie entrada/saída e filas. Desconecte cabos e esteiras antes. Motor instalado bloqueia a recolocação.","Empty input/output and crafting queues. Disconnect cables and belts first. An installed motor blocks relocation."); help.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; details.add_child(help)
+		var help:=Label.new(); help.text=t("Esvazie entrada/saída e filas. Remova cabos, esteiras e motor antes de mover ou demolir. IDs de bancadas removidas não são reutilizados.","Empty input/output and crafting queues. Remove cables, belts and motor before moving or demolishing. Removed station IDs are never reused."); help.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; details.add_child(help)
 		var move:=Button.new(); move.text=t("Mover bancada vazia","Move empty station"); move.disabled=not game.runtime.building.station_move_reason(game.session.local_id,index).is_empty(); details.add_child(move)
-		move.pressed.connect(func():game.relocate_station(index)); return
+		move.pressed.connect(func():game.relocate_station(index))
+		for operation in ["remove_motor","demolish"]:
+			var button:=Button.new();button.text=t("Retirar motor (devolve 1 motor)…","Remove motor (returns 1 motor)…") if operation=="remove_motor" else t("Demolir bancada (restitui 50%)…","Demolish station (refunds 50%)…")
+			var reason:String=game.runtime.industry.reason(game.session.local_id,index,operation)
+			button.disabled=not reason.is_empty();button.tooltip_text=Catalog.reason(reason) if not reason.is_empty() else button.text;details.add_child(button)
+			var payload:Dictionary={"station":index,"revision":int(station.building.get("revision",1)),"op":operation,"confirm":true}
+			button.pressed.connect(func():
+				var dialog:=ConfirmationDialog.new();dialog.title=t("Confirmar alteração industrial","Confirm industrial change");dialog.dialog_text=button.text+"\n"+t("Conteúdo, conexões, alcance e versão são conferidos novamente pelo servidor.","The server rechecks contents, connections, reach and revision.")
+				add_child(dialog);dialog.confirmed.connect(func():game.request_crafting_command("industry_edit",payload);dialog.queue_free());dialog.canceled.connect(dialog.queue_free);dialog.popup_centered())
+		return
 	var id:int=selection
 	selected_row=game.world.structure_registry.records.get(id,{}).duplicate(true)
 	if selected_row.is_empty(): return
@@ -121,12 +146,12 @@ func show_selected() -> void:
 	var allies:=CheckBox.new(); allies.text=t("Permitir interação de aliados","Allow allied interaction"); allies.button_pressed=selected_row.get("allow_allies",false); allies.disabled=not manage; details.add_child(allies)
 	var save:=Button.new(); save.text=t("Salvar nome e aparência","Save name and appearance"); save.disabled=not manage; details.add_child(save)
 	save.pressed.connect(func():send("configure",{"name":name.text,"paint":style.selected,"locked":locked.button_pressed,"allow_allies":allies.button_pressed}))
-	var repair:=Button.new(); repair.text=t("Reparar 25% (consome materiais)","Repair 25% (costs materials)"); repair.disabled=not editable or int(selected_row["hp"])>=maximum; details.add_child(repair); repair.pressed.connect(func():send("repair"))
+	var repair:=Button.new(); repair.text=t("Reparar 25% (consome materiais)","Repair 25% (costs materials)"); repair.disabled=not editable or int(selected_row["hp"])<=0 or int(selected_row["hp"])>=maximum; details.add_child(repair); repair.pressed.connect(func():send("repair"))
 	var upgrades:=HBoxContainer.new(); details.add_child(upgrades); var tier:=OptionButton.new(); upgrades.add_child(tier)
 	materials=[]
 	for key in Catalog.piece(selected_row["kind"]).get("tiers",Catalog.tiers()):
 		if Catalog.tiers().find(key)>Catalog.tiers().find(selected_row.get("tier","wood")): materials.append(key); tier.add_item(Catalog.tier_title(key))
-	var upgrade:=Button.new(); upgrade.text=t("Aprimorar","Upgrade"); upgrade.disabled=not editable or materials.is_empty(); upgrades.add_child(upgrade)
+	var upgrade:=Button.new(); upgrade.text=t("Aprimorar","Upgrade"); upgrade.disabled=not editable or int(selected_row["hp"])<=0 or materials.is_empty(); upgrades.add_child(upgrade)
 	var upgrade_cost:=RichTextLabel.new(); upgrade_cost.bbcode_enabled=true; upgrade_cost.fit_content=true; details.add_child(upgrade_cost)
 	var update_cost:=func():
 		if not materials.is_empty(): upgrade_cost.text=costs(Catalog.cost(selected_row["kind"],materials[tier.selected]))

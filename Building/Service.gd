@@ -25,7 +25,9 @@ func can_manage(row: Dictionary, actor: String) -> bool:
 func preview(id: int, kind: String, turn: int, options: Dictionary={}, ignore_id: int=0) -> Dictionary:
 	var is_station:bool=game.runtime.Catalog.station_ids().has(kind)
 	var site:Dictionary=Placement.station(game.world,game.players[id],turn,options) if is_station else Placement.evaluate(game.world,game.players[id],kind,turn,options,ignore_id)
-	if is_station: site["supports"]=[]
+	if is_station:
+		site["supports"]=[]
+		if ignore_id==0 and (game.runtime.workshops.size()>=preload("res://Building/Workshop.gd").MAX_RECORDS or game.runtime.workshops.filter(func(w):return not w.retired()).size()>=preload("res://Building/Workshop.gd").MAX_ACTIVE):site["valid"]=false;site["reason"]="limit"
 	if kind=="raft":
 		site=game.world.placement(game.players[id],kind,turn)
 		site["supports"]=[];site["reason"]="ok" if site["valid"] else "water"
@@ -123,6 +125,7 @@ func edit(id: int, data: Dictionary) -> bool:
 	if piece==null or not game.runtime._clear_interaction(game.players[id],piece.position+Vector3.UP*.7,piece.collision_rids()): return deny("visibility")
 	match data["op"]:
 		"repair":
+			if int(row["hp"])<=0: return deny("destroyed")
 			var maximum:=Catalog.maximum_hp(row.get("tier","wood"))
 			if int(row["hp"])>=maximum: return deny("intact")
 			var cost:=Catalog.cost(row["kind"],row.get("tier","wood"))
@@ -130,6 +133,7 @@ func edit(id: int, data: Dictionary) -> bool:
 			if not inv.transact(cost,{}): return deny("cost")
 			row["hp"]=mini(maximum,int(row["hp"])+ceili(maximum*.25))
 		"upgrade":
+			if int(row["hp"])<=0: return deny("destroyed")
 			var tier: String=data["tier"]
 			if Catalog.tiers().find(tier)<=Catalog.tiers().find(row.get("tier","wood")): return deny("material")
 			var cost:=Catalog.cost(row["kind"],tier)
@@ -162,6 +166,7 @@ func edit(id: int, data: Dictionary) -> bool:
 				if game.runtime.farming.has(str(target)) or affected["kind"]=="raft": return deny("contents")
 				var point: Vector3=game.world.structure_registry.point(affected)
 				for station in game.runtime.workshops:
+					if station.retired(): continue
 					if Vector2(station.position.x-point.x,station.position.z-point.z).length()<2.2 and station.position.y>point.y+.1 and station.position.y<point.y+4: return deny("dependants")
 				for device in game.runtime.grid.nodes.values():
 					var p:=Vector3(device["position"][0],device["position"][1],device["position"][2])
@@ -200,10 +205,11 @@ func toggle(id: int, piece) -> bool:
 	if piece.kind!="hatch": piece.record_extra["door_swing"]=swing
 	return game.world.toggle_door(piece.structure_id)
 static func valid_station_move(data: Dictionary) -> bool:
-	return data.size()==4 and Catalog.numeric(data.get("station"),0,31) and data["station"]==floorf(data["station"]) and Catalog.numeric(data.get("revision"),1,1000000000) and data["revision"]==floorf(data["revision"]) and Catalog.numeric(data.get("rotation"),0,3) and data["rotation"]==floorf(data["rotation"]) and data.get("options") is Dictionary and Catalog.valid_options(data["options"])
+	return data.size()==4 and Catalog.numeric(data.get("station"),0,preload("res://Building/Workshop.gd").MAX_RECORDS-1) and data["station"]==floorf(data["station"]) and Catalog.numeric(data.get("revision"),1,1000000000) and data["revision"]==floorf(data["revision"]) and Catalog.numeric(data.get("rotation"),0,3) and data["rotation"]==floorf(data["rotation"]) and data.get("options") is Dictionary and Catalog.valid_options(data["options"])
 func station_move_reason(id: int, index: int) -> String:
 	if index<0 or index>=game.runtime.workshops.size(): return "stale"
 	var station=game.runtime.workshops[index]
+	if station.retired(): return "stale"
 	if not can_manage({"owner":station.owner_key},game.runtime.key(id)): return "ownership"
 	if station.position.distance_to(game.players[id].position)>9: return "reach"
 	if index in game.runtime.grid.motors: return "contents"
@@ -233,5 +239,5 @@ func move_station(id: int, data: Dictionary) -> bool:
 	if not game.runtime._clear_interaction(game.players[id],station.position+Vector3.UP,[station.get_rid()]): return deny("visibility")
 	var site:=preview_station(id,index,int(data["rotation"]),data["options"])
 	if not site["valid"]: return deny(site["reason"])
-	station.position=site["position"]; station.rotation.y=int(site["rotation"])*PI*.5; station.building={"rotation":int(site["rotation"]),"revision":int(data["revision"])+1}
+	station.position=site["position"]; station.rotation.y=int(site["rotation"])*PI*.5; station.building["rotation"]=int(site["rotation"]); station.building["revision"]=int(data["revision"])+1
 	return true

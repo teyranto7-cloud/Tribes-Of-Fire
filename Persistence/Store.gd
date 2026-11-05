@@ -118,7 +118,7 @@ static func valid(data: Variant) -> bool:
 	for field in ["workshops", "drops"]:
 		if not data.has(field):
 			continue
-		if not data[field] is Array or data[field].size() > (32 if field == "workshops" else 128):
+		if not data[field] is Array or data[field].size() > (preload("res://Building/Workshop.gd").MAX_RECORDS if field == "workshops" else 128):
 			return false
 		for record in data[field]:
 			if not record is Dictionary or not position_valid(record.get("position"), extent):
@@ -128,7 +128,7 @@ static func valid(data: Variant) -> bool:
 			if field=="workshops" and record.has("machine") and not preload("res://Building/Factory.gd").valid(record["machine"],record["kind"]): return false
 			if modern and field=="workshops" and record.has("building"):
 				var building:Variant=record["building"]
-				if not building is Dictionary or building.size()!=2 or not integer(building.get("rotation"),0,3) or not integer(building.get("revision"),1,1000000000): return false
+				if not preload("res://Building/Workshop.gd").valid_building(building): return false
 			if field == "drops" and (not record.get("id") is String or not Catalog.known(record["id"]) or not integer(record.get("count"), 1, 9999)):
 				return false
 			if field == "drops" and record.has("durability") and not integer(record["durability"], 0, 100):

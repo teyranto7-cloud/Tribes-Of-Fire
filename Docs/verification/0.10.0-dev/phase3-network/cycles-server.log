@@ -1,0 +1,13 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=40960 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=955052792 count=1
+PLAYER_JOINED id=1881064468 count=2
+NET_GATHER_WOOD_DONE
+NET_BEFORE_CHARCOAL {"axe":2,"campfire":0,"clay":10,"cooking_fire":0,"copper_ore":8,"fiber":4,"pickaxe":1,"plank":6,"rope":1,"shelter":0,"stone":15,"wood":9}
+PLAYER_LEFT id=955052792
+PLAYER_JOINED id=309173569 count=2
+PHASE3_NETWORK CHECKS=372 FAILED=0 restore=false
+PLAYER_LEFT id=1881064468
+PLAYER_LEFT id=309173569

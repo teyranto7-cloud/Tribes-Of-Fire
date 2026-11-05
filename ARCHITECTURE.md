@@ -1,3 +1,7 @@
+# Continuidade — 0.10.0-dev
+
+Building/Industry valida edição industrial atômica; Workshop mantém até 256 slots históricos (32 ativos) sem reindexar IDs. Building/Destruction integra o resultado de Combat ao raycast e ao grafo de suporte, com loot de baú persistente. Building/Debris apresenta fragmentos físicos cosméticos limitados. Networking protocolo 8; schemas v4 aceitam metadados opcionais e recusam referências industriais removidas. [Integração e limites](Docs/LIFECYCLE_0.10.md).
+
 # Construção modular — extensão 0.9.0-dev
 
 `Data/Building.json` → `Building/Catalog.gd` define peças, materiais, custos e HP.

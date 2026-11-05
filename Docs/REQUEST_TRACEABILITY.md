@@ -1,3 +1,7 @@
+# Atualização — 0.10.0-dev
+
+Gestão industrial e dano estrutural básico foram integrados, com proteções de tribo, IDs estáveis e loot persistente. Os métodos, evidências e quatro estados estão em [LIFECYCLE_0.10.md](LIFECYCLE_0.10.md). O pedido de concluir todo o jogo permanece parcialmente atendido; hardware/microfones físicos, conteúdo final, Steam e carga de 100 jogadores não são declarados concluídos. Histórico preservado abaixo.
+
 # Atualização Fase 4 — 0.9.0-dev
 
 A construção foi ampliada para 39 peças/seis materiais, gerenciamento por revisão,

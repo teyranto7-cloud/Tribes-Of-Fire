@@ -66,6 +66,7 @@ var server_rules: Dictionary = ServerConfig.defaults()
 var build_piece: String = ""
 var build_rotation: int = 0
 var build_options: Dictionary = {"tier":"wood","height":0.0,"grid":true,"snap":true,"mirror":false}
+var relocating_device: String = ""
 var relocating_station: int = -1
 var relocating_id: int = 0
 var relocating_revision: int = 0
@@ -673,7 +674,9 @@ func request_weather(value: String) -> void:
 
 func use_tool() -> void:
 	if not build_piece.is_empty():
-		if relocating_station>=0:
+		if not relocating_device.is_empty():
+			request_crafting_command("device_edit",{"id":relocating_device,"revision":relocating_revision,"op":"move","confirm":true});cancel_building()
+		elif relocating_station>=0:
 			request_crafting_command("station_move",{"station":relocating_station,"revision":relocating_revision,"rotation":build_rotation,"options":build_options.duplicate(true)})
 			cancel_building()
 		elif relocating_id>0:
@@ -806,11 +809,12 @@ func _process(delta: float) -> void:
 			snapshot_timer = 0.0
 			for id in session.accepted_peers:
 				session.send_snapshot(id, network_state(id))
-	if relocating_station>=runtime.workshops.size(): cancel_building()
+	if relocating_station>=runtime.workshops.size() or (relocating_station>=0 and runtime.workshops[relocating_station].retired()) or (not relocating_device.is_empty() and not runtime.grid.nodes.has(relocating_device)): cancel_building()
 	world.preview.visible = player != null and hud.mode == "" and (not build_piece.is_empty() or tool in [2, 3]) and (not build_piece.is_empty() or inventory.count("shelter" if tool == 3 else "campfire") > 0)
 	if world.preview.visible:
 		var modular:bool=preload("res://Building/Catalog.gd").known(build_piece)
 		var place:Dictionary=runtime.building.preview(session.local_id,build_piece,build_rotation,build_options,relocating_id) if modular or preload("res://Items/Catalog.gd").station_ids().has(build_piece) else world.placement(player,build_piece if not build_piece.is_empty() else ("shelter" if tool==3 else "campfire"),build_rotation)
+		if not relocating_device.is_empty(): place=runtime.industry.preview_device(session.local_id,relocating_device)
 		if relocating_station>=0: place=runtime.building.preview_station(session.local_id,relocating_station,build_rotation,build_options)
 		if not world.preview.has_meta("base_mesh"): world.preview.set_meta("base_mesh",world.preview.mesh)
 		world.preview.mesh=preload("res://Building/Geometry.gd").preview_mesh(build_piece,bool(build_options.get("mirror",false))) if modular else world.preview.get_meta("base_mesh")
@@ -922,10 +926,10 @@ func load_audio_levels() -> void:
 			AudioServer.set_bus_volume_db(index, linear_to_db(clampf(float(level), 0.0001, 1.0)))
 
 func cancel_building() -> void:
-	build_piece=""; relocating_id=0; relocating_station=-1; relocating_revision=0; build_rotation=0
+	build_piece=""; relocating_device=""; relocating_id=0; relocating_station=-1; relocating_revision=0; build_rotation=0
 	if world.preview!=null: world.preview.hide()
 func select_building(kind: String, tier: String = "wood") -> void:
-	build_piece=kind; build_rotation=0; tool=1; relocating_id=0; relocating_station=-1; build_options["tier"]=tier; build_options["height"]=0.0; build_options["mirror"]=false
+	build_piece=kind; relocating_device=""; build_rotation=0; tool=1; relocating_id=0; relocating_station=-1; build_options["tier"]=tier; build_options["height"]=0.0; build_options["mirror"]=false
 	hud.show_panel("")
 func relocate_building(row: Dictionary) -> void:
 	select_building(row["kind"],row.get("tier","wood")); relocating_id=int(row["id"]); relocating_revision=int(row.get("revision",1)); build_rotation=int(row["rotation"]); build_options["mirror"]=row.get("mirror",false)
@@ -1028,3 +1032,8 @@ func request_crafting_command(command: String, data: Dictionary = {}) -> void:
 	var request:Dictionary=data.duplicate(true)
 	request["request_id"]=Crypto.new().generate_random_bytes(16).hex_encode()
 	request_command(command,request)
+
+func relocate_device(uid: String) -> void:
+	var row:Dictionary=runtime.grid.nodes.get(uid,{})
+	if row.is_empty():return
+	select_building(row["kind"]);relocating_device=uid;relocating_revision=int(row.get("revision",1))

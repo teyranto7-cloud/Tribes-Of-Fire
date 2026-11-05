@@ -23,6 +23,8 @@ var _fish_cooldowns: Dictionary = {}
 var _activities_usec: int = Time.get_ticks_usec()
 var game
 var building = preload("res://Building/Service.gd").new()
+var industry = preload("res://Building/Industry.gd").new()
+var destruction = preload("res://Building/Destruction.gd").new()
 var resource_seed: int = -1
 var tribes = Tribes.new()
 var channels = Channels.new()
@@ -58,6 +60,8 @@ signal message_added(data: Dictionary)
 func configure(value) -> void:
 	game = value
 	building.game = game
+	industry.game = game
+	destruction.game = game
 	game.world.structure_loaded.connect(func(piece):
 		var id:=str(piece.structure_id)
 		if piece.kind=="garden" and farming.has(id): piece.set_crop(farming[id]["crop"],farming[id]["growth"],farming[id]["water"]))
@@ -169,13 +173,14 @@ func _restore_workshops(records: Array) -> void:
 		var at:=Vector3(p[0],p[1],p[2])
 		if i<workshops.size():
 			var old=workshops[i]
-			if old.kind!=record["kind"] or old.owner_key!=record["owner"] or old.position!=at:
+			if old.kind!=record["kind"] or old.owner_key!=record["owner"] or old.position!=at or old.retired()!=bool(record.get("building",{}).get("retired",false)):
 				old.queue_free();var fresh:=Workshop.new();game.world.add_child(fresh)
 				fresh.setup(record["kind"],at,record["owner"]);workshops[i]=fresh
 		else:_add_workshop(record["kind"],at,record["owner"])
 		workshops[i].machine=record.get("machine",preload("res://Building/Factory.gd").empty()).duplicate(true)
 		workshops[i].building=record.get("building",{"rotation":0,"revision":1}).duplicate(true)
 		workshops[i].rotation.y=int(workshops[i].building.get("rotation",0))*PI*.5
+		workshops[i].apply_retired()
 
 func _add_workshop(kind: String, at: Vector3, owner: String) -> void:
 	var station := Workshop.new()
@@ -257,6 +262,7 @@ func tick(delta: float) -> void:
 		if _energy_left <= 0: _energy_left = 0.25; grid.evaluate(game.world, workshops, tribes)
 		for index in range(workshops.size()):
 			var station = workshops[index]
+			if station.retired(): continue
 			station.powered = not index in grid.motors or grid.powered.get("w%d"%index,false)
 			if station.powered: preload("res://Building/Factory.gd").advance(station.machine,station.kind,activity_delta * (1.5 if index in grid.motors else 1.0))
 		automation.advance(activity_delta,workshops,grid,tribes)
@@ -298,7 +304,7 @@ func command(id: int, action: String, data: Dictionary) -> void:
 			return
 	building.last_error=""
 	var receipt := ""
-	if action in ["station_move","build","structure_edit","craft_cancel","station_select","station_load","station_refund","factory_load","factory_take","trade_offer","trade_accept","trade_cancel","energy_connect","energy_disconnect","energy_toggle","energy_install","factory_route","factory_unroute"]:
+	if action in ["device_edit","industry_edit","station_move","build","structure_edit","craft_cancel","station_select","station_load","station_refund","factory_load","factory_take","trade_offer","trade_accept","trade_cancel","energy_connect","energy_disconnect","energy_toggle","energy_install","factory_route","factory_unroute"]:
 		receipt=Activities.operation_receipt(action,str(data.get("request_id","")))
 		if not receipt.is_empty() and receipt in activities.requests.get(id,[]): return
 	var accepted := false
@@ -382,6 +388,7 @@ func command(id: int, action: String, data: Dictionary) -> void:
 									pvp_damage += dealt
 								else:
 									pvp_blocked += 1
+						else: destruction.strike(id,result)
 						accepted = true
 			"eat":
 				var item:=str(data.get("item","berries"))
@@ -429,6 +436,8 @@ func command(id: int, action: String, data: Dictionary) -> void:
 			"station_select": accepted = _select_station_recipe(id,int(data["station"]),str(data["recipe"]))
 			"dig": accepted = _start_dig(id)
 			"mine": accepted = _start_mining(id, false)
+			"device_edit": accepted = industry.edit_device(id,data)
+			"industry_edit": accepted = industry.edit(id,data)
 			"station_move": accepted = building.move_station(id,data)
 			"structure_edit": accepted = building.edit(id,data)
 			"build":
@@ -447,10 +456,11 @@ func command(id: int, action: String, data: Dictionary) -> void:
 					if Catalog.get_item(item).get("place","")==kind and inv.count(item)>0:cost={item:1};break
 				if not cost.is_empty():
 					var site: Dictionary = game.world.placement(body, kind, int(data.get("rotation", 0)),data.get("options",{}))
-					if site["valid"] and _territory_allows(identity, site["position"]) and (not Catalog.station_ids().has(kind) or workshops.size()<32) and inv.transact(cost, {}):
+					if site["valid"] and _territory_allows(identity, site["position"]) and (not Catalog.station_ids().has(kind) or workshops.size()<Workshop.MAX_RECORDS and workshops.filter(func(w): return not w.retired()).size()<Workshop.MAX_ACTIVE) and inv.transact(cost, {}):
 						if Catalog.station_ids().has(kind):
 							_add_workshop(kind,site["position"],identity)
 							workshops[-1].machine["recipe"]=str(Catalog.station(kind)["default_recipe"])
+							workshops[-1].building["paid_cost"]=preload("res://Building/Catalog.gd").salvage_basis(kind,cost)
 							workshops[-1].building["rotation"]=int(data.get("rotation",0)); workshops[-1].rotation.y=int(data.get("rotation",0))*PI*.5
 						else: game.world.add_structure(kind, site["position"], int(data.get("rotation",0)), identity)
 						body.play_action("build", 0.75)
@@ -491,6 +501,10 @@ func publish_channels() -> void:
 		game.session.notify(id, "channels", channels.public_state(key(id)))
 func _event(kind: String, data: Dictionary) -> void:
 	if game.quitting: return
+	if kind=="building_impact":
+		if DisplayServer.get_name()!="headless":
+			var effect:=preload("res://Building/Debris.gd").new();game.world.add_child(effect);var p:Array=data["position"];effect.position=Vector3(p[0],p[1],p[2]);effect.setup(data["tier"],data["destroyed"],int(data["id"]))
+		return
 	if kind=="energy":
 		energy_view = str(data.get("id", "")); game.hud.show_panel("energy"); return
 	if kind=="factory":
@@ -674,6 +688,7 @@ func _chest_transfer(id: int, data: Dictionary) -> bool:
 	var slot := int(data.get("slot",-1));var amount:=int(data.get("amount",0))
 	if amount<1 or amount>9999: return false
 	if bool(data.get("to_chest",false)):
+		if chest.hp<=0: return false
 		if slot<0 or slot>=36: return false
 		var item: String = inv.serialize()["slots"][slot].get("id","")
 		if data.has("expected_item") and data["expected_item"] != item: return false
@@ -691,6 +706,7 @@ func _chest_transfer(id: int, data: Dictionary) -> bool:
 		chest.storage[item]=int(chest.storage[item])-amount
 		if chest.storage[item]==0: chest.storage.erase(item);chest.storage_wear.erase(item)
 	game.session.notify(id,"storage",{"id":chest.structure_id,"storage":chest.storage.duplicate(true)})
+	if chest.hp<=0 and chest.storage.is_empty(): game.world.remove_structure(chest.structure_id)
 	return true
 func _refuel(id: int) -> bool:
 	for fire in game.world.fires:
@@ -911,7 +927,7 @@ func _tick_drop_physics() -> void:
 		elif drop.freeze:drop.freeze=false
 
 func _station_accessible(id: int,station) -> bool:
-	if station==null or not game.players.has(id) or not Catalog.station_ids().has(station.kind):return false
+	if station==null or station.retired() or not game.players.has(id) or not Catalog.station_ids().has(station.kind):return false
 	var body=game.players[id]
 	return body.position.distance_to(station.position)<float(Catalog.station(station.kind).get("reach",4)) and (station.owner_key.is_empty() or tribes.can_build(station.owner_key,key(id))) and _clear_interaction(body,station.position+Vector3.UP,[station.get_rid()])
 
@@ -934,10 +950,12 @@ func _build_energy(id: int, kind: String) -> bool:
 		var p: Array = row["position"]
 		if Vector3(p[0],p[1],p[2]).distance_to(site["position"])<2.0: return false
 	for station in workshops:
-		if station.position.distance_to(site["position"])<2.0: return false
+		if not station.retired() and station.position.distance_to(site["position"])<2.0: return false
 	if not _clear_interaction(game.players[id],site["position"]+Vector3.UP): return false
 	if not game.inventories[id].consume(kind,1): return false
-	grid.add(kind,site["position"],key(id)); grid.evaluate(game.world,workshops,tribes)
+	var uid:String=grid.add(kind,site["position"],key(id))
+	grid.nodes[uid]["revision"]=1;grid.nodes[uid]["paid_cost"]=preload("res://Building/Catalog.gd").salvage_basis(kind,{kind:1})
+	grid.evaluate(game.world,workshops,tribes)
 	energy_visuals.rebuild(); return true
 
 func _energy_command(id: int, action: String, data: Dictionary) -> bool:
@@ -951,7 +969,9 @@ func _energy_command(id: int, action: String, data: Dictionary) -> bool:
 	var row: Dictionary = grid.endpoint(source,workshops)
 	if row.is_empty() or not tribes.can_build(row["owner"],identity) or game.players[id].position.distance_to(grid.point(source,workshops))>5: return false
 	if action=="energy_connect": return grid.link_ports(source,str(data["b"]),identity,game.inventories[id],game.world,workshops,tribes)
-	if action=="energy_toggle": grid.nodes[source]["enabled"]=not grid.nodes[source]["enabled"]; grid.evaluate(game.world,workshops,tribes); return true
+	if action=="energy_toggle":
+		grid.nodes[source]["enabled"]=not grid.nodes[source]["enabled"];grid.nodes[source]["revision"]=mini(1000000000,int(grid.nodes[source].get("revision",1))+1)
+		grid.evaluate(game.world,workshops,tribes);return true
 	if action=="energy_disconnect":
 		for index in range(grid.links.size()):
 			var link: Dictionary = grid.links[index]

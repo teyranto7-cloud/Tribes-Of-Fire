@@ -1,0 +1,92 @@
+{
+  "version": "0.10.0-dev",
+  "baseline": "71b2317fcc6ec83187cebbc1f0b45fc52e944f3f",
+  "application_source_sha256": "756008ee311ddce9378d7c20bba7e5b57cde85bede091ad267b626b93978e345",
+  "suite": {
+    "checks": 4778,
+    "failed": 0,
+    "runners": 31
+  },
+  "industry": {
+    "checks": 34,
+    "failed": 0
+  },
+  "structure_combat": {
+    "checks": 32,
+    "failed": 0
+  },
+  "lifecycle_network": {
+    "dedicated_checks": 23,
+    "restart_checks": 5,
+    "client_checks": [
+      19,
+      14,
+      18
+    ],
+    "failed": 0,
+    "clients": 2,
+    "materials_positions": "fixtures"
+  },
+  "gui": {
+    "checks": 21,
+    "failed": 0,
+    "method": "Actual mouse/keyboard and framebuffer; fixture resources and machine; industrial confirmations/cancel/refund, three resolutions, combat and physical debris.",
+    "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+    "screenshots": [
+      "res://builds/lifecycle/screenshots/industry-manager-1280x720.png",
+      "res://builds/lifecycle/screenshots/industry-1920x1080.png",
+      "res://builds/lifecycle/screenshots/industry-800x600.png",
+      "res://builds/lifecycle/screenshots/before-destruction-fixture.png",
+      "res://builds/lifecycle/screenshots/physical-debris-fixture.png"
+    ]
+  },
+  "windows_native": "pending current installer/upgrade",
+  "windows_graphics": "pending current exported EXE",
+  "source_zip": {
+    "checks": 2,
+    "failed": 0
+  },
+  "exports": {
+    "checks": 6,
+    "failed": 0
+  },
+  "phase3_network": {
+    "checks": 372,
+    "restart_checks": 8,
+    "failed": 0
+  },
+  "phase4_network": {
+    "checks": 36,
+    "restart_checks": 6,
+    "clients": 3,
+    "client_checks_each": 52,
+    "failed": 0
+  },
+  "artifacts": [
+    {
+      "name": "TribesOfFire-0.10.0-dev-Windows.zip",
+      "size": 53550204,
+      "sha256": "bc94479370f74979b9da304697b237fa62700a603dc83b3c8eb3ee2b7956dec8"
+    },
+    {
+      "name": "TribesOfFire-0.10.0-dev-Linux.zip",
+      "size": 44739303,
+      "sha256": "7bc0725df9b71acb002374bf2081e3b2be077558d6bf3ee2ec442cbf7464175d"
+    },
+    {
+      "name": "TribesOfFire-0.10.0-dev-Server-Linux.zip",
+      "size": 44740238,
+      "sha256": "6a10724f498667b146dc92d4f51441deefdc580657203d9155a8fe84f7a299f2"
+    },
+    {
+      "name": "TribesOfFire-0.10.0-dev-Windows-Setup.exe",
+      "size": 43240009,
+      "sha256": "47d7ef040507c41c9b9dc10a607c4e2169992f1b93fd135815736e7c78014689"
+    },
+    {
+      "name": "TribesOfFire-0.10.0-dev-Source.zip",
+      "size": 35304003,
+      "sha256": "e18c7c9bbc618446ea2ff1633f02c7d57c38e33b70edb168c965e67ea73e87ea"
+    }
+  ]
+}

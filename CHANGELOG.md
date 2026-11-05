@@ -1,3 +1,7 @@
+# 0.10.0-dev
+
+Retirada de motores; demolição/restituição de bancada vazia; recolocação e remoção elétrica; IDs industriais preservados; dano estrutural autoritativo com diplomacia; colapso por suporte com fragmentos físicos; baú destruído com conteúdo/desgaste conservado e recarregável. Protocolo 8, saves v4 compatíveis. Limites em Docs/LIFECYCLE_0.10.md.
+
 # 0.9.0-dev — Fase 4
 
 - 39 peças modulares, seis materiais, catálogo/favoritos, fantasmas e sockets.

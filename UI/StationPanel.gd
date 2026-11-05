@@ -51,6 +51,12 @@ func _refresh()->void:
 	var index:int=info["station"]
 	var state:Dictionary=info["state"]
 	if index>=0 and index<game.runtime.workshops.size():state=game.runtime.workshops[index].machine
+	if index>=0 and index<game.runtime.workshops.size() and game.runtime.workshops[index].retired():
+		detail.text=game.hud.t("Esta bancada foi removida. Feche esta janela.","This station was removed. Close this window.")
+		picker.disabled=true
+		for button in action_buttons.values(): button.disabled=true
+		if motor_button!=null: motor_button.disabled=true;wiring_button.disabled=true;route_button.disabled=true
+		return
 	var recipe:=preload("res://Building/Factory.gd").definition(info["kind"],state)
 	var lines:=PackedStringArray()
 	for item in recipe.get("input",{}):
@@ -106,7 +112,7 @@ func _route_targets()->void:
 	var item:String=route_items[route_item.selected]
 	for other in range(game.runtime.workshops.size()):
 		var station=game.runtime.workshops[other]
-		if other==index or station.position.distance_to(game.runtime.workshops[index].position)>8 or not game.runtime.tribes.can_build(station.owner_key,game.runtime.key(game.session.local_id)):continue
+		if station.retired() or other==index or station.position.distance_to(game.runtime.workshops[index].position)>8 or not game.runtime.tribes.can_build(station.owner_key,game.runtime.key(game.session.local_id)):continue
 		if not preload("res://Building/Factory.gd").definition(station.kind,station.machine).get("input",{}).has(item):continue
 		route_destinations.append(other);route_target.add_item("%s #%d"%[Catalog.display_name(station.kind),other+1])
 	if route_destinations.is_empty():route_target.add_item(game.hud.t("Nenhum destino compatível próximo","No compatible nearby destination"))

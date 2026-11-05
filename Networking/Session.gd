@@ -16,8 +16,8 @@ signal voice_received(id: int, sequence: int, packet: PackedByteArray, channel: 
 signal admin_requested(id: int, action: String, data: Dictionary)
 const ServerConfig = preload("res://Networking/ServerConfig.gd")
 const SnapshotCodec = preload("res://Networking/SnapshotCodec.gd")
-const PROTOCOL_VERSION := 7
-const COMMANDS := ["station_move","structure_edit","factory_route","factory_unroute","energy_connect","energy_disconnect","energy_toggle","energy_install","team_ping","trade_offer","trade_accept","trade_cancel","station_select","station_load","station_refund","tribe_war","tribe_alliance","tribe_accept_alliance","tribe_break_alliance","tribe_peace","tribe_accept_peace","factory_load","factory_take","dig","appearance", "eat", "drink", "cook", "respawn", "inventory_sort", "inventory_move", "inventory_drop", "equip", "unequip", "craft", "interact", "combat", "mine", "build", "tribe_create", "tribe_invite", "tribe_accept", "tribe_leave", "tribe_kick", "tribe_leader", "chat", "group_create", "group_invite", "group_accept", "group_leave", "group_kick", "call_invite", "call_accept", "call_leave", "block", "chest_transfer", "refuel", "research", "craft_cancel", "repair", "plant", "harvest_crop", "fish", "tame", "map_mark", "map_remove"]
+const PROTOCOL_VERSION := 8
+const COMMANDS := ["device_edit","industry_edit","station_move","structure_edit","factory_route","factory_unroute","energy_connect","energy_disconnect","energy_toggle","energy_install","team_ping","trade_offer","trade_accept","trade_cancel","station_select","station_load","station_refund","tribe_war","tribe_alliance","tribe_accept_alliance","tribe_break_alliance","tribe_peace","tribe_accept_peace","factory_load","factory_take","dig","appearance", "eat", "drink", "cook", "respawn", "inventory_sort", "inventory_move", "inventory_drop", "equip", "unequip", "craft", "interact", "combat", "mine", "build", "tribe_create", "tribe_invite", "tribe_accept", "tribe_leave", "tribe_kick", "tribe_leader", "chat", "group_create", "group_invite", "group_accept", "group_leave", "group_kick", "call_invite", "call_accept", "call_leave", "block", "chest_transfer", "refuel", "research", "craft_cancel", "repair", "plant", "harvest_crop", "fish", "tame", "map_mark", "map_remove"]
 
 const DEFAULT_PORT := 24567
 const MAX_PLAYERS := 100
@@ -455,7 +455,7 @@ static func valid_command(command: String, data: Dictionary) -> bool:
 		if not _number(expected.get("count")) or expected["count"] < 1 or expected["count"] > 9999 or expected["count"] != floorf(expected["count"]): return false
 		var base := data.duplicate(true); base.erase("expected")
 		return valid_command(command, base)
-	if command in ["station_move","build","structure_edit","craft","craft_cancel","station_select","station_load","station_refund","factory_load","factory_take","trade_offer","trade_accept","trade_cancel","energy_connect","energy_disconnect","energy_toggle","energy_install","factory_route","factory_unroute"] and data.has("request_id"):
+	if command in ["device_edit","industry_edit","station_move","build","structure_edit","craft","craft_cancel","station_select","station_load","station_refund","factory_load","factory_take","trade_offer","trade_accept","trade_cancel","energy_connect","energy_disconnect","energy_toggle","energy_install","factory_route","factory_unroute"] and data.has("request_id"):
 		if not data["request_id"] is String or data["request_id"].is_empty() or data["request_id"].length()>64:return false
 		var base:=data.duplicate();base.erase("request_id")
 		return valid_command(command,base)
@@ -474,6 +474,8 @@ static func valid_command(command: String, data: Dictionary) -> bool:
 		"tribe_create": ["name"], "tribe_invite": ["target"], "tribe_accept": [], "tribe_leave": [], "tribe_kick": ["target"], "tribe_leader": ["target"],
 		"chat": ["channel","target","text"], "group_create": ["name","kind"], "group_invite": ["id","target"], "group_accept": [], "group_leave": ["id"], "group_kick": ["id","target"], "call_invite": ["target"], "call_accept": ["id"], "call_leave": ["id"], "block": ["target","enabled"],
 		"chest_transfer": ["structure","slot","amount","to_chest"], "refuel": [], "research": ["technology"], "craft_cancel": ["index"], "repair": ["slot"], "plant": ["structure","crop"], "harvest_crop": ["structure"], "fish": [], "tame": ["animal"], "map_mark": ["position","name","color","shared"], "map_remove": ["id"]}
+	if command=="device_edit": return preload("res://Building/Industry.gd").valid_device(data)
+	if command=="industry_edit": return preload("res://Building/Industry.gd").valid(data)
 	if command=="station_move": return preload("res://Building/Service.gd").valid_station_move(data)
 	if command=="structure_edit": return preload("res://Building/Service.gd").valid_edit(data)
 	if command == "build":
@@ -495,7 +497,8 @@ static func valid_command(command: String, data: Dictionary) -> bool:
 				if not _number(value) or absf(float(value))>768: return false
 		elif key in ["slot","from","to","amount","index","animal","structure","color","station","quantity"] or (key=="id" and command=="map_remove"):
 			if not _number(data[key]) or float(data[key]) != floorf(float(data[key])): return false
-			var limits: Dictionary = {"station":[0,31],"slot":[0,35],"from":[0,35],"to":[0,35],"amount":[1,9999],"quantity":[1,9999],"index":[0,4],"animal":[0,95],"structure":[1,1000000],"color":[0,5],"id":[1,1000000]}
+			var limits: Dictionary = {"station":[0,preload("res://Building/Workshop.gd").MAX_RECORDS-1],"slot":[0,35],"from":[0,35],"to":[0,35],"amount":[1,9999],"quantity":[1,9999],"index":[0,4],"animal":[0,95],"structure":[1,1000000],"color":[0,5],"id":[1,1000000]}
+			if command in ["factory_route","factory_unroute"] and key in ["from","to"]: limits[key]=[0,preload("res://Building/Workshop.gd").MAX_RECORDS-1]
 			if data[key]<limits[key][0] or data[key]>limits[key][1]: return false
 		elif not data[key] is String: return false
 	if command in ["factory_route","factory_unroute"] and not preload("res://Items/Catalog.gd").known(data["item"]): return false

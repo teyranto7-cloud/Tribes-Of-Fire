@@ -1,0 +1,43 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+AUDIT_GUI PASS Management selects actual nearby machine
+AUDIT_GUI PASS Requested functional button exists
+AUDIT_GUI PASS Motor removal opens real confirmation
+AUDIT_GUI PASS Requested functional button exists
+AUDIT_GUI FAIL Mouse confirmation returns exactly one installed motor
+ERROR: Mouse confirmation returns exactly one installed motor
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (res://Tools/capture_audit.gd:11)
+       [1] run (res://Tools/capture_lifecycle.gd:40)
+       [2] press (res://Tools/capture_lifecycle.gd:16)
+       [3] frames (res://Tools/capture_audit.gd:13)
+AUDIT_GUI PASS Real framebuffer saved industry-manager-1280x720
+AUDIT_GUI PASS Requested functional button exists
+AUDIT_GUI PASS Industrial demolition opens confirmation
+AUDIT_GUI PASS Cancel preserves machine and paid materials
+AUDIT_GUI PASS Requested functional button exists
+AUDIT_GUI PASS Requested functional button exists
+AUDIT_GUI FAIL Mouse demolition removes actual machine and refunds once
+ERROR: Mouse demolition removes actual machine and refunds once
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (res://Tools/capture_audit.gd:11)
+       [1] run (res://Tools/capture_lifecycle.gd:49)
+       [2] press (res://Tools/capture_lifecycle.gd:16)
+       [3] frames (res://Tools/capture_audit.gd:13)
+AUDIT_GUI PASS Industrial menu fits (1920, 1080)
+AUDIT_GUI PASS Real framebuffer saved industry-1920x1080
+AUDIT_GUI PASS Industrial menu fits (800, 600)
+AUDIT_GUI PASS Real framebuffer saved industry-800x600
+AUDIT_GUI PASS Real framebuffer saved before-destruction-fixture
+AUDIT_GUI PASS World mouse click destroys the structure through actual combat
+AUDIT_GUI PASS Real framebuffer saved physical-debris-fixture
+AUDIT_GUI PASS Rendered physical debris is instantiated with bounded lifetime
+AUDIT_GUI PASS Debris frees bodies after lifetime
+LIFECYCLE_GUI CHECKS=21 FAILED=2

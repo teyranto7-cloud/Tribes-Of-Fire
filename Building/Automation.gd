@@ -6,6 +6,7 @@ var routes: Array = []
 
 func add(from: int, to: int, item: String, actor: String, inventory, workshops: Array, tribes, world = null) -> bool:
 	if from == to or from < 0 or to < 0 or from >= workshops.size() or to >= workshops.size() or routes.size() >= 32: return false
+	if workshops[from].retired() or workshops[to].retired(): return false
 	if not tribes.can_build(workshops[from].owner_key, actor) or not tribes.can_build(workshops[to].owner_key, actor): return false
 	if workshops[from].position.distance_to(workshops[to].position) > 8: return false
 	if not Factory.definition(workshops[from].kind, workshops[from].machine).get("output", {}).has(item): return false
@@ -28,6 +29,7 @@ func remove(from: int, to: int, item: String, actor: String, inventory, tribes) 
 func active(row: Dictionary, workshops: Array, grid, tribes) -> bool:
 	var from: int = row["from"]; var to: int = row["to"]
 	if from >= workshops.size() or to >= workshops.size() or not from in grid.motors or not grid.powered.get("w%d" % from, false): return false
+	if workshops[from].retired() or workshops[to].retired(): return false
 	if not tribes.can_build(workshops[from].owner_key, row["owner"]) or not tribes.can_build(workshops[to].owner_key, row["owner"]): return false
 	var target: Dictionary = workshops[to].machine["input"]
 	if not Factory.definition(workshops[to].kind, workshops[to].machine).get("input", {}).has(row["item"]): return false

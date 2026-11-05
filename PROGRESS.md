@@ -1,3 +1,7 @@
+# Continuidade — 0.10.0-dev
+
+Retirada de motores, demolição industrial segura, recolocação/remoção elétrica, IDs industriais não reciclados, dano estrutural por combate, suporte alternativo e baús destruídos com saque persistente. Mesmo projeto, saves v4 e renderizador. Resultados e limites: [Docs/LIFECYCLE_0.10.md](Docs/LIFECYCLE_0.10.md). Histórico anterior preservado abaixo.
+
 # Fase 4 — 0.9.0-dev
 
 Criado por **felipealx**. Continuação de 53809a2, sem trocar engine/renderizador ou

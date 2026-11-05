@@ -1,0 +1,6 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1260221 count=1
+PHASE3_CLIENT_READY observer=false
+PHASE3_CLIENT_PASS observer=false checks=1 failed=0

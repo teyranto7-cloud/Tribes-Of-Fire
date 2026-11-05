@@ -1,3 +1,20 @@
+# Continuidade 0.10 — validação humana pendente
+
+1. B → Gerenciar base: esvaziar uma serraria, cancelar filas, remover esteiras/cabos.
+2. Retirar motor e confirmar; conferir um motor devolvido e botão atualizado.
+3. Cancelar demolição; conferir bancada e materiais. Confirmar; conferir 50% do custo registrado.
+4. Criar outra bancada: outras máquinas, fios e destinos não devem mudar de ID.
+5. E em poste/lâmpada/roda: remover cabos, testar prévia de recolocação e Esc; confirmar em local válido.
+6. Em dois PCs, repetir com servidor: proprietário/líder autorizado e estranho recusado.
+7. PvP off protege peças. War exige guerra; aliados, ex-membros e tréguas permanecem protegidos.
+8. Atacar parede inimiga; reparar; destruir suporte em modo estrito e verificar suporte alternativo.
+9. Destruir suporte de baú cheio; conferir loot no chão, desgaste, save/reload, coleta sem duplicação.
+10. Conferir fragmentos no cenário e desaparecimento em três segundos; medir hardware físico.
+11. Tentar destruir suporte industrial: proteção de 1 HP permanece até remover os aparelhos.
+12. Executar o instalador/ZIP, atualizar 0.9→0.10 e verificar perfil/mundo preservados.
+
+Automação e capturas reais: Docs/LIFECYCLE_0.10.md. Isso não substitui estes playtests humanos.
+
 # Fase 4 — validação manual adicional
 
 1. Abrir B em Windows/Godot 4.6.3; filtrar peças e materiais, salvar favoritos.

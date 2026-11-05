@@ -30,10 +30,10 @@ static func wheel_current(world, at: Vector3) -> float:
 	if world.water_level - world.terrain_height(at.x, at.z) < 0.8 or river.is_crossing(at.z): return 0
 	return river.current(at.z)
 
-static func placement(world, body, kind: String) -> Dictionary:
+static func placement(world, body, kind: String, ignore: Array=[]) -> Dictionary:
 	var at: Vector3 = body.position - body.global_basis.z * 4.0
 	at.y = world.water_level + 1.0 if kind == "waterwheel" else world.terrain_height(at.x, at.z)
-	var valid: bool = world.contains_position(at)
+	var valid: bool = world.contains_position(at) and at.y>=-30 and at.y<=120
 	if kind == "waterwheel": valid = valid and wheel_current(world, at) > 0
 	else:
 		valid = valid and at.y > world.water_level + 0.3
@@ -41,7 +41,7 @@ static func placement(world, body, kind: String) -> Dictionary:
 			valid = valid and absf(world.terrain_height(at.x + offset.x, at.z + offset.y) - at.y) < 0.5
 	var volume := PhysicsShapeQueryParameters3D.new()
 	var shape := BoxShape3D.new();shape.size=Vector3(2.8,2.4,2.4) if kind=="waterwheel" else Vector3(0.6,2.8,0.6)
-	volume.shape=shape;volume.transform=Transform3D(Basis.IDENTITY,at+Vector3.UP*(0.4 if kind=="waterwheel" else 1.4));volume.collision_mask=1;volume.exclude=[body.get_rid()]
+	volume.shape=shape;volume.transform=Transform3D(Basis.IDENTITY,at+Vector3.UP*(0.4 if kind=="waterwheel" else 1.4));volume.collision_mask=3;volume.exclude=[body.get_rid()]+ignore
 	for hit in world.get_world_3d().direct_space_state.intersect_shape(volume,32):
 		if not hit["collider"].is_in_group("terrain"):valid=false
 	return {"valid": valid, "position": at, "rotation": 0}
@@ -58,6 +58,7 @@ func endpoint(uid: String, workshops: Array) -> Dictionary:
 		var index := int(uid.substr(1))
 		if index >= 0 and index < workshops.size() and index in motors:
 			var station = workshops[index]
+			if station.retired(): return {}
 			return {"owner": station.owner_key, "position": [station.position.x, station.position.y, station.position.z], "enabled": true, "kind": "motor"}
 	return {}
 
@@ -130,7 +131,14 @@ static func valid(data: Variant, extent: float, station_count: int) -> bool:
 	for uid in data["nodes"]:
 		if not uid is String or not uid.begins_with("n") or not uid.substr(1).is_valid_int() or int(uid.substr(1)) < 1 or int(uid.substr(1)) >= data["next_id"]: return false
 		var row: Variant = data["nodes"][uid]
-		if not row is Dictionary or row.size() != 4 or row.get("kind") not in KINDS or not row.get("enabled") is bool: return false
+		if not row is Dictionary or row.size()<4 or row.size()>6 or row.get("kind") not in KINDS or not row.get("enabled") is bool: return false
+		for field in row:
+			if field not in ["kind","position","owner","enabled","revision","paid_cost"]: return false
+		if not _integer(row.get("revision",1),1,1000000000): return false
+		var paid:Variant=row.get("paid_cost",{})
+		if not paid is Dictionary or paid.size()>16:return false
+		for item in paid:
+			if not item is String or not preload("res://Items/Catalog.gd").known(item) or not _integer(paid[item],1,9999):return false
 		if not row.get("owner") is String or row["owner"].length() > 128 or row["owner"].is_empty(): return false
 		var p: Variant = row.get("position")
 		if not p is Array or p.size() != 3: return false

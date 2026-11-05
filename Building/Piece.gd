@@ -42,7 +42,11 @@ func setup(record: Dictionary) -> void:
 	bound_to = str(record.get("bound_to", ""))
 	add_to_group("building_piece")
 	add_to_group(kind)
-	_build()
+	if hp<=0 and kind=="chest":
+		Shapes.box(self,Vector3(1.5,.2,.9),Vector3(0,.1,0),Color("#594536"))
+		var wreck_label:=Label3D.new();wreck_label.text="Destroços / Wreckage";wreck_label.billboard=BaseMaterial3D.BILLBOARD_ENABLED;wreck_label.position.y=.6;wreck_label.visibility_range_end=8;add_child(wreck_label)
+		collision_layer=0
+	else: _build()
 	Geometry.finish(self,str(record_extra.get("tier","wood")),int(record_extra.get("paint",0)))
 	set_open(bool(record.get("open", false)))
 	replica_target=position;replica_yaw=rotation.y

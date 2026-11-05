@@ -1,11 +1,24 @@
 # Tribes of Fire
 
-Criado por **felipealx** · código em desenvolvimento **0.9.0-dev** · Godot 4.6.3 · Windows/Linux x64
+Criado por **felipealx** · código em desenvolvimento **0.10.0-dev** · Godot 4.6.3 · Windows/Linux x64
 
 Jogo de sobrevivência 3D em terceira pessoa, com modo solo, hospedagem por jogador
 e servidor dedicado autoritativo. A reconstrução continua a base existente; não é
 uma versão 1.0 concluída. Funcionalidades, resultados observados e critérios ainda
 pendentes estão em [PROGRESS.md](PROGRESS.md) e [Docs/PENDENCIAS.md](Docs/PENDENCIAS.md).
+
+## Continuidade — 0.10.0-dev
+
+Retire motores, mova aparelhos elétricos e demola bancadas vazias com confirmação,
+restituição e IDs estáveis. O combate agora danifica peças conforme PvP/diplomacia;
+perder suporte pode derrubar dependentes. Baús destruídos mantêm o saque persistente.
+**B → Gerenciar base** para bancadas; **E** nos aparelhos para cabos/recolocação.
+
+[Resultados, comandos, arquivos e limites](Docs/LIFECYCLE_0.10.md) ·
+[Instalador e ZIPs 0.10.0-dev](https://github.com/teyranto7-cloud/Tribes-Of-Fire/releases/tag/v0.10.0-dev).
+Suíte **4.778/0**, GUI **21/0**, dois clientes/dedicado/reinício, regressões ENet
+das Fases 3/4 e binários Linux/dedicado **6/0** passaram nesta revisão. O roteiro
+integral do jogo e a arte final continuam em desenvolvimento.
 
 ## Fase 4 — construção modular — 0.9.0-dev
 

@@ -16,8 +16,21 @@ static func descriptor(data: Dictionary) -> bool:
 static func extra(data: Dictionary, extent: float) -> bool:
 	if data.has("energy_grid") and not preload("res://Energy/Grid.gd").valid(data["energy_grid"],extent,data.get("workshops",[]).size()): return false
 	for index in data.get("energy_grid",{}).get("motors",[]):
+		if data["workshops"][int(index)].get("building",{}).get("retired",false): return false
 		if data["workshops"][int(index)]["kind"] not in preload("res://Energy/Grid.gd").MOTOR_KINDS: return false
 	if not preload("res://Building/Automation.gd").valid(data.get("automation",[]),data.get("workshops",[]).size()): return false
+	var active_stations := 0
+	for station in data.get("workshops",[]):
+		if not station.get("building",{}).get("retired",false): active_stations += 1; continue
+		if not station.get("building",{}).get("paid_cost",{}).is_empty(): return false
+		var machine: Dictionary = station.get("machine",{})
+		if float(machine.get("progress",0)) != 0: return false
+		for buffer in ["input","output"]:
+			if machine.get(buffer,{}).values().any(func(n): return int(n)>0): return false
+	if active_stations > preload("res://Building/Workshop.gd").MAX_ACTIVE: return false
+	for route in data.get("automation",[]):
+		for endpoint in ["from","to"]:
+			if data["workshops"][int(route[endpoint])].get("building",{}).get("retired",false): return false
 	var edits:Variant=data.get("terrain_changes",{})
 	if not edits is Dictionary or edits.size()>1024:return false
 	for cell in edits:

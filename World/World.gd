@@ -846,6 +846,7 @@ func restore_buildings(records: Array, next_id: int = 1) -> void:
 		var changed:=replacement.is_empty()
 		for key in ["kind","owner","tier","mirror","paint"]:
 			if before.get(key)!=replacement.get(key): changed=true
+		if node.kind=="chest" and (int(before.get("hp",100))<=0)!=(int(replacement.get("hp",100))<=0):changed=true
 		if node.kind!="raft" and (before.get("position")!=replacement.get("position") or before.get("rotation")!=replacement.get("rotation")): changed=true
 		if changed:
 			structures.erase(node); _structure_nodes.erase(node.structure_id); remove_child(node); node.queue_free()

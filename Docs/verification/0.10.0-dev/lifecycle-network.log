@@ -1,0 +1,57 @@
+cycle-server exit= 0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=37070 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1992923802 count=1
+PLAYER_JOINED id=1266838152 count=2
+PLAYER_LEFT id=1266838152
+PLAYER_LEFT id=1992923802
+LIFECYCLE_NETWORK CHECKS=23 FAILED=0
+
+cycle-merchant exit= 0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1992923802 count=1
+LIFECYCLE_CLIENT_READY merchant
+PLAYER_JOINED id=1266838152 count=2
+SETTLEMENT_DELIVERY role=merchant order=1 action=build connected=true
+SETTLEMENT_DELIVERY role=merchant order=2 action=energy_install connected=true
+SETTLEMENT_DELIVERY role=merchant order=4 action=industry_edit connected=true
+SETTLEMENT_DELIVERY role=merchant order=5 action=industry_edit connected=true
+SETTLEMENT_DELIVERY role=merchant order=6 action=factory_take connected=true
+SETTLEMENT_DELIVERY role=merchant order=7 action=industry_edit connected=true
+SETTLEMENT_DELIVERY role=merchant order=8 action=factory_load connected=true
+SETTLEMENT_DELIVERY role=merchant order=9 action=device_edit connected=true
+SETTLEMENT_DELIVERY role=merchant order=10 action=combat connected=true
+LIFECYCLE_CLIENT_PASS role=merchant checks=19 failed=0
+
+cycle-buyer exit= 0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1992923802 count=1
+PLAYER_JOINED id=1266838152 count=2
+LIFECYCLE_CLIENT_READY buyer
+SETTLEMENT_DELIVERY role=buyer order=3 action=industry_edit connected=true
+LIFECYCLE_CLIENT_PASS role=buyer checks=14 failed=0
+
+restart-server exit= 0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=37070 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1742670082 count=1
+PLAYER_LEFT id=1742670082
+LIFECYCLE_NETWORK CHECKS=5 FAILED=0
+
+restart-merchant exit= 0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1742670082 count=1
+LIFECYCLE_CLIENT_READY merchant
+LIFECYCLE_CLIENT_PASS role=merchant checks=18 failed=0
+
+LIFECYCLE_NETWORK_PASS: motor removal, safe station/device demolition, stable IDs, hostile client rejection, replay, structural combat, persistent wreckage and dedicated restart

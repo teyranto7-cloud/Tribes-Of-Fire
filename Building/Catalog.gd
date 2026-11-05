@@ -68,6 +68,9 @@ static func reason(code: String) -> String:
 		"stale":["Peça alterada: atualize a seleção","Piece changed: refresh selection"],"intact":["Peça já está íntegra","Piece is already intact"],
 		"dependants":["Há peças dependentes: remova-as ou confirme o conjunto","Dependent pieces: remove them or confirm the group"],
 		"contents":["Esvazie o conteúdo primeiro; jangadas usam seu próprio sistema","Empty contents first; rafts use their own system"],
+		"industrial_support":["Suporte industrial protegido: esvazie e recoloque os aparelhos antes","Industrial support protected: empty and relocate devices first"],
+		"destroyed":["Estrutura destruída: recolha os destroços e reconstrua","Structure destroyed: collect wreckage and rebuild"],
+		"connections":["Remova cabos e esteiras primeiro","Remove cables and conveyors first"],"motor":["Retire o motor primeiro","Remove the motor first"],
 		"occupied":["Afaste os personagens da estrutura","Move characters away from the structure"],"capacity":["Mochila sem espaço para a restituição","Backpack cannot hold the refund"]}
 	var pair: Array=messages.get(code,[code,code])
 	return pair[0] if TranslationServer.get_locale().begins_with("pt") else pair[1]
