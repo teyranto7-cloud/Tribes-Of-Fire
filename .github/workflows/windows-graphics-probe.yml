@@ -37,10 +37,21 @@ jobs:
             if ($Setup.ExitCode -ne 0) { throw 'Installer failed.' }
             $Log = Join-Path $Evidence 'graphical-game.log'
             $World = Join-Path $Evidence 'Graphical world'
-            $Arguments = '--audio-driver Dummy --log-file "' + $Log + '" -- --play --save-dir="' + $World + '" --quit-after-seconds=12'
+            $Arguments = '--audio-driver Dummy --log-file "' + $Log + '" -- --play --save-dir="' + $World + '" --seed=718991 --quit-after-seconds=20'
             $Child = Start-Process -FilePath (Join-Path $Install 'TribesOfFire.exe') -WorkingDirectory $Install -ArgumentList $Arguments -PassThru
             $null = $Child.Handle
-            Start-Sleep -Seconds 7
+            $Ready = $false
+            $Deadline = (Get-Date).AddSeconds(60)
+            while ((Get-Date) -lt $Deadline) {
+              $Child.Refresh()
+              if ($Child.HasExited) { break }
+              if ((Test-Path $Log) -and (Get-Content -Raw -Encoding UTF8 $Log).Contains('GAME_READY')) { $Ready = $true; break }
+              Start-Sleep -Milliseconds 250
+            }
+            if (-not $Ready) { throw 'No GAME_READY before capture deadline.' }
+            Start-Sleep -Seconds 5
+            $Report.CaptureTiming = 'Five seconds after GAME_READY, after moving the game window inside the hosted desktop'
+            $Report.WaitedForReadiness = $true
             $Child.Refresh()
             if ($Child.HasExited) { throw 'Game exited before a graphical capture could be taken.' }
             if ($Child.MainWindowHandle -eq 0) { throw 'Exported game has no native window.' }
@@ -50,10 +61,15 @@ jobs:
           using System.Runtime.InteropServices;
           public static class TribesWindowProbe {
             [StructLayout(LayoutKind.Sequential)] public struct Rect { public int Left, Top, Right, Bottom; }
+            [DllImport("user32.dll")] public static extern bool SetProcessDPIAware();
+            [DllImport("user32.dll")] public static extern bool MoveWindow(IntPtr h, int x, int y, int w, int height, bool repaint);
             [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr h, out Rect r);
             [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
           }
           '@
+            $null = [TribesWindowProbe]::SetProcessDPIAware()
+            $null = [TribesWindowProbe]::MoveWindow($Child.MainWindowHandle, 24, 24, 960, 650, $true)
+            Start-Sleep -Seconds 2
             $null = [TribesWindowProbe]::SetForegroundWindow($Child.MainWindowHandle)
             $Bounds = New-Object TribesWindowProbe+Rect
             if (-not [TribesWindowProbe]::GetWindowRect($Child.MainWindowHandle, [ref]$Bounds)) { throw 'Could not inspect native window bounds.' }
@@ -77,6 +93,7 @@ jobs:
             $Child.Refresh()
             $Text = Get-Content -Raw -Encoding UTF8 $Log
             if ($Child.ExitCode -ne 0 -or -not $Text.Contains('GAME_READY') -or $Text.Contains('SCRIPT ERROR') -or $Text.Contains('ERROR:')) { throw 'Graphical runtime failed; see log.' }
+            $Report.Renderer = @($Text -split "`n" | Where-Object { $_.StartsWith('OpenGL API') -or $_.StartsWith('Vulkan API') })
             $Report.Status = 'Passed'
             $Report.InstallerSha256 = $Artifact.sha256
           } catch {

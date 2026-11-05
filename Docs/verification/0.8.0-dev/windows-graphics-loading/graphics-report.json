@@ -1,0 +1,11 @@
+{
+  "WindowSize": [
+    1296,
+    759
+  ],
+  "Status": "Passed",
+  "Mode": "Native Windows exported graphical startup on hosted VM; no human interaction",
+  "SampledColors": 54,
+  "PhysicalGpuTest": false,
+  "InstallerSha256": "153c6926bf7cca492f2e9c877ba8e16295c1c836c98adba35a58e4a6103f153a"
+}
