@@ -121,9 +121,10 @@ aprovação da 0.8 substitui os testes desta revisão.
 
 | Verificação | Resultado observado nesta revisão |
 |---|---|
-| Importação/regras/integração/processos | **4.705 checks, 0 falhas**, 28 runners |
+| Importação/regras/integração/processos | **4.712 checks, 0 falhas**, 29 runners |
 | Catálogo, autoridade, peças, cimento, restituição, crop e 3.000 registros | **312/0** |
 | Marco/folha, E real, abertura segura, JSON e metades triangulares | **15/0** |
+| Jangada/limite de altura persistível | **7/0**; terra recusada, água aceita, custo e save preservados |
 | Caminhada física sem salto por escada/rampa | **4/0**; subida até ~23 m a partir de piso de fixture em 20 m |
 | Construção ENet compartilhada e bancada | **36/0** no dedicado + **6/0** após reinício; três clientes e cliente reconectado, **52/0 por execução** |
 | Cadeias anteriores de coleta/fabricação em ENet | **372 + 8**, zero falhas; dois clientes/reconexão/reinício |
@@ -135,10 +136,10 @@ aprovação da 0.8 substitui os testes desta revisão.
 | ZIP de fontes extraído | **2/0**, importação e execução/save do projeto extraído |
 
 Fonte de aplicação congelada:
-`cce57b58456d106b8afb8356e9d832ae1d8aa9762cbac518835669c37528e00a`.
+`b165f027dd2d993793044149658d5f2f029b29b7a0f8b36d218a0bcec2fc3a81`.
 
-A galeria fixa por software (llvmpipe), com simulação congelada, mediu 9,95 FPS,
-p95 107,07 ms, 242 draw calls e ~157,4 MB de memória estática em quatro segundos.
+A galeria fixa por software (llvmpipe), com simulação congelada, mediu 10.20 FPS,
+p95 106.46 ms, 242 draw calls e ~157.5 MB de memória estática em quatro segundos.
 Esse número não representa gameplay, GPU física ou o hardware alvo; não aprova 60 FPS.
 
 Falhas reproduzidas e corrigidas: kit restituía zero por arredondar uma unidade
@@ -171,6 +172,11 @@ Testes específicos: `Tests/test_phase4.gd`, `test_phase4_doors.gd` e
 de fixture; verifica construção compartilhada, inimigo recusado, replay, revisão,
 baú, bancada, restituição, reconexão e reinício. Capturas são framebuffers reais;
 a galeria de materiais é uma cena de apresentação identificada como fixture.
+O caminho especial de água da jangada é mantido no novo catálogo; uma regressão
+desse encaminhamento foi reproduzida e corrigida. A validação recusa alturas de
+origem fora do intervalo persistível antes de debitar materiais. A fixture de
+confiabilidade agora usa duas seeds fixas e aguarda frames de física após trocar
+o mundo/restaurar o pickup; as 21 verificações de desgaste e persistência permanecem.
 Escadas e rampas usam transição de colisão contínua. A fixture de travessia mantém
 o CharacterBody3D real, comandos de movimento sem salto e frames de física normais.
 
@@ -198,3 +204,7 @@ O roteiro integral e os marcos A–D continuam sem aprovação completa.
 
 Os documentos dentro dos pacotes antecedem os testes pós-publicação no Windows.
 O relatório e as evidências do repositório registram os resultados confirmados.
+
+Os testes de coleta/comunicação precedem apenas o ajuste do caminho da jangada e
+da rejeição de altura fora do schema. Esses cenários não exercitam os ramos alterados;
+a suíte completa e os testes da jangada/binários cobrem a revisão final.

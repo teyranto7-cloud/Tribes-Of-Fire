@@ -4,12 +4,12 @@
 	"method": "Native mouse/keyboard for B/select/build/favourite/rotation/height/name/confirmation cancel; fixture inventory and gallery, actual framebuffer; three resolutions.",
 	"performance": {
 		"draw_calls": 242.0,
-		"fps": 9.95165981246097,
-		"frame_p95_ms": 107.069,
-		"frames": 40,
+		"fps": 10.1978583502551,
+		"frame_p95_ms": 106.463,
+		"frames": 41,
 		"method": "Four-second fixed material gallery on software/cloud renderer, simulation frozen; not gameplay or target hardware.",
 		"nodes": 5575,
-		"static_memory_bytes": 157444023.0
+		"static_memory_bytes": 157456671.0
 	},
 	"renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
 	"screenshots": [

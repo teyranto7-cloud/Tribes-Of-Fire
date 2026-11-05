@@ -46,7 +46,7 @@ static func evaluate(world, player, kind: String, turn: int, options: Dictionary
 	if not selected.is_empty():
 		target=selected["position"]; result["rotation"]=int(selected["rotation"]) if kind=="door_leaf" else posmod(int(selected["rotation"])+turn,4); result["supports"]=[selected["support"]]
 	result["position"]=target
-	if not world.contains_position(target) or target.distance_to(player.position)>9: result["reason"]="reach"; return result
+	if not world.contains_position(target) or not Catalog.numeric(target.y,-30,120) or target.distance_to(player.position)>9: result["reason"]="reach"; return result
 	world.ensure_structures(target)
 	for id in world.structure_registry.nearby(target,12):
 		if id==ignore_id or id in result["supports"]: continue
@@ -114,7 +114,7 @@ static func station(world, player, turn: int, options: Dictionary={}, ignore: Va
 	if not options.has("position"): at.y=world.terrain_height(at.x,at.z)+float(options.get("height",0))
 	var result:Dictionary={"valid":false,"position":at,"rotation":posmod(turn,4),"reason":"invalid"}
 	if not Catalog.valid_options(options) or options.get("tier","wood")!="wood" or options.get("mirror",false): return result
-	if not world.contains_position(at) or at.distance_to(player.position)>9: result["reason"]="reach"; return result
+	if not world.contains_position(at) or not Catalog.numeric(at.y,-30,120) or at.distance_to(player.position)>9: result["reason"]="reach"; return result
 	if at.y<=world.water_level+.1: result["reason"]="water"; return result
 	world.ensure_structures(at)
 	var excluded:Array[RID]=[]

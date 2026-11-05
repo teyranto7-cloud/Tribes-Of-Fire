@@ -1,26 +1,26 @@
 cycle-server exit= 0
 Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
 
-SERVER_LISTENING port=52489 dedicated=true
+SERVER_LISTENING port=42715 dedicated=true
 GAME_READY role=dedicated Godot=4.6.3-stable (official)
-PLAYER_JOINED id=1295880199 count=1
-PLAYER_JOINED id=1546889366 count=2
-PLAYER_JOINED id=949434028 count=3
-PLAYER_LEFT id=1546889366
-PLAYER_JOINED id=976819403 count=3
-PLAYER_LEFT id=976819403
-PLAYER_LEFT id=1295880199
-PLAYER_LEFT id=949434028
+PLAYER_JOINED id=1561486870 count=1
+PLAYER_JOINED id=589173781 count=2
+PLAYER_JOINED id=1408558727 count=3
+PLAYER_LEFT id=589173781
+PLAYER_JOINED id=557646733 count=3
+PLAYER_LEFT id=557646733
+PLAYER_LEFT id=1408558727
+PLAYER_LEFT id=1561486870
 PHASE4_NETWORK CHECKS=36 FAILED=0
 
 cycle-merchant exit= 0
 Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
 
 GAME_READY role=client Godot=4.6.3-stable (official)
-PLAYER_JOINED id=1295880199 count=1
+PLAYER_JOINED id=1561486870 count=1
 PHASE4_CLIENT_READY merchant
-PLAYER_JOINED id=1546889366 count=2
-PLAYER_JOINED id=949434028 count=3
+PLAYER_JOINED id=589173781 count=2
+PLAYER_JOINED id=1408558727 count=3
 SETTLEMENT_DELIVERY role=merchant order=1 action=build connected=true
 SETTLEMENT_DELIVERY role=merchant order=2 action=tribe_create connected=true
 SETTLEMENT_DELIVERY role=merchant order=3 action=tribe_invite connected=true
@@ -32,9 +32,9 @@ SETTLEMENT_DELIVERY role=merchant order=12 action=chest_transfer connected=true
 SETTLEMENT_DELIVERY role=merchant order=13 action=structure_edit connected=true
 SETTLEMENT_DELIVERY role=merchant order=14 action=chest_transfer connected=true
 SETTLEMENT_DELIVERY role=merchant order=15 action=structure_edit connected=true
-PLAYER_LEFT id=1546889366
+PLAYER_LEFT id=589173781
 SETTLEMENT_DELIVERY role=merchant order=16 action=structure_edit connected=true
-PLAYER_JOINED id=976819403 count=3
+PLAYER_JOINED id=557646733 count=3
 SETTLEMENT_DELIVERY role=merchant order=17 action=build connected=true
 SETTLEMENT_DELIVERY role=merchant order=18 action=station_move connected=true
 PHASE4_CLIENT_PASS role=merchant checks=52 failed=0
@@ -43,45 +43,45 @@ cycle-buyer exit= 0
 Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
 
 GAME_READY role=client Godot=4.6.3-stable (official)
-PLAYER_JOINED id=1295880199 count=1
-PLAYER_JOINED id=1546889366 count=2
+PLAYER_JOINED id=1561486870 count=1
+PLAYER_JOINED id=589173781 count=2
 PHASE4_CLIENT_READY buyer
-PLAYER_JOINED id=949434028 count=3
+PLAYER_JOINED id=1408558727 count=3
 SETTLEMENT_DELIVERY role=buyer order=4 action=tribe_accept connected=true
 SETTLEMENT_DELIVERY role=buyer order=5 action=build connected=true
 SETTLEMENT_DELIVERY role=buyer order=9 action=structure_edit connected=true
-PLAYER_JOINED id=1295880199 count=1
-PLAYER_JOINED id=949434028 count=2
-PLAYER_JOINED id=976819403 count=3
+PLAYER_JOINED id=1561486870 count=1
+PLAYER_JOINED id=1408558727 count=2
+PLAYER_JOINED id=557646733 count=3
 PHASE4_CLIENT_PASS role=buyer checks=52 failed=0
 
 cycle-enemy exit= 0
 Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
 
 GAME_READY role=client Godot=4.6.3-stable (official)
-PLAYER_JOINED id=1295880199 count=1
-PLAYER_JOINED id=1546889366 count=2
-PLAYER_JOINED id=949434028 count=3
+PLAYER_JOINED id=1561486870 count=1
+PLAYER_JOINED id=589173781 count=2
+PLAYER_JOINED id=1408558727 count=3
 PHASE4_CLIENT_READY enemy
 SETTLEMENT_DELIVERY role=enemy order=6 action=build connected=true
-PLAYER_LEFT id=1546889366
-PLAYER_JOINED id=976819403 count=3
+PLAYER_LEFT id=589173781
+PLAYER_JOINED id=557646733 count=3
 PHASE4_CLIENT_PASS role=enemy checks=52 failed=0
 
 restart-server exit= 0
 Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
 
-SERVER_LISTENING port=52489 dedicated=true
+SERVER_LISTENING port=42715 dedicated=true
 GAME_READY role=dedicated Godot=4.6.3-stable (official)
-PLAYER_JOINED id=1743883579 count=1
-PLAYER_LEFT id=1743883579
+PLAYER_JOINED id=894662929 count=1
+PLAYER_LEFT id=894662929
 PHASE4_NETWORK CHECKS=6 FAILED=0
 
 restart-merchant exit= 0
 Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
 
 GAME_READY role=client Godot=4.6.3-stable (official)
-PLAYER_JOINED id=1743883579 count=1
+PLAYER_JOINED id=894662929 count=1
 PHASE4_CLIENT_READY merchant
 PHASE4_CLIENT_PASS role=merchant checks=52 failed=0
 

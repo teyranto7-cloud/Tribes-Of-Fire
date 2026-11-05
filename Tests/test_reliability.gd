@@ -19,7 +19,7 @@ func run() -> void:
 	game.save_folder = folder.path_join("world")
 	root.add_child(game)
 	while not game.ready_world: await process_frame
-	game.new_game()
+	game.new_game(183127)
 	game.set_process(false)
 	game.set_physics_process(false)
 	game.player.set_physics_process(false)
@@ -27,9 +27,9 @@ func run() -> void:
 	for animal in game.runtime.wildlife.animals: animal.set_physics_process(false)
 	game.runtime.command(1, "group_create", {"name": "Old group", "kind": "group"})
 	check(game.runtime.channel_state["groups"].size() == 1, "Group creation reaches the local client presentation")
-	game.new_game()
+	game.new_game(718991)
 	game.player.set_physics_process(false)
-	await process_frame
+	await physics_frame; await physics_frame
 	check(game.runtime.channels.groups.is_empty() and game.runtime.channel_state["groups"].is_empty(), "New world removes old groups from both authority and HUD state")
 	game.inventory.wear_equipment("hand", 60)
 	var selected := -1
@@ -42,6 +42,7 @@ func run() -> void:
 	var loaded := Store.load_world(game.save_folder)
 	check(loaded["drops"][0].get("durability") == 40, "Worn bag metadata survives checksum and reload")
 	game.runtime._restore_drops(loaded["drops"])
+	await physics_frame; await physics_frame
 	game.runtime.command(1, "interact", {})
 	game.runtime._tick_activities(0.6)
 	check(game.inventory.count("axe") == 1 and game.inventory.durability["axe"] == 40 and game.runtime.drops.is_empty(), "Picking the actual restored bag cannot repair the axe")

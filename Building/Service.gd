@@ -26,12 +26,26 @@ func preview(id: int, kind: String, turn: int, options: Dictionary={}, ignore_id
 	var is_station:bool=game.runtime.Catalog.station_ids().has(kind)
 	var site:Dictionary=Placement.station(game.world,game.players[id],turn,options) if is_station else Placement.evaluate(game.world,game.players[id],kind,turn,options,ignore_id)
 	if is_station: site["supports"]=[]
+	if kind=="raft":
+		site=game.world.placement(game.players[id],kind,turn)
+		site["supports"]=[];site["reason"]="ok" if site["valid"] else "water"
+		if not Catalog.valid_options(options) or options.get("tier","wood")!="wood" or options.get("mirror",false):site["valid"]=false;site["reason"]="material"
+		if site["position"].distance_to(game.players[id].position)>9:site["valid"]=false;site["reason"]="reach"
+		if site["valid"]:
+			game.world.ensure_structures(site["position"])
+			var shape:=BoxShape3D.new();shape.size=Vector3(2.4,.35,3.8)
+			var excluded:Array[RID]=[]
+			for ground in game.get_tree().get_nodes_in_group("terrain"):
+				if ground is CollisionObject3D:excluded.append(ground.get_rid())
+			var obstacle:=Placement.volume_error(game.world,shape,Transform3D(Basis(Vector3.UP,turn*PI*.5),site["position"]),excluded)
+			if not obstacle.is_empty():site["valid"]=false;site["reason"]=obstacle
 	var tier: String=options.get("tier","wood"); var cost:Dictionary=game.runtime.Balance.section("building")["costs"].get(kind,{}) if is_station else Catalog.cost(kind,tier)
 	if tier=="wood" and ignore_id==0:
 		for item in game.runtime.Catalog.ids():
 			if game.runtime.Catalog.get_item(item).get("place","")==kind and game.inventories[id].count(item)>0: cost={item:1}; break
 	site["cost"]=cost
 	if not site["valid"]: return site
+	if cost.is_empty():site["valid"]=false;site["reason"]="material";return site
 	if kind=="door_leaf" and site["supports"].is_empty(): site["valid"]=false; site["reason"]="frame"; return site
 	var actor: String=game.runtime.key(id)
 	if not territory_allows(actor,site["position"]): site["valid"]=false; site["reason"]="ownership"; return site
