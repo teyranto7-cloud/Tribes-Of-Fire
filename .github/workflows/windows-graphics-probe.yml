@@ -1,0 +1,95 @@
+name: Windows exported graphical probe
+on:
+  workflow_dispatch:
+    inputs:
+      package_version:
+        description: Packaged version to install and render
+        default: '0.8.0-dev'
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  graphical-startup:
+    runs-on: windows-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install and launch the real exported game with a display
+        shell: pwsh
+        env:
+          PACKAGE_VERSION: ${{ inputs.package_version }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          if ($env:PACKAGE_VERSION -notmatch '^\d+\.\d+\.\d+(?:-[A-Za-z0-9.-]+)?$') { throw 'Invalid version.' }
+          $Evidence = Join-Path $env:RUNNER_TEMP 'Tribes-Graphics-QA'
+          New-Item -ItemType Directory -Force -Path $Evidence | Out-Null
+          $Child = $null
+          $Report = @{ Status = 'Failed'; PhysicalGpuTest = $false; Mode = 'Native Windows exported graphical startup on hosted VM; no human interaction' }
+          try {
+            $Directory = 'Downloads/' + $env:PACKAGE_VERSION
+            $Manifest = Get-Content -Raw "$Directory/manifest.json" | ConvertFrom-Json
+            $Artifact = @($Manifest.artifacts | Where-Object { $_.name.EndsWith('-Windows-Setup.exe') })[0]
+            $Installer = Join-Path $Directory $Artifact.name
+            if ((Get-FileHash -Algorithm SHA256 $Installer).Hash.ToLowerInvariant() -ne $Artifact.sha256) { throw 'Installer checksum mismatch.' }
+            $Install = Join-Path $Evidence 'Installed game'
+            $Setup = Start-Process -FilePath (Resolve-Path $Installer).Path -ArgumentList @('/S', "/D=$Install") -Wait -PassThru
+            if ($Setup.ExitCode -ne 0) { throw 'Installer failed.' }
+            $Log = Join-Path $Evidence 'graphical-game.log'
+            $World = Join-Path $Evidence 'Graphical world'
+            $Arguments = '--audio-driver Dummy --log-file "' + $Log + '" -- --play --save-dir="' + $World + '" --quit-after-seconds=12'
+            $Child = Start-Process -FilePath (Join-Path $Install 'TribesOfFire.exe') -WorkingDirectory $Install -ArgumentList $Arguments -PassThru
+            $null = $Child.Handle
+            Start-Sleep -Seconds 7
+            $Child.Refresh()
+            if ($Child.HasExited) { throw 'Game exited before a graphical capture could be taken.' }
+            if ($Child.MainWindowHandle -eq 0) { throw 'Exported game has no native window.' }
+            Add-Type -AssemblyName System.Drawing
+            Add-Type -TypeDefinition @'
+          using System;
+          using System.Runtime.InteropServices;
+          public static class TribesWindowProbe {
+            [StructLayout(LayoutKind.Sequential)] public struct Rect { public int Left, Top, Right, Bottom; }
+            [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr h, out Rect r);
+            [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
+          }
+          '@
+            $null = [TribesWindowProbe]::SetForegroundWindow($Child.MainWindowHandle)
+            $Bounds = New-Object TribesWindowProbe+Rect
+            if (-not [TribesWindowProbe]::GetWindowRect($Child.MainWindowHandle, [ref]$Bounds)) { throw 'Could not inspect native window bounds.' }
+            $Width = $Bounds.Right - $Bounds.Left
+            $Height = $Bounds.Bottom - $Bounds.Top
+            if ($Width -lt 320 -or $Height -lt 240) { throw 'Native window is unexpectedly small.' }
+            $Bitmap = New-Object Drawing.Bitmap($Width, $Height)
+            $Graphics = [Drawing.Graphics]::FromImage($Bitmap)
+            try {
+              $Graphics.CopyFromScreen($Bounds.Left, $Bounds.Top, 0, 0, $Bitmap.Size)
+              $Bitmap.Save((Join-Path $Evidence 'windows-exported-game.png'), [Drawing.Imaging.ImageFormat]::Png)
+              $Colors = New-Object 'System.Collections.Generic.HashSet[int]'
+              for ($y = 60; $y -lt $Height - 20; $y += 31) {
+                for ($x = 20; $x -lt $Width - 20; $x += 31) { $null = $Colors.Add($Bitmap.GetPixel($x, $y).ToArgb()) }
+              }
+              if ($Colors.Count -lt 8) { throw 'Capture is blank or nearly uniform.' }
+              $Report.SampledColors = $Colors.Count
+              $Report.WindowSize = @($Width, $Height)
+            } finally { $Graphics.Dispose(); $Bitmap.Dispose() }
+            if (-not $Child.WaitForExit(30000)) { throw 'Graphical run did not shut down normally.' }
+            $Child.Refresh()
+            $Text = Get-Content -Raw -Encoding UTF8 $Log
+            if ($Child.ExitCode -ne 0 -or -not $Text.Contains('GAME_READY') -or $Text.Contains('SCRIPT ERROR') -or $Text.Contains('ERROR:')) { throw 'Graphical runtime failed; see log.' }
+            $Report.Status = 'Passed'
+            $Report.InstallerSha256 = $Artifact.sha256
+          } catch {
+            $Report.Error = $_.Exception.Message
+            throw
+          } finally {
+            if ($null -ne $Child -and -not $Child.HasExited) { Stop-Process -Id $Child.Id -ErrorAction SilentlyContinue }
+            $Report | ConvertTo-Json -Depth 5 | Set-Content -Encoding UTF8 (Join-Path $Evidence 'graphics-report.json')
+          }
+      - name: Publish graphical evidence or exact failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: windows-graphics-results
+          path: ${{ runner.temp }}/Tribes-Graphics-QA/
+          retention-days: 14

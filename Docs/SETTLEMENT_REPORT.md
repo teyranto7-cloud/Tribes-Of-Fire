@@ -79,9 +79,11 @@ Resultados finais e logs desta revisão: `verification/0.8.0-dev`.
 | Movimento/recurso compartilhado | Dois clientes móveis e servidor dedicado, PASS |
 | Chat anterior/voz sintética | Três clientes, canais privados/grupo/reino/diplomacia e ganho por distância, PASS |
 | Abrir/salvar/continuar | **50/0**, processos independentes |
-| Binários Linux/servidor/reinício | **6/0** na build anterior à filtragem de campos v1–3; repetição final registrada abaixo |
+| Binários Linux/servidor/reinício | **6/0** na build final, após a correção de migração de legado |
 | Soak de 30 minutos | Primeira execução: FAIL de prazo de comando sob concorrência; repetição isolada PENDENTE |
-| ZIP de fontes e Windows nativo/upgrade | PENDENTES até os respectivos testes dos pacotes finais |
+| ZIP de fontes extraído/importação/jogo/save | **2/0** |
+| Windows nativo: instalador/reinstalação/desinstalação/upgrade 0.7.1→0.8 | **34/0**, runtime headless |
+| Downloads públicos fixados no commit da build | **5/0**, HTTP 200/tamanho correto e hashes verificados no Windows |
 
 
 ```sh
@@ -165,3 +167,17 @@ Steamworks/loja, cercos/catapultas e guerra territorial completos, continente de
 certificação de 100 jogadores/60 FPS. Nenhum marco A–D integralmente aprovado.
 
 Rastreabilidade de todos os grupos de pedidos e limites: [REQUEST_TRACEABILITY.md](REQUEST_TRACEABILITY.md).
+
+
+## Publicação e atualização Windows
+
+Código e cinco pacotes: commit `2926caabf64c63254f3ea5264b59a35de06f4fda`, enviado
+normalmente a main. [Workflow Windows](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41957403530)
+executou as etapas de checksum e instalação: 34 verificações passaram, incluindo
+instalar 0.7.1, criar perfil/mundo, atualizar para 0.8, preservar todos os campos do
+jogador/seed/gerador e avançar o snapshot. Também houve cliente isolado exportado,
+reinício do dedicado, reinstalação e desinstalação preservando dados. Runtime headless.
+A prova gráfica em VM Windows é registrada separadamente, sem substituir GPU física.
+
+Os documentos dentro dos pacotes antecedem os testes pós-publicação; os resultados
+confirmados ficam neste relatório e na pasta de evidências do repositório.

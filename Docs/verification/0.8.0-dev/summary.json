@@ -39,5 +39,15 @@
     "failed": 0
   },
   "soak": "first run failed one 5-second command deadline under competing QA/builds; isolated 15-second-deadline repeat pending",
-  "windows_native": "pending after publication"
+  "windows_native": {
+    "checks": 34,
+    "failed": 0,
+    "cross_version_upgrade": true,
+    "mode": "headless; graphical validation remains pending",
+    "url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41957403530"
+  },
+  "public_downloads": {
+    "checks": 5,
+    "failed": 0
+  }
 }

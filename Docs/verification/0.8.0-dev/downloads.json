@@ -1,0 +1,43 @@
+{
+  "commit": "2926caabf64c63254f3ea5264b59a35de06f4fda",
+  "checks": [
+    {
+      "name": "TribesOfFire-0.8.0-dev-Windows.zip",
+      "url": "https://raw.githubusercontent.com/teyranto7-cloud/Tribes-Of-Fire/2926caabf64c63254f3ea5264b59a35de06f4fda/Downloads/0.8.0-dev/TribesOfFire-0.8.0-dev-Windows.zip",
+      "status": 200,
+      "content_length": 53451150,
+      "expected_size": 53451150
+    },
+    {
+      "name": "TribesOfFire-0.8.0-dev-Linux.zip",
+      "url": "https://raw.githubusercontent.com/teyranto7-cloud/Tribes-Of-Fire/2926caabf64c63254f3ea5264b59a35de06f4fda/Downloads/0.8.0-dev/TribesOfFire-0.8.0-dev-Linux.zip",
+      "status": 200,
+      "content_length": 44640148,
+      "expected_size": 44640148
+    },
+    {
+      "name": "TribesOfFire-0.8.0-dev-Server-Linux.zip",
+      "url": "https://raw.githubusercontent.com/teyranto7-cloud/Tribes-Of-Fire/2926caabf64c63254f3ea5264b59a35de06f4fda/Downloads/0.8.0-dev/TribesOfFire-0.8.0-dev-Server-Linux.zip",
+      "status": 200,
+      "content_length": 44641015,
+      "expected_size": 44641015
+    },
+    {
+      "name": "TribesOfFire-0.8.0-dev-Windows-Setup.exe",
+      "url": "https://raw.githubusercontent.com/teyranto7-cloud/Tribes-Of-Fire/2926caabf64c63254f3ea5264b59a35de06f4fda/Downloads/0.8.0-dev/TribesOfFire-0.8.0-dev-Windows-Setup.exe",
+      "status": 200,
+      "content_length": 43158006,
+      "expected_size": 43158006
+    },
+    {
+      "name": "TribesOfFire-0.8.0-dev-Source.zip",
+      "url": "https://raw.githubusercontent.com/teyranto7-cloud/Tribes-Of-Fire/2926caabf64c63254f3ea5264b59a35de06f4fda/Downloads/0.8.0-dev/TribesOfFire-0.8.0-dev-Source.zip",
+      "status": 200,
+      "content_length": 30653453,
+      "expected_size": 30653453
+    }
+  ],
+  "passed": 5,
+  "failed": 0,
+  "method": "Public HEAD; SHA256 validated separately by native Windows CI."
+}
