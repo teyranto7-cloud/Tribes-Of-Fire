@@ -34,5 +34,18 @@
   "exports": {
     "checks": 6,
     "failed": 0
-  }
+  },
+  "windows_native": {
+    "checks": 24,
+    "failed": 0,
+    "mode": "headless; graphical validation remains pending",
+    "url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41941392492",
+    "commit": "06fd9f386f429bd14133a841e90a47eb60dd10e0"
+  },
+  "public_downloads": {
+    "checks": 5,
+    "failed": 0,
+    "method": "Public HEAD, HTTP 200 and exact sizes; hashes validated independently by Windows CI"
+  },
+  "release_url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/releases/tag/v0.7.1-dev"
 }

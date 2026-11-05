@@ -16,8 +16,8 @@ O catálogo permanece com **100 itens, 89 receitas e 17 bancadas**.
   coleta real, dois fluxos, replay, cancelamento atrasado e reconexão passaram.
 - Três clientes de comunicação: seis canais e áudio sintético passaram; sem captura física.
 - Exports Linux/servidor/reinício: **6/0**; fontes extraídas/importação/jogo/save: **2/0**.
-  Instalador NSIS e quatro ZIPs gerados e conferidos por SHA256. QA Windows da
-  revisão é confirmado após o envio, sem reaproveitar aprovação da 0.7.0.
+  Instalador NSIS e quatro ZIPs gerados e conferidos por SHA256. QA Windows nativo
+  desta revisão: **24/0**, com execução headless; cinco downloads públicos conferidos.
 
 ## CONCLUÍDO E TESTADO
 
@@ -36,6 +36,8 @@ O catálogo permanece com **100 itens, 89 receitas e 17 bancadas**.
 | UI com teclas/cliques reais | Base existente | PASS: fabricação, cancelamento entre pressionar/soltar, mochila e mapa em três resoluções; capturas reais |
 | Chat global/local/privado/grupo/reino/diplomacia | Base existente | PASS: três clientes, autorização, bloqueio, privacidade e reprodução de áudio sintético |
 | Voz sintética por proximidade | Base existente | PASS de transporte/ganho: perto ~4 m = 0,80; médio ~15 m = 0,287; fora >30 m não recebe pacotes |
+| Instalador Windows e runtime exportado | Pacote novo desta revisão | PASS: 24 verificações nativas de instalação, atalhos, runtime headless, save/reinício, reinstalação e desinstalação |
+| Pacotes públicos | — | PASS: cinco URLs fixadas no commit da build, HTTP 200 e tamanho igual ao manifesto; SHA256 validado pelo CI Windows |
 | Comparação de scripts | — | PASS: nenhum GDScript/cena/shader apagado desde o baseline; catálogo, Assets e World inalterados pela auditoria |
 
 `unlocks` está vazio nas receitas atuais; o teste de contrato injeta temporariamente
@@ -162,6 +164,24 @@ As URLs de referência fornecidas foram consultadas: a página Tool Cupboard res
 200 e foi lida; as demais devolveram 402/403 neste ambiente, sem tentativa de contorno.
 Disponibilidade registrada em `references.json`. Nenhum asset dessas referências ou
 da Poly Haven foi importado; o catálogo de dependências/licenças existente permanece.
+
+## Publicação e Windows confirmados
+
+Código e cinco pacotes enviados para `main` no commit
+`06fd9f386f429bd14133a841e90a47eb60dd10e0`, preservando o histórico anterior.
+[Prévia 0.7.1-dev](https://github.com/teyranto7-cloud/Tribes-Of-Fire/releases/tag/v0.7.1-dev)
+com instalador Windows, ZIP Windows/Linux, servidor Linux e ZIP de fontes.
+
+[QA Windows desta revisão](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41941392492):
+as etapas de checksum e execução do instalador realmente executaram; todas as
+**24 verificações passaram**. A reinstalação testada é da mesma versão. O runtime
+foi executado em Windows nativo, em modo headless, sem comprovar gameplay gráfico,
+permissões de microfone ou instalação interativa nos seis idiomas.
+
+JSON/CSV e logs em `verification/0.7.1-dev/windows-native`; URLs e tamanhos em
+`downloads.json`. Os documentos dentro dos pacotes registram o estado anterior
+ao QA Windows; esta confirmação posterior fica no repositório. Os binários não
+foram alterados depois dos testes, e o manifesto identifica as fontes da aplicação.
 
 ## Próximo incremento reduzido — apenas proposta
 

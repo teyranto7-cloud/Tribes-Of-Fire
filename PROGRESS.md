@@ -16,8 +16,11 @@ Matriz, métodos, arquivos, desempenho e quatro classificações obrigatórias:
 fixture antiga de gerador 2; agora exige o gerador 3 publicado, sem relaxar seed,
 checksum ou conservação. Nenhum script/cena/shader foi apagado desde o checkpoint.
 
-Pacotes, fontes extraídas e QA nativo desta revisão são registrados junto das
-suas evidências; resultados anteriores não substituem a validação da 0.7.1.
+Binários Linux/servidor: 6/0; fontes extraídas: 2/0; instalador Windows nativo:
+**24/0**, com runtime headless. [CI da revisão](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41941392492).
+Cinco downloads públicos conferidos no commit 06fd9f3, com tamanho correto e
+hashes validados no Windows. [Prévia 0.7.1-dev](https://github.com/teyranto7-cloud/Tribes-Of-Fire/releases/tag/v0.7.1-dev).
+As evidências estão em Docs/verification/0.7.1-dev; não reutilizam aprovação da 0.7.0.
 O próximo incremento foi apenas proposto, sem começar outra fase nesta auditoria.
 
 # Entrega 0.7.0-dev — 04/11/2026

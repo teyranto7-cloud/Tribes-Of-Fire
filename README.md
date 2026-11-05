@@ -13,9 +13,12 @@ Correções de pedidos repetidos nas bancadas, cancelamento após a fila mudar,
 desbloqueio, capacidade e comandos pendentes ao carregar. **4.255 checks sem
 falhas**, 50 aberturas/continuações, dois ciclos em rede com reconexão/reinício,
 chat e áudio sintético entre três clientes. Nenhum novo sistema/item/asset.
+Instalador Windows: [24 verificações nativas aprovadas](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41941392492),
+com runtime headless; validação gráfica no Windows permanece pendente.
 
 [Auditoria PASS/FAIL, arquivos e pendências](Docs/AUDIT_PHASES_1_3.md) ·
-[Pacotes 0.7.1-dev](Downloads/0.7.1-dev). Voz por microfone físico, gráficos finais,
+[Prévia e downloads 0.7.1-dev](https://github.com/teyranto7-cloud/Tribes-Of-Fire/releases/tag/v0.7.1-dev).
+Voz por microfone físico, gráficos finais,
 hardware alvo e carga de 100 jogadores permanecem pendentes.
 
 ## Fase 3 — itens e fabricação preservados
@@ -81,7 +84,7 @@ godot --path .
 ```
 
 O checkout contém código, assets, testes e instruções de build. A pasta
-`Downloads/0.5.0-dev` contém os pacotes preparados desta revisão.
+`Downloads/0.7.1-dev` contém os pacotes preparados desta revisão.
 
 Escolha o idioma, uma nova jornada, a seed e o personagem. Mundos novos usam um
 terreno de **1536 × 1536 m** com geração determinística; saves anteriores preservam
