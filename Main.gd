@@ -65,6 +65,10 @@ var journal = Journal.new()
 var server_rules: Dictionary = ServerConfig.defaults()
 var build_piece: String = ""
 var build_rotation: int = 0
+var build_options: Dictionary = {"tier":"wood","height":0.0,"grid":true,"snap":true,"mirror":false}
+var relocating_station: int = -1
+var relocating_id: int = 0
+var relocating_revision: int = 0
 var _stream_timer: float = 0.0
 var _journal_timer: float = 0.0
 var _startup_error: String = ""
@@ -151,7 +155,7 @@ func install_inputs() -> void:
 	var keys := {"forward": KEY_W, "back": KEY_S, "left": KEY_A, "right": KEY_D,
 		"sprint": KEY_SHIFT, "jump": KEY_SPACE, "inventory": KEY_I,
 		"menu": KEY_ESCAPE, "save": KEY_F5, "load": KEY_F9,
-		"view": KEY_F4, "rotate_build": KEY_R, "world_map": KEY_M, "axe": KEY_1, "build": KEY_2, "shelter": KEY_3, "interact": KEY_E,
+		"construction": KEY_B, "build_grid": KEY_G, "build_snap": KEY_T, "build_mirror": KEY_H, "build_up": KEY_PAGEUP, "build_down": KEY_PAGEDOWN, "view": KEY_F4, "rotate_build": KEY_R, "world_map": KEY_M, "axe": KEY_1, "build": KEY_2, "shelter": KEY_3, "interact": KEY_E,
 		"quick4":KEY_4,"quick5":KEY_5,"quick6":KEY_6,"quick7":KEY_7,"quick8":KEY_8,"quick9":KEY_9,
 		"crouch": KEY_C, "dodge": KEY_Q, "heavy": KEY_F, "push_to_talk": KEY_V, "chat": KEY_ENTER}
 	for action in keys:
@@ -292,6 +296,7 @@ func _network_failure(message: String) -> void:
 	printerr("NETWORK_FAILURE ", message)
 
 func _clear_players() -> void:
+	if world!=null: cancel_building()
 	for body in players.values():
 		remove_child(body)
 		body.queue_free()
@@ -359,6 +364,7 @@ func _spawn_player(id: int) -> void:
 	if record.has("exposure"):
 		exposures[id].restore(record["exposure"])
 	runtime.spawn(id, record)
+	world.ensure_structures(body.position)
 	journal.restore(session.player_key(id), record.get("journal", {}))
 	body.set_meta("key", session.player_key(id))
 	body.respawn_position = world.bed_spawn(session.player_key(id))
@@ -469,7 +475,7 @@ func snapshot() -> Dictionary:
 		records[session.player_key(id)] = _player_record(id)
 	var description: Dictionary = world.descriptor()
 	var data := {"version": 4, "seed": description["seed"], "world": description, "players": records,
-		"rules": _saved_rules(), "structures": world.building_records(), "resource_timers": world.resource_timers.duplicate(), "fire_states": world.fire_states(), "fishing": world.fish_states(), "terrain_changes": world.sampler.changes.duplicate(true), "cut": world.cut_ids(),
+		"structure_next_id": world.structure_registry.next_id, "rules": _saved_rules(), "structures": world.building_records(), "resource_timers": world.resource_timers.duplicate(), "fire_states": world.fire_states(), "fishing": world.fish_states(), "terrain_changes": world.sampler.changes.duplicate(true), "cut": world.cut_ids(),
 		"fires": world.fire_positions(), "shelters": world.shelter_positions(),
 		"phase": clock.elapsed, "weather": weather.serialize()}
 	data.merge(runtime.save_state(), true)
@@ -496,9 +502,9 @@ func network_state(recipient_id: int = 0) -> Dictionary:
 			state["journal"] = journal.serialize(session.player_key(id))
 			state["shared_markers"] = journal.visible_markers(session.player_key(id), runtime.tribes).filter(func(marker): return marker.get("foreign", false))
 		bodies[str(id)] = state
-	var building_data: Array = world.building_records()
+	var building_data: Array = world.building_records(players[recipient_id].position if players.has(recipient_id) else null)
 	for record in building_data:
-		if not runtime.tribes.can_build(record["owner"], session.player_key(recipient_id)):
+		if not runtime.building.can_interact(record,session.player_key(recipient_id)):
 			record.erase("storage")
 			record.erase("storage_wear")
 	var data := {"players": bodies, "world": world.descriptor(), "structures": building_data,
@@ -667,7 +673,16 @@ func request_weather(value: String) -> void:
 
 func use_tool() -> void:
 	if not build_piece.is_empty():
-		request_command("build", {"piece": build_piece, "rotation": build_rotation})
+		if relocating_station>=0:
+			request_crafting_command("station_move",{"station":relocating_station,"revision":relocating_revision,"rotation":build_rotation,"options":build_options.duplicate(true)})
+			cancel_building()
+		elif relocating_id>0:
+			request_crafting_command("structure_edit",{"id":relocating_id,"revision":relocating_revision,"op":"move","rotation":build_rotation,"options":build_options.duplicate(true)})
+			cancel_building()
+		else:
+			var payload:Dictionary={"piece":build_piece,"rotation":build_rotation}
+			if preload("res://Building/Catalog.gd").known(build_piece) or preload("res://Items/Catalog.gd").station_ids().has(build_piece): payload["options"]=build_options.duplicate(true)
+			request_crafting_command("build",payload)
 		return
 	session.send_action({1: "attack", 2: "place_fire", 3: "place_shelter"}.get(tool, "attack"))
 
@@ -676,6 +691,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if player.creation_pending:
 		return
+	if event.is_action_pressed("construction"):
+		hud.show_panel("construction" if hud.mode!="construction" else ""); return
+	if hud.mode=="" and not build_piece.is_empty():
+		if event.is_action_pressed("menu"): cancel_building(); return
+		for action in ["build_grid","build_snap","build_mirror"]:
+			if event.is_action_pressed(action):
+				var key:String={"build_grid":"grid","build_snap":"snap","build_mirror":"mirror"}[action]
+				if key!="mirror" or preload("res://Building/Catalog.gd").piece(build_piece).get("mirror",false): build_options[key]=not build_options[key]
+				return
+		if event.is_action_pressed("build_up") or event.is_action_pressed("build_down"):
+			build_options["height"]=clampf(float(build_options["height"])+(.25 if event.is_action_pressed("build_up") else -.25),-1,12); return
 	if event.is_action_pressed("view") and hud.mode=="":
 		player.first_person=not player.first_person
 		return
@@ -780,12 +806,21 @@ func _process(delta: float) -> void:
 			snapshot_timer = 0.0
 			for id in session.accepted_peers:
 				session.send_snapshot(id, network_state(id))
+	if relocating_station>=runtime.workshops.size(): cancel_building()
 	world.preview.visible = player != null and hud.mode == "" and (not build_piece.is_empty() or tool in [2, 3]) and (not build_piece.is_empty() or inventory.count("shelter" if tool == 3 else "campfire") > 0)
 	if world.preview.visible:
-		var place: Dictionary = world.placement(player, build_piece if not build_piece.is_empty() else ("shelter" if tool == 3 else "campfire"), build_rotation)
-		world.preview.position = place["position"]
-		world.preview.scale = Vector3(3.6, 1, 3.6) if tool == 3 else Vector3.ONE
-		world.preview.material_override.albedo_color = Color(0.3, 1, 0.55, 0.45) if place["valid"] else Color(1, 0.25, 0.2, 0.45)
+		var modular:bool=preload("res://Building/Catalog.gd").known(build_piece)
+		var place:Dictionary=runtime.building.preview(session.local_id,build_piece,build_rotation,build_options,relocating_id) if modular or preload("res://Items/Catalog.gd").station_ids().has(build_piece) else world.placement(player,build_piece if not build_piece.is_empty() else ("shelter" if tool==3 else "campfire"),build_rotation)
+		if relocating_station>=0: place=runtime.building.preview_station(session.local_id,relocating_station,build_rotation,build_options)
+		if not world.preview.has_meta("base_mesh"): world.preview.set_meta("base_mesh",world.preview.mesh)
+		world.preview.mesh=preload("res://Building/Geometry.gd").preview_mesh(build_piece,bool(build_options.get("mirror",false))) if modular else world.preview.get_meta("base_mesh")
+		world.preview.position=place["position"]; world.preview.rotation.y=int(place.get("rotation",build_rotation))*PI*.5
+		if preload("res://Items/Catalog.gd").station_ids().has(build_piece):
+			var bounds:=BoxMesh.new(); bounds.size=Vector3(1.7,1.2,1); world.preview.mesh=bounds; world.preview.position.y+=.6
+		world.preview.scale=Vector3(3.6,1,3.6) if not modular and tool==3 else Vector3.ONE
+		world.preview.material_override.albedo_color=Color(.3,1,.55,.45) if place["valid"] else Color(1,.25,.2,.45)
+		if modular:
+			hud.hint.text=preload("res://Building/Catalog.gd").title(build_piece)+" · "+preload("res://Building/Catalog.gd").reason(place.get("reason","invalid"))+"\nR ↻ · PgUp/PgDn %.2fm · G grid · T snap · H mirror · Esc"%float(build_options["height"])
 
 func _run_cli_checks(delta: float) -> void:
 	if quitting:
@@ -886,10 +921,18 @@ func load_audio_levels() -> void:
 		if index >= 0 and (level is int or level is float) and is_finite(float(level)):
 			AudioServer.set_bus_volume_db(index, linear_to_db(clampf(float(level), 0.0001, 1.0)))
 
-func select_building(kind: String) -> void:
-	build_piece = kind
-	build_rotation = 0
+func cancel_building() -> void:
+	build_piece=""; relocating_id=0; relocating_station=-1; relocating_revision=0; build_rotation=0
+	if world.preview!=null: world.preview.hide()
+func select_building(kind: String, tier: String = "wood") -> void:
+	build_piece=kind; build_rotation=0; tool=1; relocating_id=0; relocating_station=-1; build_options["tier"]=tier; build_options["height"]=0.0; build_options["mirror"]=false
 	hud.show_panel("")
+func relocate_building(row: Dictionary) -> void:
+	select_building(row["kind"],row.get("tier","wood")); relocating_id=int(row["id"]); relocating_revision=int(row.get("revision",1)); build_rotation=int(row["rotation"]); build_options["mirror"]=row.get("mirror",false)
+
+func relocate_station(index: int) -> void:
+	var station=runtime.workshops[index]
+	select_building(station.kind); relocating_station=index; relocating_revision=int(station.building.get("revision",1)); build_rotation=int(station.building.get("rotation",0))
 
 func return_to_menu() -> bool:
 	if running and session.is_authority() and not save_game(): return false
@@ -906,7 +949,7 @@ func return_to_menu() -> bool:
 
 func _saved_rules() -> Dictionary:
 	var result: Dictionary = {}
-	for field in ["pvp", "death_loss", "day_minutes", "night_minutes", "resource_rate", "difficulty"]:
+	for field in ["pvp", "death_loss", "day_minutes", "night_minutes", "resource_rate", "difficulty", "structural_support"]:
 		result[field] = server_rules[field]
 	return result
 

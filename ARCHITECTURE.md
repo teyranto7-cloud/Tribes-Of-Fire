@@ -1,3 +1,24 @@
+# Construção modular — extensão 0.9.0-dev
+
+`Data/Building.json` → `Building/Catalog.gd` define peças, materiais, custos e HP.
+`Placement.gd` calcula sockets e volumes de colisão; usa SAT canônico para peças
+recém-criadas enquanto o servidor de física ainda atualiza seus colliders.
+`Registry.gd` conserva registros por células de 32 m e contador de IDs monotônico;
+World mantém cache visual/físico próximo, com carga imediata de colisão até 12 m.
+`Service.gd` valida a autoridade, revisão, propriedade, conteúdo, suporte, custo e
+restituição; UI envia comandos através de Session/Runtime e recebe snapshots.
+`Geometry.gd` constrói geometrias/ghosts originais e distinções de material.
+`UI/BuildPanel.gd` é compartilhado entre B e a aba de construção do inventário.
+
+Saves v4 recebem metadados opcionais de peça, `structure_next_id` e `building` nas
+bancadas. Snapshots da rede incluem apenas estruturas próximas, filtrando conteúdo.
+Um grafo acíclico de suporte impede cascatas ambíguas. Confirmação de demolição
+inclui versões de todos os envolvidos; o máximo por transação é 24 peças.
+Cultivos pertencem ao runtime persistente e não ao ciclo de vida do nó renderizado.
+
+[Especificação, limitações e evidências](Docs/BUILDING_PHASE4.md).
+O histórico de arquitetura segue abaixo.
+
 # Atualização de arquitetura — 0.5.0-dev
 
 Mesma cena Main e módulos da 0.4, sem troca de engine. Godot executado: 4.6.3

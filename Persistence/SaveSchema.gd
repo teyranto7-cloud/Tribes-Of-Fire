@@ -3,7 +3,7 @@ const Catalog = preload("res://Items/Catalog.gd")
 const Journal = preload("res://Game/Journal.gd")
 const Profile = preload("res://Progression/Profile.gd")
 const Activities = preload("res://Crafting/Activities.gd")
-const KINDS := ["lantern","torch","raft","foundation","floor","wall","window","door","roof","stairs","fence","bed","chest","garden","totem"]
+const Buildings = preload("res://Building/Catalog.gd")
 static func number(value: Variant, low: float, high: float, whole: bool = false) -> bool:
 	return (value is int or value is float) and is_finite(float(value)) and value >= low and value <= high and (not whole or float(value) == floorf(float(value)))
 static func position(value: Variant, extent: float) -> bool:
@@ -26,9 +26,11 @@ static func extra(data: Dictionary, extent: float) -> bool:
 		if parts.size()!=2 or not parts[0].is_valid_int() or not parts[1].is_valid_int():return false
 		if absf(float(parts[0]))>extent/4+1 or absf(float(parts[1]))>extent/4+1 or not number(edits[cell],0,4):return false
 	var rules: Variant = data.get("rules",{})
-	if not rules is Dictionary or rules.size()>6: return false
+	if not rules is Dictionary or rules.size()>7: return false
 	for key in rules:
-		if key=="pvp":
+		if key=="structural_support":
+			if not rules[key] is bool: return false
+		elif key=="pvp":
 			if rules[key] not in ["on","off","war"]: return false
 		elif key=="difficulty":
 			if rules[key] not in ["peaceful","normal","hard"]: return false
@@ -45,13 +47,11 @@ static func extra(data: Dictionary, extent: float) -> bool:
 		for request in requests:
 			if not request is String or request.is_empty() or request.length()>64:return false
 	var pieces: Variant = data.get("structures",[])
-	if not pieces is Array or pieces.size() > 512: return false
+	if not pieces is Array or pieces.size() > preload("res://Building/Registry.gd").MAXIMUM: return false
 	var ids := {}
 	for piece in pieces:
-		if not piece is Dictionary or not number(piece.get("id"),1,1000000,true) or ids.has(int(piece["id"])) or piece.get("kind") not in KINDS: return false
+		if not piece is Dictionary or not Buildings.valid_record(piece,extent) or ids.has(int(piece["id"])): return false
 		ids[int(piece["id"])]=true
-		if not position(piece.get("position"),extent) or not number(piece.get("rotation"),0,3,true) or not number(piece.get("hp"),0,100,true) or not piece.get("open") is bool: return false
-		if not piece.get("owner") is String or piece["owner"].length()>128: return false
 		if piece.has("bound_to") and (piece["kind"] != "bed" or not piece["bound_to"] is String or piece["bound_to"].length()>128): return false
 		if piece.has("storage"):
 			if piece["kind"] != "chest" or not piece["storage"] is Dictionary or piece["storage"].size()>24: return false
@@ -61,6 +61,25 @@ static func extra(data: Dictionary, extent: float) -> bool:
 			if piece["kind"] != "chest" or not piece["storage_wear"] is Dictionary or piece["storage_wear"].size()>24: return false
 			for item in piece["storage_wear"]:
 				if not piece.get("storage",{}).has(item) or not number(piece["storage_wear"][item],0,100,true):return false
+	if data.has("structure_next_id"):
+		if not number(data["structure_next_id"],1,1000001,true): return false
+		for id in ids:
+			if id>=int(data["structure_next_id"]): return false
+	var degrees:Dictionary={}; var children:Dictionary={}; var ready:Array=[]
+	for piece in pieces:
+		var id:=int(piece["id"]); degrees[id]=piece.get("supports",[]).size()
+		if degrees[id]==0: ready.append(id)
+		for parent in piece.get("supports",[]):
+			if not ids.has(int(parent)): return false
+			if not children.has(int(parent)): children[int(parent)]=[]
+			children[int(parent)].append(id)
+	var visited:=0
+	while not ready.is_empty():
+		var id:int=ready.pop_back(); visited+=1
+		for child in children.get(id,[]):
+			degrees[child]-=1
+			if degrees[child]==0: ready.append(child)
+	if visited!=pieces.size(): return false
 	var fishes: Variant = data.get("fishing",[])
 	if not fishes is Array or fishes.size()>12: return false
 	var fish_ids: Dictionary = {}

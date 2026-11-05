@@ -174,4 +174,4 @@ func _unhandled_input(event: InputEvent) -> void:
 		hide_chat()
 		get_viewport().set_input_as_handled()
 func _process(_delta: float) -> void:
-	visible = game != null and game.running and game.player != null and not game.player.creation_pending
+	visible = game != null and game.running and game.player != null and not game.player.creation_pending and (game.hud.mode=="" or panel.visible)

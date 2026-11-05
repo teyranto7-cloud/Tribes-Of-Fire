@@ -1,0 +1,7 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=805161683 count=1
+PLAYER_JOINED id=964157943 count=2
+PLAYER_JOINED id=1767123045 count=3
+COMMUNICATION_FAIL role=C messages=["global-proof", "diplomacy-proof"] audio={ "diplomacy": 1 } played=640

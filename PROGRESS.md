@@ -1,3 +1,19 @@
+# Fase 4 — 0.9.0-dev
+
+Criado por **felipealx**. Continuação de 53809a2, sem trocar engine/renderizador ou
+apagar mecânicas. Catálogo de 39 peças/seis materiais, encaixes, altura/grade/espelho,
+recolocação por revisão, reparo, tiers, pintura/nome/permissões e demolição com
+orçamento confirmado de IDs/versões. Bancadas vazias se movem sem reindexar fábricas.
+Registro por chunks com 8.192 peças de limite; 3.000 estruturas gravadas/recarregadas
+na fixture. Cultivos distantes mantêm crescimento; peças próximas têm colisão antes
+da interação. Corrigidos o próprio collider bloqueando portas, altura duplicada no
+snapping, devolução zero de kits e sobreposição antes do tick de física.
+
+Resultados finais e limites em [Docs/BUILDING_PHASE4.md](Docs/BUILDING_PHASE4.md).
+A arte continua procedural em transição; suporte não é solver de cargas, e bancadas
+industriais com conteúdo/motor/conexões não podem ser movidas. Sem aprovação de
+60 FPS, 100 jogadores ou jogo 1.0. O histórico está preservado a seguir.
+
 # Continuidade — 0.8.0-dev
 
 Criado por **felipealx**. Mesmo projeto Godot 4.6.3/Compatibility; baseline 185a463

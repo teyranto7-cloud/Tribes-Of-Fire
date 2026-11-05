@@ -1,3 +1,23 @@
+# Fase 4 — validação manual adicional
+
+1. Abrir B em Windows/Godot 4.6.3; filtrar peças e materiais, salvar favoritos.
+2. Construir fundações, duas metades triangulares, paredes, marco/folha de porta e telhado.
+3. Alternar R, PgUp/PgDn, G, T e H em peças compatíveis; observar motivo da prévia vermelha.
+4. Ativar suporte estrutural: telhado sem paredes/colunas deve ser recusado.
+5. Tentar construir/mover atravessando personagem, terreno, árvore e peça de outro jogador.
+6. Abrir portas por ambos os lados; tentar fechar enquanto outro jogador ocupa o vão.
+7. Guardar itens no baú: mover/demolir deve falhar; retirar tudo e recolocar sem gerar kit.
+8. Reparar peça danificada, aprimorar material, renomear, pintar, controlar aliado/fechadura.
+9. Abrir confirmação de demolição; outro jogador altera dependente: confirmar deve ser recusado.
+10. Esvaziar mochila/baú; confirmar cascata pequena e conferir restituição uma única vez.
+11. Esvaziar/desconectar bancada e cancelar filas; mover e conferir produção/posição após reinício.
+12. Caminhar por escada e rampa sem pular. Verificar câmera, aterrissagem e piso superior.
+13. Plantar, afastar-se para descarregar o chunk e voltar: cultura/tempo/umidade devem persistir.
+14. Medir CPU/GPU/FPS/memória em hardware real e conferir UI em 720p/1080p/janela reduzida.
+
+Estes passos humanos continuam pendentes onde não houver resultado específico;
+[relatório e testes automatizados](../Docs/BUILDING_PHASE4.md).
+
 # Validação manual — 0.3.1-dev
 
 Importação, regras, física automatizada, processo real de rede, captura/reprodução

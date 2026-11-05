@@ -96,12 +96,7 @@ func configure(value, _language: int = 0) -> void:
 		var kind:String=entry[0];var tool:int=entry[1]
 		var b:=Button.new();b.text=label("Posicionar ","Place ")+item_name(kind)
 		b.pressed.connect(func():game.tool=tool;game.build_piece="";game.hud.show_panel(""));building.add_child(b)
-	var scroll_build:=ScrollContainer.new();scroll_build.custom_minimum_size.y=340;building.add_child(scroll_build)
-	var list_build:=VBoxContainer.new();list_build.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll_build.add_child(list_build)
-	for kind in Balance.section("building")["costs"]:
-		var b:=Button.new();b.text=tr("Build")+": "+item_name(kind)+" · "+cost_text(Balance.section("building")["costs"][kind])
-		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL;b.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS;b.add_theme_font_size_override("font_size",14)
-		b.pressed.connect(func():game.select_building(kind));list_build.add_child(b)
+	var catalogue:=preload("res://UI/BuildPanel.gd").new(); building.add_child(catalogue); catalogue.configure(game)
 	_refresh(true)
 func item_name(id: String) -> String: return Catalog.display_name(id)
 func cost_text(cost: Dictionary) -> String:

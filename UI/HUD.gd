@@ -7,6 +7,7 @@ var mode: String = "loading"
 var stats: Label
 var hint: Label
 var notice_label: Label
+var panel_notice: Label
 var exposure_label: Label
 var panel: PanelContainer
 var column: VBoxContainer
@@ -147,7 +148,7 @@ func _ready() -> void:
 func _fit_panel() -> void:
 	var viewport_size := get_viewport().get_visible_rect().size
 	panel.set_anchors_preset(Control.PRESET_CENTER)
-	var half_width := minf(420.0 if mode in ["inventory", "map"] else 300.0, viewport_size.x * 0.5 - 12.0)
+	var half_width := minf(420.0 if mode in ["inventory", "map", "construction"] else 300.0, viewport_size.x * 0.5 - 12.0)
 	var half_height := minf(308.0, viewport_size.y * 0.5 - 12.0)
 	panel.offset_left = -half_width
 	panel.offset_right = half_width
@@ -182,6 +183,7 @@ func button(value: String, action: Callable) -> Button:
 
 
 func clear() -> void:
+	panel_notice=null
 	for child in column.get_children():
 		column.remove_child(child)
 		child.queue_free()
@@ -192,6 +194,8 @@ func _heading(subtitle: String) -> void:
 	text(subtitle, 17, MUTED)
 	var divider := HSeparator.new()
 	column.add_child(divider)
+	panel_notice=text(notice_label.text,14,GOLD)
+	panel_notice.visible=notice_left>0
 
 
 func _footer() -> void:
@@ -245,6 +249,10 @@ func show_panel(value: String) -> void:
 			_heading(tr("You died"))
 			button(tr("Respawn"), func(): game.request_command("respawn", {}))
 			button(tr("Return to main menu"), Callable(game,"return_to_menu"))
+		"construction":
+			_heading(t("Construção modular", "Modular building"))
+			_add_panel(preload("res://UI/BuildPanel.gd"))
+			button(tr("Back"), func():show_panel(""))
 		"inventory":
 			_heading(tr("Inventory"))
 			_add_panel(preload("res://UI/InventoryPanel.gd"))
@@ -382,7 +390,9 @@ func notify_message(value: String) -> void:
 
 func _process(delta: float) -> void:
 	notice_left -= delta
-	notice_label.visible = notice_left > 0
+	notice_label.visible = notice_left > 0 and mode==""
+	if is_instance_valid(panel_notice):
+		panel_notice.text=notice_label.text; panel_notice.visible=notice_left>0 and mode!=""
 	if game == null or game.player == null:
 		stats.text = ""
 		hint.text = ""

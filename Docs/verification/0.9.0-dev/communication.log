@@ -1,0 +1,45 @@
+server: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=52721 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1043679887 count=1
+PLAYER_JOINED id=596839752 count=2
+PLAYER_JOINED id=1285611283 count=3
+PLAYER_LEFT id=1043679887
+PLAYER_LEFT id=596839752
+PLAYER_LEFT id=1285611283
+COMMUNICATION_SERVER_PASS clients=3 routing=authority blocks=validated routes={ "proximity:1043679887": 18, "proximity:596839752": 12, "private:1043679887": 4, "private:596839752": 4, "tribe:1043679887": 4, "tribe:596839752": 4, "group:1043679887": 4, "group:596839752": 4, "diplomacy:1043679887": 4, "diplomacy:1285611283": 4 }
+
+A: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1043679887 count=1
+PLAYER_JOINED id=596839752 count=2
+PLAYER_JOINED id=1285611283 count=3
+COMMUNICATION_DIAGNOSTIC role=A sent={ "proximity": 18, "private": 4, "tribe": 4, "group": 4, "diplomacy": 4 } queued=0 elapsed=17.519276333334
+COMMUNICATION_CLIENT_PASS role=A messages=7 audio_packets={  } played_samples=0 microphone_started=false
+
+B: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1043679887 count=1
+PLAYER_JOINED id=596839752 count=2
+PLAYER_JOINED id=1285611283 count=3
+COMMUNICATION_DIAGNOSTIC role=B sent={  } queued=0 elapsed=17.5541703333338
+PROXIMITY_SYNTHETIC_LEVELS {"medium":0.285194918246518,"near":0.80000000228364} microphone_started=false
+COMMUNICATION_CLIENT_PASS role=B messages=5 audio_packets={ "proximity": 12, "private": 4, "tribe": 4, "group": 4 } played_samples=15360 microphone_started=false
+
+C: exit=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1043679887 count=1
+PLAYER_JOINED id=596839752 count=2
+PLAYER_JOINED id=1285611283 count=3
+COMMUNICATION_DIAGNOSTIC role=C sent={  } queued=0 elapsed=17.4901530000006
+COMMUNICATION_CLIENT_PASS role=C messages=2 audio_packets={ "diplomacy": 4 } played_samples=2560 microphone_started=false
+
+COMMUNICATION_PASS: 3 clients, six text channels, spatial and remote encoded audio, privacy, block, receive playback; no microphone captured

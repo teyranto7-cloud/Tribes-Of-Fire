@@ -34,8 +34,18 @@ def runtime_environment() -> dict[str, str]:
 def run(engine: str, options: list[str], log_name: str, env: dict[str, str]) -> str:
     command = [engine, '--headless', '--path', str(ROOT), *options]
     print('+', ' '.join(command), flush=True)
-    completed = subprocess.run(command, cwd=ROOT, env=env, text=True,
-                               stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    try:
+        completed = subprocess.run(command, cwd=ROOT, env=env, text=True,
+                                   stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                   timeout=240)
+    except subprocess.TimeoutExpired as error:
+        raw = error.stdout or ''
+        output = raw.decode('utf-8', errors='replace') if isinstance(raw, bytes) else raw
+        logs = ROOT / 'builds' / 'logs'
+        logs.mkdir(parents=True, exist_ok=True)
+        (logs / log_name).write_text(output, encoding='utf-8')
+        print(output, end='', flush=True)
+        raise SystemExit(f'Godot timed out after 240s; partial log: builds/logs/{log_name}')
     print(completed.stdout, end='', flush=True)
     logs = ROOT / 'builds' / 'logs'
     logs.mkdir(parents=True, exist_ok=True)
@@ -108,7 +118,7 @@ def main() -> None:
     expected_source = source_signature()
     tests = [name for name in ('test_rules.gd', 'test_world.gd', 'test_player.gd', 'test_input.gd',
                               'test_gameplay.gd', 'test_v3.gd', 'test_gameplay_regressions.gd',
-                              'test_tribes_regression.gd', 'test_ui_regressions.gd', 'test_phase2.gd', 'test_phase3.gd', 'test_station_transactions.gd', 'test_settlement.gd', 'test_mesh_batching.gd', 'test_legacy_extensions.gd', 'test_frontier.gd',
+                              'test_tribes_regression.gd', 'test_ui_regressions.gd', 'test_phase2.gd', 'test_phase3.gd', 'test_station_transactions.gd', 'test_settlement.gd', 'test_phase4.gd', 'test_phase4_doors.gd', 'test_phase4_walk.gd', 'test_mesh_batching.gd', 'test_legacy_extensions.gd', 'test_frontier.gd',
                               'test_voice_regressions.gd', 'test_reliability.gd',
                               'test_startup_close.gd', 'test_delivery_regressions.gd', 'test_playability.gd', 'test_reconstruction.gd', 'test_runner.gd')
              if (ROOT / 'Tests' / name).is_file()]

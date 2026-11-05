@@ -1,7 +1,11 @@
 extends StaticBody3D
 ## Each modular piece owns its collision, state and appearance; the server owns commands.
 const Shapes = preload("res://World/Shapes.gd")
-const KINDS := ["lantern","torch","raft","foundation", "floor", "wall", "window", "door", "roof", "stairs", "fence", "bed", "chest", "garden", "totem"]
+const BuildingCatalog = preload("res://Building/Catalog.gd")
+const Geometry = preload("res://Building/Geometry.gd")
+static var KINDS: Array = BuildingCatalog.ids()
+const LEGACY := ["lantern","torch","raft","foundation","floor","wall","window","door","roof","stairs","fence","bed","chest","garden","totem"]
+var record_extra: Dictionary = {}
 var replica_target := Vector3.ZERO
 var replica_yaw: float = 0.0
 var structure_id: int = 0
@@ -18,8 +22,14 @@ var water: float = 0.0
 var hinge: Node3D
 var plants: Array[Node3D] = []
 var _lid: Node3D
+func collision_rids() -> Array:
+	var result:Array=[get_rid()]
+	for child in find_children("*","CollisionObject3D",true,false): result.append(child.get_rid())
+	return result
 
 func setup(record: Dictionary) -> void:
+	for field in ["tier","mirror","paint","name","locked","allow_allies","supports","revision","paid_cost","door_swing"]:
+		if record.has(field): record_extra[field]=record[field].duplicate(true) if record[field] is Array or record[field] is Dictionary else record[field]
 	structure_id = int(record["id"])
 	kind = str(record["kind"])
 	owner_key = str(record.get("owner", ""))
@@ -33,6 +43,7 @@ func setup(record: Dictionary) -> void:
 	add_to_group("building_piece")
 	add_to_group(kind)
 	_build()
+	Geometry.finish(self,str(record_extra.get("tier","wood")),int(record_extra.get("paint",0)))
 	set_open(bool(record.get("open", false)))
 	replica_target=position;replica_yaw=rotation.y
 
@@ -44,6 +55,8 @@ func _box(size: Vector3, at: Vector3, tint: Color, solid: bool = true) -> void:
 		Shapes.collider(self, shape, at)
 
 func _build() -> void:
+	if kind not in LEGACY:
+		Geometry.build(self,record_extra); return
 	var wood := Color("#78583d")
 	var edge := Color("#4e3e2b")
 	match kind:
@@ -96,7 +109,9 @@ func _build() -> void:
 			for i in range(10): Shapes.box(self, Vector3(0.42, 0.12, 4.25), Vector3(-1.9 + i * 0.42, 3.55, 0), Color("#8d7c52").lightened(i % 2 * 0.05))
 			add_to_group("rain_roof")
 		"stairs":
-			for i in range(8): _box(Vector3(2, 0.4, 0.5), Vector3(0, 0.2 + i * 0.4, 1.75 - i * 0.5), wood)
+			for i in range(16): _box(Vector3(2, 0.2, 0.25), Vector3(0, 0.1 + i * 0.2, 1.875 - i * 0.25), wood, false)
+			var slope:=ConvexPolygonShape3D.new(); slope.points=Geometry.vertices("stairs",false)
+			Shapes.collider(self,slope,Vector3.ZERO)
 		"fence":
 			for x in [-1.9, 1.9]: _box(Vector3(0.2, 1.6, 0.2), Vector3(x, 0.8, 0), edge)
 			for y in [0.55, 1.15]: _box(Vector3(4, 0.18, 0.15), Vector3(0, y, 0), wood)
@@ -129,7 +144,9 @@ func _build() -> void:
 
 func set_open(value: bool) -> void:
 	open = value
-	if hinge != null: hinge.rotation.y = -PI * 0.55 if open else 0.0
+	if hinge != null:
+		if kind=="hatch": hinge.rotation.z=PI*.5 if open else 0.0
+		else: hinge.rotation.y = int(record_extra.get("door_swing",-1)) * PI * 0.55 if open else 0.0
 	if _lid != null: _lid.rotation.x = -PI * 0.4 if open else 0.0
 
 func set_crop(value: String, progress: float, moisture: float) -> void:
@@ -145,6 +162,7 @@ func get_record() -> Dictionary:
 		result["storage"] = storage.duplicate(true)
 		result["storage_wear"] = storage_wear.duplicate(true)
 	if kind == "bed": result["bound_to"] = bound_to
+	result.merge(record_extra,true)
 	return result
 
 func _process(delta: float) -> void:

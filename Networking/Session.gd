@@ -16,8 +16,8 @@ signal voice_received(id: int, sequence: int, packet: PackedByteArray, channel: 
 signal admin_requested(id: int, action: String, data: Dictionary)
 const ServerConfig = preload("res://Networking/ServerConfig.gd")
 const SnapshotCodec = preload("res://Networking/SnapshotCodec.gd")
-const PROTOCOL_VERSION := 6
-const COMMANDS := ["factory_route","factory_unroute","energy_connect","energy_disconnect","energy_toggle","energy_install","team_ping","trade_offer","trade_accept","trade_cancel","station_select","station_load","station_refund","tribe_war","tribe_alliance","tribe_accept_alliance","tribe_break_alliance","tribe_peace","tribe_accept_peace","factory_load","factory_take","dig","appearance", "eat", "drink", "cook", "respawn", "inventory_sort", "inventory_move", "inventory_drop", "equip", "unequip", "craft", "interact", "combat", "mine", "build", "tribe_create", "tribe_invite", "tribe_accept", "tribe_leave", "tribe_kick", "tribe_leader", "chat", "group_create", "group_invite", "group_accept", "group_leave", "group_kick", "call_invite", "call_accept", "call_leave", "block", "chest_transfer", "refuel", "research", "craft_cancel", "repair", "plant", "harvest_crop", "fish", "tame", "map_mark", "map_remove"]
+const PROTOCOL_VERSION := 7
+const COMMANDS := ["station_move","structure_edit","factory_route","factory_unroute","energy_connect","energy_disconnect","energy_toggle","energy_install","team_ping","trade_offer","trade_accept","trade_cancel","station_select","station_load","station_refund","tribe_war","tribe_alliance","tribe_accept_alliance","tribe_break_alliance","tribe_peace","tribe_accept_peace","factory_load","factory_take","dig","appearance", "eat", "drink", "cook", "respawn", "inventory_sort", "inventory_move", "inventory_drop", "equip", "unequip", "craft", "interact", "combat", "mine", "build", "tribe_create", "tribe_invite", "tribe_accept", "tribe_leave", "tribe_kick", "tribe_leader", "chat", "group_create", "group_invite", "group_accept", "group_leave", "group_kick", "call_invite", "call_accept", "call_leave", "block", "chest_transfer", "refuel", "research", "craft_cancel", "repair", "plant", "harvest_crop", "fish", "tame", "map_mark", "map_remove"]
 
 const DEFAULT_PORT := 24567
 const MAX_PLAYERS := 100
@@ -455,7 +455,7 @@ static func valid_command(command: String, data: Dictionary) -> bool:
 		if not _number(expected.get("count")) or expected["count"] < 1 or expected["count"] > 9999 or expected["count"] != floorf(expected["count"]): return false
 		var base := data.duplicate(true); base.erase("expected")
 		return valid_command(command, base)
-	if command in ["craft","craft_cancel","station_select","station_load","station_refund","factory_load","factory_take","trade_offer","trade_accept","trade_cancel","energy_connect","energy_disconnect","energy_toggle","energy_install","factory_route","factory_unroute"] and data.has("request_id"):
+	if command in ["station_move","build","structure_edit","craft","craft_cancel","station_select","station_load","station_refund","factory_load","factory_take","trade_offer","trade_accept","trade_cancel","energy_connect","energy_disconnect","energy_toggle","energy_install","factory_route","factory_unroute"] and data.has("request_id"):
 		if not data["request_id"] is String or data["request_id"].is_empty() or data["request_id"].length()>64:return false
 		var base:=data.duplicate();base.erase("request_id")
 		return valid_command(command,base)
@@ -474,11 +474,16 @@ static func valid_command(command: String, data: Dictionary) -> bool:
 		"tribe_create": ["name"], "tribe_invite": ["target"], "tribe_accept": [], "tribe_leave": [], "tribe_kick": ["target"], "tribe_leader": ["target"],
 		"chat": ["channel","target","text"], "group_create": ["name","kind"], "group_invite": ["id","target"], "group_accept": [], "group_leave": ["id"], "group_kick": ["id","target"], "call_invite": ["target"], "call_accept": ["id"], "call_leave": ["id"], "block": ["target","enabled"],
 		"chest_transfer": ["structure","slot","amount","to_chest"], "refuel": [], "research": ["technology"], "craft_cancel": ["index"], "repair": ["slot"], "plant": ["structure","crop"], "harvest_crop": ["structure"], "fish": [], "tame": ["animal"], "map_mark": ["position","name","color","shared"], "map_remove": ["id"]}
+	if command=="station_move": return preload("res://Building/Service.gd").valid_station_move(data)
+	if command=="structure_edit": return preload("res://Building/Service.gd").valid_edit(data)
 	if command == "build":
-		if data.get("piece") in preload("res://Energy/Grid.gd").KINDS: return data.size()==2 and _number(data.get("rotation")) and data["rotation"]==floorf(data["rotation"]) and data["rotation"]>=0 and data["rotation"]<=3
-		if not data.get("piece") is String or (not data["piece"] in ["foundation","floor","wall","window","door","roof","stairs","fence","bed","chest","garden","lantern","torch","raft","totem"] and not preload("res://Items/Catalog.gd").station_ids().has(data["piece"])): return false
-		if data.size() != (2 if data.has("rotation") else 1): return false
-		return not data.has("rotation") or (_number(data["rotation"]) and data["rotation"] == floorf(float(data["rotation"])) and data["rotation"] >= 0 and data["rotation"] <= 3)
+		var base:=data.duplicate(true); var options:Variant=base.get("options",{}); base.erase("options")
+		if not options is Dictionary or not preload("res://Building/Catalog.gd").valid_options(options): return false
+		if not base.get("piece") is String: return false
+		if not preload("res://Building/Catalog.gd").known(base["piece"]) and base["piece"] not in preload("res://Energy/Grid.gd").KINDS and base["piece"] not in preload("res://Items/Catalog.gd").station_ids(): return false
+		if not preload("res://Building/Catalog.gd").known(base["piece"]) and base["piece"] not in preload("res://Items/Catalog.gd").station_ids() and not options.is_empty(): return false
+		if base.size()!=(2 if base.has("rotation") else 1): return false
+		return not base.has("rotation") or (_number(base["rotation"]) and base["rotation"]==floorf(base["rotation"]) and base["rotation"]>=0 and base["rotation"]<=3)
 	if not fields.has(command) or data.size() != fields[command].size(): return false
 	for key in fields[command]:
 		if not data.has(key): return false

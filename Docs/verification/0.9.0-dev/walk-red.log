@@ -1,0 +1,17 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+ERROR: Walk up stairs without jumping
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (res://Tests/test_phase4_walk.gd:7)
+       [1] run (res://Tests/test_phase4_walk.gd:25)
+PHASE4_WALK_SAMPLE kind=stairs frames=240 end=(0.0, 19.99538, 0.309635) maximum_y=20.2000007629395
+ERROR: Walk up ramp without jumping
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (res://Tests/test_phase4_walk.gd:7)
+       [1] run (res://Tests/test_phase4_walk.gd:25)
+PHASE4_WALK_SAMPLE kind=ramp frames=240 end=(5.0, 20.00039, 0.293333) maximum_y=20.2000007629395
+PHASE4_WALK CHECKS=4 FAILED=2

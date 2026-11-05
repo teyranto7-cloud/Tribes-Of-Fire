@@ -1,3 +1,14 @@
+# Atualização de construção — 0.9.0-dev
+
+A Fase 4 acrescentou catálogo, materiais, gerenciamento seguro, suporte configurável
+e persistência/streaming de peças. Detalhes e resultados em
+[BUILDING_PHASE4.md](BUILDING_PHASE4.md). Limite de peças passou de 512 para 8.192;
+a fixture de 3.000 registros não certifica milhares de objetos simultâneos ou FPS.
+Continuam parciais arte final, solver de cargas, combate destrutivo/cercos e gestão
+industrial completa. Bancadas com motor/conteúdo/conexões ficam bloqueadas para mover.
+Demolição de bancada industrial e retirada de motor não fazem parte desta entrega.
+As pendências de hardware, microfone físico, Steam e 100 jogadores permanecem.
+
 # Pendências atuais — 0.8.0-dev
 
 Consulte [REQUEST_TRACEABILITY.md](REQUEST_TRACEABILITY.md) para cada grupo de pedidos

@@ -1,11 +1,28 @@
 # Tribes of Fire
 
-Criado por **felipealx** · código em desenvolvimento **0.8.0-dev** · Godot 4.6.3 · Windows/Linux x64
+Criado por **felipealx** · código em desenvolvimento **0.9.0-dev** · Godot 4.6.3 · Windows/Linux x64
 
 Jogo de sobrevivência 3D em terceira pessoa, com modo solo, hospedagem por jogador
 e servidor dedicado autoritativo. A reconstrução continua a base existente; não é
 uma versão 1.0 concluída. Funcionalidades, resultados observados e critérios ainda
 pendentes estão em [PROGRESS.md](PROGRESS.md) e [Docs/PENDENCIAS.md](Docs/PENDENCIAS.md).
+
+## Fase 4 — construção modular — 0.9.0-dev
+
+**B** abre o novo catálogo com busca, categorias, favoritos e seis materiais.
+39 peças modulares incluem triângulos, marco/folha de porta, portões, telhados,
+pontes e móveis. R gira; PgUp/PgDn ajusta altura; G grade; T encaixe; H espelha.
+Gerenciar base permite reparar, aprimorar, pintar, renomear, controlar acesso,
+recolocar e confirmar demolição com restituição segura. Bancadas vazias e
+desconectadas também podem ser movidas, preservando índice e orientação.
+
+Registro por chunk conserva até 8.192 peças; o teste técnico cobre 3.000 registros.
+Esse limite não comprova FPS com milhares de objetos visíveis. Construções antigas
+continuam válidas; o modo estrutural estrito é opcional.
+
+[Relatório e comandos da Fase 4](Docs/BUILDING_PHASE4.md) ·
+[Instalador e ZIPs 0.9.0-dev](Downloads/0.9.0-dev).
+Os resultados da 0.8 abaixo são históricos. A versão 1.0 completa permanece pendente.
 
 ## Continuidade 0.8.0-dev — indústria e qualidade
 

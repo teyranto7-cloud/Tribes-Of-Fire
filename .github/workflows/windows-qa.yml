@@ -74,7 +74,8 @@ jobs:
         if: steps.package.outputs.available == 'true'
         shell: pwsh
         run: |
-          $previous = 'Downloads/0.7.1-dev/TribesOfFire-0.7.1-dev-Windows-Setup.exe'
+          $previousVersion = if ([version](($env:PACKAGE_VERSION -split '-')[0]) -ge [version]'0.9.0') { '0.8.0-dev' } else { '0.7.1-dev' }
+          $previous = 'Downloads/' + $previousVersion + '/TribesOfFire-' + $previousVersion + '-Windows-Setup.exe'
           $upgrade = @{}
           if ([version](($env:PACKAGE_VERSION -split '-')[0]) -gt [version]'0.7.1' -and (Test-Path $previous)) { $upgrade.PreviousInstaller = $previous }
           ./Tools/Test-Windows.ps1 @upgrade -Installer (Join-Path $env:PACKAGE_DIRECTORY ('TribesOfFire-' + $env:PACKAGE_VERSION + '-Windows-Setup.exe')) -OutputDirectory (Join-Path $env:RUNNER_TEMP 'Tribes-QA') -Headless

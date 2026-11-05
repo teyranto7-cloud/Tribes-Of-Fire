@@ -1,0 +1,24 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1295880199 count=1
+PHASE4_CLIENT_READY merchant
+PLAYER_JOINED id=1546889366 count=2
+PLAYER_JOINED id=949434028 count=3
+SETTLEMENT_DELIVERY role=merchant order=1 action=build connected=true
+SETTLEMENT_DELIVERY role=merchant order=2 action=tribe_create connected=true
+SETTLEMENT_DELIVERY role=merchant order=3 action=tribe_invite connected=true
+SETTLEMENT_DELIVERY role=merchant order=7 action=build connected=true
+SETTLEMENT_DELIVERY role=merchant order=8 action=structure_edit connected=true
+SETTLEMENT_DELIVERY role=merchant order=10 action=structure_edit connected=true
+SETTLEMENT_DELIVERY role=merchant order=11 action=build connected=true
+SETTLEMENT_DELIVERY role=merchant order=12 action=chest_transfer connected=true
+SETTLEMENT_DELIVERY role=merchant order=13 action=structure_edit connected=true
+SETTLEMENT_DELIVERY role=merchant order=14 action=chest_transfer connected=true
+SETTLEMENT_DELIVERY role=merchant order=15 action=structure_edit connected=true
+PLAYER_LEFT id=1546889366
+SETTLEMENT_DELIVERY role=merchant order=16 action=structure_edit connected=true
+PLAYER_JOINED id=976819403 count=3
+SETTLEMENT_DELIVERY role=merchant order=17 action=build connected=true
+SETTLEMENT_DELIVERY role=merchant order=18 action=station_move connected=true
+PHASE4_CLIENT_PASS role=merchant checks=52 failed=0

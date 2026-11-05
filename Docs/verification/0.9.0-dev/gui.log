@@ -1,0 +1,35 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+AUDIT_GUI PASS B opens modular building menu
+AUDIT_GUI PASS Search filters to square and triangular foundations
+AUDIT_GUI PASS Mouse favourite persists with other preferences
+AUDIT_GUI PASS Framebuffer size catalogue-1280x720
+AUDIT_GUI PASS Real screenshot catalogue-1280x720
+AUDIT_GUI PASS Selectable real square foundation
+AUDIT_GUI PASS Selection opens world placement
+AUDIT_GUI PASS Rotation and height use keyboard actions
+AUDIT_GUI PASS Ghost displays the piece geometry
+AUDIT_GUI PASS Framebuffer size foundation-ghost-green
+AUDIT_GUI PASS Real screenshot foundation-ghost-green
+AUDIT_GUI PASS World mouse click builds once and pays once
+AUDIT_GUI PASS Existing foundation causes red collision preview
+AUDIT_GUI PASS Framebuffer size foundation-ghost-red
+AUDIT_GUI PASS Real screenshot foundation-ghost-red
+AUDIT_GUI PASS Escape cancels construction without opening another action
+AUDIT_GUI PASS Mouse saves a real object name
+AUDIT_GUI PASS Demolition opens a confirmation window
+AUDIT_GUI PASS Cancel confirmation preserves object and materials
+AUDIT_GUI PASS Building menu fits (1920, 1080)
+AUDIT_GUI PASS Framebuffer size catalogue-1920x1080
+AUDIT_GUI PASS Real screenshot catalogue-1920x1080
+AUDIT_GUI PASS Building menu fits (800, 600)
+AUDIT_GUI PASS Framebuffer size catalogue-800x600
+AUDIT_GUI PASS Real screenshot catalogue-800x600
+AUDIT_GUI PASS Framebuffer size six-materials-gallery-fixture
+AUDIT_GUI PASS Real screenshot six-materials-gallery-fixture
+PHASE4_GUI CHECKS=27 FAILED=0

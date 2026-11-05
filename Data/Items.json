@@ -2079,7 +2079,8 @@
         "en": "Used in survival and workshop production.",
         "pt_BR": "Usado na sobrevivência e produção nas bancadas."
       },
-      "source": "craft"
+      "source": "craft",
+      "place": "modular_chair"
     },
     "table": {
       "id": "table",
@@ -2102,7 +2103,8 @@
         "en": "Used in survival and workshop production.",
         "pt_BR": "Usado na sobrevivência e produção nas bancadas."
       },
-      "source": "craft"
+      "source": "craft",
+      "place": "modular_table"
     },
     "vase": {
       "id": "vase",
@@ -2125,7 +2127,8 @@
         "en": "Used in survival and workshop production.",
         "pt_BR": "Usado na sobrevivência e produção nas bancadas."
       },
-      "source": "craft"
+      "source": "craft",
+      "place": "decor_vase"
     },
     "copper_pickaxe": {
       "id": "copper_pickaxe",
@@ -3814,7 +3817,8 @@
       "unlocks": [],
       "inputs": {
         "limestone": 2,
-        "clay": 1
+        "clay": 1,
+        "sand": 1
       }
     },
     "concrete": {
@@ -3831,7 +3835,8 @@
       "inputs": {
         "cement": 1,
         "sand": 2,
-        "water": 1
+        "water": 1,
+        "gravel": 2
       }
     },
     "chair": {

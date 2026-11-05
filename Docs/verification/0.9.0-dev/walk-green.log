@@ -1,0 +1,7 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PHASE4_WALK_SAMPLE kind=stairs frames=125 end=(0.0, 22.9971, -3.636319) maximum_y=22.9970989227295
+PHASE4_WALK_SAMPLE kind=ramp frames=125 end=(5.0, 22.99691, -3.636049) maximum_y=22.9969120025635
+PHASE4_WALK CHECKS=4 FAILED=0

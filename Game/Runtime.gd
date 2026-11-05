@@ -22,6 +22,7 @@ var farming: Dictionary = {}
 var _fish_cooldowns: Dictionary = {}
 var _activities_usec: int = Time.get_ticks_usec()
 var game
+var building = preload("res://Building/Service.gd").new()
 var resource_seed: int = -1
 var tribes = Tribes.new()
 var channels = Channels.new()
@@ -56,6 +57,10 @@ var ping_view: Array = []
 signal message_added(data: Dictionary)
 func configure(value) -> void:
 	game = value
+	building.game = game
+	game.world.structure_loaded.connect(func(piece):
+		var id:=str(piece.structure_id)
+		if piece.kind=="garden" and farming.has(id): piece.set_crop(farming[id]["crop"],farming[id]["growth"],farming[id]["water"]))
 	energy_visuals = preload("res://Energy/Presentation.gd").new(); energy_visuals.game = game; game.world.add_child(energy_visuals)
 	voice = Voice.new()
 	add_child(voice)
@@ -130,7 +135,7 @@ func player_record(id: int) -> Dictionary:
 func save_state() -> Dictionary:
 	var records: Array = []
 	for station in workshops:
-		records.append({"kind": station.kind, "position": [station.position.x, station.position.y, station.position.z], "owner": station.owner_key, "machine": station.machine.duplicate(true)})
+		records.append({"kind": station.kind, "position": [station.position.x, station.position.y, station.position.z], "owner": station.owner_key, "machine": station.machine.duplicate(true), "building":station.building.duplicate(true)})
 	var dropped: Array = []
 	for drop in drops:
 		dropped.append({"id": drop.get_meta("id"), "count": drop.get_meta("count"), "durability": drop.get_meta("durability", 100), "position": [drop.position.x, drop.position.y, drop.position.z]})
@@ -169,6 +174,8 @@ func _restore_workshops(records: Array) -> void:
 				fresh.setup(record["kind"],at,record["owner"]);workshops[i]=fresh
 		else:_add_workshop(record["kind"],at,record["owner"])
 		workshops[i].machine=record.get("machine",preload("res://Building/Factory.gd").empty()).duplicate(true)
+		workshops[i].building=record.get("building",{"rotation":0,"revision":1}).duplicate(true)
+		workshops[i].rotation.y=int(workshops[i].building.get("rotation",0))*PI*.5
 
 func _add_workshop(kind: String, at: Vector3, owner: String) -> void:
 	var station := Workshop.new()
@@ -289,8 +296,9 @@ func command(id: int, action: String, data: Dictionary) -> void:
 		if slot_index < 0 or slot_index >= slots.size() or slots[slot_index].get("id", "") != data["expected"].get("id", "") or int(slots[slot_index].get("count", 0)) != int(data["expected"].get("count", -1)):
 			_notify(id, false)
 			return
+	building.last_error=""
 	var receipt := ""
-	if action in ["craft_cancel","station_select","station_load","station_refund","factory_load","factory_take","trade_offer","trade_accept","trade_cancel","energy_connect","energy_disconnect","energy_toggle","energy_install","factory_route","factory_unroute"]:
+	if action in ["station_move","build","structure_edit","craft_cancel","station_select","station_load","station_refund","factory_load","factory_take","trade_offer","trade_accept","trade_cancel","energy_connect","energy_disconnect","energy_toggle","energy_install","factory_route","factory_unroute"]:
 		receipt=Activities.operation_receipt(action,str(data.get("request_id","")))
 		if not receipt.is_empty() and receipt in activities.requests.get(id,[]): return
 	var accepted := false
@@ -421,21 +429,29 @@ func command(id: int, action: String, data: Dictionary) -> void:
 			"station_select": accepted = _select_station_recipe(id,int(data["station"]),str(data["recipe"]))
 			"dig": accepted = _start_dig(id)
 			"mine": accepted = _start_mining(id, false)
+			"station_move": accepted = building.move_station(id,data)
+			"structure_edit": accepted = building.edit(id,data)
 			"build":
 				var kind := str(data.get("piece", ""))
 				if kind in PowerGrid.KINDS:
 					accepted = _build_energy(id,kind)
 					if accepted: activities.remember_request(id,receipt)
 					_notify(id,accepted); return
+				if preload("res://Building/Catalog.gd").known(kind):
+					accepted=building.build(id,kind,int(data.get("rotation",0)),data.get("options",{}))
+					if accepted:
+						activities.remember_request(id,receipt); body.play_action("build",.75); progression[id].award("building",8); game.journal.record_event(identity,"build")
+					_notify(id,accepted); return
 				var cost: Dictionary = Balance.section("building").get("costs", {}).get(kind, {})
 				for item in Catalog.ids():
 					if Catalog.get_item(item).get("place","")==kind and inv.count(item)>0:cost={item:1};break
 				if not cost.is_empty():
-					var site: Dictionary = game.world.placement(body, kind, int(data.get("rotation", 0)))
+					var site: Dictionary = game.world.placement(body, kind, int(data.get("rotation", 0)),data.get("options",{}))
 					if site["valid"] and _territory_allows(identity, site["position"]) and (not Catalog.station_ids().has(kind) or workshops.size()<32) and inv.transact(cost, {}):
 						if Catalog.station_ids().has(kind):
 							_add_workshop(kind,site["position"],identity)
 							workshops[-1].machine["recipe"]=str(Catalog.station(kind)["default_recipe"])
+							workshops[-1].building["rotation"]=int(data.get("rotation",0)); workshops[-1].rotation.y=int(data.get("rotation",0))*PI*.5
 						else: game.world.add_structure(kind, site["position"], int(data.get("rotation",0)), identity)
 						body.play_action("build", 0.75)
 						progression[id].award("building", Balance.number("progression", "build_xp", 8))
@@ -447,7 +463,7 @@ func command(id: int, action: String, data: Dictionary) -> void:
 		emit_sound(sound, body.position)
 	_notify(id, accepted)
 func _notify(id: int, accepted: bool) -> void:
-	game.session.notify(id, "notice", {"key": "Action completed" if accepted else "Action unavailable"})
+	game.session.notify(id, "notice", {"key": "Action completed" if accepted else (preload("res://Building/Catalog.gd").reason(building.last_error) if not building.last_error.is_empty() else "Action unavailable")})
 
 func _trade_command(id: int, action: String, data: Dictionary) -> bool:
 	var identity := key(id)
@@ -647,11 +663,10 @@ func _repair(id: int, slot: int) -> bool:
 	game.players[id].play_action("craft",0.7)
 	return true
 func _accessible(id: int, piece) -> bool:
-	return piece!=null and game.players[id].position.distance_to(piece.position)<4 and (piece.owner_key.is_empty() or tribes.can_build(piece.owner_key,key(id))) and _clear_interaction(game.players[id],piece.position+Vector3.UP*0.7,[piece.get_rid()])
+	return piece!=null and game.players[id].position.distance_to(piece.position)<4 and building.can_interact(piece.get_record(),key(id)) and _clear_interaction(game.players[id],piece.position+Vector3.UP*0.7,piece.collision_rids())
 func _territory_allows(identity: String, at: Vector3) -> bool:
-	for piece in game.world.structures:
-		if piece.kind=="totem" and piece.position.distance_to(at)<16 and not tribes.can_build(piece.owner_key,identity): return false
-	return true
+	return building.territory_allows(identity,at)
+
 func _chest_transfer(id: int, data: Dictionary) -> bool:
 	var chest = game.world.get_structure(int(data.get("structure",-1)))
 	if not _accessible(id,chest) or chest.kind!="chest": return false
@@ -697,7 +712,7 @@ func _interact(id: int) -> bool:
 			body.play_action("gather",0.55)
 			return true
 	if _accessible(id,piece):
-		if piece.kind=="door": return game.world.toggle_door(piece.structure_id)
+		if preload("res://Building/Catalog.gd").piece(piece.kind).has("door"): return building.toggle(id,piece)
 		if piece.kind=="bed": piece.bound_to=key(id);body.respawn_position=game.world.bed_spawn(key(id));return true
 		if piece.kind=="chest":
 			game.session.notify(id,"storage",{"id":piece.structure_id,"storage":piece.storage.duplicate(true)})
@@ -761,7 +776,7 @@ func _tick_farming(delta: float) -> void:
 	var raining: bool = game.weather.state()["raining"]
 	for id in farming.keys():
 		var piece = game.world.get_structure(int(id))
-		if piece==null: farming.erase(id);continue
+		if not game.world.structure_registry.records.has(int(id)) or game.world.structure_registry.records[int(id)]["kind"]!="garden": farming.erase(id);continue
 		var row: Dictionary = farming[id]
 		row["water"]=clampf(float(row["water"])+delta*(0.01 if raining else -0.001),0,1)
 		row["growth"]=minf(1,float(row["growth"])+delta/Balance.number("garden","grow_seconds",180)*(1.5 if raining else (1 if row["water"]>0 else 0.2)))

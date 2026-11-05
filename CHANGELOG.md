@@ -1,3 +1,16 @@
+# 0.9.0-dev — Fase 4
+
+- 39 peças modulares, seis materiais, catálogo/favoritos, fantasmas e sockets.
+- Tiers/reparo, aparência/nome/acesso, recolocação e demolição com revisão e restituição atômica.
+- Cimento com areia; concreto com agregados; kits restituem ingredientes proporcionais.
+- Cache por chunk separado dos registros; IDs persistidos e teste de 3.000 estruturas.
+- Corrigidos cultivo perdido ao descarregar, porta bloqueada pela própria colisão,
+  dupla aplicação de altura no encaixe e colisão ainda não atualizada no mesmo tick.
+- Folha de porta encaixável, abertura para longe do jogador e proteção do vão.
+- Degraus e rampas com transição de colisão contínua para caminhar sem pular.
+- Menus evitam notificações/chat sobre os controles da construção.
+- Bancadas vazias desconectadas mantêm índice, orientação e revisão ao mover/recarregar.
+
 # 0.8.0-dev
 
 - Conserva faces ao unir malhas indexadas/não indexadas; corrige partes invisíveis.

@@ -126,6 +126,9 @@ static func valid(data: Variant) -> bool:
 			if field == "workshops" and (not Catalog.station_ids().has(record.get("kind")) or not record.get("owner") is String or record["owner"].length() > 128):
 				return false
 			if field=="workshops" and record.has("machine") and not preload("res://Building/Factory.gd").valid(record["machine"],record["kind"]): return false
+			if modern and field=="workshops" and record.has("building"):
+				var building:Variant=record["building"]
+				if not building is Dictionary or building.size()!=2 or not integer(building.get("rotation"),0,3) or not integer(building.get("revision"),1,1000000000): return false
 			if field == "drops" and (not record.get("id") is String or not Catalog.known(record["id"]) or not integer(record.get("count"), 1, 9999)):
 				return false
 			if field == "drops" and record.has("durability") and not integer(record["durability"], 0, 100):
@@ -135,7 +138,8 @@ static func valid(data: Variant) -> bool:
 static func migrate(data: Dictionary) -> Dictionary:
 	var output := data.duplicate(true)
 	if int(data.get("version",1))<4:
-		for field in ["world","rules","structures","fire_states","resource_timers","resource_regrowth","tribe_research","farming","fishing","energy_grid","automation"]: output.erase(field)
+		for field in ["structure_next_id","world","rules","structures","fire_states","resource_timers","resource_regrowth","tribe_research","farming","fishing","energy_grid","automation"]: output.erase(field)
+		for station in output.get("workshops",[]): station.erase("building")
 		for player in output.get("players",{}).values():
 			for field in ["journal","progression","craft_queue","craft_requests"]: player.erase(field)
 	if int(output.get("version", 0)) == 1:

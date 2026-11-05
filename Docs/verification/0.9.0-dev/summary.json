@@ -1,0 +1,87 @@
+{
+  "version": "0.9.0-dev",
+  "baseline": "53809a26f9c76e6b404d7721ec0d14da712809e5",
+  "application_source_sha256": "cce57b58456d106b8afb8356e9d832ae1d8aa9762cbac518835669c37528e00a",
+  "suite": {
+    "checks": 4705,
+    "failed": 0,
+    "runners": 28
+  },
+  "gui": {
+    "checks": 27,
+    "failed": 0,
+    "method": "Native mouse/keyboard for B/select/build/favourite/rotation/height/name/confirmation cancel; fixture inventory and gallery, actual framebuffer; three resolutions.",
+    "performance": {
+      "draw_calls": 242.0,
+      "fps": 9.95165981246097,
+      "frame_p95_ms": 107.069,
+      "frames": 40,
+      "method": "Four-second fixed material gallery on software/cloud renderer, simulation frozen; not gameplay or target hardware.",
+      "nodes": 5575,
+      "static_memory_bytes": 157444023.0
+    },
+    "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+    "screenshots": [
+      "res://builds/phase4/screenshots/catalogue-1280x720.png",
+      "res://builds/phase4/screenshots/foundation-ghost-green.png",
+      "res://builds/phase4/screenshots/foundation-ghost-red.png",
+      "res://builds/phase4/screenshots/catalogue-1920x1080.png",
+      "res://builds/phase4/screenshots/catalogue-800x600.png",
+      "res://builds/phase4/screenshots/six-materials-gallery-fixture.png"
+    ]
+  },
+  "network": {
+    "dedicated_checks": 36,
+    "restart_checks": 6,
+    "failed": 0,
+    "clients": 3,
+    "client_checks_each": 52,
+    "fixture_materials_positions": true
+  },
+  "phase3_network": {
+    "checks": 372,
+    "restart": 8,
+    "failed": 0
+  },
+  "exports": {
+    "checks": 6,
+    "failed": 0
+  },
+  "communication": {
+    "first": "FAIL: C received one of four diplomatic packets; cause not isolated",
+    "diagnostic_repeat": "PASS: unchanged assertions, all four diplomatic packets received; synthetic only"
+  },
+  "windows_native": "pending",
+  "windows_graphics": "pending",
+  "source_zip": {
+    "checks": 2,
+    "failed": 0
+  },
+  "artifacts": [
+    {
+      "name": "TribesOfFire-0.9.0-dev-Windows.zip",
+      "size": 53520141,
+      "sha256": "b55d3229d36e527d031168b5ebff7574abf08a85daec8b340168ad7cd959ff31"
+    },
+    {
+      "name": "TribesOfFire-0.9.0-dev-Linux.zip",
+      "size": 44709206,
+      "sha256": "184b8d462682ebbe8cc3fd8c566d7659380c198cba5d93c748369536602519d0"
+    },
+    {
+      "name": "TribesOfFire-0.9.0-dev-Server-Linux.zip",
+      "size": 44710101,
+      "sha256": "5198971ff88d473e26c49aafb1c397dbac3298dac5fb3bc9d586bb12016d7c0c"
+    },
+    {
+      "name": "TribesOfFire-0.9.0-dev-Windows-Setup.exe",
+      "size": 43214758,
+      "sha256": "e262f44c47156c7c9b5b93faad01e82e48c6ef130486cfba750ced9e1f4b4599"
+    },
+    {
+      "name": "TribesOfFire-0.9.0-dev-Source.zip",
+      "size": 34123271,
+      "sha256": "11ca559373ef7946075a2b2e1448e5716cb3ceca94f0342337b831d322077815"
+    }
+  ]
+}

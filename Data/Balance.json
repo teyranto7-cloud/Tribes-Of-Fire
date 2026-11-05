@@ -306,7 +306,7 @@
         "electric_lamp": 1
       }
     },
-    "maximum": 512,
+    "maximum": 8192,
     "station_reach": 4,
     "interact_reach": 3,
     "repair_cost": {

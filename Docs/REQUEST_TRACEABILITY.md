@@ -1,3 +1,12 @@
+# Atualização Fase 4 — 0.9.0-dev
+
+A construção foi ampliada para 39 peças/seis materiais, gerenciamento por revisão,
+recolocação, restituição, permissões, encaixes e suporte configurável. Registro por
+chunks: limite 8.192, fixture de escrita/reload com 3.000. Bancadas vazias desconectadas
+se movem com índice estável. [Matriz e limites atuais](BUILDING_PHASE4.md).
+O restante da rastreabilidade 0.8 abaixo é histórico e continua útil; não transfere
+seus resultados de instalador/build para a 0.9.
+
 # Pedidos da conversa × implementação real — 0.8.0-dev
 
 Tribes of Fire · criado por **felipealx**. Continuação de `185a463`, preservado em

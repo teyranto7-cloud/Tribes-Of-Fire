@@ -18,6 +18,10 @@ var world_description: Dictionary = Terrain.LEGACY.duplicate(true)
 var sampler = Terrain.new()
 var water_level: float = -2.9
 var structures: Array = []
+signal structure_loaded(piece)
+var structure_registry = preload("res://Building/Registry.gd").new()
+var _structure_wanted: Dictionary = {}
+var _structure_nodes: Dictionary = {}
 var fishes: Array = []
 var resource_timers: Dictionary = {}
 var _cut_registry: Dictionary = {}
@@ -369,18 +373,19 @@ func nearest_tree(player: Node3D):
 		result = tree
 	return result
 
-func placement(player: CharacterBody3D, kind: String = "campfire", rotation_value: int = 0) -> Dictionary:
+func placement(player: CharacterBody3D, kind: String = "campfire", rotation_value: int = 0, options: Dictionary = {}, ignore_id: int = 0) -> Dictionary:
+	if preload("res://Items/Catalog.gd").station_ids().has(kind): return preload("res://Building/Placement.gd").station(self,player,rotation_value,options)
 	if kind in preload("res://Energy/Grid.gd").KINDS: return preload("res://Energy/Grid.gd").placement(self,player,kind)
 	if kind=="raft":
 		var at:Vector3=player.position-player.global_basis.z*4
 		at.y=water_level+0.12
-		var valid:bool=contains_position(at) and structures.size()<512
+		var valid:bool=contains_position(at) and structure_registry.records.size()<preload("res://Building/Registry.gd").MAXIMUM
 		for offset in [Vector3(-1,0,-1.8),Vector3(1,0,1.8),Vector3.ZERO]:
 			valid=valid and terrain_height(at.x+offset.x,at.z+offset.z)<water_level-0.6
 		for piece in structures:
 			if piece.position.distance_to(at)<3:valid=false
 		return {"valid":valid,"position":at,"rotation":rotation_value}
-	if kind in Piece.KINDS: return _modular_placement(player, kind, rotation_value)
+	if kind in Piece.KINDS: return preload("res://Building/Placement.gd").evaluate(self,player,kind,rotation_value,options,ignore_id)
 	var shelter := kind == "shelter"
 	if (shelters.size() >= 16 if shelter else fires.size() >= 32):
 		return {"valid": false, "position": player.global_position}
@@ -464,7 +469,7 @@ func restore(data: Dictionary) -> void:
 		var p: Array = state["position"]
 		for fire in fires:
 			if fire.position.distance_to(Vector3(p[0], p[1], p[2])) < 0.05: fire.restore_state(state)
-	restore_buildings(data.get("structures", []))
+	restore_buildings(data.get("structures", []),int(data.get("structure_next_id",1)))
 	for fish in fishes: fish.restore({"stock":8,"restock_at":0.0})
 	for state in data.get("fishing",[]):
 		if int(state["id"])<fishes.size(): fishes[int(state["id"])].restore(state)
@@ -611,6 +616,7 @@ func configure_world(description: Dictionary) -> void:
 		for node in collection:
 			_remove_world_object(node)
 		collection.clear()
+	structure_registry.clear(); _structure_nodes.clear(); _structure_wanted.clear()
 	resource_timers.clear()
 	for node in _poi_nodes: remove_child(node); node.queue_free()
 	_poi_nodes.clear()
@@ -685,6 +691,7 @@ func _spawn_chunk_trees(key: Vector2i) -> void:
 	trees.sort_custom(func(a,b): return a.tree_id < b.tree_id)
 
 func update_streaming(foci: Array) -> void:
+	_stream_structures(foci)
 	if int(world_description["generator"]) == 0: return
 	_wanted.clear()
 	_focus_positions = foci.duplicate()
@@ -713,6 +720,7 @@ func _build_chunk_job(key: Vector2i, model, generation: int) -> void:
 	_mutex.lock(); _ready_arrays.append({"key":key,"arrays":arrays,"generation":generation}); _mutex.unlock()
 
 func _process(_delta: float) -> void:
+	_install_structures(8)
 	_sync_distant_forest()
 	_update_chunk_mask()
 	if forest_material!=null and not _focus_positions.is_empty():forest_material.set_shader_parameter("focus",Vector2(_focus_positions[0].x,_focus_positions[0].z))
@@ -774,76 +782,103 @@ func fire_states() -> Array:
 	return result
 
 func _modular_placement(player, kind: String, turn: int) -> Dictionary:
-	var target: Vector3 = player.position - player.global_basis.z*4
-	target.x = snappedf(target.x,2); target.z = snappedf(target.z,2)
-	target.y = terrain_height(target.x,target.z)
-	var valid: bool = contains_position(target) and target.y > water_level+0.2 and structures.size() < 512
-	for piece in structures:
-		if piece.kind == kind and piece.position.distance_to(target) < 1: valid = false
-	for tree in trees:
-		if not tree.felled and Vector2(tree.position.x-target.x,tree.position.z-target.z).length()<1.1: valid=false
-	var query := PhysicsRayQueryParameters3D.create(player.position+Vector3.UP*1.4,target+Vector3.UP*0.4,1,[player.get_rid()])
-	var hit := get_world_3d().direct_space_state.intersect_ray(query)
-	if not hit.is_empty() and not hit["collider"].is_in_group("terrain") and not hit["collider"].is_in_group("foundation"): valid=false
-	return {"valid":valid,"position":target,"rotation":posmod(turn,4)}
-
-func add_structure(kind: String, at: Vector3, turn: int, owner: String, id: int = -1):
-	if kind not in Piece.KINDS: return null
-	if id < 0:
-		id = 1
-		for item in structures: id = maxi(id,item.structure_id+1)
-	var piece := Piece.new()
-	add_child(piece)
-	piece.setup({"id":id,"kind":kind,"position":[at.x,at.y,at.z],"rotation":posmod(turn,4),"owner":owner,"hp":100,"open":false})
-	structures.append(piece)
+	return preload("res://Building/Placement.gd").evaluate(self,player,kind,turn)
+func _sync_structure_records() -> void:
+	for piece in structures: structure_registry.put(piece.get_record())
+func _spawn_structure(record: Dictionary):
+	var piece = Piece.new(); add_child(piece); piece.setup(record)
+	piece.set_meta("collision_frame",Engine.get_physics_frames())
+	structures.append(piece); _structure_nodes[int(record["id"])]=piece
+	structure_loaded.emit(piece)
 	return piece
-func get_structure(id: int):
-	for piece in structures:
-		if piece.structure_id == id: return piece
-	return null
+func ensure_structures(at: Vector3, radius: float=12) -> void:
+	for id in structure_registry.nearby(at,radius):
+		if not _structure_nodes.has(id): _spawn_structure(structure_registry.records[id])
+func add_structure(kind: String, at: Vector3, turn: int, owner: String, id: int = -1, extra: Dictionary = {}):
+	if kind not in Piece.KINDS: return null
+	if id<0: id=structure_registry.next_id
+	var row := {"id":id,"kind":kind,"position":[at.x,at.y,at.z],"rotation":posmod(turn,4),"owner":owner,"hp":100,"open":false}
+	row.merge(extra,true); structure_registry.put(row)
+	return _spawn_structure(row)
+func get_structure(id: int, materialize: bool=false):
+	if not _structure_nodes.has(id) and materialize and structure_registry.records.has(id): return _spawn_structure(structure_registry.records[id])
+	return _structure_nodes.get(id)
 func structure_near(body, kind: String = "", distance: float = 3.0):
 	var result = null
 	for piece in structures:
 		var d: float = piece.position.distance_to(body.position)
-		if d < distance and (kind.is_empty() or piece.kind == kind): result=piece; distance=d
+		if (d < distance or (result!=null and absf(d-distance)<.01 and preload("res://Building/Catalog.gd").piece(piece.kind).has("door"))) and (kind.is_empty() or piece.kind == kind): result=piece; distance=d
 	return result
+func replace_structure(row: Dictionary) -> void:
+	var id:=int(row["id"]); var node=get_structure(id)
+	if node!=null:
+		structures.erase(node); _structure_nodes.erase(id); remove_child(node); node.queue_free()
+	structure_registry.put(row)
+	_spawn_structure(row)
+func remove_structure(id: int) -> void:
+	var node=get_structure(id)
+	if node!=null:
+		structures.erase(node); _structure_nodes.erase(id); remove_child(node); node.queue_free()
+	structure_registry.erase(id); _structure_wanted.erase(id)
 func toggle_door(id: int) -> bool:
 	var piece = get_structure(id)
-	if piece == null or piece.kind != "door": return false
-	piece.set_open(not piece.open); return true
+	if piece == null or not preload("res://Building/Catalog.gd").piece(piece.kind).has("door"): return false
+	piece.set_open(not piece.open); piece.record_extra["revision"]=int(piece.record_extra.get("revision",1))+1
+	return true
 func bed_spawn(identity: String) -> Vector3:
-	for piece in structures:
-		if piece.kind == "bed" and piece.bound_to == identity: return piece.position+Vector3(1.5,0.5,0)
+	_sync_structure_records()
+	for row in structure_registry.records.values():
+		if row["kind"]=="bed" and row.get("bound_to","")==identity: return structure_registry.point(row)+Vector3(1.5,0.5,0)
 	return Vector3(0,terrain_height(0,0)+0.2,0)
-func building_records() -> Array:
-	var result: Array = []
-	for piece in structures: result.append(piece.get_record())
-	return result
-func restore_buildings(records: Array) -> void:
-	var ids: Dictionary = {}
-	for record in records:
-		var id := int(record["id"]); ids[id]=true
-		var piece = get_structure(id)
-		var p: Array = record["position"]
-		var at := Vector3(p[0], p[1], p[2])
-		if piece != null and (piece.kind != record["kind"] or (piece.kind!="raft" and piece.position != at) or piece.owner_key != record["owner"] or (piece.kind!="raft" and not is_equal_approx(piece.rotation.y, int(record["rotation"]) * PI * 0.5))):
-			# IDs are scoped to a saved world. Rebuild the physical piece when its
-			# identity fields change; retaining its old mesh/collider leaks state.
-			structures.erase(piece)
-			remove_child(piece)
-			piece.queue_free()
-			piece = null
-		if piece == null:
-			piece = add_structure(record["kind"],at,record["rotation"],record["owner"],id)
-		if piece != null:
-			if piece.kind=="raft":
-				piece.replica_target=at;piece.replica_yaw=int(record["rotation"])*PI*0.5
-				if piece.is_multiplayer_authority():piece.position=at;piece.rotation.y=piece.replica_yaw
-			piece.hp = int(record["hp"]); piece.set_open(bool(record.get("open",false)))
-			piece.storage_wear = record.get("storage_wear",{}).duplicate(true)
-			piece.storage = record.get("storage",{}).duplicate(true); piece.bound_to = str(record.get("bound_to",""))
-	for piece in structures.duplicate():
-		if not ids.has(piece.structure_id): structures.erase(piece); remove_child(piece); piece.queue_free()
+func building_records(focus: Variant = null) -> Array:
+	_sync_structure_records()
+	if focus is Vector3:
+		var result: Array=[]
+		for id in structure_registry.nearby(focus,96): result.append(structure_registry.records[id].duplicate(true))
+		return result
+	return structure_registry.all_records()
+func restore_buildings(records: Array, next_id: int = 1) -> void:
+	var ids := {}
+	for row in records: ids[int(row["id"])]=row
+	for node in structures.duplicate():
+		var replacement: Dictionary=ids.get(node.structure_id,{})
+		var before: Dictionary=node.get_record()
+		var changed:=replacement.is_empty()
+		for key in ["kind","owner","tier","mirror","paint"]:
+			if before.get(key)!=replacement.get(key): changed=true
+		if node.kind!="raft" and (before.get("position")!=replacement.get("position") or before.get("rotation")!=replacement.get("rotation")): changed=true
+		if changed:
+			structures.erase(node); _structure_nodes.erase(node.structure_id); remove_child(node); node.queue_free()
+		else:
+			node.hp=int(replacement["hp"])
+			if preload("res://Building/Catalog.gd").piece(node.kind).has("door"): node.record_extra["door_swing"]=int(replacement.get("door_swing",-1))
+			node.set_open(bool(replacement.get("open",false)))
+			for key in ["name","locked","allow_allies","supports","revision","paid_cost"]:
+				if replacement.has(key): node.record_extra[key]=replacement[key]
+			node.storage=replacement.get("storage",{}).duplicate(true); node.storage_wear=replacement.get("storage_wear",{}).duplicate(true); node.bound_to=str(replacement.get("bound_to",""))
+			if node.kind=="raft":
+				node.replica_target=structure_registry.point(replacement); node.replica_yaw=int(replacement["rotation"])*PI*.5
+				if node.is_multiplayer_authority(): node.position=node.replica_target; node.rotation.y=node.replica_yaw
+	structure_registry.load_records(records,maxi(next_id,structure_registry.next_id))
+	_stream_structures(_focus_positions)
+	# Small old saves are installed immediately; large worlds use the frame budget.
+	_install_structures(32)
+func _stream_structures(foci: Array) -> void:
+	_sync_structure_records(); _structure_wanted.clear()
+	for focus in foci:
+		for id in structure_registry.nearby(focus,72): _structure_wanted[id]=true
+		ensure_structures(focus)
+	for node in structures.duplicate():
+		var keep: bool=_structure_wanted.has(node.structure_id)
+		for focus in foci:
+			if node.position.distance_to(focus)<96: keep=true
+		if not keep:
+			structures.erase(node); _structure_nodes.erase(node.structure_id); remove_child(node); node.queue_free()
+func _install_structures(budget: int) -> void:
+	for id in _structure_wanted:
+		if _structure_nodes.has(id) or not structure_registry.records.has(id): continue
+		_spawn_structure(structure_registry.records[id]); budget-=1
+		if budget<=0: break
 
 func _make_points_of_interest() -> void:
 	if int(world_description["generator"]) >= 3: _make_watershed_landmarks()

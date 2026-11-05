@@ -1,0 +1,18 @@
+test_binary_stages_include_all_linked_local_documentation (__main__.BuildIntegrityTests.test_binary_stages_include_all_linked_local_documentation) ... ok
+test_checksum_link_is_external_without_editing_source_readme (__main__.BuildIntegrityTests.test_checksum_link_is_external_without_editing_source_readme) ... ok
+test_failed_new_full_build_does_not_leave_previous_receipt (__main__.BuildIntegrityTests.test_failed_new_full_build_does_not_leave_previous_receipt) ... ok
+test_git_source_zip_respects_ignore_and_keeps_new_public_sources (__main__.BuildIntegrityTests.test_git_source_zip_respects_ignore_and_keeps_new_public_sources) ... ok
+test_runtime_signature_does_not_hash_export_credentials (__main__.BuildIntegrityTests.test_runtime_signature_does_not_hash_export_credentials) ... ok
+test_source_changed_after_windows_export_stops_other_exports (__main__.BuildIntegrityTests.test_source_changed_after_windows_export_stops_other_exports) ... ok
+test_source_changed_at_last_export_cannot_write_receipt (__main__.BuildIntegrityTests.test_source_changed_at_last_export_cannot_write_receipt) ... ok
+test_source_changed_during_rules_rejects_the_cohort (__main__.BuildIntegrityTests.test_source_changed_during_rules_rejects_the_cohort) ... ok
+test_stable_import_tests_and_exports_share_one_receipt (__main__.BuildIntegrityTests.test_stable_import_tests_and_exports_share_one_receipt) ... ok
+test_standalone_source_zip_excludes_profiles_credentials_and_builds (__main__.BuildIntegrityTests.test_standalone_source_zip_excludes_profiles_credentials_and_builds) ... ok
+test_test_only_does_not_export_or_create_receipt (__main__.BuildIntegrityTests.test_test_only_does_not_export_or_create_receipt) ... ok
+test_test_only_source_change_also_invalidates_old_receipt (__main__.BuildIntegrityTests.test_test_only_source_change_also_invalidates_old_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.075s
+
+OK
+BUILD_INTEGRITY CHECKS=12 FAILED=0

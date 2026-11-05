@@ -1,0 +1,1433 @@
+{
+  "version": 1,
+  "pieces": {
+    "foundation": {
+      "name": {
+        "pt_BR": "Fundação quadrada",
+        "en": "Square foundation"
+      },
+      "category": "structure",
+      "boxes": [
+        [
+          4,
+          0.25,
+          4,
+          0,
+          0.13,
+          0
+        ]
+      ],
+      "units": 1,
+      "grounded": true,
+      "mirror": false,
+      "snap_family": "deck",
+      "span": 4
+    },
+    "foundation_triangle": {
+      "name": {
+        "pt_BR": "Fundação triangular",
+        "en": "Triangle foundation"
+      },
+      "category": "structure",
+      "boxes": [],
+      "units": 1,
+      "shape": "triangle",
+      "mirror": true,
+      "grounded": true,
+      "snap_family": "deck",
+      "span": 4
+    },
+    "floor": {
+      "name": {
+        "pt_BR": "Piso",
+        "en": "Floor"
+      },
+      "category": "structure",
+      "boxes": [
+        [
+          4,
+          0.25,
+          4,
+          0,
+          0.13,
+          0
+        ]
+      ],
+      "units": 1,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "deck",
+      "span": 4
+    },
+    "wall": {
+      "name": {
+        "pt_BR": "Parede",
+        "en": "Wall"
+      },
+      "category": "walls",
+      "boxes": [
+        [
+          4,
+          3,
+          0.18,
+          0,
+          1.75,
+          0
+        ]
+      ],
+      "units": 1,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "wall",
+      "span": 4
+    },
+    "half_wall": {
+      "name": {
+        "pt_BR": "Meia parede",
+        "en": "Half wall"
+      },
+      "category": "walls",
+      "boxes": [
+        [
+          4,
+          1.5,
+          0.18,
+          0,
+          1,
+          0
+        ]
+      ],
+      "units": 0.5,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "wall",
+      "span": 4
+    },
+    "window": {
+      "name": {
+        "pt_BR": "Parede com janela",
+        "en": "Window wall"
+      },
+      "category": "walls",
+      "boxes": [
+        [
+          4,
+          1,
+          0.2,
+          0,
+          0.75,
+          0
+        ],
+        [
+          4,
+          0.7,
+          0.2,
+          0,
+          2.9,
+          0
+        ],
+        [
+          1.1,
+          1.3,
+          0.2,
+          -1.45,
+          1.9,
+          0
+        ],
+        [
+          1.1,
+          1.3,
+          0.2,
+          1.45,
+          1.9,
+          0
+        ]
+      ],
+      "units": 1,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "wall",
+      "span": 4
+    },
+    "door_frame": {
+      "name": {
+        "pt_BR": "Marco de porta",
+        "en": "Door frame"
+      },
+      "category": "walls",
+      "boxes": [
+        [
+          1.2,
+          3,
+          0.22,
+          -1.4,
+          1.75,
+          0
+        ],
+        [
+          1.2,
+          3,
+          0.22,
+          1.4,
+          1.75,
+          0
+        ],
+        [
+          1.6,
+          0.5,
+          0.22,
+          0,
+          3,
+          0
+        ]
+      ],
+      "units": 1,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "wall",
+      "span": 4
+    },
+    "door": {
+      "name": {
+        "pt_BR": "Porta com marco",
+        "en": "Framed door"
+      },
+      "category": "doors",
+      "boxes": [
+        [
+          1.2,
+          3,
+          0.22,
+          -1.4,
+          1.75,
+          0
+        ],
+        [
+          1.2,
+          3,
+          0.22,
+          1.4,
+          1.75,
+          0
+        ],
+        [
+          1.6,
+          0.5,
+          0.22,
+          0,
+          3,
+          0
+        ]
+      ],
+      "units": 1,
+      "door": [
+        1.6,
+        2.5
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "wall",
+      "span": 4
+    },
+    "gate_small": {
+      "name": {
+        "pt_BR": "Portão pequeno",
+        "en": "Small gate"
+      },
+      "category": "doors",
+      "boxes": [],
+      "units": 1,
+      "shape": "gate",
+      "door": [
+        3.2,
+        3.0
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "wall",
+      "span": 4
+    },
+    "gate_large": {
+      "name": {
+        "pt_BR": "Portão grande",
+        "en": "Large gate"
+      },
+      "category": "doors",
+      "boxes": [],
+      "units": 2.5,
+      "shape": "gate",
+      "door": [
+        7.2,
+        4.5
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "wall",
+      "span": 4
+    },
+    "fortress_gate": {
+      "name": {
+        "pt_BR": "Portão de fortaleza",
+        "en": "Fortress gate"
+      },
+      "category": "doors",
+      "boxes": [],
+      "units": 3.5,
+      "shape": "gate",
+      "door": [
+        7.2,
+        6.0
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "wall",
+      "span": 4
+    },
+    "roof": {
+      "name": {
+        "pt_BR": "Telhado plano",
+        "en": "Flat roof"
+      },
+      "category": "roofs",
+      "boxes": [
+        [
+          4.2,
+          0.25,
+          4.2,
+          0,
+          3.4,
+          0
+        ]
+      ],
+      "units": 1,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "roof",
+      "span": 4
+    },
+    "roof_slope": {
+      "name": {
+        "pt_BR": "Telhado inclinado",
+        "en": "Sloped roof"
+      },
+      "category": "roofs",
+      "boxes": [],
+      "units": 1,
+      "shape": "roof_slope",
+      "mirror": true,
+      "grounded": false,
+      "snap_family": "roof",
+      "span": 4
+    },
+    "ceiling": {
+      "name": {
+        "pt_BR": "Teto",
+        "en": "Ceiling"
+      },
+      "category": "roofs",
+      "boxes": [
+        [
+          4,
+          0.2,
+          4,
+          0,
+          3.4,
+          0
+        ]
+      ],
+      "units": 1,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "roof",
+      "span": 4
+    },
+    "column": {
+      "name": {
+        "pt_BR": "Coluna",
+        "en": "Column"
+      },
+      "category": "structure",
+      "boxes": [
+        [
+          0.3,
+          3.2,
+          0.3,
+          0,
+          1.85,
+          0
+        ]
+      ],
+      "units": 0.5,
+      "grounded": true,
+      "mirror": false,
+      "snap_family": "pillar",
+      "span": 4
+    },
+    "stairs": {
+      "name": {
+        "pt_BR": "Escada",
+        "en": "Stairs"
+      },
+      "category": "access",
+      "boxes": [
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          0.1,
+          1.875
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          0.30000000000000004,
+          1.625
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          0.5,
+          1.375
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          0.7000000000000001,
+          1.125
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          0.9,
+          0.875
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          1.1,
+          0.625
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          1.3000000000000003,
+          0.375
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          1.5000000000000002,
+          0.125
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          1.7000000000000002,
+          -0.125
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          1.9000000000000001,
+          -0.375
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          2.1,
+          -0.625
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          2.3000000000000003,
+          -0.875
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          2.5000000000000004,
+          -1.125
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          2.7,
+          -1.375
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          2.9000000000000004,
+          -1.625
+        ],
+        [
+          2,
+          0.2,
+          0.25,
+          0,
+          3.1,
+          -1.875
+        ]
+      ],
+      "units": 1,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "free",
+      "span": 4,
+      "shape": "stairs"
+    },
+    "ramp": {
+      "name": {
+        "pt_BR": "Rampa",
+        "en": "Ramp"
+      },
+      "category": "access",
+      "boxes": [],
+      "units": 1,
+      "shape": "ramp",
+      "mirror": true,
+      "grounded": false,
+      "snap_family": "free",
+      "span": 4
+    },
+    "railing": {
+      "name": {
+        "pt_BR": "Corrimão",
+        "en": "Railing"
+      },
+      "category": "access",
+      "boxes": [
+        [
+          0.14,
+          1.2,
+          0.14,
+          -1.9,
+          0.85,
+          0
+        ],
+        [
+          0.14,
+          1.2,
+          0.14,
+          1.9,
+          0.85,
+          0
+        ],
+        [
+          4,
+          0.12,
+          0.12,
+          0,
+          0.65,
+          0
+        ],
+        [
+          4,
+          0.12,
+          0.12,
+          0,
+          1.35,
+          0
+        ]
+      ],
+      "units": 0.5,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "free",
+      "span": 4
+    },
+    "fence": {
+      "name": {
+        "pt_BR": "Cerca",
+        "en": "Fence"
+      },
+      "category": "defense",
+      "boxes": [
+        [
+          0.2,
+          1.6,
+          0.2,
+          -1.9,
+          0.8,
+          0
+        ],
+        [
+          0.2,
+          1.6,
+          0.2,
+          1.9,
+          0.8,
+          0
+        ],
+        [
+          4,
+          0.18,
+          0.15,
+          0,
+          0.55,
+          0
+        ],
+        [
+          4,
+          0.18,
+          0.15,
+          0,
+          1.15,
+          0
+        ]
+      ],
+      "units": 1,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "wall",
+      "span": 4
+    },
+    "palisade": {
+      "name": {
+        "pt_BR": "Paliçada",
+        "en": "Palisade"
+      },
+      "category": "defense",
+      "boxes": [
+        [
+          0.32,
+          3,
+          0.32,
+          -1.8,
+          1.5,
+          0
+        ],
+        [
+          0.32,
+          3,
+          0.32,
+          -1.4,
+          1.5,
+          0
+        ],
+        [
+          0.32,
+          3,
+          0.32,
+          -1.0,
+          1.5,
+          0
+        ],
+        [
+          0.32,
+          3,
+          0.32,
+          -0.5999999999999999,
+          1.5,
+          0
+        ],
+        [
+          0.32,
+          3,
+          0.32,
+          -0.19999999999999996,
+          1.5,
+          0
+        ],
+        [
+          0.32,
+          3,
+          0.32,
+          0.19999999999999996,
+          1.5,
+          0
+        ],
+        [
+          0.32,
+          3,
+          0.32,
+          0.6000000000000003,
+          1.5,
+          0
+        ],
+        [
+          0.32,
+          3,
+          0.32,
+          1.0000000000000002,
+          1.5,
+          0
+        ],
+        [
+          0.32,
+          3,
+          0.32,
+          1.4000000000000001,
+          1.5,
+          0
+        ],
+        [
+          0.32,
+          3,
+          0.32,
+          1.8,
+          1.5,
+          0
+        ]
+      ],
+      "units": 1.5,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "wall",
+      "span": 4
+    },
+    "bridge": {
+      "name": {
+        "pt_BR": "Ponte",
+        "en": "Bridge"
+      },
+      "category": "access",
+      "boxes": [
+        [
+          4,
+          0.25,
+          8,
+          0,
+          0.13,
+          0
+        ],
+        [
+          0.14,
+          1.1,
+          8,
+          -1.9,
+          0.8,
+          0
+        ],
+        [
+          0.14,
+          1.1,
+          8,
+          1.9,
+          0.8,
+          0
+        ]
+      ],
+      "units": 2,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "deck",
+      "span": 8
+    },
+    "platform": {
+      "name": {
+        "pt_BR": "Plataforma",
+        "en": "Platform"
+      },
+      "category": "structure",
+      "boxes": [
+        [
+          4,
+          0.25,
+          4,
+          0,
+          0.13,
+          0
+        ]
+      ],
+      "units": 1,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "deck",
+      "span": 4
+    },
+    "balcony": {
+      "name": {
+        "pt_BR": "Sacada",
+        "en": "Balcony"
+      },
+      "category": "access",
+      "boxes": [
+        [
+          4,
+          0.25,
+          2,
+          0,
+          0.13,
+          0
+        ],
+        [
+          4,
+          1,
+          0.12,
+          0,
+          0.85,
+          -0.95
+        ]
+      ],
+      "units": 1,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "deck",
+      "span": 4
+    },
+    "support": {
+      "name": {
+        "pt_BR": "Suporte",
+        "en": "Brace"
+      },
+      "category": "structure",
+      "boxes": [
+        [
+          0.3,
+          3.2,
+          0.3,
+          0,
+          1.85,
+          0
+        ],
+        [
+          2,
+          0.2,
+          0.3,
+          0.85,
+          3.35,
+          0
+        ]
+      ],
+      "units": 1,
+      "shape": "brace",
+      "mirror": true,
+      "grounded": true,
+      "snap_family": "pillar",
+      "span": 4
+    },
+    "beam": {
+      "name": {
+        "pt_BR": "Viga",
+        "en": "Beam"
+      },
+      "category": "structure",
+      "boxes": [
+        [
+          4,
+          0.25,
+          0.25,
+          0,
+          3.4,
+          0
+        ]
+      ],
+      "units": 0.5,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "pillar",
+      "span": 4
+    },
+    "hatch": {
+      "name": {
+        "pt_BR": "Escotilha",
+        "en": "Hatch"
+      },
+      "category": "access",
+      "boxes": [
+        [
+          1.3,
+          0.25,
+          4,
+          -1.35,
+          0.13,
+          0
+        ],
+        [
+          1.3,
+          0.25,
+          4,
+          1.35,
+          0.13,
+          0
+        ],
+        [
+          1.4,
+          0.25,
+          1.3,
+          0,
+          0.13,
+          -1.35
+        ],
+        [
+          1.4,
+          0.25,
+          1.3,
+          0,
+          0.13,
+          1.35
+        ]
+      ],
+      "units": 1,
+      "door": [
+        1.4,
+        1.4
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "deck",
+      "span": 4
+    },
+    "farm_fence": {
+      "name": {
+        "pt_BR": "Cerca de fazenda",
+        "en": "Farm fence"
+      },
+      "category": "defense",
+      "boxes": [
+        [
+          0.15,
+          1.1,
+          0.15,
+          -1.9,
+          0.55,
+          0
+        ],
+        [
+          0.15,
+          1.1,
+          0.15,
+          0,
+          0.55,
+          0
+        ],
+        [
+          0.15,
+          1.1,
+          0.15,
+          1.9,
+          0.55,
+          0
+        ],
+        [
+          4,
+          0.13,
+          0.13,
+          0,
+          0.35,
+          0
+        ],
+        [
+          4,
+          0.13,
+          0.13,
+          0,
+          0.85,
+          0
+        ]
+      ],
+      "units": 0.5,
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "wall",
+      "span": 4
+    },
+    "chest": {
+      "name": {
+        "pt_BR": "Baú",
+        "en": "Chest"
+      },
+      "category": "furniture",
+      "boxes": [
+        [
+          1.5,
+          0.8,
+          0.9,
+          0,
+          0.45,
+          0
+        ]
+      ],
+      "units": 1,
+      "tiers": [
+        "wood",
+        "reinforced_wood",
+        "stone",
+        "metal"
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "free",
+      "span": 4
+    },
+    "bed": {
+      "name": {
+        "pt_BR": "Cama",
+        "en": "Bed"
+      },
+      "category": "furniture",
+      "boxes": [
+        [
+          1.25,
+          0.6,
+          2,
+          0,
+          0.3,
+          0
+        ]
+      ],
+      "units": 1,
+      "tiers": [
+        "wood",
+        "reinforced_wood",
+        "metal"
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "free",
+      "span": 4
+    },
+    "modular_table": {
+      "name": {
+        "pt_BR": "Mesa",
+        "en": "Table"
+      },
+      "category": "furniture",
+      "boxes": [
+        [
+          2,
+          0.15,
+          1.2,
+          0,
+          1,
+          0
+        ],
+        [
+          0.14,
+          1,
+          0.14,
+          -0.85,
+          0.5,
+          -0.45
+        ],
+        [
+          0.14,
+          1,
+          0.14,
+          -0.85,
+          0.5,
+          0.45
+        ],
+        [
+          0.14,
+          1,
+          0.14,
+          0.85,
+          0.5,
+          -0.45
+        ],
+        [
+          0.14,
+          1,
+          0.14,
+          0.85,
+          0.5,
+          0.45
+        ]
+      ],
+      "units": 1,
+      "tiers": [
+        "wood",
+        "reinforced_wood",
+        "stone",
+        "metal"
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "free",
+      "span": 4
+    },
+    "modular_chair": {
+      "name": {
+        "pt_BR": "Cadeira",
+        "en": "Chair"
+      },
+      "category": "furniture",
+      "boxes": [
+        [
+          0.7,
+          0.12,
+          0.7,
+          0,
+          0.55,
+          0
+        ],
+        [
+          0.7,
+          0.8,
+          0.12,
+          0,
+          1,
+          -0.3
+        ],
+        [
+          0.1,
+          0.55,
+          0.1,
+          -0.28,
+          0.275,
+          -0.28
+        ],
+        [
+          0.1,
+          0.55,
+          0.1,
+          -0.28,
+          0.275,
+          0.28
+        ],
+        [
+          0.1,
+          0.55,
+          0.1,
+          0.28,
+          0.275,
+          -0.28
+        ],
+        [
+          0.1,
+          0.55,
+          0.1,
+          0.28,
+          0.275,
+          0.28
+        ]
+      ],
+      "units": 1,
+      "tiers": [
+        "wood",
+        "reinforced_wood",
+        "stone",
+        "metal"
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "free",
+      "span": 4
+    },
+    "decor_vase": {
+      "name": {
+        "pt_BR": "Vaso de flores",
+        "en": "Flower vase"
+      },
+      "category": "decoration",
+      "boxes": [
+        [
+          0.42,
+          0.5,
+          0.42,
+          0,
+          0.25,
+          0
+        ]
+      ],
+      "units": 0.35,
+      "shape": "vase",
+      "tiers": [
+        "wood",
+        "stone"
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "free",
+      "span": 4
+    },
+    "decor_banner": {
+      "name": {
+        "pt_BR": "Estandarte",
+        "en": "Banner"
+      },
+      "category": "decoration",
+      "boxes": [
+        [
+          0.12,
+          2.5,
+          0.12,
+          0,
+          1.25,
+          0
+        ]
+      ],
+      "units": 0.5,
+      "shape": "banner",
+      "tiers": [
+        "wood"
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "free",
+      "span": 4
+    },
+    "garden": {
+      "name": {
+        "pt_BR": "Canteiro",
+        "en": "Garden"
+      },
+      "category": "furniture",
+      "boxes": [
+        [
+          4,
+          0.2,
+          0.16,
+          0,
+          0.16,
+          -1.95
+        ],
+        [
+          4,
+          0.2,
+          0.16,
+          0,
+          0.16,
+          1.95
+        ],
+        [
+          0.16,
+          0.2,
+          4,
+          -1.95,
+          0.16,
+          0
+        ],
+        [
+          0.16,
+          0.2,
+          4,
+          1.95,
+          0.16,
+          0
+        ]
+      ],
+      "units": 1,
+      "tiers": [
+        "wood"
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "free",
+      "span": 4
+    },
+    "lantern": {
+      "name": {
+        "pt_BR": "Lamparina",
+        "en": "Lantern"
+      },
+      "category": "decoration",
+      "boxes": [
+        [
+          0.3,
+          0.7,
+          0.3,
+          0,
+          0.35,
+          0
+        ]
+      ],
+      "units": 1,
+      "tiers": [
+        "wood"
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "free",
+      "span": 4
+    },
+    "torch": {
+      "name": {
+        "pt_BR": "Tocha",
+        "en": "Torch"
+      },
+      "category": "decoration",
+      "boxes": [
+        [
+          0.15,
+          1.5,
+          0.15,
+          0,
+          0.75,
+          0
+        ]
+      ],
+      "units": 1,
+      "tiers": [
+        "wood"
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "free",
+      "span": 4
+    },
+    "raft": {
+      "name": {
+        "pt_BR": "Jangada",
+        "en": "Raft"
+      },
+      "category": "boats",
+      "boxes": [
+        [
+          2.4,
+          0.35,
+          3.8,
+          0,
+          0,
+          0
+        ]
+      ],
+      "units": 1,
+      "tiers": [
+        "wood"
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "free",
+      "span": 4
+    },
+    "totem": {
+      "name": {
+        "pt_BR": "Totem territorial",
+        "en": "Territory totem"
+      },
+      "category": "defense",
+      "boxes": [
+        [
+          1.2,
+          2.8,
+          0.85,
+          0,
+          1.4,
+          0
+        ]
+      ],
+      "units": 1,
+      "tiers": [
+        "wood"
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "wall",
+      "span": 4
+    },
+    "door_leaf": {
+      "name": {
+        "pt_BR": "Folha de porta",
+        "en": "Door leaf"
+      },
+      "category": "doors",
+      "boxes": [],
+      "units": 0.5,
+      "shape": "door_leaf",
+      "door": [
+        1.6,
+        2.5
+      ],
+      "grounded": false,
+      "mirror": false,
+      "snap_family": "leaf",
+      "span": 0
+    }
+  },
+  "materials": {
+    "thatch": {
+      "name": {
+        "pt_BR": "Palha e galhos",
+        "en": "Thatch and branches"
+      },
+      "hp": 60,
+      "cost": {
+        "stick": 4,
+        "fiber": 4
+      },
+      "color": "#ad9458"
+    },
+    "wood": {
+      "name": {
+        "pt_BR": "Madeira simples",
+        "en": "Wood"
+      },
+      "hp": 100,
+      "cost": {
+        "wood": 4
+      },
+      "color": "#855d3b"
+    },
+    "reinforced_wood": {
+      "name": {
+        "pt_BR": "Madeira reforçada",
+        "en": "Reinforced wood"
+      },
+      "hp": 220,
+      "cost": {
+        "plank": 4,
+        "nail": 2
+      },
+      "color": "#644a36"
+    },
+    "stone": {
+      "name": {
+        "pt_BR": "Pedra e tijolo",
+        "en": "Stone and brick"
+      },
+      "hp": 400,
+      "cost": {
+        "stone": 6,
+        "brick": 2
+      },
+      "color": "#879087"
+    },
+    "metal": {
+      "name": {
+        "pt_BR": "Metal",
+        "en": "Metal"
+      },
+      "hp": 650,
+      "cost": {
+        "iron_ingot": 4,
+        "nail": 2
+      },
+      "color": "#576e7b"
+    },
+    "concrete": {
+      "name": {
+        "pt_BR": "Concreto armado",
+        "en": "Reinforced concrete"
+      },
+      "hp": 1000,
+      "cost": {
+        "concrete": 4,
+        "iron_ingot": 2
+      },
+      "color": "#b9b6a6"
+    }
+  }
+}

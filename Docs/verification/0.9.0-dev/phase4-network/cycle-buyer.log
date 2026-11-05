@@ -1,0 +1,14 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1295880199 count=1
+PLAYER_JOINED id=1546889366 count=2
+PHASE4_CLIENT_READY buyer
+PLAYER_JOINED id=949434028 count=3
+SETTLEMENT_DELIVERY role=buyer order=4 action=tribe_accept connected=true
+SETTLEMENT_DELIVERY role=buyer order=5 action=build connected=true
+SETTLEMENT_DELIVERY role=buyer order=9 action=structure_edit connected=true
+PLAYER_JOINED id=1295880199 count=1
+PLAYER_JOINED id=949434028 count=2
+PLAYER_JOINED id=976819403 count=3
+PHASE4_CLIENT_PASS role=buyer checks=52 failed=0

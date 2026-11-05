@@ -174,12 +174,12 @@ func run() -> void:
 	check(persisted["fishing"].reduce(func(total,item):return total+int(item["stock"]),0)==old_stock-1,"Fish population survives reload")
 	# World IDs can repeat across saves: neither old geometry nor ownership may
 	# survive replacing the world, even when the same IDs are present again.
-	var previous_loot_position: Vector3 = game.world.get_structure(3000).position
+	var previous_loot_position: Vector3 = game.world.get_structure(3000,true).position
 	game.new_game(321)
 	game.player.set_physics_process(false)
 	var seeded_loot_position: Vector3 = game.world.sampler.locations[0]["position"] + Vector3(1,0,1)
-	check(game.world.get_structure(3000).position == seeded_loot_position and seeded_loot_position != previous_loot_position,"A new seed replaces same-ID loot geometry with the new seeded position")
-	check(game.world.structures.size()==10 and game.world.fires.is_empty() and game.world.shelters.is_empty(),"A new world clears previous player structures and fires")
+	check(game.world.get_structure(3000,true).position == seeded_loot_position and seeded_loot_position != previous_loot_position,"A new seed replaces same-ID loot geometry with the new seeded position")
+	check(game.world.building_records().size()==10 and game.world.fires.is_empty() and game.world.shelters.is_empty(),"A new world clears previous player structures and fires")
 	check(game.world.resource_timers.is_empty() and game.world.cut_ids().is_empty(),"A new world cannot inherit resource regeneration or cut-tree state")
 	var replacement: Dictionary = game.snapshot()
 	var moved_at := Vector3(14,game.world.terrain_height(14,8),8)
@@ -189,7 +189,7 @@ func run() -> void:
 	check(Store.save_world(replacement,game.save_folder)=="","A changed same-ID chest can be persisted")
 	check(game._begin_authority(Store.load_world(game.save_folder)),"The saved replacement world opens successfully")
 	game._spawn_player(1);game.player.set_physics_process(false)
-	var replaced = game.world.get_structure(3000)
+	var replaced = game.world.get_structure(3000,true)
 	check(replaced.position==moved_at and replaced.owner_key=="replacement-owner" and is_equal_approx(replaced.rotation.y,PI*0.5),"Reload updates same-ID position, owner and orientation")
 	replacement=game.snapshot()
 	replacement["structures"][0]["kind"]="wall"
@@ -197,7 +197,7 @@ func run() -> void:
 	replacement["structures"][0].erase("storage_wear")
 	check(Store.save_world(replacement,game.save_folder)=="" and game._begin_authority(Store.load_world(game.save_folder)),"A save may replace the structural kind associated with a reused ID")
 	game._spawn_player(1);game.player.set_physics_process(false)
-	replaced=game.world.get_structure(3000)
+	replaced=game.world.get_structure(3000,true)
 	check(replaced.kind=="wall" and replaced.is_in_group("wall") and not replaced.is_in_group("chest"),"Reload rebuilds physical geometry and groups when a reused ID changes kind")
 	print("RECONSTRUCTION CHECKS=%d FAILED=%d" % [checks,failed])
 	await game.quit_game(1 if failed else 0,false)

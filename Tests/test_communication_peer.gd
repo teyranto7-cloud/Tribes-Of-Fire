@@ -9,6 +9,8 @@ var ready_age: float = -1.0
 var profile_sent: bool = false
 var phases: Dictionary = {}
 var audio_received: Dictionary = {}
+var audio_sent: Dictionary = {}
+var audio_routed: Dictionary = {}
 var packets: Array = []
 var send_left: float = 0.0
 var seq: int = 0
@@ -28,6 +30,12 @@ func start() -> void:
 	game.session.voice_received.connect(func(_id, _seq, _packet, channel): audio_received[channel] = int(audio_received.get(channel, 0)) + 1)
 	game.session.voice_received.connect(record_proximity_level)
 	game.session.command_received.connect(observe_command)
+	game.session.voice_requested.connect(func(id,_seq,_packet,channel,target):
+		if role=="server":
+			var recipients:Array=game.runtime.channels.recipients(game.runtime.key(id),channel,target,game.runtime.positions(),game.runtime.tribes,true)
+			for recipient in recipients:
+				var label:String=str(channel)+":"+str(game.runtime.peer(recipient))
+				audio_routed[label]=int(audio_routed.get(label,0))+1)
 	if role != "server":
 		# Receive-only opt-in; do not call set_enabled(), so no capture device starts.
 		game.runtime.voice.enabled = true
@@ -163,6 +171,7 @@ func _process(delta: float) -> bool:
 				var next: Array = packets.pop_front()
 				seq += 1
 				game.session.send_voice(seq, next[2], next[0], next[1])
+				audio_sent[next[0]]=int(audio_sent.get(next[0],0))+1
 	return false
 func queue_audio(channel: String, target: String, count: int) -> void:
 	var samples := PackedFloat32Array()
@@ -182,6 +191,7 @@ func event(kind: String, _data: Dictionary) -> void:
 		finish = true
 		verify()
 func verify() -> void:
+	print("COMMUNICATION_DIAGNOSTIC role=",role," sent=",audio_sent," queued=",packets.size()," elapsed=",age-ready_age)
 	var texts: Array = game.runtime.messages.map(func(m): return m["text"])
 	var ok: bool = "global-proof" in texts
 	if role == "B":
@@ -210,7 +220,7 @@ func end_server() -> void:
 		printerr("COMMUNICATION_FAIL PvP protections not exercised: ", game.runtime.pvp_blocked)
 		game.quit_game(1, false)
 		return
-	print("COMMUNICATION_SERVER_PASS clients=3 routing=authority blocks=validated")
+	print("COMMUNICATION_SERVER_PASS clients=3 routing=authority blocks=validated routes=",audio_routed)
 	finish = true
 	game.quit_game()
 

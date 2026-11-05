@@ -1,0 +1,23 @@
+{
+	"checks": 27,
+	"failed": 0,
+	"method": "Native mouse/keyboard for B/select/build/favourite/rotation/height/name/confirmation cancel; fixture inventory and gallery, actual framebuffer; three resolutions.",
+	"performance": {
+		"draw_calls": 242.0,
+		"fps": 9.95165981246097,
+		"frame_p95_ms": 107.069,
+		"frames": 40,
+		"method": "Four-second fixed material gallery on software/cloud renderer, simulation frozen; not gameplay or target hardware.",
+		"nodes": 5575,
+		"static_memory_bytes": 157444023.0
+	},
+	"renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+	"screenshots": [
+		"res://builds/phase4/screenshots/catalogue-1280x720.png",
+		"res://builds/phase4/screenshots/foundation-ghost-green.png",
+		"res://builds/phase4/screenshots/foundation-ghost-red.png",
+		"res://builds/phase4/screenshots/catalogue-1920x1080.png",
+		"res://builds/phase4/screenshots/catalogue-800x600.png",
+		"res://builds/phase4/screenshots/six-materials-gallery-fixture.png"
+	]
+}

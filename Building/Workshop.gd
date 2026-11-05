@@ -6,6 +6,7 @@ var rotors: Array[Node3D] = []
 var kind: String = "workbench"
 var owner_key: String = ""
 var powered: bool = true
+var building: Dictionary = {"rotation":0,"revision":1}
 
 func setup(type: String, at: Vector3, key: String) -> void:
 	kind = type; owner_key = key; position = at; add_to_group(type)
