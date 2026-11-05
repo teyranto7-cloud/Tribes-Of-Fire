@@ -1,0 +1,9 @@
+{
+  "phase0_checkpoint": "8c0555f",
+  "pre_audit_checkpoint": "d77dbc1",
+  "deleted_scripts": [],
+  "catalog_identical": true,
+  "assets_changed": false,
+  "world_code_changed": false,
+  "new_gameplay_systems": false
+}

@@ -701,3 +701,30 @@ msgstr "Tempestade"
 
 msgid "Fog"
 msgstr "Neblina"
+
+msgid "Station unavailable"
+msgstr "Bancada indisponível"
+
+msgid "Stay near the required station"
+msgstr "Aproxime-se da bancada necessária"
+
+msgid "Refund station inputs before changing recipe"
+msgstr "Cancele e devolva as entradas antes de trocar a receita"
+
+msgid "Station input storage is full"
+msgstr "A bancada está sem espaço para entradas"
+
+msgid "Missing materials"
+msgstr "Faltam materiais"
+
+msgid "No materials to refund"
+msgstr "Não há materiais para devolver"
+
+msgid "No stored output"
+msgstr "Ainda não há produção para retirar"
+
+msgid "Inventory is full"
+msgstr "A mochila está sem espaço"
+
+msgid "Research required in Technology"
+msgstr "Pesquisa necessária em Tecnologias"

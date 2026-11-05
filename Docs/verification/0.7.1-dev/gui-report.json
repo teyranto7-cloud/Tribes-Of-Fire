@@ -1,0 +1,15 @@
+{
+	"captures": [
+		"res://builds/audit/ui/screenshots/craft-cancel-race-1280x720.png",
+		"res://builds/audit/ui/screenshots/inventory-1280x720.png",
+		"res://builds/audit/ui/screenshots/map-1280x720.png",
+		"res://builds/audit/ui/screenshots/inventory-1920x1080.png",
+		"res://builds/audit/ui/screenshots/map-1920x1080.png",
+		"res://builds/audit/ui/screenshots/inventory-800x600.png",
+		"res://builds/audit/ui/screenshots/map-800x600.png",
+		"res://builds/audit/ui/screenshots/world-1280x720.png"
+	],
+	"checks": 39,
+	"failed": 0,
+	"method": "Xorg/Mesa llvmpipe, actual window pixels and Input.parse_input_event keys/mouse. UI interactions disable 3D drawing only; world capture enables 3D. Also tests cancellation held across completion of the displayed job. Fixture items for UI; authoritative resource collection is independently tested in phase3 ENet."
+}

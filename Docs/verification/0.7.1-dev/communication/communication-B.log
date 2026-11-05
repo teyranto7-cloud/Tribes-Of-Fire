@@ -1,0 +1,8 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=110973573 count=1
+PLAYER_JOINED id=1830846745 count=2
+PLAYER_JOINED id=1584972938 count=3
+PROXIMITY_SYNTHETIC_LEVELS {"medium":0.286650551252765,"near":0.80000000228364} microphone_started=false
+COMMUNICATION_CLIENT_PASS role=B messages=5 audio_packets={ "proximity": 12, "private": 4, "tribe": 4, "group": 4 } played_samples=15360 microphone_started=false

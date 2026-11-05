@@ -455,9 +455,14 @@ static func valid_command(command: String, data: Dictionary) -> bool:
 		if not _number(expected.get("count")) or expected["count"] < 1 or expected["count"] > 9999 or expected["count"] != floorf(expected["count"]): return false
 		var base := data.duplicate(true); base.erase("expected")
 		return valid_command(command, base)
-	if command=="craft" and data.has("request_id"):
+	if command in ["craft","craft_cancel","station_select","station_load","station_refund","factory_load","factory_take"] and data.has("request_id"):
 		if not data["request_id"] is String or data["request_id"].is_empty() or data["request_id"].length()>64:return false
 		var base:=data.duplicate();base.erase("request_id")
+		return valid_command(command,base)
+	if command=="craft_cancel" and data.has("job_uid"):
+		var uid: Variant = data["job_uid"]
+		if not uid is String or uid.length()!=32 or not uid.is_valid_hex_number(false): return false
+		var base:=data.duplicate();base.erase("job_uid")
 		return valid_command(command,base)
 	if command == "appearance":
 		return preload("res://Character/Appearance.gd").valid(data)

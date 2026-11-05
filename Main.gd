@@ -196,6 +196,7 @@ func _begin_authority(data: Dictionary) -> bool:
 		push_error(error)
 		return false
 	_clear_players()
+	commands.clear()
 	_reset_communication()
 	saved = data.duplicate(true)
 	world.configure_world(data.get("world", {"seed": 1337, "generator": 0, "size": 128}))
@@ -973,3 +974,8 @@ func use_quick_slot(index: int) -> void:
 func _resize_interface() -> void:
 	var window := get_window()
 	if window.content_scale_size != window.size: window.content_scale_size = window.size
+
+func request_crafting_command(command: String, data: Dictionary = {}) -> void:
+	var request:Dictionary=data.duplicate(true)
+	request["request_id"]=Crypto.new().generate_random_bytes(16).hex_encode()
+	request_command(command,request)

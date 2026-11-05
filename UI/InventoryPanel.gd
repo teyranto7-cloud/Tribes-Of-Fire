@@ -76,7 +76,10 @@ func configure(value, _language: int = 0) -> void:
 	var technology:=Button.new();technology.text=label("Pesquisa e tecnologias →","Research and technology →")
 	technology.pressed.connect(func():game.hud.show_panel("technology"));craft.add_child(technology)
 	for i in range(5):
-		var b:=Button.new();b.pressed.connect(func():game.request_command("craft_cancel",{"index":i}));craft.add_child(b);queue_labels.append(b)
+		var b:=Button.new()
+		b.button_down.connect(func():b.set_meta("pressed_job_uid",b.get_meta("job_uid","")))
+		b.pressed.connect(func():game.request_crafting_command("craft_cancel",{"index":i,"job_uid":str(b.get_meta("pressed_job_uid",b.get_meta("job_uid","")))}))
+		craft.add_child(b);queue_labels.append(b)
 	var scroll:=ScrollContainer.new();scroll.custom_minimum_size.y=300;scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;craft.add_child(scroll)
 	var list:=VBoxContainer.new();list.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(list)
 	var recipe_ids:Array=Catalog.RECIPES.keys()
@@ -84,7 +87,7 @@ func configure(value, _language: int = 0) -> void:
 	for id in recipe_ids:
 		var b:=Button.new();b.alignment=HORIZONTAL_ALIGNMENT_LEFT;b.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 		b.add_theme_font_size_override("font_size",14)
-		b.pressed.connect(func():game.request_command("craft",{"recipe":id}));list.add_child(b);recipes[id]=b
+		b.pressed.connect(func():game.request_crafting_command("craft",{"recipe":id}));list.add_child(b);recipes[id]=b
 		var materials := RichTextLabel.new(); materials.bbcode_enabled = true; materials.fit_content = true
 		materials.mouse_filter = Control.MOUSE_FILTER_IGNORE; materials.add_theme_font_size_override("normal_font_size", 13)
 		list.add_child(materials); material_rows[id] = materials
@@ -174,6 +177,7 @@ func _refresh_recipes() -> void:
 	var jobs:Array=game.runtime.activities.queue(id)
 	for i in range(queue_labels.size()):
 		var b:=queue_labels[i];b.visible=i<jobs.size()
+		if b.visible:b.set_meta("job_uid",str(jobs[i].get("uid","")))
 		if b.visible:b.text=(label("Pronto; libere espaço · ","Ready; free space · ") if float(jobs[i]["remaining"])<=0 else "")+item_name(jobs[i]["recipe"])+" · %.1fs · "%jobs[i]["remaining"]+label("Cancelar e devolver materiais","Cancel and refund")
 	for recipe in recipes:
 		var b:Button=recipes[recipe];var data:Dictionary=Catalog.recipe(recipe)

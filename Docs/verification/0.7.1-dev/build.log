@@ -1,0 +1,1498 @@
+Engine: 4.6.3.stable.official.7d41c59c4
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --editor --import
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (2 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_rules.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+RULES CHECKS=61 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_world.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WORLD CHECKS=25 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_player.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PLAYER_CHECKS=11 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_input.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+INPUT CHECKS=8 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_gameplay.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+GAMEPLAY CHECKS=17 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_v3.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+V3 CHECKS=109 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_gameplay_regressions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAMEPLAY_REGRESSIONS CHECKS=25 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_tribes_regression.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+TRIBES CHECKS=32 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_ui_regressions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+NETWORK_FAILURE simulated connection failure for regression test
+PLAYER_JOINED id=1 count=1
+UI_REGRESSIONS CHECKS=33 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_phase2.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PHASE2 CHECKS=36 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_phase3.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_LEFT id=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=2 count=2
+PLAYER_LEFT id=2
+PLAYER_JOINED id=1 count=1
+PHASE3 CHECKS=804 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_station_transactions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_LEFT id=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+STATION_TRANSACTIONS CHECKS=46 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_frontier.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+FRONTIER CHECKS=2758 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_voice_regressions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+VOICE_REGRESSION CHECKS=8 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_reliability.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+RELIABILITY CHECKS=21 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_startup_close.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+STARTUP_CLOSE CHECKS=2 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_delivery_regressions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+DELIVERY_REGRESSIONS CHECKS=9 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_playability.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYABILITY CHECKS=144 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_reconstruction.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=2 count=2
+PLAYER_LEFT id=2
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+RECONSTRUCTION CHECKS=83 FAILED=0
+PERSISTENCE_PROCESS CHECKS=4 FAILED=0 (forced termination, refusal, explicit recovery, release)
+STARTUP_PROCESS CHECKS=7 FAILED=0 (real isolated startup, safe mode, corrupt-save refusal)
+test_binary_stages_include_all_linked_local_documentation (__main__.BuildIntegrityTests.test_binary_stages_include_all_linked_local_documentation) ... ok
+test_checksum_link_is_external_without_editing_source_readme (__main__.BuildIntegrityTests.test_checksum_link_is_external_without_editing_source_readme) ... ok
+test_failed_new_full_build_does_not_leave_previous_receipt (__main__.BuildIntegrityTests.test_failed_new_full_build_does_not_leave_previous_receipt) ... ok
+test_git_source_zip_respects_ignore_and_keeps_new_public_sources (__main__.BuildIntegrityTests.test_git_source_zip_respects_ignore_and_keeps_new_public_sources) ... ok
+test_runtime_signature_does_not_hash_export_credentials (__main__.BuildIntegrityTests.test_runtime_signature_does_not_hash_export_credentials) ... ok
+test_source_changed_after_windows_export_stops_other_exports (__main__.BuildIntegrityTests.test_source_changed_after_windows_export_stops_other_exports) ... ok
+test_source_changed_at_last_export_cannot_write_receipt (__main__.BuildIntegrityTests.test_source_changed_at_last_export_cannot_write_receipt) ... ok
+test_source_changed_during_rules_rejects_the_cohort (__main__.BuildIntegrityTests.test_source_changed_during_rules_rejects_the_cohort) ... ok
+test_stable_import_tests_and_exports_share_one_receipt (__main__.BuildIntegrityTests.test_stable_import_tests_and_exports_share_one_receipt) ... ok
+test_standalone_source_zip_excludes_profiles_credentials_and_builds (__main__.BuildIntegrityTests.test_standalone_source_zip_excludes_profiles_credentials_and_builds) ... ok
+test_test_only_does_not_export_or_create_receipt (__main__.BuildIntegrityTests.test_test_only_does_not_export_or_create_receipt) ... ok
+test_test_only_source_change_also_invalidates_old_receipt (__main__.BuildIntegrityTests.test_test_only_source_change_also_invalidates_old_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.056s
+
+OK
+BUILD_INTEGRITY CHECKS=12 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --export-release Windows Desktop /workspace/Tribes-Of-Fire/builds/windows/TribesOfFire.exe
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://Animals/Animal.gdc[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://Animals/Director.gdc[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://Animals/Fish.gdc[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/build.wav-db75013a7f22b6c51f71db13ee0436eb.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/build.wav.import[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/combat.wav-52812756ca2e682823fb7c7ea5bfe584.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/combat.wav.import[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/combat_music.wav-f882030b303cb9fbadace76f8a5fe628.sample[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/combat_music.wav.import[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/craft.wav-a05beac1a2c1e1f8e74904abf754931f.sample[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/craft.wav.import[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/creation.wav-7ef6b1bed7d7d223da26d2a26f951528.sample[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/creation.wav.import[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/damage.wav-43079643dc331808cc736026ba57b086.sample[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/damage.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/exploration.wav-52937d88746c9538933c04fe20dd3d06.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/exploration.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/menu.wav-97a1895bc9823b712cac9992039c3ea2.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/menu.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/night.wav-1adebe0e322805f63bba2a980e3a9277.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/night.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pickup.wav-4518a50ecad6c3fc15a4ed4880f2f1e1.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/pickup.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_dirt.wav-c2cb5d8d83a5ec6a6fe4072871cab4cb.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_dirt.wav.import[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_grass.wav-226477e073dd6a7d02426ad4c6b2695e.sample[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_grass.wav.import[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_sand.wav-0f9a3917df58721e9a96f40364ba5eab.sample[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_sand.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_stone.wav-3986d5f63470a6ff125ea75ae76a14c5.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_stone.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_water.wav-ba707488b5051e9923591563fd68c0a0.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_water.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_wood.wav-031cbc87d0016c33847bbdaa036d9639.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_wood.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stone.wav-808c9839f2e1fcc9d21d9179bfe4dbce.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/stone.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/ui.wav-b65c598c9d6db3626ea804df96b7c08d.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/ui.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wind.wav-d52ae88b167fb5c7140fb0e8b584074d.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/wind.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wood.wav-92354adbfa1922b42bd99966c029eae7.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/wood.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/NotoSansCJK-Regular.ttc-c6741816368b725511fbf54ead93f17e.fontdata[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://Assets/Fonts/NotoSansCJK-Regular.ttc.import[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/cascade.gdshader[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/clouds.gdshader[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/color_grade.gdshader[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/distant_forest.gdshader[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/distant_terrain.gdshader[39m[0m
+[  14% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/foliage.gdshader[39m[0m
+[  14% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/hide.gdshader[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/water.gdshader[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/advanced_workshop.svg-31aac9310fc4e2a11ff17920fe6cf1f2.ctex[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/advanced_workshop.svg.import[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/alchemy.svg-b0fa56a11fca857c4d28f6fe17652934.ctex[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/alchemy.svg.import[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/anvil.svg-c4d87c5cc266cf4edbff2399c4091aa3.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/anvil.svg.import[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/armor.svg-cf9d5561b721c3c40c1fc8c861e9cecb.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/armor.svg.import[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/arrow.svg-b6490fbacbf5234e89642a791a4d25d8.ctex[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/arrow.svg.import[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/axe.svg-803e746d65960b10e12bd511c6cc784d.ctex[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/axe.svg.import[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bandage.svg-5c89e6a36c178e7ead457e3daebab8c9.ctex[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bandage.svg.import[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/berries.svg-1ffbbd00bdf23f21e64475682ab66574.ctex[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/berries.svg.import[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bone.svg-61f766e36591cf244f58e3216d292849.ctex[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bone.svg.import[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bone_armor.svg-2f6ca6a039fd8d25ae63694aa8c962ff.ctex[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bone_armor.svg.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bow.svg-e4eedc958e2602e6f56a108044786af2.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bow.svg.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/brick.svg-4b9848a63faf8d09807a44ec7536e203.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/brick.svg.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bronze_armor.svg-8f5fcaf45723daa702fb0fa14720144d.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bronze_armor.svg.import[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bronze_ingot.svg-07bf5f1bf3f3ca6709bd26244354d9de.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bronze_ingot.svg.import[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bronze_sword.svg-ad9a6d0124139ee90866333e7cbfd8d4.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bronze_sword.svg.import[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/campfire.svg-3770be9fd61a1dcd840a48be43654c78.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/campfire.svg.import[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/carpenter.svg-bf33dbfbff0d3be79d49b5dfa1b78ec8.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/carpenter.svg.import[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cement.svg-309da97ed883dc22cae619232b7279ad.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cement.svg.import[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/chair.svg-8c21ffc2bc2eb15cbf05a1d765fc765e.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/chair.svg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/charcoal.svg-333ec38444e22a2229909a67b61fa798.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/charcoal.svg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/chest_kit.svg-07676534c199107017a79901013c116d.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/chest_kit.svg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/circuit.svg-ba949ef19c2f70654fd96a73f6608002.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/circuit.svg.import[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/clay.svg-1341fa9bd0c990320d0ba698c912a0d1.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/clay.svg.import[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cloth.svg-8c79737be0af1289cc01d86ed0610527.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cloth.svg.import[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/club.svg-c2a59bd8f6e878ec3beb6bbf076789b5.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/club.svg.import[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/coal.svg-b105e66bbcc82dab9618a1aea46012b9.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/coal.svg.import[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/concrete.svg-2ceb1f1a6cdf980ad8d18d162d16a6f1.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/concrete.svg.import[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/concrete_mixer.svg-baff3575576e7bb0a86a2f8283dbb588.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/concrete_mixer.svg.import[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cooked_fish.svg-9ad389f09930eaeda5e42ec20567ecf7.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cooked_fish.svg.import[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cooked_meat.svg-9d982f86ffa655f88dead916f310fe6b.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cooked_meat.svg.import[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cooking_fire.svg-2f4faa260a4977c3725272fd5305d4ee.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cooking_fire.svg.import[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_armor.svg-14b99c08c25a3a826285348737eaa173.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_armor.svg.import[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_ingot.svg-13640891f411b714fbc472f9441583b3.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_ingot.svg.import[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_ore.svg-207cd80af53d923317e25b37dae6c2f4.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_ore.svg.import[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_pickaxe.svg-e0ec28c0bc2ba31994e8ece23a8b2a71.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_pickaxe.svg.import[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_sword.svg-e852385484daeff563ff221d2e5e940b.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_sword.svg.import[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cost.svg-9a35244163f1e5f8f86cb1cb9d7a8a53.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cost.svg.import[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/crusher.svg-67e84a9f849e03af52bd87c58abe6f33.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/crusher.svg.import[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/durability.svg-c230bb1ddbc704e072b86f29c5d3575c.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/durability.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/electrical_bench.svg-68f4d751b63597b7a042b47a3b416d11.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/electrical_bench.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/fiber.svg-e868af795c7b20d24013f3aa7896ab36.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/fiber.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/furnace.svg-bcdfa2920f2cd58b82954d815dc211f4.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/furnace.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gear.svg-05f22a78cc718f25b9061a5a6e71591c.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gear.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/glass.svg-d374433ebbbd0eecf03a38435891670a.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/glass.svg.import[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gold_armor.svg-8a7ad0935c51066685718dd823e0fd84.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gold_armor.svg.import[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gold_ingot.svg-d4087a6635e5899571a5e4581e6ed25a.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gold_ingot.svg.import[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gold_ore.svg-f8a3c2006d3031c6c17d795c9dd5af82.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gold_ore.svg.import[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gravel.svg-047ebd14d4311fdd4257584275d4eba5.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gravel.svg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/hand.svg-5fcda6b085ce5b013bf25f59309edbbd.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/hand.svg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/herb.svg-09a6bd70725ddec035b12bf695bb1b79.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/herb.svg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/herbal_tea.svg-3c261ff642f072025408a53dbfc50a8d.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/herbal_tea.svg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/id.svg-8086ff7fc10644c1cbe9a0862b451989.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/id.svg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_armor.svg-c80c95182171ec0c0d7c6df7788a7010.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_armor.svg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_ingot.svg-b51cc3fe1fb9d6c7c0c8d7ef83ed1781.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_ingot.svg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_ore.svg-fdf3bfe17693d99515af43186f7d8705.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_ore.svg.import[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_pickaxe.svg-a1e501543d62ebbd308c53ef4a2335b9.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_pickaxe.svg.import[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_sword.svg-eb9b1d2c908ddc650825850a42599745.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_sword.svg.import[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/kitchen.svg-9cea8bea52e63966171cf7c5497da234.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/kitchen.svg.import[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lantern.svg-ac010fc12de6b4613348b6cab3cffb47.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/lantern.svg.import[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/leather.svg-2a22e50346da36cbeb6e850ce587d6d7.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/leather.svg.import[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/leather_armor.svg-99f2fd46e87f1769d9a54aff3676ce4b.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/leather_armor.svg.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/limestone.svg-cebe7bf3e4f067e34784745d13644f23.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/limestone.svg.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/log.svg-7c242ce9ac1d5d415f36532c3f9d55b0.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/log.svg.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/loom.svg-08d071a42dabc75ad3d19b9d2e88dd96.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/loom.svg.import[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/mason.svg-bc7b14da54006fcdb03a4e14959c4149.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/mason.svg.import[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/mechanical_workshop.svg-9161bf1925ce0e8dc7eeb747fc1555f7.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/mechanical_workshop.svg.import[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/medical_kit.svg-a54796f08cc647821d2cbb87f9575299.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/medical_kit.svg.import[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/nail.svg-fbc693c0f38b388b14901f57569dc19f.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/nail.svg.import[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/petals.svg-fcbb804ec9b513b3eb7ced32042fd9c2.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/petals.svg.import[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pickaxe.svg-4abc1c6060b7c35362991abf4c933187.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/pickaxe.svg.import[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/plank.svg-245bf7362ca2114a9b1755772aa0347c.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/plank.svg.import[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pt.svg-765534362d382985b03720e148a66359.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/pt.svg.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/raft.svg-b134d43ab386e126324cc6c31836fe7b.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/raft.svg.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rare_ore.svg-4611721a6945a53fde5c174fb26dda25.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/rare_ore.svg.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/raw_fish.svg-865e85fdb5c650cbbbc67877000c1040.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/raw_fish.svg.import[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/raw_meat.svg-f8cfe3088c7954a769f809c3b554074d.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/raw_meat.svg.import[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/recipes.svg-c3e4351d7a1e588ab1a7a1c0a9fb89ee.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/recipes.svg.import[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rope.svg-3ceee76fbfeb169dc1d2f1bdf4e472c3.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/rope.svg.import[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sand.svg-b751f3f3736a45af928f1b8bdd961a34.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/sand.svg.import[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sawmill.svg-1667e2f8e9fc48fc093272d4ccf235e4.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/sawmill.svg.import[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/seed.svg-b29ee407e0d7226f754435b3cdf8d961.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/seed.svg.import[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shaft.svg-3e03755ec21ba1a3862331d0d9af14df.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/shaft.svg.import[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shelter.svg-f0c840a5a9a2f8963ba19b463c471b47.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/shelter.svg.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shield.svg-f31741d610d90885e5e6a589f42a7011.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/shield.svg.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shovel.svg-afb2245d2042cf2ba3bafb0c5bccdd43.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/shovel.svg.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/silver_ingot.svg-ab7b3e6cf10d97c069fb6f4c13dc297d.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/silver_ingot.svg.import[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/silver_ore.svg-7276383e17b4a79eedf80318c384db65.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/silver_ore.svg.import[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/silver_sword.svg-5aab21a4a6f5e875d54c70e0ec8dcc69.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/silver_sword.svg.import[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/smelter.svg-e84c5e31f8e38acd7358128929302769.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/smelter.svg.import[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/soil.svg-705ba3e8c1bbfa13fd086625143ef13b.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/soil.svg.import[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/spear.svg-b186ec6338f3305ad484cfb051754b84.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/spear.svg.import[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stack.svg-036c03d7d5e1490dc461732bd12a78f7.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/stack.svg.import[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/station.svg-53b10f34e0d77c3d4a6aa61c10edc635.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/station.svg.import[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/steel_armor.svg-3e47c36c667222183ccf7a7e2b9419c7.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/steel_armor.svg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/steel_ingot.svg-cdac02725df94ed66dd6bd830e304b1f.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/steel_ingot.svg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/steel_sword.svg-daabbcc5135052b952949f7e6711434c.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/steel_sword.svg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stick.svg-4e015ceed29dfc30968fbc03cb6704c5.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/stick.svg.import[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stone.svg-0b58994eaf83f5cd4896b525e88c9c97.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/stone.svg.import[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stone_sword.svg-e41abdf81dda929717fdd0521df07ebb.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/stone_sword.svg.import[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sulfur.svg-b348469b4a719a0585e395aef9b7c5af.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/sulfur.svg.import[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/table.svg-070dba8861d1903561f683c7d61fa204.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/table.svg.import[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tannery.svg-b603f03d6607bd58faa0fcb3be63b49f.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/tannery.svg.import[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tin_ingot.svg-cdef4c173a2734c4789b0b1b5eacd51f.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/tin_ingot.svg.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tin_ore.svg-6a97ed8a0c59de412095adc1b578fc1f.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/tin_ore.svg.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/torch.svg-1a17c15067295fa27f4daecde55aa3f8.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/torch.svg.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/totem.svg-30317b85b11efe6e016e732ed375475f.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/totem.svg.import[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/vase.svg-8c309e0b295c626cb803423bf19f0060.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/vase.svg.import[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wall_kit.svg-6ad78d43e014fd2683c920e10299ec69.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/wall_kit.svg.import[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/water.svg-cbcc622ae0d43c40c532b25ec399636a.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/water.svg.import[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/water_container.svg-eed696743d3542b1b3e32c3b107d56b5.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/water_container.svg.import[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/weapons.svg-914c29aa01280f1d7b4515fd158ae31a.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/weapons.svg.import[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wire.svg-6448c7cb67d4d0dc734f98431ef081e1.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/wire.svg.import[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wood.svg-3fcb376d2d17d0fd5c32271ef9b838ad.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/wood.svg.import[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/workbench.svg-10fa5ec70204d39d275136954426ed0c.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/workbench.svg.import[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Assets/icon.ico[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/icon.svg-8193eb3d66a1b5143b8bb4c28c1dc139.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Assets/icon.svg.import[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Audio/Manager.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Building/Campfire.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Building/Factory.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://Building/Piece.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://Building/Shelter.gdc[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://Building/Workshop.gdc[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://Character/Rig.gdc[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://Combat/Rules.gdc[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://Character/Model.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://Communication/Channels.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://Communication/ADPCM.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://World/Clock.gdc[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://UI/PerformanceOverlay.gdc[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://UI/StoragePanel.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://UI/CharacterCreator.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://World/Shapes.gdc[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://Character/Appearance.gdc[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://Tribes/System.gdc[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://Localization/de.po[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://Character/Equipment.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://Communication/Voice.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://Core/Inventory.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://Core/Vitals.gdc[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://Persistence/SaveSchema.gdc[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://Main.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://UI/Quickbar.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://Progression/Profile.gdc[39m[0m
+[  78% ] [90m[1msavepack[22m | Storing File: res://Settings/ConfigStore.gdc[39m[0m
+[  78% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-a8e1520d83f25710dd4e3da8c6f32601-Main.scn[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://Player/Player.gdc[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://Persistence/Store.gdc[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://Settings/Manager.gdc[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://Survival/Survival.gdc[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://Networking/SnapshotCodec.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://UI/WorldMap.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://UI/InventoryPanel.gdc[39m[0m
+[  82% ] [90m[1msavepack[22m | Storing File: res://Game/Journal.gdc[39m[0m
+[  82% ] [90m[1msavepack[22m | Storing File: res://Data/Items.json[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://Game/Diagnostics.gdc[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://Data/Biomes.json[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://Data/Balance.json[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://Localization/Manager.gdc[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://Game/Balance.gdc[39m[0m
+[  85% ] [90m[1msavepack[22m | Storing File: res://Crafting/Activities.gdc[39m[0m
+[  85% ] [90m[1msavepack[22m | Storing File: res://Game/Runtime.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://Items/Catalog.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://Graphics/Settings.gdc[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://Items/WorldPickup.gdc[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://Networking/Session.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | Storing File: res://World/Tree.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | Storing File: res://UI/ControlsPanel.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://World/Terrain.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://UI/ChatWidget.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://UI/StationPanel.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | Storing File: res://UI/NavigationMiniMap.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | Storing File: res://UI/InventoryDropZone.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://Networking/server.example.json[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://Localization/en_US.po[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://Networking/ServerConfig.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://Localization/ja.po[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://Localization/fr.po[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://Weather/Weather.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://Localization/es.po[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://Mining/System.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://World/World.gdc[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://Localization/pt_BR.po[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://UI/HUD.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | Storing File: res://Weather/Exposure.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | Storing File: res://UI/InventorySlot.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://UI/ItemIcons.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://UI/GraphicsPanel.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Watershed.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/CommunicationPanel.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Animals/Animal.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Animals/Director.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Animals/Fish.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Audio/Manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Campfire.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Factory.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Piece.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Shelter.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Workshop.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Character/Rig.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Combat/Rules.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Character/Model.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Communication/Channels.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Communication/ADPCM.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Clock.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/PerformanceOverlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/StoragePanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/CharacterCreator.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Shapes.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Character/Appearance.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Tribes/System.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Character/Equipment.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Communication/Voice.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Core/Inventory.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Core/Vitals.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Persistence/SaveSchema.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Main.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/Quickbar.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Progression/Profile.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Settings/ConfigStore.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Scenes/Main.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Player/Player.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Persistence/Store.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Settings/Manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Survival/Survival.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Networking/SnapshotCodec.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/WorldMap.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/InventoryPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Game/Journal.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Game/Diagnostics.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Localization/Manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Game/Balance.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Crafting/Activities.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Game/Runtime.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Items/Catalog.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Graphics/Settings.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Items/WorldPickup.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Networking/Session.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Tree.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/ControlsPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Terrain.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/ChatWidget.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/StationPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/NavigationMiniMap.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/InventoryDropZone.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Networking/ServerConfig.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Weather/Weather.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Mining/System.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/World.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/HUD.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Weather/Exposure.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/InventorySlot.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/ItemIcons.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/GraphicsPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Watershed.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/CommunicationPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://.godot/global_script_class_cache.cfg[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Assets/icon.svg[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --export-release Linux /workspace/Tribes-Of-Fire/builds/linux/TribesOfFire.x86_64
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://Animals/Animal.gdc[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://Animals/Director.gdc[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://Animals/Fish.gdc[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/build.wav-db75013a7f22b6c51f71db13ee0436eb.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/build.wav.import[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/combat.wav-52812756ca2e682823fb7c7ea5bfe584.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/combat.wav.import[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/combat_music.wav-f882030b303cb9fbadace76f8a5fe628.sample[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/combat_music.wav.import[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/craft.wav-a05beac1a2c1e1f8e74904abf754931f.sample[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/craft.wav.import[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/creation.wav-7ef6b1bed7d7d223da26d2a26f951528.sample[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/creation.wav.import[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/damage.wav-43079643dc331808cc736026ba57b086.sample[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/damage.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/exploration.wav-52937d88746c9538933c04fe20dd3d06.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/exploration.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/menu.wav-97a1895bc9823b712cac9992039c3ea2.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/menu.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/night.wav-1adebe0e322805f63bba2a980e3a9277.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/night.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pickup.wav-4518a50ecad6c3fc15a4ed4880f2f1e1.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/pickup.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_dirt.wav-c2cb5d8d83a5ec6a6fe4072871cab4cb.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_dirt.wav.import[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_grass.wav-226477e073dd6a7d02426ad4c6b2695e.sample[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_grass.wav.import[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_sand.wav-0f9a3917df58721e9a96f40364ba5eab.sample[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_sand.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_stone.wav-3986d5f63470a6ff125ea75ae76a14c5.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_stone.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_water.wav-ba707488b5051e9923591563fd68c0a0.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_water.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_wood.wav-031cbc87d0016c33847bbdaa036d9639.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_wood.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stone.wav-808c9839f2e1fcc9d21d9179bfe4dbce.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/stone.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/ui.wav-b65c598c9d6db3626ea804df96b7c08d.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/ui.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wind.wav-d52ae88b167fb5c7140fb0e8b584074d.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/wind.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wood.wav-92354adbfa1922b42bd99966c029eae7.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/wood.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/NotoSansCJK-Regular.ttc-c6741816368b725511fbf54ead93f17e.fontdata[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://Assets/Fonts/NotoSansCJK-Regular.ttc.import[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/cascade.gdshader[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/clouds.gdshader[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/color_grade.gdshader[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/distant_forest.gdshader[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/distant_terrain.gdshader[39m[0m
+[  14% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/foliage.gdshader[39m[0m
+[  14% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/hide.gdshader[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/water.gdshader[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/advanced_workshop.svg-31aac9310fc4e2a11ff17920fe6cf1f2.ctex[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/advanced_workshop.svg.import[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/alchemy.svg-b0fa56a11fca857c4d28f6fe17652934.ctex[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/alchemy.svg.import[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/anvil.svg-c4d87c5cc266cf4edbff2399c4091aa3.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/anvil.svg.import[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/armor.svg-cf9d5561b721c3c40c1fc8c861e9cecb.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/armor.svg.import[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/arrow.svg-b6490fbacbf5234e89642a791a4d25d8.ctex[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/arrow.svg.import[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/axe.svg-803e746d65960b10e12bd511c6cc784d.ctex[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/axe.svg.import[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bandage.svg-5c89e6a36c178e7ead457e3daebab8c9.ctex[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bandage.svg.import[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/berries.svg-1ffbbd00bdf23f21e64475682ab66574.ctex[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/berries.svg.import[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bone.svg-61f766e36591cf244f58e3216d292849.ctex[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bone.svg.import[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bone_armor.svg-2f6ca6a039fd8d25ae63694aa8c962ff.ctex[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bone_armor.svg.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bow.svg-e4eedc958e2602e6f56a108044786af2.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bow.svg.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/brick.svg-4b9848a63faf8d09807a44ec7536e203.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/brick.svg.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bronze_armor.svg-8f5fcaf45723daa702fb0fa14720144d.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bronze_armor.svg.import[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bronze_ingot.svg-07bf5f1bf3f3ca6709bd26244354d9de.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bronze_ingot.svg.import[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bronze_sword.svg-ad9a6d0124139ee90866333e7cbfd8d4.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bronze_sword.svg.import[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/campfire.svg-3770be9fd61a1dcd840a48be43654c78.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/campfire.svg.import[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/carpenter.svg-bf33dbfbff0d3be79d49b5dfa1b78ec8.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/carpenter.svg.import[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cement.svg-309da97ed883dc22cae619232b7279ad.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cement.svg.import[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/chair.svg-8c21ffc2bc2eb15cbf05a1d765fc765e.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/chair.svg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/charcoal.svg-333ec38444e22a2229909a67b61fa798.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/charcoal.svg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/chest_kit.svg-07676534c199107017a79901013c116d.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/chest_kit.svg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/circuit.svg-ba949ef19c2f70654fd96a73f6608002.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/circuit.svg.import[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/clay.svg-1341fa9bd0c990320d0ba698c912a0d1.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/clay.svg.import[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cloth.svg-8c79737be0af1289cc01d86ed0610527.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cloth.svg.import[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/club.svg-c2a59bd8f6e878ec3beb6bbf076789b5.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/club.svg.import[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/coal.svg-b105e66bbcc82dab9618a1aea46012b9.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/coal.svg.import[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/concrete.svg-2ceb1f1a6cdf980ad8d18d162d16a6f1.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/concrete.svg.import[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/concrete_mixer.svg-baff3575576e7bb0a86a2f8283dbb588.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/concrete_mixer.svg.import[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cooked_fish.svg-9ad389f09930eaeda5e42ec20567ecf7.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cooked_fish.svg.import[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cooked_meat.svg-9d982f86ffa655f88dead916f310fe6b.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cooked_meat.svg.import[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cooking_fire.svg-2f4faa260a4977c3725272fd5305d4ee.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cooking_fire.svg.import[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_armor.svg-14b99c08c25a3a826285348737eaa173.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_armor.svg.import[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_ingot.svg-13640891f411b714fbc472f9441583b3.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_ingot.svg.import[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_ore.svg-207cd80af53d923317e25b37dae6c2f4.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_ore.svg.import[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_pickaxe.svg-e0ec28c0bc2ba31994e8ece23a8b2a71.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_pickaxe.svg.import[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_sword.svg-e852385484daeff563ff221d2e5e940b.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_sword.svg.import[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cost.svg-9a35244163f1e5f8f86cb1cb9d7a8a53.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cost.svg.import[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/crusher.svg-67e84a9f849e03af52bd87c58abe6f33.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/crusher.svg.import[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/durability.svg-c230bb1ddbc704e072b86f29c5d3575c.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/durability.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/electrical_bench.svg-68f4d751b63597b7a042b47a3b416d11.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/electrical_bench.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/fiber.svg-e868af795c7b20d24013f3aa7896ab36.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/fiber.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/furnace.svg-bcdfa2920f2cd58b82954d815dc211f4.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/furnace.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gear.svg-05f22a78cc718f25b9061a5a6e71591c.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gear.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/glass.svg-d374433ebbbd0eecf03a38435891670a.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/glass.svg.import[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gold_armor.svg-8a7ad0935c51066685718dd823e0fd84.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gold_armor.svg.import[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gold_ingot.svg-d4087a6635e5899571a5e4581e6ed25a.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gold_ingot.svg.import[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gold_ore.svg-f8a3c2006d3031c6c17d795c9dd5af82.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gold_ore.svg.import[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gravel.svg-047ebd14d4311fdd4257584275d4eba5.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gravel.svg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/hand.svg-5fcda6b085ce5b013bf25f59309edbbd.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/hand.svg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/herb.svg-09a6bd70725ddec035b12bf695bb1b79.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/herb.svg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/herbal_tea.svg-3c261ff642f072025408a53dbfc50a8d.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/herbal_tea.svg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/id.svg-8086ff7fc10644c1cbe9a0862b451989.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/id.svg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_armor.svg-c80c95182171ec0c0d7c6df7788a7010.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_armor.svg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_ingot.svg-b51cc3fe1fb9d6c7c0c8d7ef83ed1781.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_ingot.svg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_ore.svg-fdf3bfe17693d99515af43186f7d8705.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_ore.svg.import[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_pickaxe.svg-a1e501543d62ebbd308c53ef4a2335b9.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_pickaxe.svg.import[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_sword.svg-eb9b1d2c908ddc650825850a42599745.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_sword.svg.import[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/kitchen.svg-9cea8bea52e63966171cf7c5497da234.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/kitchen.svg.import[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lantern.svg-ac010fc12de6b4613348b6cab3cffb47.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/lantern.svg.import[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/leather.svg-2a22e50346da36cbeb6e850ce587d6d7.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/leather.svg.import[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/leather_armor.svg-99f2fd46e87f1769d9a54aff3676ce4b.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/leather_armor.svg.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/limestone.svg-cebe7bf3e4f067e34784745d13644f23.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/limestone.svg.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/log.svg-7c242ce9ac1d5d415f36532c3f9d55b0.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/log.svg.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/loom.svg-08d071a42dabc75ad3d19b9d2e88dd96.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/loom.svg.import[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/mason.svg-bc7b14da54006fcdb03a4e14959c4149.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/mason.svg.import[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/mechanical_workshop.svg-9161bf1925ce0e8dc7eeb747fc1555f7.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/mechanical_workshop.svg.import[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/medical_kit.svg-a54796f08cc647821d2cbb87f9575299.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/medical_kit.svg.import[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/nail.svg-fbc693c0f38b388b14901f57569dc19f.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/nail.svg.import[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/petals.svg-fcbb804ec9b513b3eb7ced32042fd9c2.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/petals.svg.import[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pickaxe.svg-4abc1c6060b7c35362991abf4c933187.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/pickaxe.svg.import[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/plank.svg-245bf7362ca2114a9b1755772aa0347c.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/plank.svg.import[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pt.svg-765534362d382985b03720e148a66359.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/pt.svg.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/raft.svg-b134d43ab386e126324cc6c31836fe7b.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/raft.svg.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rare_ore.svg-4611721a6945a53fde5c174fb26dda25.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/rare_ore.svg.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/raw_fish.svg-865e85fdb5c650cbbbc67877000c1040.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/raw_fish.svg.import[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/raw_meat.svg-f8cfe3088c7954a769f809c3b554074d.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/raw_meat.svg.import[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/recipes.svg-c3e4351d7a1e588ab1a7a1c0a9fb89ee.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/recipes.svg.import[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rope.svg-3ceee76fbfeb169dc1d2f1bdf4e472c3.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/rope.svg.import[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sand.svg-b751f3f3736a45af928f1b8bdd961a34.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/sand.svg.import[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sawmill.svg-1667e2f8e9fc48fc093272d4ccf235e4.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/sawmill.svg.import[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/seed.svg-b29ee407e0d7226f754435b3cdf8d961.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/seed.svg.import[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shaft.svg-3e03755ec21ba1a3862331d0d9af14df.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/shaft.svg.import[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shelter.svg-f0c840a5a9a2f8963ba19b463c471b47.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/shelter.svg.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shield.svg-f31741d610d90885e5e6a589f42a7011.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/shield.svg.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shovel.svg-afb2245d2042cf2ba3bafb0c5bccdd43.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/shovel.svg.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/silver_ingot.svg-ab7b3e6cf10d97c069fb6f4c13dc297d.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/silver_ingot.svg.import[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/silver_ore.svg-7276383e17b4a79eedf80318c384db65.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/silver_ore.svg.import[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/silver_sword.svg-5aab21a4a6f5e875d54c70e0ec8dcc69.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/silver_sword.svg.import[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/smelter.svg-e84c5e31f8e38acd7358128929302769.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/smelter.svg.import[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/soil.svg-705ba3e8c1bbfa13fd086625143ef13b.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/soil.svg.import[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/spear.svg-b186ec6338f3305ad484cfb051754b84.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/spear.svg.import[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stack.svg-036c03d7d5e1490dc461732bd12a78f7.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/stack.svg.import[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/station.svg-53b10f34e0d77c3d4a6aa61c10edc635.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/station.svg.import[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/steel_armor.svg-3e47c36c667222183ccf7a7e2b9419c7.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/steel_armor.svg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/steel_ingot.svg-cdac02725df94ed66dd6bd830e304b1f.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/steel_ingot.svg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/steel_sword.svg-daabbcc5135052b952949f7e6711434c.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/steel_sword.svg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stick.svg-4e015ceed29dfc30968fbc03cb6704c5.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/stick.svg.import[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stone.svg-0b58994eaf83f5cd4896b525e88c9c97.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/stone.svg.import[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stone_sword.svg-e41abdf81dda929717fdd0521df07ebb.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/stone_sword.svg.import[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sulfur.svg-b348469b4a719a0585e395aef9b7c5af.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/sulfur.svg.import[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/table.svg-070dba8861d1903561f683c7d61fa204.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/table.svg.import[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tannery.svg-b603f03d6607bd58faa0fcb3be63b49f.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/tannery.svg.import[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tin_ingot.svg-cdef4c173a2734c4789b0b1b5eacd51f.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/tin_ingot.svg.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tin_ore.svg-6a97ed8a0c59de412095adc1b578fc1f.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/tin_ore.svg.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/torch.svg-1a17c15067295fa27f4daecde55aa3f8.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/torch.svg.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/totem.svg-30317b85b11efe6e016e732ed375475f.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/totem.svg.import[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/vase.svg-8c309e0b295c626cb803423bf19f0060.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/vase.svg.import[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wall_kit.svg-6ad78d43e014fd2683c920e10299ec69.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/wall_kit.svg.import[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/water.svg-cbcc622ae0d43c40c532b25ec399636a.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/water.svg.import[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/water_container.svg-eed696743d3542b1b3e32c3b107d56b5.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/water_container.svg.import[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/weapons.svg-914c29aa01280f1d7b4515fd158ae31a.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/weapons.svg.import[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wire.svg-6448c7cb67d4d0dc734f98431ef081e1.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/wire.svg.import[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wood.svg-3fcb376d2d17d0fd5c32271ef9b838ad.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/wood.svg.import[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/workbench.svg-10fa5ec70204d39d275136954426ed0c.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/workbench.svg.import[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Assets/icon.ico[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/icon.svg-8193eb3d66a1b5143b8bb4c28c1dc139.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Assets/icon.svg.import[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Audio/Manager.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Building/Campfire.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Building/Factory.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://Building/Piece.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://Building/Shelter.gdc[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://Building/Workshop.gdc[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://Character/Rig.gdc[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://Combat/Rules.gdc[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://Character/Model.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://Communication/Channels.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://Communication/ADPCM.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://World/Clock.gdc[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://UI/PerformanceOverlay.gdc[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://UI/StoragePanel.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://UI/CharacterCreator.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://World/Shapes.gdc[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://Character/Appearance.gdc[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://Tribes/System.gdc[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://Localization/de.po[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://Character/Equipment.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://Communication/Voice.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://Core/Inventory.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://Core/Vitals.gdc[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://Persistence/SaveSchema.gdc[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://Main.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://UI/Quickbar.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://Progression/Profile.gdc[39m[0m
+[  78% ] [90m[1msavepack[22m | Storing File: res://Settings/ConfigStore.gdc[39m[0m
+[  78% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-a8e1520d83f25710dd4e3da8c6f32601-Main.scn[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://Player/Player.gdc[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://Persistence/Store.gdc[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://Settings/Manager.gdc[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://Survival/Survival.gdc[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://Networking/SnapshotCodec.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://UI/WorldMap.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://UI/InventoryPanel.gdc[39m[0m
+[  82% ] [90m[1msavepack[22m | Storing File: res://Game/Journal.gdc[39m[0m
+[  82% ] [90m[1msavepack[22m | Storing File: res://Data/Items.json[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://Game/Diagnostics.gdc[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://Data/Biomes.json[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://Data/Balance.json[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://Localization/Manager.gdc[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://Game/Balance.gdc[39m[0m
+[  85% ] [90m[1msavepack[22m | Storing File: res://Crafting/Activities.gdc[39m[0m
+[  85% ] [90m[1msavepack[22m | Storing File: res://Game/Runtime.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://Items/Catalog.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://Graphics/Settings.gdc[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://Items/WorldPickup.gdc[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://Networking/Session.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | Storing File: res://World/Tree.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | Storing File: res://UI/ControlsPanel.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://World/Terrain.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://UI/ChatWidget.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://UI/StationPanel.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | Storing File: res://UI/NavigationMiniMap.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | Storing File: res://UI/InventoryDropZone.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://Networking/server.example.json[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://Localization/en_US.po[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://Networking/ServerConfig.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://Localization/ja.po[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://Localization/fr.po[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://Weather/Weather.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://Localization/es.po[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://Mining/System.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://World/World.gdc[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://Localization/pt_BR.po[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://UI/HUD.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | Storing File: res://Weather/Exposure.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | Storing File: res://UI/InventorySlot.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://UI/ItemIcons.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://UI/GraphicsPanel.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Watershed.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/CommunicationPanel.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Animals/Animal.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Animals/Director.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Animals/Fish.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Audio/Manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Campfire.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Factory.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Piece.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Shelter.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Workshop.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Character/Rig.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Combat/Rules.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Character/Model.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Communication/Channels.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Communication/ADPCM.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Clock.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/PerformanceOverlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/StoragePanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/CharacterCreator.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Shapes.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Character/Appearance.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Tribes/System.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Character/Equipment.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Communication/Voice.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Core/Inventory.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Core/Vitals.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Persistence/SaveSchema.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Main.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/Quickbar.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Progression/Profile.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Settings/ConfigStore.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Scenes/Main.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Player/Player.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Persistence/Store.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Settings/Manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Survival/Survival.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Networking/SnapshotCodec.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/WorldMap.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/InventoryPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Game/Journal.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Game/Diagnostics.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Localization/Manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Game/Balance.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Crafting/Activities.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Game/Runtime.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Items/Catalog.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Graphics/Settings.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Items/WorldPickup.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Networking/Session.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Tree.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/ControlsPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Terrain.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/ChatWidget.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/StationPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/NavigationMiniMap.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/InventoryDropZone.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Networking/ServerConfig.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Weather/Weather.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Mining/System.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/World.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/HUD.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Weather/Exposure.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/InventorySlot.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/ItemIcons.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/GraphicsPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Watershed.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/CommunicationPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://.godot/global_script_class_cache.cfg[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Assets/icon.svg[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --export-release Linux Dedicated Server /workspace/Tribes-Of-Fire/builds/server/TribesOfFireServer.x86_64
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://Animals/Animal.gdc[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://Animals/Director.gdc[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://Animals/Fish.gdc[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/build.wav-db75013a7f22b6c51f71db13ee0436eb.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/build.wav.import[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/combat.wav-52812756ca2e682823fb7c7ea5bfe584.sample[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/combat.wav.import[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/combat_music.wav-f882030b303cb9fbadace76f8a5fe628.sample[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/combat_music.wav.import[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/craft.wav-a05beac1a2c1e1f8e74904abf754931f.sample[39m[0m
+[   3% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/craft.wav.import[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/creation.wav-7ef6b1bed7d7d223da26d2a26f951528.sample[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/creation.wav.import[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/damage.wav-43079643dc331808cc736026ba57b086.sample[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/damage.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/exploration.wav-52937d88746c9538933c04fe20dd3d06.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/exploration.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/menu.wav-97a1895bc9823b712cac9992039c3ea2.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/menu.wav.import[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/night.wav-1adebe0e322805f63bba2a980e3a9277.sample[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/night.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pickup.wav-4518a50ecad6c3fc15a4ed4880f2f1e1.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/pickup.wav.import[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_dirt.wav-c2cb5d8d83a5ec6a6fe4072871cab4cb.sample[39m[0m
+[   6% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_dirt.wav.import[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_grass.wav-226477e073dd6a7d02426ad4c6b2695e.sample[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_grass.wav.import[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_sand.wav-0f9a3917df58721e9a96f40364ba5eab.sample[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_sand.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_stone.wav-3986d5f63470a6ff125ea75ae76a14c5.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_stone.wav.import[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_water.wav-ba707488b5051e9923591563fd68c0a0.sample[39m[0m
+[   8% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_water.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/step_wood.wav-031cbc87d0016c33847bbdaa036d9639.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/step_wood.wav.import[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stone.wav-808c9839f2e1fcc9d21d9179bfe4dbce.sample[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/stone.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/ui.wav-b65c598c9d6db3626ea804df96b7c08d.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/ui.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wind.wav-d52ae88b167fb5c7140fb0e8b584074d.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/wind.wav.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wood.wav-92354adbfa1922b42bd99966c029eae7.sample[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://Assets/Audio/wood.wav.import[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/NotoSansCJK-Regular.ttc-c6741816368b725511fbf54ead93f17e.fontdata[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://Assets/Fonts/NotoSansCJK-Regular.ttc.import[39m[0m
+[  11% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/cascade.gdshader[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/clouds.gdshader[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/color_grade.gdshader[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/distant_forest.gdshader[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/distant_terrain.gdshader[39m[0m
+[  14% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/foliage.gdshader[39m[0m
+[  14% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/hide.gdshader[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://Assets/Shaders/water.gdshader[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/advanced_workshop.svg-31aac9310fc4e2a11ff17920fe6cf1f2.ctex[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/advanced_workshop.svg.import[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/alchemy.svg-b0fa56a11fca857c4d28f6fe17652934.ctex[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/alchemy.svg.import[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/anvil.svg-c4d87c5cc266cf4edbff2399c4091aa3.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/anvil.svg.import[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/armor.svg-cf9d5561b721c3c40c1fc8c861e9cecb.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/armor.svg.import[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/arrow.svg-b6490fbacbf5234e89642a791a4d25d8.ctex[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/arrow.svg.import[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/axe.svg-803e746d65960b10e12bd511c6cc784d.ctex[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/axe.svg.import[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bandage.svg-5c89e6a36c178e7ead457e3daebab8c9.ctex[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bandage.svg.import[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/berries.svg-1ffbbd00bdf23f21e64475682ab66574.ctex[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/berries.svg.import[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bone.svg-61f766e36591cf244f58e3216d292849.ctex[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bone.svg.import[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bone_armor.svg-2f6ca6a039fd8d25ae63694aa8c962ff.ctex[39m[0m
+[  19% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bone_armor.svg.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bow.svg-e4eedc958e2602e6f56a108044786af2.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bow.svg.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/brick.svg-4b9848a63faf8d09807a44ec7536e203.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/brick.svg.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bronze_armor.svg-8f5fcaf45723daa702fb0fa14720144d.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bronze_armor.svg.import[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bronze_ingot.svg-07bf5f1bf3f3ca6709bd26244354d9de.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bronze_ingot.svg.import[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bronze_sword.svg-ad9a6d0124139ee90866333e7cbfd8d4.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/bronze_sword.svg.import[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/campfire.svg-3770be9fd61a1dcd840a48be43654c78.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/campfire.svg.import[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/carpenter.svg-bf33dbfbff0d3be79d49b5dfa1b78ec8.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/carpenter.svg.import[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cement.svg-309da97ed883dc22cae619232b7279ad.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cement.svg.import[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/chair.svg-8c21ffc2bc2eb15cbf05a1d765fc765e.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/chair.svg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/charcoal.svg-333ec38444e22a2229909a67b61fa798.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/charcoal.svg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/chest_kit.svg-07676534c199107017a79901013c116d.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/chest_kit.svg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/circuit.svg-ba949ef19c2f70654fd96a73f6608002.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/circuit.svg.import[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/clay.svg-1341fa9bd0c990320d0ba698c912a0d1.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/clay.svg.import[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cloth.svg-8c79737be0af1289cc01d86ed0610527.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cloth.svg.import[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/club.svg-c2a59bd8f6e878ec3beb6bbf076789b5.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/club.svg.import[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/coal.svg-b105e66bbcc82dab9618a1aea46012b9.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/coal.svg.import[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/concrete.svg-2ceb1f1a6cdf980ad8d18d162d16a6f1.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/concrete.svg.import[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/concrete_mixer.svg-baff3575576e7bb0a86a2f8283dbb588.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/concrete_mixer.svg.import[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cooked_fish.svg-9ad389f09930eaeda5e42ec20567ecf7.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cooked_fish.svg.import[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cooked_meat.svg-9d982f86ffa655f88dead916f310fe6b.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cooked_meat.svg.import[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cooking_fire.svg-2f4faa260a4977c3725272fd5305d4ee.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cooking_fire.svg.import[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_armor.svg-14b99c08c25a3a826285348737eaa173.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_armor.svg.import[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_ingot.svg-13640891f411b714fbc472f9441583b3.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_ingot.svg.import[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_ore.svg-207cd80af53d923317e25b37dae6c2f4.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_ore.svg.import[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_pickaxe.svg-e0ec28c0bc2ba31994e8ece23a8b2a71.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_pickaxe.svg.import[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/copper_sword.svg-e852385484daeff563ff221d2e5e940b.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/copper_sword.svg.import[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/cost.svg-9a35244163f1e5f8f86cb1cb9d7a8a53.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/cost.svg.import[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/crusher.svg-67e84a9f849e03af52bd87c58abe6f33.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/crusher.svg.import[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/durability.svg-c230bb1ddbc704e072b86f29c5d3575c.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/durability.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/electrical_bench.svg-68f4d751b63597b7a042b47a3b416d11.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/electrical_bench.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/fiber.svg-e868af795c7b20d24013f3aa7896ab36.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/fiber.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/furnace.svg-bcdfa2920f2cd58b82954d815dc211f4.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/furnace.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gear.svg-05f22a78cc718f25b9061a5a6e71591c.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gear.svg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/glass.svg-d374433ebbbd0eecf03a38435891670a.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/glass.svg.import[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gold_armor.svg-8a7ad0935c51066685718dd823e0fd84.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gold_armor.svg.import[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gold_ingot.svg-d4087a6635e5899571a5e4581e6ed25a.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gold_ingot.svg.import[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gold_ore.svg-f8a3c2006d3031c6c17d795c9dd5af82.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gold_ore.svg.import[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/gravel.svg-047ebd14d4311fdd4257584275d4eba5.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/gravel.svg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/hand.svg-5fcda6b085ce5b013bf25f59309edbbd.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/hand.svg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/herb.svg-09a6bd70725ddec035b12bf695bb1b79.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/herb.svg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/herbal_tea.svg-3c261ff642f072025408a53dbfc50a8d.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/herbal_tea.svg.import[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/id.svg-8086ff7fc10644c1cbe9a0862b451989.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/id.svg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_armor.svg-c80c95182171ec0c0d7c6df7788a7010.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_armor.svg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_ingot.svg-b51cc3fe1fb9d6c7c0c8d7ef83ed1781.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_ingot.svg.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_ore.svg-fdf3bfe17693d99515af43186f7d8705.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_ore.svg.import[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_pickaxe.svg-a1e501543d62ebbd308c53ef4a2335b9.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_pickaxe.svg.import[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/iron_sword.svg-eb9b1d2c908ddc650825850a42599745.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/iron_sword.svg.import[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/kitchen.svg-9cea8bea52e63966171cf7c5497da234.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/kitchen.svg.import[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lantern.svg-ac010fc12de6b4613348b6cab3cffb47.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/lantern.svg.import[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/leather.svg-2a22e50346da36cbeb6e850ce587d6d7.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/leather.svg.import[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/leather_armor.svg-99f2fd46e87f1769d9a54aff3676ce4b.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/leather_armor.svg.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/limestone.svg-cebe7bf3e4f067e34784745d13644f23.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/limestone.svg.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/log.svg-7c242ce9ac1d5d415f36532c3f9d55b0.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/log.svg.import[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/loom.svg-08d071a42dabc75ad3d19b9d2e88dd96.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/loom.svg.import[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/mason.svg-bc7b14da54006fcdb03a4e14959c4149.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/mason.svg.import[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/mechanical_workshop.svg-9161bf1925ce0e8dc7eeb747fc1555f7.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/mechanical_workshop.svg.import[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/medical_kit.svg-a54796f08cc647821d2cbb87f9575299.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/medical_kit.svg.import[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/nail.svg-fbc693c0f38b388b14901f57569dc19f.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/nail.svg.import[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/petals.svg-fcbb804ec9b513b3eb7ced32042fd9c2.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/petals.svg.import[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pickaxe.svg-4abc1c6060b7c35362991abf4c933187.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/pickaxe.svg.import[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/plank.svg-245bf7362ca2114a9b1755772aa0347c.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/plank.svg.import[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pt.svg-765534362d382985b03720e148a66359.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/pt.svg.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/raft.svg-b134d43ab386e126324cc6c31836fe7b.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/raft.svg.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rare_ore.svg-4611721a6945a53fde5c174fb26dda25.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/rare_ore.svg.import[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/raw_fish.svg-865e85fdb5c650cbbbc67877000c1040.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/raw_fish.svg.import[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/raw_meat.svg-f8cfe3088c7954a769f809c3b554074d.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/raw_meat.svg.import[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/recipes.svg-c3e4351d7a1e588ab1a7a1c0a9fb89ee.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/recipes.svg.import[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rope.svg-3ceee76fbfeb169dc1d2f1bdf4e472c3.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/rope.svg.import[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sand.svg-b751f3f3736a45af928f1b8bdd961a34.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/sand.svg.import[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sawmill.svg-1667e2f8e9fc48fc093272d4ccf235e4.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/sawmill.svg.import[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/seed.svg-b29ee407e0d7226f754435b3cdf8d961.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/seed.svg.import[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shaft.svg-3e03755ec21ba1a3862331d0d9af14df.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/shaft.svg.import[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shelter.svg-f0c840a5a9a2f8963ba19b463c471b47.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/shelter.svg.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shield.svg-f31741d610d90885e5e6a589f42a7011.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/shield.svg.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shovel.svg-afb2245d2042cf2ba3bafb0c5bccdd43.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/shovel.svg.import[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/silver_ingot.svg-ab7b3e6cf10d97c069fb6f4c13dc297d.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/silver_ingot.svg.import[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/silver_ore.svg-7276383e17b4a79eedf80318c384db65.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/silver_ore.svg.import[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/silver_sword.svg-5aab21a4a6f5e875d54c70e0ec8dcc69.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/silver_sword.svg.import[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/smelter.svg-e84c5e31f8e38acd7358128929302769.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/smelter.svg.import[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/soil.svg-705ba3e8c1bbfa13fd086625143ef13b.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/soil.svg.import[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/spear.svg-b186ec6338f3305ad484cfb051754b84.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/spear.svg.import[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stack.svg-036c03d7d5e1490dc461732bd12a78f7.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/stack.svg.import[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/station.svg-53b10f34e0d77c3d4a6aa61c10edc635.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/station.svg.import[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/steel_armor.svg-3e47c36c667222183ccf7a7e2b9419c7.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/steel_armor.svg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/steel_ingot.svg-cdac02725df94ed66dd6bd830e304b1f.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/steel_ingot.svg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/steel_sword.svg-daabbcc5135052b952949f7e6711434c.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/steel_sword.svg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stick.svg-4e015ceed29dfc30968fbc03cb6704c5.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/stick.svg.import[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stone.svg-0b58994eaf83f5cd4896b525e88c9c97.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/stone.svg.import[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/stone_sword.svg-e41abdf81dda929717fdd0521df07ebb.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/stone_sword.svg.import[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sulfur.svg-b348469b4a719a0585e395aef9b7c5af.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/sulfur.svg.import[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/table.svg-070dba8861d1903561f683c7d61fa204.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/table.svg.import[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tannery.svg-b603f03d6607bd58faa0fcb3be63b49f.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/tannery.svg.import[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tin_ingot.svg-cdef4c173a2734c4789b0b1b5eacd51f.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/tin_ingot.svg.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tin_ore.svg-6a97ed8a0c59de412095adc1b578fc1f.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/tin_ore.svg.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/torch.svg-1a17c15067295fa27f4daecde55aa3f8.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/torch.svg.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/totem.svg-30317b85b11efe6e016e732ed375475f.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/totem.svg.import[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/vase.svg-8c309e0b295c626cb803423bf19f0060.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/vase.svg.import[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wall_kit.svg-6ad78d43e014fd2683c920e10299ec69.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/wall_kit.svg.import[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/water.svg-cbcc622ae0d43c40c532b25ec399636a.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/water.svg.import[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/water_container.svg-eed696743d3542b1b3e32c3b107d56b5.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/water_container.svg.import[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/weapons.svg-914c29aa01280f1d7b4515fd158ae31a.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/weapons.svg.import[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wire.svg-6448c7cb67d4d0dc734f98431ef081e1.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/wire.svg.import[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/wood.svg-3fcb376d2d17d0fd5c32271ef9b838ad.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/wood.svg.import[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/workbench.svg-10fa5ec70204d39d275136954426ed0c.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | Storing File: res://Assets/UI/Items/workbench.svg.import[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Assets/icon.ico[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/icon.svg-8193eb3d66a1b5143b8bb4c28c1dc139.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Assets/icon.svg.import[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Audio/Manager.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Building/Campfire.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://Building/Factory.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://Building/Piece.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | Storing File: res://Building/Shelter.gdc[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://Building/Workshop.gdc[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://Character/Rig.gdc[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://Combat/Rules.gdc[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://Character/Model.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://Communication/Channels.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://Communication/ADPCM.gdc[39m[0m
+[  70% ] [90m[1msavepack[22m | Storing File: res://World/Clock.gdc[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://UI/PerformanceOverlay.gdc[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://UI/StoragePanel.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://UI/CharacterCreator.gdc[39m[0m
+[  72% ] [90m[1msavepack[22m | Storing File: res://World/Shapes.gdc[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://Character/Appearance.gdc[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://Tribes/System.gdc[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://Localization/de.po[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://Character/Equipment.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://Communication/Voice.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://Core/Inventory.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | Storing File: res://Core/Vitals.gdc[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://Persistence/SaveSchema.gdc[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://Main.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://UI/Quickbar.gdc[39m[0m
+[  77% ] [90m[1msavepack[22m | Storing File: res://Progression/Profile.gdc[39m[0m
+[  78% ] [90m[1msavepack[22m | Storing File: res://Settings/ConfigStore.gdc[39m[0m
+[  78% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-a8e1520d83f25710dd4e3da8c6f32601-Main.scn[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://Player/Player.gdc[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://Persistence/Store.gdc[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://Settings/Manager.gdc[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://Survival/Survival.gdc[39m[0m
+[  80% ] [90m[1msavepack[22m | Storing File: res://Networking/SnapshotCodec.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://UI/WorldMap.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://UI/InventoryPanel.gdc[39m[0m
+[  82% ] [90m[1msavepack[22m | Storing File: res://Game/Journal.gdc[39m[0m
+[  82% ] [90m[1msavepack[22m | Storing File: res://Data/Items.json[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://Game/Diagnostics.gdc[39m[0m
+[  83% ] [90m[1msavepack[22m | Storing File: res://Data/Biomes.json[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://Data/Balance.json[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://Localization/Manager.gdc[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://Game/Balance.gdc[39m[0m
+[  85% ] [90m[1msavepack[22m | Storing File: res://Crafting/Activities.gdc[39m[0m
+[  85% ] [90m[1msavepack[22m | Storing File: res://Game/Runtime.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://Items/Catalog.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://Graphics/Settings.gdc[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://Items/WorldPickup.gdc[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://Networking/Session.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | Storing File: res://World/Tree.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | Storing File: res://UI/ControlsPanel.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://World/Terrain.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://UI/ChatWidget.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://UI/StationPanel.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | Storing File: res://UI/NavigationMiniMap.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | Storing File: res://UI/InventoryDropZone.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://Networking/server.example.json[39m[0m
+[  91% ] [90m[1msavepack[22m | Storing File: res://Localization/en_US.po[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://Networking/ServerConfig.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://Localization/ja.po[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://Localization/fr.po[39m[0m
+[  93% ] [90m[1msavepack[22m | Storing File: res://Weather/Weather.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://Localization/es.po[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://Mining/System.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://World/World.gdc[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://Localization/pt_BR.po[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://UI/HUD.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | Storing File: res://Weather/Exposure.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | Storing File: res://UI/InventorySlot.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://UI/ItemIcons.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://UI/GraphicsPanel.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Watershed.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/CommunicationPanel.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Animals/Animal.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Animals/Director.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Animals/Fish.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Audio/Manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Campfire.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Factory.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Piece.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Shelter.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Building/Workshop.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Character/Rig.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Combat/Rules.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Character/Model.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Communication/Channels.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Communication/ADPCM.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Clock.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/PerformanceOverlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/StoragePanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/CharacterCreator.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Shapes.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Character/Appearance.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Tribes/System.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Character/Equipment.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Communication/Voice.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Core/Inventory.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Core/Vitals.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Persistence/SaveSchema.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Main.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/Quickbar.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Progression/Profile.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Settings/ConfigStore.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Scenes/Main.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Player/Player.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Persistence/Store.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Settings/Manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Survival/Survival.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Networking/SnapshotCodec.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/WorldMap.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/InventoryPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Game/Journal.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Game/Diagnostics.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Localization/Manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Game/Balance.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Crafting/Activities.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Game/Runtime.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Items/Catalog.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Graphics/Settings.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Items/WorldPickup.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Networking/Session.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Tree.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/ControlsPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Terrain.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/ChatWidget.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/StationPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/NavigationMiniMap.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/InventoryDropZone.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Networking/ServerConfig.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Weather/Weather.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Mining/System.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/World.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/HUD.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Weather/Exposure.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/InventorySlot.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/ItemIcons.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/GraphicsPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://World/Watershed.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://UI/CommunicationPanel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://.godot/global_script_class_cache.cfg[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://Assets/icon.svg[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+[  98% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m
+Exports generated. Run platform smoke checks before distribution.

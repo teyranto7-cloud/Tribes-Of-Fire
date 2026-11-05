@@ -1,3 +1,25 @@
+# Auditoria das Fases 1–3 — 0.7.1-dev
+
+Criado por **felipealx**. Sem novo sistema, catálogo ou asset. Corrigidos replay de
+estação, cancelamento de outro job após mudança de índice, desbloqueio/capacidade
+de bancada e comandos do estado anterior ao carregar um snapshot.
+
+**4255 checks / 0 falhas**, 22 runners. 46 regressões de transação/filas passaram.
+Duas cadeias de coleta/processamento/construção passaram por servidor e dois
+clientes com replay, reconexão e reinício. Três clientes preservaram os seis canais
+de texto e passaram roteamento/ganho de áudio sintético perto/médio/fora de alcance.
+**Nenhum microfone físico foi capturado.** 39 checks GUI e oito screenshots reais,
+três resoluções; 50 processos de abrir/salvar/continuar passaram.
+
+Matriz, métodos, arquivos, desempenho e quatro classificações obrigatórias:
+[Docs/AUDIT_PHASES_1_3.md](Docs/AUDIT_PHASES_1_3.md). O teste de 50 processos tinha
+fixture antiga de gerador 2; agora exige o gerador 3 publicado, sem relaxar seed,
+checksum ou conservação. Nenhum script/cena/shader foi apagado desde o checkpoint.
+
+Pacotes, fontes extraídas e QA nativo desta revisão são registrados junto das
+suas evidências; resultados anteriores não substituem a validação da 0.7.1.
+O próximo incremento foi apenas proposto, sem começar outra fase nesta auditoria.
+
 # Entrega 0.7.0-dev — 04/11/2026
 
 Criado por **felipealx**. A base atual do GitHub (634f07e) foi preservada, incluindo

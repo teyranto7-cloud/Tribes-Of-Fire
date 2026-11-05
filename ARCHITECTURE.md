@@ -67,3 +67,16 @@ estruturas; atualizações de canais conservam o baú aberto. Após Main.quittin
 snapshots/eventos/playback são descartados antes de acessar emissores liberados.
 O viewport acompanha o tamanho real da janela. Tests/test_delivery_regressions.gd
 reproduz esses limites; Tools/capture_delivery.gd verifica entrada real e produção.
+
+
+## Correções da auditoria 0.7.1
+
+Pedidos da UI de crafting/estação têm request_id; Session valida metadados opcionais.
+Runtime deriva recibos por operação, usando o histórico persistido de 128 pedidos
+por jogador. Activities dá uid estável aos jobs, migra filas antigas e cancela pelo
+uid, inclusive quando o índice mudou. O botão guarda o uid mostrado em button_down,
+evita cancelar outro job em mouse-up e envia a intenção à autoridade.
+station_reason/recipe_unlock_reason são a única validação de pré-condições para
+UI e operação; transferência real continua atômica. A projeção de capacidade usa
+uma cópia de Inventory. _begin_authority limpa comandos anteriores ao snapshot.
+Não houve alteração de gerador, catálogo, renderer, voz ou modelos nesta auditoria.

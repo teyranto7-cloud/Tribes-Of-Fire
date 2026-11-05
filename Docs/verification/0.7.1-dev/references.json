@@ -1,0 +1,56 @@
+[
+  {
+    "name": "ARK",
+    "url": "https://ark.wiki.gg/wiki/ARK_Survival_Ascended",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "Kingdom",
+    "url": "https://roblox-the-survival-game.fandom.com/wiki/Kingdom",
+    "status": "unavailable",
+    "error": "HTTP Error 402: Payment Required"
+  },
+  {
+    "name": "Map",
+    "url": "https://www.gamezebo.com/walkthroughs/the-survival-game-map/",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "Conveyor",
+    "url": "https://robloxislands.fandom.com/wiki/Conveyor",
+    "status": "unavailable",
+    "error": "HTTP Error 402: Payment Required"
+  },
+  {
+    "name": "Power",
+    "url": "https://robloxislands.fandom.com/wiki/Power",
+    "status": "unavailable",
+    "error": "HTTP Error 402: Payment Required"
+  },
+  {
+    "name": "Territory",
+    "url": "https://wiki.facepunch.com/rust/The_Tool_Cupboard",
+    "status": 200,
+    "sha256": "85d87f270b295b97f30cb809fb2cfb08f5cf14e70ac1200f5bb7a9fcb0e1e35b"
+  },
+  {
+    "name": "Godot multiplayer",
+    "url": "https://docs.godotengine.org/en/4.3/tutorials/networking/high_level_multiplayer.html",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "Godot LOD",
+    "url": "https://docs.godotengine.org/en/4.3/tutorials/3d/mesh_lod.html",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "CC0",
+    "url": "https://polyhaven.com/license",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

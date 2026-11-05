@@ -1,0 +1,7 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=46748 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=751713576 count=1
+PHASE3_NETWORK CHECKS=8 FAILED=0 restore=true
+PLAYER_LEFT id=751713576

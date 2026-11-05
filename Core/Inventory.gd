@@ -240,6 +240,11 @@ func transact(costs: Dictionary, rewards: Dictionary) -> bool:
 			return false
 	return true
 
+func can_add_many(rewards: Dictionary) -> bool:
+	var projection = get_script().new()
+	projection.restore(serialize())
+	return projection.add_many(rewards)
+
 func add_many(rewards: Dictionary) -> bool:
 	return transact({}, rewards)
 

@@ -1,5 +1,14 @@
 # Mudanças — Tribes of Fire
 
+## 0.7.1-dev — auditoria de regressão das Fases 1–3
+
+- Recibos persistidos para operações de bancada e cancelamento identificado por job.
+- Corrigidos desbloqueios, capacidade de entrada e comandos antigos ao carregar.
+- Controles existentes exibem motivo de bloqueio sem adicionar sistemas ou catálogo.
+- Testes de dois ciclos em rede, cancelamento entre mouse-down/up, chat/áudio
+  sintético em três distâncias, 50 startups e comparação de desempenho.
+- Catálogo, gerador, modelos e recursos publicados preservados.
+
 ## 0.7.0-dev — itens, receitas, coleta e bancadas
 
 Catálogo de 100 itens e 89 receitas em JSON, 17 bancadas com buffers persistidos,

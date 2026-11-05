@@ -257,6 +257,10 @@ func command(id: int, action: String, data: Dictionary) -> void:
 		if slot_index < 0 or slot_index >= slots.size() or slots[slot_index].get("id", "") != data["expected"].get("id", "") or int(slots[slot_index].get("count", 0)) != int(data["expected"].get("count", -1)):
 			_notify(id, false)
 			return
+	var receipt := ""
+	if action in ["craft_cancel","station_select","station_load","station_refund","factory_load","factory_take"]:
+		receipt=Activities.operation_receipt(action,str(data.get("request_id","")))
+		if not receipt.is_empty() and receipt in activities.requests.get(id,[]): return
 	var accepted := false
 	if action == "appearance":
 		if not Appearance.valid(data) or str(data.get("name", "")).to_lower() in ["admin", "server", "system"]:
@@ -353,7 +357,7 @@ func command(id: int, action: String, data: Dictionary) -> void:
 			"inventory_sort": accepted = inv.organize()
 			"inventory_move": accepted = inv.move_slot(int(data.get("from", -1)), int(data.get("to", -1)), int(data.get("amount", 9999)))
 			"interact": accepted = _interact(id)
-			"craft_cancel": accepted = activities.cancel(id, int(data.get("index", -1)), inv)
+			"craft_cancel": accepted = activities.cancel(id, int(data.get("index", -1)), inv, str(data.get("job_uid","")))
 			"research": accepted = _research(id, str(data.get("technology", "")))
 			"repair": accepted = _repair(id, int(data.get("slot", -1)))
 			"chest_transfer": accepted = _chest_transfer(id, data)
@@ -393,6 +397,7 @@ func command(id: int, action: String, data: Dictionary) -> void:
 						game.journal.record_event(identity, "build")
 						accepted = true
 	if accepted:
+		activities.remember_request(id,receipt)
 		var sound: String = {"craft": "craft", "build": "build", "mine": "stone", "interact": "pickup", "combat": "combat"}.get(action, "pickup")
 		emit_sound(sound, body.position)
 	_notify(id, accepted)
@@ -408,7 +413,10 @@ func publish_channels() -> void:
 func _event(kind: String, data: Dictionary) -> void:
 	if game.quitting: return
 	if kind=="factory":
-		factory_view=data.duplicate(true);game.hud.show_panel("factory");return
+		var changed:bool=factory_view.get("station",-1)!=data.get("station",-1)
+		factory_view=data.duplicate(true)
+		if changed or game.hud.mode!="factory": game.hud.show_panel("factory")
+		return
 	if kind == "chat":
 		messages.append(data)
 		message_counter += 1
@@ -717,7 +725,7 @@ func craft_reason(id: int, recipe: String) -> String:
 	var definition:Dictionary=preload("res://Items/Catalog.gd").recipe(recipe)
 	if definition.is_empty() or not game.players.has(id): return "Unknown recipe"
 	if activities.queue(id).size()>=5: return "Crafting queue is full"
-	if int(definition.get("era",0))>Profile.era(known_technologies(id)) or not definition.get("unlocks",[]).all(func(technology):return technology in known_technologies(id)): return "Research required in Technology"
+	if not recipe_unlock_reason(id,recipe).is_empty(): return "Research required in Technology"
 	var station:String=definition.get("station","hand")
 	if station!="hand" and not station in stations(game.players[id]): return "Stay near the required station: "+station
 	for item in definition["cost"]:
@@ -733,45 +741,77 @@ func _start_dig(id: int) -> bool:
 	if not activities.start_action(id,"dig",0.9,{"position":at}):return false
 	body.play_action("mine",0.9);return true
 
-func _factory_command(id: int,action: String,index: int,cycles: int = 5) -> bool:
-	if index<0 or index>=workshops.size():return false
-	var station=workshops[index];var body=game.players[id];var inv=game.inventories[id]
-	if cycles<1 or cycles>5 or not _station_accessible(id,station):return false
-	var recipe:Dictionary=preload("res://Building/Factory.gd").definition(station.kind,station.machine)
-	if recipe.is_empty():return false
-	if action=="factory_load" and not (preload("res://Building/Factory.gd").RECIPES.has(station.kind) and not station.machine.has("recipe")):
-		var recipe_id:String=station.machine.get("recipe",str(Catalog.station(station.kind).get("default_recipe","")))
+func recipe_unlock_reason(id: int, recipe_id: String) -> String:
+	var definition:=Catalog.recipe(recipe_id)
+	if definition.is_empty() or not game.players.has(id): return "Unknown recipe"
+	var known:Array=known_technologies(id)
+	if int(definition.get("era",0))>Profile.era(known) or not definition.get("unlocks",[]).all(func(t):return t in known):
+		return "Research required in Technology"
+	return ""
+
+func station_reason(id: int, index: int, action: String, cycles: int = 1, recipe_id: String = "") -> String:
+	if not game.players.has(id) or index<0 or index>=workshops.size(): return "Station unavailable"
+	var station=workshops[index]
+	if not _station_accessible(id,station): return "Stay near the required station"
+	var state:Dictionary=station.machine
+	if action=="station_select":
 		var definition:=Catalog.recipe(recipe_id)
-		if int(definition.get("era",0))>Profile.era(known_technologies(id)) or not definition.get("unlocks",[]).all(func(t):return t in known_technologies(id)):return false
+		if definition.is_empty() or definition["station"]!=station.kind: return "Unknown recipe"
+		var unlock:=recipe_unlock_reason(id,recipe_id)
+		if not unlock.is_empty(): return unlock
+		if float(state["progress"])>0 or state["input"].values().any(func(n):return n>0): return "Refund station inputs before changing recipe"
+		return ""
+	var recipe:Dictionary=preload("res://Building/Factory.gd").definition(station.kind,state)
+	if recipe.is_empty(): return "Unknown recipe"
+	var inv=game.inventories[id]
 	if action=="factory_load":
+		if cycles<1 or cycles>5: return "Invalid amount"
+		var legacy:bool=preload("res://Building/Factory.gd").RECIPES.has(station.kind) and not state.has("recipe")
+		if not legacy:
+			var unlock:=recipe_unlock_reason(id,str(state.get("recipe",Catalog.station(station.kind).get("default_recipe",""))))
+			if not unlock.is_empty(): return unlock
+		var keys:Array=state["input"].keys().filter(func(item):return int(state["input"][item])>0)
 		for item in recipe["input"]:
-			if int(station.machine["input"].get(item,0))+int(recipe["input"][item])*cycles>9999:return false
+			if not item in keys: keys.append(item)
+			var required:int=int(recipe["input"][item])*cycles
+			if int(state["input"].get(item,0))+required>9999: return "Station input storage is full"
+			if inv.count(item)<required: return "Missing materials"
+		if keys.size()>mini(8,int(Catalog.station(station.kind).get("capacity",8))): return "Station input storage is full"
+		return ""
+	var field:String="input" if action=="station_refund" else "output"
+	if action not in ["station_refund","factory_take"]: return "Action unavailable"
+	var reward:Dictionary={}
+	for item in state[field]:
+		if int(state[field][item])>0: reward[item]=int(state[field][item])
+	if reward.is_empty(): return "No materials to refund" if field=="input" else "No stored output"
+	return "" if inv.can_add_many(reward) else "Inventory is full"
+
+func _factory_command(id: int, action: String, index: int, cycles: int = 5) -> bool:
+	if not station_reason(id,index,action,cycles).is_empty(): return false
+	var station=workshops[index]
+	var inv=game.inventories[id]
+	if action=="factory_load":
+		var recipe:Dictionary=preload("res://Building/Factory.gd").definition(station.kind,station.machine)
 		var cost:Dictionary={}
-		for item in recipe["input"]:cost[item]=int(recipe["input"][item])*cycles
-		if not inv.transact(cost,{}):return false
-		for item in cost:station.machine["input"][item]=int(station.machine["input"].get(item,0))+cost[item]
-	elif action=="station_refund":
-		var refund:Dictionary={}
-		for item in station.machine["input"]:
-			if int(station.machine["input"][item])>0:refund[item]=int(station.machine["input"][item])
-		if refund.is_empty() or not inv.add_many(refund):return false
-		station.machine["input"].clear();station.machine["progress"]=0.0
+		for item in recipe["input"]: cost[item]=int(recipe["input"][item])*cycles
+		if not inv.transact(cost,{}): return false
+		for item in station.machine["input"].keys():
+			if int(station.machine["input"][item])==0: station.machine["input"].erase(item)
+		for item in cost: station.machine["input"][item]=int(station.machine["input"].get(item,0))+cost[item]
 	else:
-		var output:Dictionary=station.machine["output"]
+		var field:String="input" if action=="station_refund" else "output"
 		var reward:Dictionary={}
-		for item in output:
-			if int(output[item])>0:reward[item]=int(output[item])
-		if reward.is_empty() or not inv.add_many(reward):return false
-		station.machine["output"].clear()
+		for item in station.machine[field]:
+			if int(station.machine[field][item])>0: reward[item]=int(station.machine[field][item])
+		if not inv.add_many(reward): return false
+		station.machine[field].clear()
+		if field=="input": station.machine["progress"]=0.0
 	game.session.notify(id,"factory",{"station":index,"kind":station.kind,"state":station.machine.duplicate(true)})
 	return true
 
-func _select_station_recipe(id: int,index: int,recipe_id: String) -> bool:
-	if index<0 or index>=workshops.size():return false
+func _select_station_recipe(id: int, index: int, recipe_id: String) -> bool:
+	if not station_reason(id,index,"station_select",1,recipe_id).is_empty(): return false
 	var station=workshops[index]
-	var recipe:=Catalog.recipe(recipe_id)
-	if recipe.is_empty() or recipe["station"]!=station.kind or int(recipe.get("era",0))>Profile.era(known_technologies(id)):return false
-	if not _station_accessible(id,station) or float(station.machine["progress"])>0 or station.machine["input"].values().any(func(n):return n>0):return false
 	station.machine["input"].clear()
 	station.machine["recipe"]=recipe_id
 	game.session.notify(id,"factory",{"station":index,"kind":station.kind,"state":station.machine.duplicate(true)})

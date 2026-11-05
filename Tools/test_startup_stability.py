@@ -48,7 +48,7 @@ def main() -> None:
                 candidates.append((envelope['sequence'], json.loads(envelope['payload'])))
             sequence, data = max(candidates)
             assert sequence > last_sequence and data['version'] == 4 and data['seed'] == 718991
-            assert data['world'] == {'seed': 718991, 'generator': 2, 'size': 1536}
+            assert data['world'] == {'seed': 718991, 'generator': 3, 'size': 1536}
             assert len(data['players']) == 1 and len(data['structures']) == 10
             assert previous_players is None or set(data['players']) == previous_players
             assert not (world / '.writer-lock').exists()

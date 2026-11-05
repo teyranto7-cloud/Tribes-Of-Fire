@@ -15,6 +15,7 @@ var seq: int = 0
 var finish: bool = false
 var blocked_seen_at: float = -1.0
 var server_finishing: bool = false
+var proximity_levels: Dictionary = {}
 func _initialize() -> void:
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--qa-role="): role = arg.trim_prefix("--qa-role=")
@@ -25,6 +26,7 @@ func start() -> void:
 	while not game.ready_world: await process_frame
 	game.session.event_received.connect(event)
 	game.session.voice_received.connect(func(_id, _seq, _packet, channel): audio_received[channel] = int(audio_received.get(channel, 0)) + 1)
+	game.session.voice_received.connect(record_proximity_level)
 	game.session.command_received.connect(observe_command)
 	if role != "server":
 		# Receive-only opt-in; do not call set_enabled(), so no capture device starts.
@@ -55,7 +57,11 @@ func _process(delta: float) -> bool:
 		for label in ["A", "B", "C"]:
 			var id := named(label)
 			if id != 0:
-				var x := {"A": 0.0, "B": 8.0, "C": 45.0}[label] as float
+				var x := {"A": 0.0, "B": 4.0, "C": 45.0}[label] as float
+				if label=="B" and ready_age>0:
+					var elapsed:float=age-ready_age
+					if elapsed>=8.5 and elapsed<10.5:x=15.0
+					elif elapsed>=10.5 and elapsed<12.0:x=45.0
 				game.players[id].position = Vector3(x, game.world.terrain_height(x, 0) + 0.1, 0)
 				if label == "B" and ready_age > 0 and age - ready_age > 13:
 					game.players[id].position = Vector3(0, game.world.terrain_height(0, -1.8) + 0.1, -1.8)
@@ -129,6 +135,13 @@ func _process(delta: float) -> bool:
 		if t > 8 and group_id("Council") != "" and not phases.has("diplomatic_invite"):
 			phases["diplomatic_invite"] = true
 			command("group_invite", {"id": group_id("Council"), "target": identity("C")})
+		var listener:=named("B")
+		if listener!=0:
+			var distance:float=game.player.position.distance_to(game.players[listener].position)
+			if t>9 and distance>10 and distance<25 and not phases.has("voice-medium"):
+				phases["voice-medium"]=true;queue_audio("proximity","",6)
+			if t>11 and distance>35 and not phases.has("voice-far"):
+				phases["voice-far"]=true;queue_audio("proximity","",6)
 		if t > 12.2 and not phases.has("diplomacy"):
 			phases["diplomacy"] = true
 			message("diplomacy", "diplomacy-proof", group_id("Council"))
@@ -176,6 +189,10 @@ func verify() -> void:
 		ok = ok and not "diplomacy-proof" in texts and not "blocked-proof" in texts
 		ok = ok and ["proximity", "private", "group", "tribe"].all(func(c): return int(audio_received.get(c, 0)) >= 2)
 		ok = ok and not audio_received.has("diplomacy") and game.runtime.voice.played_samples > 0
+		ok = ok and proximity_levels.has("near") and proximity_levels.has("medium") and not proximity_levels.has("far")
+		if proximity_levels.has("near") and proximity_levels.has("medium"):
+			ok = ok and float(proximity_levels["near"])>float(proximity_levels["medium"]) and float(proximity_levels["medium"])>0
+		print("PROXIMITY_SYNTHETIC_LEVELS ",JSON.stringify(proximity_levels)," microphone_started=",game.runtime.voice.microphone.playing)
 	elif role == "C":
 		ok = ok and "diplomacy-proof" in texts
 		ok = ok and ["local-proof", "private-proof", "group-proof", "tribe-proof", "blocked-proof"].all(func(text): return not text in texts)
@@ -196,3 +213,12 @@ func end_server() -> void:
 	print("COMMUNICATION_SERVER_PASS clients=3 routing=authority blocks=validated")
 	finish = true
 	game.quit_game()
+
+func record_proximity_level(id:int,_seq:int,_packet:PackedByteArray,channel:String) -> void:
+	if role!="B" or channel!="proximity" or not game.players.has(id): return
+	var distance:float=game.player.position.distance_to(game.players[id].position)
+	var band:String="near" if distance<=7 else ("medium" if distance<30 else "far")
+	await process_frame
+	if game.runtime.voice.receivers.has(id):
+		var output=game.runtime.voice.receivers[id]["player"]
+		proximity_levels[band]=db_to_linear(output.volume_db)

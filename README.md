@@ -1,13 +1,24 @@
 # Tribes of Fire
 
-Criado por **felipealx** · código em desenvolvimento **0.7.0-dev** · Godot 4.6.3 · Windows/Linux x64
+Criado por **felipealx** · código em desenvolvimento **0.7.1-dev** · Godot 4.6.3 · Windows/Linux x64
 
 Jogo de sobrevivência 3D em terceira pessoa, com modo solo, hospedagem por jogador
 e servidor dedicado autoritativo. A reconstrução continua a base existente; não é
 uma versão 1.0 concluída. Funcionalidades, resultados observados e critérios ainda
 pendentes estão em [PROGRESS.md](PROGRESS.md) e [Docs/PENDENCIAS.md](Docs/PENDENCIAS.md).
 
-## Fase 3 — itens e fabricação 0.7.0-dev
+## Auditoria de regressão 0.7.1-dev
+
+Correções de pedidos repetidos nas bancadas, cancelamento após a fila mudar,
+desbloqueio, capacidade e comandos pendentes ao carregar. **4.255 checks sem
+falhas**, 50 aberturas/continuações, dois ciclos em rede com reconexão/reinício,
+chat e áudio sintético entre três clientes. Nenhum novo sistema/item/asset.
+
+[Auditoria PASS/FAIL, arquivos e pendências](Docs/AUDIT_PHASES_1_3.md) ·
+[Pacotes 0.7.1-dev](Downloads/0.7.1-dev). Voz por microfone físico, gráficos finais,
+hardware alvo e carga de 100 jogadores permanecem pendentes.
+
+## Fase 3 — itens e fabricação preservados
 
 100 itens, 89 receitas e 17 bancadas em [Data/Items.json](Data/Items.json), com
 coleta por ferramenta/dureza, stacks e peso, filas atômicas, cancelamento com
@@ -17,12 +28,12 @@ completos chegam a parede/baú e a uma ferramenta de cobre capaz de minerar ferr
 I abre a mochila; Fabricação contém busca, categorias e guia de progressão.
 Selecione um kit e use Posicionar. E abre a estação para selecionar receita,
 abastecer e retirar produtos. Consulte o [relatório da Fase 3](Docs/PHASE3_REPORT.md).
-**Baixar:** [Instalador Windows](Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Windows-Setup.exe?raw=true) · [ZIP Windows](Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Windows.zip?raw=true) · [ZIP Linux](Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Linux.zip?raw=true) · [Servidor Linux](Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Server-Linux.zip?raw=true) · [Fontes ZIP](Downloads/0.7.0-dev/TribesOfFire-0.7.0-dev-Source.zip?raw=true).
+**Baixar:** [Instalador Windows](Downloads/0.7.1-dev/TribesOfFire-0.7.1-dev-Windows-Setup.exe?raw=true) · [ZIP Windows](Downloads/0.7.1-dev/TribesOfFire-0.7.1-dev-Windows.zip?raw=true) · [ZIP Linux](Downloads/0.7.1-dev/TribesOfFire-0.7.1-dev-Linux.zip?raw=true) · [Servidor Linux](Downloads/0.7.1-dev/TribesOfFire-0.7.1-dev-Server-Linux.zip?raw=true) · [Fontes ZIP](Downloads/0.7.1-dev/TribesOfFire-0.7.1-dev-Source.zip?raw=true).
 
 No Windows, execute o instalador ou extraia o ZIP e abra `TribesOfFire.exe`.
 No Linux, extraia o ZIP e execute `chmod +x TribesOfFire.x86_64` seguido de
 `./TribesOfFire.x86_64`. O jogo exportado não exige o editor Godot.
-[Hashes SHA256](Downloads/0.7.0-dev/SHA256SUMS.txt) · [Verificação desta entrega](Docs/DELIVERY_0.7.md) · [Teste Windows aprovado](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41803077369).
+[Hashes SHA256](Downloads/0.7.1-dev/SHA256SUMS.txt) · [Verificação desta entrega](Docs/AUDIT_PHASES_1_3.md).
 A versão permanece em desenvolvimento; os pacotes anteriores estão preservados.
 
 ## Continuidade 0.6.0-dev

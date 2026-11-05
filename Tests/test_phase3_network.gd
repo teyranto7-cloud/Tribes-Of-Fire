@@ -142,6 +142,7 @@ func cycles()->void:
 	for i in range(3):await craft("copper_ingot_charcoal")
 	await craft("stick");await craft("copper_pickaxe");await gather("iron_ore",2,"copper_pickaxe")
 	check(inv.count("iron_ore")>=2,"Crafted copper tool mines iron over network")
+	await station_regressions()
 	await order("craft",{"recipe":"rope","request_id":"disconnect-paid"},false,false)
 	check(game.runtime.activities.queue(actor).size()==1,"Escrow paid before disconnect")
 	var identity:String=game.session.player_key(actor);var old:=actor
@@ -170,6 +171,13 @@ func restore_run()->void:
 	check(inv.count("rope") in [base,base+1],"Elapsed online time may complete only the paid job")
 	await order("craft",{"recipe":"rope","request_id":"restart-paid"},true)
 	check(inv.count("rope")==base+1 and game.runtime.activities.queue(actor).is_empty(),"Restarted job completes once and rejects replay")
+	near("workbench")
+	var index:int=-1
+	for i in range(game.runtime.workshops.size()):
+		if game.runtime.workshops[i].kind=="workbench":index=i;break
+	var planks:int=inv.count("plank")
+	await order("factory_take",{"station":index,"request_id":"station-net-take"},true,false)
+	check(inv.count("plank")==planks and game.runtime.workshops[index].machine["output"].get("plank")==2,"Persisted station receipt rejects replay after clean restart")
 	check(game.save_game(),"Restored production state saves")
 	await finish_server()
 func finish_server()->void:
@@ -179,3 +187,34 @@ func finish_server()->void:
 	game.quitting=true
 	await create_timer(0.5).timeout;game.quitting=false
 	game.quit_game(0 if failed==0 else 1,true)
+
+func station_regressions() -> void:
+	await gather("wood",4,"axe");await gather("fiber",6)
+	near("workbench")
+	var index:int=-1
+	for i in range(game.runtime.workshops.size()):
+		if game.runtime.workshops[i].kind=="workbench":index=i;break
+	check(index>=0,"Network workbench exists")
+	var machine:Dictionary=game.runtime.workshops[index].machine
+	var wood:int=inv.count("wood")
+	await order("station_load",{"station":index,"amount":1,"request_id":"station-net-load"},true,false)
+	check(inv.count("wood")==wood-1 and machine["input"].get("wood")==1,"ENet replay charges station input once")
+	preload("res://Building/Factory.gd").advance(machine,"workbench",10)
+	var planks:int=inv.count("plank")
+	await order("factory_take",{"station":index,"request_id":"station-net-take"},true,false)
+	check(inv.count("plank")==planks+2,"ENet output collection delivers once")
+	await order("station_load",{"station":index,"amount":1,"request_id":"station-net-next"},false,false)
+	preload("res://Building/Factory.gd").advance(machine,"workbench",10)
+	await order("factory_take",{"station":index,"request_id":"station-net-take"},true,false)
+	check(inv.count("plank")==planks+2 and machine["output"].get("plank")==2,"Delayed network replay cannot steal the next batch")
+	# Save this uncollected batch for the clean server-restart assertion.
+	await order("craft",{"recipe":"rope","request_id":"stale-cancel-a"},false,false)
+	await order("craft",{"recipe":"rope","request_id":"stale-cancel-b"},false,false)
+	var queue:Array=game.runtime.activities.queue(actor)
+	check(queue.size()==2,"Two real client jobs queued for cancel-race regression")
+	var first_uid:String=queue[0]["uid"];var second_uid:String=queue[1]["uid"]
+	game.runtime._tick_activities(30)
+	await order("craft_cancel",{"index":0,"job_uid":first_uid,"request_id":"cancel-finished"},true,false)
+	check(game.runtime.activities.queue(actor).size()==1 and game.runtime.activities.queue(actor)[0]["uid"]==second_uid,"Stale client cancellation preserves the next job")
+	await order("craft_cancel",{"index":1,"job_uid":second_uid,"request_id":"cancel-shifted"},true,false)
+	check(game.runtime.activities.queue(actor).is_empty(),"Cancellation tracks the intended shifted job once")

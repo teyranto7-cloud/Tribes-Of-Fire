@@ -44,3 +44,13 @@ e alimenta AudioStreamGenerator; não prova qualidade de microfone/alto-falante.
 Teste humano pendente: dois computadores, fones, devices separados, V/ativação,
 chamadas recusadas/aceitas, deslocamento 5/15/30/31 m, grupo/tribo remotos,
 transferência de liderança, mudo/bloqueio, reconexão, perda/latência e ausência de eco.
+
+
+## Auditoria 0.7.1
+
+Três clientes voltaram a passar os seis canais, bloqueio e privacidade com sinal
+sintético. Em ~4 m o ganho observado foi 0,80; em ~15 m, 0,287; fora de 30 m não
+houve recepção de pacotes de proximidade. Não houve captura de microfone. Voz com
+dispositivos físicos/latência/audibilidade segue PENDENTE, inclusive os passos
+humanos listados acima. Canais automáticos de aliados e pings temporários não
+foram adicionados durante a auditoria. Relatório: AUDIT_PHASES_1_3.md.
