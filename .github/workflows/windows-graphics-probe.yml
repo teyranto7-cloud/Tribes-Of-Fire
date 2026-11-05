@@ -37,20 +37,31 @@ jobs:
             if ($Setup.ExitCode -ne 0) { throw 'Installer failed.' }
             $Log = Join-Path $Evidence 'graphical-game.log'
             $World = Join-Path $Evidence 'Graphical world'
-            $Arguments = '--audio-driver Dummy --log-file "' + $Log + '" -- --play --save-dir="' + $World + '" --seed=718991 --quit-after-seconds=20'
+            $Arguments = '--audio-driver Dummy --log-file "' + $Log + '" -- --play --save-dir="' + $World + '" --seed=718991 --quit-after-seconds=65'
             $Child = Start-Process -FilePath (Join-Path $Install 'TribesOfFire.exe') -WorkingDirectory $Install -ArgumentList $Arguments -PassThru
             $null = $Child.Handle
             $Ready = $false
-            $Deadline = (Get-Date).AddSeconds(60)
+            $Deadline = (Get-Date).AddSeconds(100)
             while ((Get-Date) -lt $Deadline) {
               $Child.Refresh()
               if ($Child.HasExited) { break }
-              if ((Test-Path $Log) -and (Get-Content -Raw -Encoding UTF8 $Log).Contains('GAME_READY')) { $Ready = $true; break }
+              # Release builds can buffer their log until exit. A complete automatic
+              # world snapshot is an observable gameplay-readiness barrier instead.
+              if (Test-Path $World) {
+                foreach ($Snapshot in @(Get-ChildItem -LiteralPath $World -Filter 'world.*.json')) {
+                  try {
+                    $Envelope = Get-Content -LiteralPath $Snapshot.FullName -Raw -Encoding UTF8 | ConvertFrom-Json
+                    $Data = $Envelope.payload | ConvertFrom-Json
+                    if ($Data.version -eq 4 -and $Data.phase -gt 450 -and @($Data.players.PSObject.Properties).Count -gt 0) { $Ready = $true; break }
+                  } catch { }
+                }
+              }
+              if ($Ready) { break }
               Start-Sleep -Milliseconds 250
             }
-            if (-not $Ready) { throw 'No GAME_READY before capture deadline.' }
+            if (-not $Ready) { throw 'No automatic gameplay snapshot before capture deadline.' }
             Start-Sleep -Seconds 5
-            $Report.CaptureTiming = 'Five seconds after GAME_READY, after moving the game window inside the hosted desktop'
+            $Report.CaptureTiming = 'After a valid automatic world snapshot and five extra seconds, with the window inside the hosted desktop'
             $Report.WaitedForReadiness = $true
             $Child.Refresh()
             if ($Child.HasExited) { throw 'Game exited before a graphical capture could be taken.' }

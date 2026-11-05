@@ -1,0 +1,6 @@
+{
+  "PhysicalGpuTest": false,
+  "Status": "Failed",
+  "Mode": "Native Windows exported graphical startup on hosted VM; no human interaction",
+  "Error": "No GAME_READY before capture deadline."
+}
