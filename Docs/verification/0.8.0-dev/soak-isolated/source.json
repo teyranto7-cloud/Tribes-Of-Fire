@@ -1,0 +1,4 @@
+{
+  "application_source_sha256": "99aea8f79d4ae2194923421e8e0574b745714b462cebe313af48a1cbd74c0398",
+  "method": "Isolated repeated 1800-second run after all builds, renders and exports completed; command wait deadline 15 seconds, observed round trips recorded separately."
+}

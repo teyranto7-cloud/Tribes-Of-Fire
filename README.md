@@ -15,7 +15,7 @@ postes/fios, lâmpadas, motores e esteiras permitem uma cadeia automática real.
 Trocas entre jogadores, canal de aliados e pings de equipe têm autoridade no servidor.
 Catálogo atual: **105 itens, 94 receitas e 17 bancadas**.
 
-[Instalador, ZIPs Windows/Linux, servidor e fontes](Downloads/0.8.0-dev) ·
+[Prévia e downloads 0.8.0-dev](https://github.com/teyranto7-cloud/Tribes-Of-Fire/releases/tag/v0.8.0-dev) ·
 [Resultados e reprodução](Docs/SETTLEMENT_REPORT.md) ·
 [Pedidos atendidos, parciais e pendentes](Docs/REQUEST_TRACEABILITY.md).
 
@@ -25,8 +25,11 @@ automática pausa sem potência. Configure uma esteira para uma oficina próxima
 receita compatível. Trocas ficam em Esc → Trocar com um jogador próximo; pings em M.
 
 Esta entrega permanece em desenvolvimento; a lista completa de funcionalidades
-pedidas não está concluída. Voz física, QA gráfico em Windows/hardware alvo e
-arte final exigem validação adicional. Os resultados abaixo da 0.7.1 são históricos.
+pedidas não está concluída. Suíte **4.372/0**, UI **37/0 + 17/0**, instalador
+Windows **34/0**, captura gráfica real do EXE em VM e repetição de 30 min com três
+clientes passaram. O soak teve p95 de 37 ms e pico de 4,5 s; não certifica latência
+estável. Voz física, playtest humano, hardware alvo e arte final exigem validação
+adicional. Os resultados abaixo da 0.7.1 são históricos.
 
 ## Auditoria de regressão 0.7.1-dev
 

@@ -1,3 +1,13 @@
+# Validação atual — 0.8.0-dev
+
+Resultados atuais, comandos reproduzíveis e capturas estão em
+[SETTLEMENT_REPORT.md](SETTLEMENT_REPORT.md); requisitos da conversa em
+[REQUEST_TRACEABILITY.md](REQUEST_TRACEABILITY.md). Suíte 4.372/0, GUI 37/0 e
+17/0, Windows nativo 34/0 incluindo upgrade e captura gráfica do EXE em VM.
+O soak de três clientes passou na repetição, com pico de resposta de 4,5 s ainda
+sem causa isolada. Hardware físico, microfone e playtest humano continuam pendentes.
+Os números 0.5 a seguir são históricos e não descrevem a revisão atual.
+
 # Validação e Fase 0 — 0.5.0-dev
 
 Criado por **felipealx**. Continuação da base 0.4 no mesmo projeto Godot.

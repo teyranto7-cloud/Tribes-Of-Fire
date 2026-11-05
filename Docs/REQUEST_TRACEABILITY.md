@@ -28,7 +28,7 @@ orientam esta matriz. Não se trata de aprovação integral do jogo final.
 | Construção com telhado e abrigo reais | Peças, colisão, cobertura, camas/baús e persistência preservadas. Arte final, variantes de material, suporte estrutural/reparo/destruição completos continuam parciais |
 | Vida, sobrevivência e chuva | Mantidos 100 HP, regeneração 1/3 s, tolerância de chuva 40 s e primeiro dano aos 55 s, depois 1/15 s. Abrigo reinicia exposição. Nenhuma dessas taxas foi alterada |
 | Janela, presets e hardware modesto | Renderizador mantido; cinco presets existentes, batching corrigido e limites de luz elétrica por proximidade. Medição em llvmpipe não equivale a Ryzen 4600G ou GPU física |
-| Instalador, ZIP, Windows/Linux e GitHub | Pacotes novos vinculados a recibo de fonte/binários; Windows nativo e atualização entre versões precisam do resultado do workflow desta revisão, registrado no relatório. Nenhuma aprovação antiga substitui o novo teste |
+| Instalador, ZIP, Windows/Linux e GitHub | Cinco pacotes com recibo/hashes publicados; Windows nativo 34/0 incluindo upgrade 0.7.1→0.8, captura gráfica real do EXE em VM e Linux exportado 6/0. Playtest humano/hardware físico ainda pendentes; nenhuma aprovação antiga substitui o novo teste |
 | Steam e jogo final publicado comercialmente | NÃO IMPLEMENTADO: Steamworks/loja, assinatura comercial, QA físico amplo, carga de 100 jogadores e conteúdo/arte final. Não há App ID ou publicação Steam realizada |
 | Primeiros 60 minutos divertidos | Guia de progressão atualizado. Testes automatizados não substituem playtest humano cronometrado; esse critério não é declarado aprovado |
 

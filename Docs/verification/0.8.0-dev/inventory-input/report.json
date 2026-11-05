@@ -1,0 +1,5 @@
+{
+  "checks": 17,
+  "failed": 0,
+  "method": "Input.parse_input_event mouse down/motion/up, native viewport drag detection, Shift split, outside-panel drop, E pickup, Escape confirmation cancellation, disk reload. Fixture inventory; no direct UI drag/drop callbacks."
+}

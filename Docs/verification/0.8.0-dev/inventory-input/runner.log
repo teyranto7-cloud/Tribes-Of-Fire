@@ -1,0 +1,26 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+AUDIT_GUI PASS I opens the actual backpack
+AUDIT_GUI PASS Native viewport starts an inventory drag
+AUDIT_GUI PASS Mouse moves stack: wood
+AUDIT_GUI PASS Native viewport starts an inventory drag
+AUDIT_GUI PASS Mouse moves stack: stone
+AUDIT_GUI PASS Native viewport starts an inventory drag
+AUDIT_GUI PASS Mouse moves stack: berries
+AUDIT_GUI PASS Native viewport starts an inventory drag
+AUDIT_GUI PASS Shift drag splits stack with exact conservation
+AUDIT_GUI PASS Native viewport starts an inventory drag
+AUDIT_GUI PASS Dragging outside creates one physical pickup and removes six items
+AUDIT_GUI PASS E collects the dropped stack exactly once
+AUDIT_GUI PASS Native viewport starts an inventory drag
+AUDIT_GUI PASS Valuable gear awaits confirmation without deleting it
+AUDIT_GUI PASS Escape cancels valuable drop without loss
+AUDIT_GUI PASS Save after real drag, split, drop and pickup
+PLAYER_JOINED id=1 count=1
+AUDIT_GUI PASS Reload preserves items without duplicate pickups
+INVENTORY_INPUT CHECKS=17 FAILED=0

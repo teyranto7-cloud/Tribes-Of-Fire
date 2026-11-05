@@ -74,15 +74,17 @@ Resultados finais e logs desta revisão: `verification/0.8.0-dev`.
 | Integridade do batching | **8/0**; antes duas falhas, depois todas as faces conservadas |
 | Indústria/troca/social/migração de legado | **59/0 + 4/0** |
 | GUI automatizada, janela real | **37/0**, 12 capturas + 12 frames de ação articulada |
+| Mochila com arrastar/soltar nativo | **17/0**; três stacks movidos, split, descarte físico, coleta, confirmação e reload sem duplicação |
 | ENet: cadeias de coleta/processamento anteriores | **372 + 8**, sem falhas, dois clientes + reinício |
 | ENet: cadeia industrial, troca, pings, aliança e reconexão | Três clientes + reinício passaram; materiais/posições de fixture |
 | Movimento/recurso compartilhado | Dois clientes móveis e servidor dedicado, PASS |
 | Chat anterior/voz sintética | Três clientes, canais privados/grupo/reino/diplomacia e ganho por distância, PASS |
 | Abrir/salvar/continuar | **50/0**, processos independentes |
 | Binários Linux/servidor/reinício | **6/0** na build final, após a correção de migração de legado |
-| Soak de 30 minutos | Primeira execução: FAIL de prazo de comando sob concorrência; repetição isolada PENDENTE |
+| Soak de 30 minutos | Repetição: **273/0** no servidor + **3/0** após reinício; três clientes conectados, 1.801 s observados. Primeira execução com prazo de 5 s permanece FAIL |
 | ZIP de fontes extraído/importação/jogo/save | **2/0** |
 | Windows nativo: instalador/reinstalação/desinstalação/upgrade 0.7.1→0.8 | **34/0**, runtime headless |
+| Windows gráfico exportado, fora do editor | **PASS**; gameplay 3D capturado após autosave válido, janela 960×650, encerramento normal. VM com ANGLE/driver por software |
 | Downloads públicos fixados no commit da build | **5/0**, HTTP 200/tamanho correto e hashes verificados no Windows |
 
 
@@ -93,6 +95,7 @@ python3 Tools/test_settlement_network.py --soak-seconds=1800
 python3 Tools/test_phase3_network.py
 python3 Tools/test_communication.py --keep-logs builds/settlement/communication
 python3 Tools/render_check.py --script res://Tools/capture_settlement.gd --log builds/settlement/gui.log --virtual-display --timeout 420
+python3 Tools/render_check.py --script res://Tools/capture_inventory_acceptance.gd --log builds/settlement/inventory-input.log --virtual-display --timeout 180
 python3 Tools/compare_audit_performance.py --baseline 185a463 --output builds/settlement/performance --warmup-seconds 5 --sample-seconds 12
 python3 Tools/test_startup_stability.py --keep-logs builds/settlement/startup-50
 python3 Tools/test_exports.py
@@ -116,6 +119,17 @@ validação espacial do servidor. Sessões anteriores com falhas não contam com
 de 30 min teve uma ação fora do prazo de 5 s durante concorrência com builds;
 os três clientes permaneceram conectados. Repetição isolada usa prazo de 15 s e
 registra tempos por comando; esse prazo não é uma promessa de latência aceitável.
+Na repetição, 197 respostas medidas tiveram mediana de 17 ms, p95 de 37 ms e
+máximo de **4.501 ms**. Não houve nova falha de prazo, perda de conexão ou
+divergência de inventário nos checks; os picos de vários segundos continuam
+uma limitação observada, sem causa isolada nem aprovação de latência de produção.
+As amostras do servidor mantiveram 5.847 nós, 96 chunks e três jogadores;
+memória estática foi de 126.337.349 para 126.370.649 bytes (+33.300 bytes).
+O relógio passou de dia para noite. A fixture mantém posições fixas e os materiais
+de teste; a cadeia industrial termina seu lote inicial. Isso não equivale a 30 min
+de jogadores em movimento, produção contínua de uma cidade ou carga de 100 pessoas.
+Os seis logs de peers/servidor, métricas e recibo de fontes estão em
+`verification/0.8.0-dev/soak-isolated`; o primeiro FAIL permanece em `soak-contended`.
 O teste isolado de World apresentou uma corrida de teardown do mixer sob carga;
 a fixture agora chama o cleanup real e verifica WeakRefs liberadas, em vez de
 confiar em espera fixa de 0,2 s. As verificações de gameplay foram preservadas.
@@ -147,7 +161,7 @@ novo de produção industrial ou renderização não exercitado.
 ## IMPLEMENTADO MAS NÃO TESTADO
 
 Microfone físico e permissões do sistema, PTT/qualidade audível entre duas máquinas,
-latência/perda externa, Windows gráfico interativo, Windows 10/11 físicos e hardware
+latência/perda externa, interação humana com a UI no Windows, Windows 10/11 físicos e hardware
 alvo. O guia de 60 minutos ainda precisa de playtest humano cronometrado.
 
 ## PARCIAL
@@ -159,6 +173,7 @@ Automação tem rotas ponto a ponto: sem splitters, filtros logísticos complexo
 redes de alta tensão, baterias ou produção com servidor desligado. Troca direta
 não equivale a mercado/NPCs. Moderação de texto não cobre todo conteúdo ofensivo.
 Persistência não oferece garantia de WAL/fsync contra interrupção elétrica.
+Respostas ocasionais de vários segundos no soak impedem declarar latência estável.
 
 ## NÃO IMPLEMENTADO
 
@@ -177,7 +192,20 @@ executou as etapas de checksum e instalação: 34 verificações passaram, inclu
 instalar 0.7.1, criar perfil/mundo, atualizar para 0.8, preservar todos os campos do
 jogador/seed/gerador e avançar o snapshot. Também houve cliente isolado exportado,
 reinício do dedicado, reinstalação e desinstalação preservando dados. Runtime headless.
-A prova gráfica em VM Windows é registrada separadamente, sem substituir GPU física.
+A [prova gráfica nativa](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41959712491)
+instalou o mesmo EXE, abriu o jogo exportado e capturou personagem, terreno,
+vegetação e HUD após o primeiro autosave válido; encerrou com código zero.
+O driver da VM não oferece OpenGL 3.3: o Godot usou seu fallback automático ANGLE/
+Direct3D11 com Microsoft Basic Render Driver. O renderizador do projeto foi mantido.
+Captura/log/relatório em `verification/0.8.0-dev/windows-graphics-gameplay`.
+Não foi um teste humano de controles nem um teste de GPU física.
+
+O primeiro probe capturou somente a tela de carregamento; seus arquivos permanecem
+em `windows-graphics-loading` e não provam gameplay 3D. O segundo probe esperava
+`GAME_READY` em log que o executável release só descarregou ao sair: o harness
+falhou, apesar de o jogo iniciar. Foi preservado em `windows-graphics-log-wait`.
+O probe aprovado agora espera um snapshot automático válido, além de conferir o
+log final; nenhuma verificação de integridade do jogo foi retirada.
 
 Os documentos dentro dos pacotes antecedem os testes pós-publicação; os resultados
 confirmados ficam neste relatório e na pasta de evidências do repositório.

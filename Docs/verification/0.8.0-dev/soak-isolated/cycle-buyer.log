@@ -1,0 +1,74 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=481482929 count=1
+PLAYER_JOINED id=1871093181 count=2
+SETTLEMENT_CLIENT_READY buyer
+PLAYER_JOINED id=2006053121 count=3
+SETTLEMENT_DELIVERY role=buyer order=2 action=trade_accept connected=true
+PLAYER_JOINED id=481482929 count=1
+PLAYER_JOINED id=2006053121 count=2
+PLAYER_JOINED id=1933396449 count=3
+SETTLEMENT_DELIVERY role=buyer order=5 action=tribe_create connected=true
+SETTLEMENT_DELIVERY role=buyer order=8 action=tribe_accept_alliance connected=true
+SETTLEMENT_DELIVERY role=buyer order=20 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=21 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=26 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=27 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=32 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=33 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=38 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=39 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=44 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=45 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=50 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=51 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=56 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=57 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=62 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=63 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=68 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=69 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=74 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=75 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=80 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=81 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=86 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=87 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=92 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=93 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=98 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=99 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=104 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=105 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=110 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=111 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=116 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=117 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=122 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=123 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=128 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=129 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=134 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=135 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=140 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=141 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=146 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=147 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=152 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=153 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=158 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=159 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=164 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=165 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=170 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=171 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=176 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=177 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=182 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=183 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=188 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=189 action=drink connected=true
+SETTLEMENT_DELIVERY role=buyer order=194 action=eat connected=true
+SETTLEMENT_DELIVERY role=buyer order=195 action=drink connected=true
+SETTLEMENT_CLIENT_PASS role=buyer checks=14 failed=0

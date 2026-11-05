@@ -1,0 +1,83 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=481482929 count=1
+SETTLEMENT_CLIENT_READY merchant
+PLAYER_JOINED id=1871093181 count=2
+PLAYER_JOINED id=2006053121 count=3
+SETTLEMENT_DELIVERY role=merchant order=1 action=trade_offer connected=true
+SETTLEMENT_DELIVERY role=merchant order=3 action=trade_offer connected=true
+PLAYER_LEFT id=1871093181
+SETTLEMENT_DELIVERY role=merchant order=4 action=tribe_create connected=true
+PLAYER_JOINED id=1933396449 count=3
+SETTLEMENT_DELIVERY role=merchant order=7 action=tribe_alliance connected=true
+SETTLEMENT_DELIVERY role=merchant order=9 action=team_ping connected=true
+SETTLEMENT_DELIVERY role=merchant order=10 action=chat connected=true
+SETTLEMENT_DELIVERY role=merchant order=11 action=build connected=true
+SETTLEMENT_DELIVERY role=merchant order=12 action=build connected=true
+SETTLEMENT_DELIVERY role=merchant order=13 action=build connected=true
+SETTLEMENT_DELIVERY role=merchant order=14 action=energy_connect connected=true
+SETTLEMENT_DELIVERY role=merchant order=15 action=energy_install connected=true
+SETTLEMENT_DELIVERY role=merchant order=16 action=energy_connect connected=true
+SETTLEMENT_DELIVERY role=merchant order=17 action=factory_route connected=true
+SETTLEMENT_DELIVERY role=merchant order=18 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=19 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=24 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=25 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=30 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=31 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=36 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=37 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=42 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=43 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=48 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=49 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=54 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=55 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=60 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=61 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=66 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=67 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=72 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=73 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=78 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=79 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=84 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=85 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=90 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=91 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=96 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=97 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=102 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=103 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=108 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=109 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=114 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=115 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=120 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=121 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=126 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=127 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=132 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=133 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=138 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=139 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=144 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=145 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=150 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=151 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=156 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=157 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=162 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=163 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=168 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=169 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=174 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=175 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=180 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=181 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=186 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=187 action=drink connected=true
+SETTLEMENT_DELIVERY role=merchant order=192 action=eat connected=true
+SETTLEMENT_DELIVERY role=merchant order=193 action=drink connected=true
+SETTLEMENT_CLIENT_PASS role=merchant checks=15 failed=0

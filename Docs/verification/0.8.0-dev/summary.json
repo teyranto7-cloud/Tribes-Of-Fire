@@ -38,16 +38,64 @@
     "checks": 2,
     "failed": 0
   },
-  "soak": "first run failed one 5-second command deadline under competing QA/builds; isolated 15-second-deadline repeat pending",
+  "soak": {
+    "server_checks": 273,
+    "server_failed": 0,
+    "restart_checks": 3,
+    "restart_failed": 0,
+    "client_checks": [
+      15,
+      14,
+      13
+    ],
+    "reconnected_client_checks": 9,
+    "observed_seconds": 1801.218,
+    "command_deadline_seconds": 15,
+    "roundtrips": 197,
+    "median_ms": 17,
+    "p95_nearest_rank_ms": 37,
+    "max_ms": 4501,
+    "first_sample_memory_bytes": 126337349.0,
+    "last_sample_memory_bytes": 126370649.0,
+    "fixed_nodes": 5847,
+    "fixed_chunks": 96,
+    "source": {
+      "application_source_sha256": "99aea8f79d4ae2194923421e8e0574b745714b462cebe313af48a1cbd74c0398",
+      "method": "Isolated repeated 1800-second run after all builds, renders and exports completed; command wait deadline 15 seconds, observed round trips recorded separately."
+    },
+    "limits": "Frozen fixture player positions; finite initial factory batch. First competing run failed one 5-second command deadline and remains FAIL. Not a human playtest, external latency certification or 100-player load test."
+  },
   "windows_native": {
     "checks": 34,
     "failed": 0,
     "cross_version_upgrade": true,
-    "mode": "headless; graphical validation remains pending",
+    "mode": "headless installer/update/isolated and dedicated runtime; graphical probe recorded separately",
     "url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41957403530"
   },
   "public_downloads": {
     "checks": 5,
     "failed": 0
+  },
+  "inventory_native_input": {
+    "checks": 17,
+    "failed": 0,
+    "method": "Input.parse_input_event mouse down/motion/up, native viewport drag detection, Shift split, outside-panel drop, E pickup, Escape confirmation cancellation, disk reload. Fixture inventory; no direct UI drag/drop callbacks."
+  },
+  "windows_graphics": {
+    "WindowSize": [
+      960,
+      650
+    ],
+    "Mode": "Native Windows exported graphical startup on hosted VM; no human interaction",
+    "WaitedForReadiness": true,
+    "InstallerSha256": "153c6926bf7cca492f2e9c877ba8e16295c1c836c98adba35a58e4a6103f153a",
+    "CaptureTiming": "After a valid automatic world snapshot and five extra seconds, with the window inside the hosted desktop",
+    "PhysicalGpuTest": false,
+    "SampledColors": 376,
+    "Renderer": [
+      "OpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)"
+    ],
+    "Status": "Passed",
+    "url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41959712491"
   }
 }

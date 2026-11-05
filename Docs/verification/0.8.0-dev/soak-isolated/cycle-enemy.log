@@ -1,0 +1,71 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=481482929 count=1
+PLAYER_JOINED id=1871093181 count=2
+PLAYER_JOINED id=2006053121 count=3
+SETTLEMENT_CLIENT_READY enemy
+PLAYER_LEFT id=1871093181
+PLAYER_JOINED id=1933396449 count=3
+SETTLEMENT_DELIVERY role=enemy order=6 action=tribe_create connected=true
+SETTLEMENT_DELIVERY role=enemy order=22 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=23 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=28 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=29 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=34 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=35 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=40 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=41 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=46 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=47 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=52 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=53 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=58 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=59 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=64 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=65 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=70 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=71 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=76 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=77 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=82 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=83 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=88 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=89 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=94 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=95 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=100 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=101 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=106 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=107 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=112 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=113 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=118 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=119 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=124 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=125 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=130 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=131 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=136 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=137 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=142 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=143 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=148 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=149 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=154 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=155 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=160 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=161 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=166 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=167 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=172 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=173 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=178 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=179 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=184 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=185 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=190 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=191 action=drink connected=true
+SETTLEMENT_DELIVERY role=enemy order=196 action=eat connected=true
+SETTLEMENT_DELIVERY role=enemy order=197 action=drink connected=true
+SETTLEMENT_CLIENT_PASS role=enemy checks=13 failed=0

@@ -19,6 +19,14 @@ com recibo de fontes/binários. Demais resultados finais são registrados em
 [Docs/SETTLEMENT_REPORT.md](Docs/SETTLEMENT_REPORT.md) e Docs/verification/0.8.0-dev.
 Não transferir aprovação de instaladores antigos para esta revisão.
 
+QA pós-build: **37/0** na UI e **17/0** em arrastar/split/descarte/coleta/reload
+por entrada real; instalador Windows **34/0**, incluindo upgrade 0.7.1→0.8.
+O executável Windows produziu captura real de gameplay em VM via ANGLE, fora do
+editor. Três clientes e dedicado passaram repetição de **30 min (273/0)** e
+reinício (3/0), com posições de fixture. A primeira execução falhou um prazo de
+5 s; os logs foram mantidos. Na repetição, prazo de 15 s, p95 37 ms e pico 4.501 ms:
+não há aprovação de latência estável, hardware físico ou carga de 100 jogadores.
+
 [Rastreabilidade dos pedidos da conversa](Docs/REQUEST_TRACEABILITY.md): marcos A–D
 não integralmente aprovados; há conteúdo, arte, dispositivos e escalabilidade pendentes.
 O histórico anterior está preservado abaixo.

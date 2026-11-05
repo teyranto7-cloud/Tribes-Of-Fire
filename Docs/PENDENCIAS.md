@@ -15,6 +15,9 @@ splitters/automação avançada, remoção/reposicionamento completo de aparelho
 WAL/fsync e testes de queda de energia, Steamworks/publicação Steam/assinatura,
 revisão linguística dos seis idiomas, microfones/voz humana e rede externa,
 Windows gráfico físico, GPU/hardware alvo e playtest humano dos 60 minutos.
+O soak automatizado de 30 min com três clientes passou na repetição; o pico de
+resposta de 4,5 s ainda exige investigação. Não houve certificação de latência
+estável nem de jogadores móveis/indústria contínua durante todo esse período.
 
 A cadeia industrial atual permite produção real; não equivale a uma cidade
 completa. Os relatos 0.5 abaixo são históricos, não a matriz atual de ausências.
