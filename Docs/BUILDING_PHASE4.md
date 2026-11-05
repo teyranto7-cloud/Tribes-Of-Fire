@@ -131,7 +131,8 @@ aprovação da 0.8 substitui os testes desta revisão.
 | GUI e teclado/mouse | **27/0**, seis capturas reais, 1280×720/1920×1080/800×600 |
 | Binários Linux/dedicado/reinício | **6/0**, executados fora do editor |
 | Comunicação e áudio sintético | Repetição com diagnóstico PASS: três clientes, canais/ganho/privacidade/bloqueio; nenhum microfone |
-| Instalador Windows/upgrade 0.8→0.9 | PENDENTE do workflow desta build |
+| Instalador Windows/upgrade 0.8→0.9 | **34/0**, instalação, atualização, saves, reinício, reinstalação e desinstalação em VM Windows |
+| Comparador JSON do QA Windows | **8/0**, preserva igualdade exata de inteiros e rejeita diferenças reais |
 | Windows gráfico exportado | **PASS**, captura após autosave, saída normal, VM via ANGLE; EXE idêntico ao export final por SHA256 |
 | ZIP de fontes extraído | **2/0**, importação e execução/save do projeto extraído |
 
@@ -214,4 +215,23 @@ A primeira atualização Windows foi reprovada por igualdade estrita de double e
 contagens, IDs, strings e os demais campos não mudaram. O comparador de QA mantém
 inteiros exatos e usa oito epsilons de máquina somente entre frações finitas;
 oito casos de comparação protegem mudança real, campo ausente e NaN. Os logs
-do FAIL foram preservados; o instalador é revalidado após atualizar o script.
+do FAIL foram preservados; a nova execução aprovou os oito casos e as 34
+verificações do instalador. Não houve mudança no jogo para fazer esse teste passar.
+
+Validação pós-publicação:
+
+- [Windows nativo — 34/0 + comparador 8/0](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41989195907),
+  commit de pacotes `d7732f585d5c23cbffcabccafe864d114224bcd3`.
+- [Windows gráfico — captura real do executável](https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41987374784).
+  Esse teste usou o empacotamento anterior, mas o SHA256 do EXE executado coincide
+  com o EXE final: `c293151d62d6a4ff39b08f71593ecc0e088a7cffb8801a3daa993eceb1e8e30f`.
+  Somente documentos e ferramentas de QA mudaram entre os dois empacotamentos.
+- Cinco downloads públicos retornaram HTTP 200 com o tamanho esperado. Hashes
+  dos cinco arquivos foram conferidos no workflow Windows; manifesto e recibo
+  vinculam os pacotes à fonte congelada acima.
+
+Relatórios brutos ficam em `verification/0.9.0-dev/windows-native` e
+`windows-graphics`; o primeiro FAIL numérico está em `windows-float-comparison-fail`.
+O relatório nativo é headless e enumera pendências manuais próprias. A captura
+gráfica separada comprova abertura/renderização/autosave em VM; não aprova as
+pendências de interação humana, microfone ou GPU física daquele relatório.

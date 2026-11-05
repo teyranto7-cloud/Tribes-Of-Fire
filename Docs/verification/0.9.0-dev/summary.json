@@ -52,7 +52,17 @@
     "first": "FAIL: C received one of four diplomatic packets; cause not isolated",
     "diagnostic_repeat": "PASS: unchanged assertions, all four diplomatic packets received; synthetic only"
   },
-  "windows_native": "pending revalidation: fractional JSON comparator corrected; first failure and diff preserved",
+  "windows_native": {
+    "url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41989195907",
+    "package_commit": "d7732f585d5c23cbffcabccafe864d114224bcd3",
+    "checks": 34,
+    "failed": 0,
+    "comparison_cases": 8,
+    "comparison_failed": 0,
+    "upgrade": "0.8.0-dev to 0.9.0-dev",
+    "installer_sha256": "25b2c8e65a9b46b992f7becf9e99f13c15de76f294dbd3bc26d59cb3155e6b24",
+    "mode": "Native Windows hosted VM; headless runtime and dedicated restart. Graphical proof is separate."
+  },
   "windows_graphics": {
     "url": "https://github.com/teyranto7-cloud/Tribes-Of-Fire/actions/runs/41987374784",
     "package_commit": "bbaec0f51eae749fd15359a3f0d58cea121bd145",
@@ -91,5 +101,11 @@
       "size": 34542382,
       "sha256": "d76834d8c97fb68f54735ab2b0b22186a8890debfe97e33a881508bec6d1fbfa"
     }
-  ]
+  ],
+  "public_downloads": {
+    "checks": 5,
+    "failed": 0,
+    "package_commit": "d7732f585d5c23cbffcabccafe864d114224bcd3",
+    "method": "Public HEAD size/status; all five SHA256s verified by native Windows workflow"
+  }
 }

@@ -10,6 +10,11 @@ da interação. Corrigidos o próprio collider bloqueando portas, altura duplica
 snapping, devolução zero de kits e sobreposição antes do tick de física.
 
 Resultados finais e limites em [Docs/BUILDING_PHASE4.md](Docs/BUILDING_PHASE4.md).
+Suíte 4.712/0 (29 runners), GUI 27/0 em três resoluções, três clientes/dedicado,
+reconexão/reinício, exports 6/0 e fontes extraídas 2/0 passaram. Instalador Windows
+34/0 incluindo upgrade 0.8→0.9; comparador numérico 8/0; captura real do executável
+Windows em VM, com identidade binária conferida. Primeiro FAIL numérico do QA e
+primeiro FAIL de pacotes diplomáticos permanecem nos logs, com diagnóstico/limites.
 A arte continua procedural em transição; suporte não é solver de cargas, e bancadas
 industriais com conteúdo/motor/conexões não podem ser movidas. Sem aprovação de
 60 FPS, 100 jogadores ou jogo 1.0. O histórico está preservado a seguir.

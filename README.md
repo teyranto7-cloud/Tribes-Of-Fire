@@ -21,7 +21,10 @@ Esse limite não comprova FPS com milhares de objetos visíveis. Construções a
 continuam válidas; o modo estrutural estrito é opcional.
 
 [Relatório e comandos da Fase 4](Docs/BUILDING_PHASE4.md) ·
-[Instalador e ZIPs 0.9.0-dev](Downloads/0.9.0-dev).
+[Instalador e ZIPs 0.9.0-dev](https://github.com/teyranto7-cloud/Tribes-Of-Fire/releases/tag/v0.9.0-dev).
+Suíte **4.712/0**, GUI **27/0**, três clientes/dedicado com reinício e fixture de
+3.000 estruturas passaram. Instalador Windows **34/0**, incluindo atualização
+0.8→0.9; captura gráfica real do EXE em VM. Os limites e métodos estão no relatório.
 Os resultados da 0.8 abaixo são históricos. A versão 1.0 completa permanece pendente.
 
 ## Continuidade 0.8.0-dev — indústria e qualidade
