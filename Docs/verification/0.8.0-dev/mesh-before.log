@@ -1,0 +1,15 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+BATCH_TRIANGLES order=false before=188 after=108
+ERROR: Batch preserves indexed and unindexed triangles in either insertion order
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (res://Tests/test_mesh_batching.gd:8)
+       [1] _initialize (res://Tests/test_mesh_batching.gd:28)
+BATCH_TRIANGLES order=true before=188 after=108
+ERROR: Batch preserves indexed and unindexed triangles in either insertion order
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (res://Tests/test_mesh_batching.gd:8)
+       [1] _initialize (res://Tests/test_mesh_batching.gd:28)
+MESH_BATCHING CHECKS=8 FAILED=2

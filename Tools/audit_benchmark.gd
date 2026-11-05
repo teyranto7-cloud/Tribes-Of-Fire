@@ -2,8 +2,12 @@ extends SceneTree
 ## Identical seeded scene for before/after audit; software-renderer diagnostic only.
 var game
 var results:Array=[]
+var warmup_seconds:float=1.0
+var sample_seconds:float=4.0
 func _initialize() -> void:call_deferred("run")
 func run() -> void:
+	if not OS.get_environment("TRIBES_BENCHMARK_WARMUP").is_empty():warmup_seconds=clampf(float(OS.get_environment("TRIBES_BENCHMARK_WARMUP")),1,15)
+	if not OS.get_environment("TRIBES_BENCHMARK_DURATION").is_empty():sample_seconds=clampf(float(OS.get_environment("TRIBES_BENCHMARK_DURATION")),4,60)
 	if DisplayServer.get_name()=="headless":printerr("Rendering display required");quit(1);return
 	game=load("res://Scenes/Main.tscn").instantiate();game.save_folder="user://audit-benchmark";root.add_child(game)
 	while not game.ready_world:await process_frame
@@ -26,10 +30,10 @@ func run() -> void:
 		game.runtime.factory_view={"station":0,"kind":"workbench","state":game.runtime.workshops[0].machine.duplicate(true)}
 		game.hud.show_panel("factory" if scene=="station" else "")
 		game.set_controls(false)
-		await create_timer(1).timeout
+		await create_timer(warmup_seconds).timeout
 		var frames:Array[float]=[];var process_ms:=0.0;var physics_ms:=0.0;var draws:=0.0
 		var start:=Time.get_ticks_usec();var last:=start
-		while Time.get_ticks_usec()-start<4000000:
+		while Time.get_ticks_usec()-start<sample_seconds*1000000:
 			await RenderingServer.frame_post_draw
 			var now:=Time.get_ticks_usec();frames.append(float(now-last)/1000);last=now
 			process_ms+=Performance.get_monitor(Performance.TIME_PROCESS)*1000;physics_ms+=Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS)*1000
@@ -38,5 +42,5 @@ func run() -> void:
 		var row:={"scene":scene,"frames":frames.size(),"fps":frames.size()/elapsed,"p50_ms":frames[int(frames.size()*0.5)],"p95_ms":frames[mini(frames.size()-1,int(frames.size()*0.95))],"process_ms":process_ms/frames.size(),"physics_ms":physics_ms/frames.size(),"draw_calls":draws/frames.size(),"nodes":get_node_count(),"godot_static_bytes":OS.get_static_memory_usage()}
 		results.append(row);print("AUDIT_PERF ",JSON.stringify(row))
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://builds/audit"))
-	var f:=FileAccess.open("res://builds/audit/performance.json",FileAccess.WRITE);f.store_string(JSON.stringify({"version":ProjectSettings.get_setting("application/config/version"),"seed":718991,"resolution":[root.size.x,root.size.y],"hardware":game.graphics.hardware(),"samples":results,"gpu_time_ms":null,"method":"Very Low, fixed camera/seed, wait for wanted chunks, 1s warmup + 4s samples. Main world clock held, live physics/AI. Xorg/llvmpipe software; not target hardware or sustained performance."},"\t"));f.close()
+	var f:=FileAccess.open("res://builds/audit/performance.json",FileAccess.WRITE);f.store_string(JSON.stringify({"version":ProjectSettings.get_setting("application/config/version"),"seed":718991,"resolution":[root.size.x,root.size.y],"hardware":game.graphics.hardware(),"warmup_seconds":warmup_seconds,"sample_seconds":sample_seconds,"samples":results,"gpu_time_ms":null,"method":"Very Low, fixed camera/seed, wait for wanted chunks, Warmup/sample durations recorded in this report. Main world clock held, live physics/AI. Xorg/llvmpipe software; not target hardware or sustained performance."},"\t"));f.close()
 	await game.quit_game(0,false)

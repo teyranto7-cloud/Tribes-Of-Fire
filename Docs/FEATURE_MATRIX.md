@@ -1,3 +1,12 @@
+# Matriz atual — 0.8.0-dev
+
+A matriz completa dos pedidos e seus limites está em [REQUEST_TRACEABILITY.md](REQUEST_TRACEABILITY.md).
+Resultados desta revisão em [SETTLEMENT_REPORT.md](SETTLEMENT_REPORT.md).
+
+Energia fluvial, fios/postes/lâmpadas/motores, esteiras simples, troca direta e pings
+estão integrados; não devem continuar marcados como inteiramente ausentes na matriz
+histórica abaixo. Arte e automação finais, dispositivos físicos e escala seguem parciais.
+
 # Matriz auditada — Fase 0 / 0.5.0-dev
 
 Criado por **felipealx**. Classificação descreve o escopo observado, não o jogo

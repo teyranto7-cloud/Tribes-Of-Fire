@@ -75,12 +75,19 @@ static func consolidate(parent: Node3D) -> void:
 				surface.begin(Mesh.PRIMITIVE_TRIANGLES)
 				surfaces[key] = surface
 				used_materials[key] = material
-			surfaces[key].append_from(child.mesh, index, child.transform)
+			# A SurfaceTool cannot mix indexed primitives and unindexed authored
+			# triangles: once indices exist, the latter become unreferenced vertices.
+			# Normalize before appending, then re-index the completed material batch.
+			var expanded := SurfaceTool.new()
+			expanded.create_from(child.mesh, index)
+			expanded.deindex()
+			surfaces[key].append_from(expanded.commit(), 0, child.transform)
 	for child in originals:
 		parent.remove_child(child)
 		child.free()
 	for key in surfaces:
 		var merged := MeshInstance3D.new()
+		surfaces[key].index()
 		merged.mesh = surfaces[key].commit()
 		merged.material_override = used_materials[key]
 		parent.add_child(merged)

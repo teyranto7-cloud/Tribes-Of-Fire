@@ -1,0 +1,19 @@
+{
+  "captures": [
+    "res://builds/settlement/ui/main-menu-1280x720.png",
+    "res://builds/settlement/ui/energy-crafting-1280x720.png",
+    "res://builds/settlement/ui/trade-offer-1280x720.png",
+    "res://builds/settlement/ui/team-ping-map-1280x720.png",
+    "res://builds/settlement/ui/inventory-1920x1080.png",
+    "res://builds/settlement/ui/inventory-800x600.png",
+    "res://builds/settlement/ui/workshops-gallery.png",
+    "res://builds/settlement/ui/workshops-forge-closeup.png",
+    "res://builds/settlement/ui/workshops-loom-closeup.png",
+    "res://builds/settlement/ui/river-powered-workshop-night.png",
+    "res://builds/settlement/ui/vitals-hud-1280x720.png",
+    "res://builds/settlement/ui/character-complete-closeup.png"
+  ],
+  "checks": 37,
+  "failed": 0,
+  "method": "Actual window input and framebuffer; isolated fixture materials, second player, gallery and powered night scene. ENet separately tests command authority."
+}

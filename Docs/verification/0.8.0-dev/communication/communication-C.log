@@ -1,0 +1,7 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=2105255462 count=1
+PLAYER_JOINED id=1969783209 count=2
+PLAYER_JOINED id=2069902419 count=3
+COMMUNICATION_CLIENT_PASS role=C messages=2 audio_packets={ "diplomacy": 4 } played_samples=2560 microphone_started=false

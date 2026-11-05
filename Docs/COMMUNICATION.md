@@ -54,3 +54,14 @@ houve recepção de pacotes de proximidade. Não houve captura de microfone. Voz
 dispositivos físicos/latência/audibilidade segue PENDENTE, inclusive os passos
 humanos listados acima. Canais automáticos de aliados e pings temporários não
 foram adicionados durante a auditoria. Relatório: AUDIT_PHASES_1_3.md.
+
+
+## 0.8.0-dev — aliados, pings e trocas
+
+O canal textual `allies` acompanha alianças aceitas e bloqueios; romper uma aliança
+revoga o acesso imediatamente. Pings duram 20 s, têm cooldown 2 s, alcance 250 m e
+exigem uma célula explorada. Snapshots de pings e ofertas são individuais; inimigos
+não recebem o conteúdo. Trocas diretas exigem até 6 m/linha livre e consentimento
+para a oferta fixa. Desconexão/reinício cancela ofertas pendentes sem escrow perdido.
+Seis canais anteriores, voz/PTT/mute e as suas limitações permanecem preservados.
+Voz por microfone físico continua PENDENTE; testes sintéticos não são voz humana.

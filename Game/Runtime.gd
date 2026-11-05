@@ -42,10 +42,21 @@ var pvp_damage: int = 0
 var wildlife
 var _initial_animals: Array = []
 var audio
+const PowerGrid = preload("res://Energy/Grid.gd")
+var grid = PowerGrid.new()
+var automation = preload("res://Building/Automation.gd").new()
+var energy_view: String = ""
+var energy_visuals
+var _energy_left: float = 0
 var factory_view: Dictionary = {}
+var exchange = preload("res://Trading/Exchange.gd").new()
+var team_pings = preload("res://Communication/TeamPings.gd").new()
+var trade_view: Array = []
+var ping_view: Array = []
 signal message_added(data: Dictionary)
 func configure(value) -> void:
 	game = value
+	energy_visuals = preload("res://Energy/Presentation.gd").new(); energy_visuals.game = game; game.world.add_child(energy_visuals)
 	voice = Voice.new()
 	add_child(voice)
 	voice.configure(game)
@@ -123,8 +134,10 @@ func save_state() -> Dictionary:
 	var dropped: Array = []
 	for drop in drops:
 		dropped.append({"id": drop.get_meta("id"), "count": drop.get_meta("count"), "durability": drop.get_meta("durability", 100), "position": [drop.position.x, drop.position.y, drop.position.z]})
-	return {"tribes": tribes.state(), "communication": channels.state(), "mining": mining.capture(), "resource_regrowth": mining.regrowth.duplicate(), "workshops": records, "drops": dropped, "animals": wildlife.capture(), "tribe_research": tribe_research.duplicate(true), "farming": farming.duplicate(true)}
+	return {"automation": automation.routes.duplicate(true), "energy_grid": grid.state(), "tribes": tribes.state(), "communication": channels.state(), "mining": mining.capture(), "resource_regrowth": mining.regrowth.duplicate(), "workshops": records, "drops": dropped, "animals": wildlife.capture(), "tribe_research": tribe_research.duplicate(true), "farming": farming.duplicate(true)}
 func restore(data: Dictionary) -> void:
+	exchange.offers.clear()
+	team_pings.entries.clear()
 	mining.reposition()
 	wildlife.configure_world()
 	tribes = Tribes.new()
@@ -139,6 +152,9 @@ func restore(data: Dictionary) -> void:
 	tribe_research = data.get("tribe_research", {}).duplicate(true)
 	farming = data.get("farming", {}).duplicate(true)
 	_restore_workshops(data.get("workshops", []))
+	grid.restore(data.get("energy_grid", {}))
+	automation.routes=data.get("automation",[]).duplicate(true)
+	grid.evaluate(game.world, workshops, tribes)
 	_restore_drops(data.get("drops", []))
 	wildlife.restore(data.get("animals", _fresh_animals()), true)
 func _restore_workshops(records: Array) -> void:
@@ -160,6 +176,8 @@ func _add_workshop(kind: String, at: Vector3, owner: String) -> void:
 	station.setup(kind, at, owner)
 	workshops.append(station)
 func apply_state(data: Dictionary) -> void:
+	grid.restore(data.get("energy_grid", {}))
+	automation.routes=data.get("automation",[]).duplicate(true)
 	tribes.restore(data.get("tribes", {}))
 	tribe_research = data.get("tribe_research", {}).duplicate(true)
 	farming = data.get("farming", {}).duplicate(true)
@@ -173,6 +191,8 @@ func apply_state(data: Dictionary) -> void:
 	if hash(station_data) != _workshop_signature:
 		_restore_workshops(station_data)
 		_workshop_signature = hash(station_data)
+	grid.evaluate(game.world, workshops, tribes)
+	for index in range(workshops.size()): workshops[index].powered = not index in grid.motors or grid.powered.get("w%d"%index,false)
 	var dropped: Array = data.get("drops", [])
 	if hash(dropped) != _drop_signature:
 		_restore_drops(dropped)
@@ -217,6 +237,8 @@ func stations(body) -> Array:
 func tick(delta: float) -> void:
 	wildlife.tick(delta, game.players, game.session.is_authority())
 	if game.session.is_authority():
+		team_pings.advance(delta, positions().keys())
+		exchange.expire(positions().keys(), Time.get_unix_time_from_system())
 		var now := Time.get_ticks_usec()
 		var activity_delta := maxf(0, float(now - _activities_usec) / 1000000.0)
 		_activities_usec = now
@@ -224,14 +246,24 @@ func tick(delta: float) -> void:
 		_tick_drop_physics()
 		mining.tick_regrowth()
 		_tick_farming(activity_delta)
-		for station in workshops:
-			preload("res://Building/Factory.gd").advance(station.machine,station.kind,activity_delta)
+		_energy_left -= delta
+		if _energy_left <= 0: _energy_left = 0.25; grid.evaluate(game.world, workshops, tribes)
+		for index in range(workshops.size()):
+			var station = workshops[index]
+			station.powered = not index in grid.motors or grid.powered.get("w%d"%index,false)
+			if station.powered: preload("res://Building/Factory.gd").advance(station.machine,station.kind,activity_delta * (1.5 if index in grid.motors else 1.0))
+		automation.advance(activity_delta,workshops,grid,tribes)
 		combat.tick(delta)
 		for id in needs:
 			if game.players.has(id) and not game.players[id].creation_pending:
 				game.players[id].set_equipment(game.inventories[id].equipment)
 
 func reset_local_communication() -> void:
+	exchange.offers.clear()
+	trade_view.clear()
+	team_pings.entries.clear()
+	team_pings.cooldowns.clear()
+	ping_view.clear()
 	channel_state = {"groups": {}, "calls": {}, "invitation": {}, "blocked": []}
 	messages.clear()
 	message_counter = 0
@@ -258,7 +290,7 @@ func command(id: int, action: String, data: Dictionary) -> void:
 			_notify(id, false)
 			return
 	var receipt := ""
-	if action in ["craft_cancel","station_select","station_load","station_refund","factory_load","factory_take"]:
+	if action in ["craft_cancel","station_select","station_load","station_refund","factory_load","factory_take","trade_offer","trade_accept","trade_cancel","energy_connect","energy_disconnect","energy_toggle","energy_install","factory_route","factory_unroute"]:
 		receipt=Activities.operation_receipt(action,str(data.get("request_id","")))
 		if not receipt.is_empty() and receipt in activities.requests.get(id,[]): return
 	var accepted := false
@@ -314,6 +346,15 @@ func command(id: int, action: String, data: Dictionary) -> void:
 		return
 	else:
 		match action:
+			"factory_route", "factory_unroute":
+				var source: int=data["from"]
+				if source>=0 and source<workshops.size() and _station_accessible(id,workshops[source]):
+					if action=="factory_route": accepted=automation.add(source,int(data["to"]),data["item"],identity,inv,workshops,tribes,game.world)
+					else: accepted=automation.remove(source,int(data["to"]),data["item"],identity,inv,tribes)
+			"energy_connect", "energy_disconnect", "energy_toggle", "energy_install": accepted = _energy_command(id, action, data)
+			"team_ping":
+				accepted = team_pings.create(identity, Vector2(data["position"][0], data["position"][1]), body.position, game.journal.serialize(identity), tribes, Time.get_unix_time_from_system())
+			"trade_offer", "trade_accept", "trade_cancel": accepted = _trade_command(id, action, data)
 			"combat":
 				var kind := str(data.get("kind", "light"))
 				if kind == "light" and inv.equipped_item() == "bow":
@@ -382,6 +423,10 @@ func command(id: int, action: String, data: Dictionary) -> void:
 			"mine": accepted = _start_mining(id, false)
 			"build":
 				var kind := str(data.get("piece", ""))
+				if kind in PowerGrid.KINDS:
+					accepted = _build_energy(id,kind)
+					if accepted: activities.remember_request(id,receipt)
+					_notify(id,accepted); return
 				var cost: Dictionary = Balance.section("building").get("costs", {}).get(kind, {})
 				for item in Catalog.ids():
 					if Catalog.get_item(item).get("place","")==kind and inv.count(item)>0:cost={item:1};break
@@ -404,6 +449,24 @@ func command(id: int, action: String, data: Dictionary) -> void:
 func _notify(id: int, accepted: bool) -> void:
 	game.session.notify(id, "notice", {"key": "Action completed" if accepted else "Action unavailable"})
 
+func _trade_command(id: int, action: String, data: Dictionary) -> bool:
+	var identity := key(id)
+	if action == "trade_cancel": return exchange.cancel(identity, str(data["id"]))
+	var other_key := str(data.get("target", ""))
+	if action == "trade_accept":
+		var offer: Dictionary = exchange.offers.get(str(data["id"]), {})
+		if offer.is_empty() or offer["to"] != identity: return false
+		other_key = offer["from"]
+	var other := peer(other_key)
+	if other == 0 or other == id or game.players[other].vitals.hp <= 0 or game.players[other].creation_pending: return false
+	if identity in channels.blocked.get(other_key, []) or other_key in channels.blocked.get(identity, []): return false
+	if game.players[id].position.distance_to(game.players[other].position) > 6.0 or not _clear_interaction(game.players[id], game.players[other].position + Vector3.UP, [game.players[other].get_rid()]): return false
+	if action == "trade_offer":
+		return exchange.create(identity, other_key, data["give"], int(data["amount"]), data["want"], int(data["quantity"]), game.inventories[id], Time.get_unix_time_from_system())
+	var accepted: bool = exchange.accept(identity, str(data["id"]), game.inventories[other], game.inventories[id], Time.get_unix_time_from_system())
+	if accepted: game.session.notify(other, "notice", {"key": "Trade completed"})
+	return accepted
+
 func _clear_interaction(body, at: Vector3, exclude: Array = []) -> bool:
 	var query := PhysicsRayQueryParameters3D.create(body.global_position + Vector3.UP, at, 1, [body.get_rid()] + exclude)
 	return game.world.get_world_3d().direct_space_state.intersect_ray(query).is_empty()
@@ -412,6 +475,8 @@ func publish_channels() -> void:
 		game.session.notify(id, "channels", channels.public_state(key(id)))
 func _event(kind: String, data: Dictionary) -> void:
 	if game.quitting: return
+	if kind=="energy":
+		energy_view = str(data.get("id", "")); game.hud.show_panel("energy"); return
 	if kind=="factory":
 		var changed:bool=factory_view.get("station",-1)!=data.get("station",-1)
 		factory_view=data.duplicate(true)
@@ -641,6 +706,10 @@ func _interact(id: int) -> bool:
 	for animal in wildlife.animals:
 		if animal.hp<=0 and not animal.harvested and body.position.distance_to(animal.position)<3:
 			if activities.start_action(id,"corpse",1.2,{"animal":animal.animal_id}): body.play_action("gather",1.2);return true
+	for uid in energy_visuals.devices:
+		var device = energy_visuals.devices[uid]
+		if body.position.distance_to(device.position)<4 and tribes.can_build(grid.nodes[uid]["owner"],key(id)) and _clear_interaction(body,device.position+Vector3.UP,[device.get_rid()]):
+			game.session.notify(id,"energy",{"id":uid}); return true
 	for index in range(workshops.size()):
 		var station=workshops[index]
 		if _station_accessible(id,station):
@@ -842,3 +911,34 @@ func nearby_pickup(id: int):
 			result = drop
 			distance = next_distance
 	return result
+
+func _build_energy(id: int, kind: String) -> bool:
+	var site: Dictionary = PowerGrid.placement(game.world, game.players[id], kind)
+	if not site["valid"] or grid.nodes.size()>=PowerGrid.MAX_NODES or grid.next_id>1000000 or not _territory_allows(key(id),site["position"]): return false
+	for row in grid.nodes.values():
+		var p: Array = row["position"]
+		if Vector3(p[0],p[1],p[2]).distance_to(site["position"])<2.0: return false
+	for station in workshops:
+		if station.position.distance_to(site["position"])<2.0: return false
+	if not _clear_interaction(game.players[id],site["position"]+Vector3.UP): return false
+	if not game.inventories[id].consume(kind,1): return false
+	grid.add(kind,site["position"],key(id)); grid.evaluate(game.world,workshops,tribes)
+	energy_visuals.rebuild(); return true
+
+func _energy_command(id: int, action: String, data: Dictionary) -> bool:
+	var identity := key(id)
+	if action=="energy_install":
+		var index: int = data["station"]
+		if index<0 or index>=workshops.size() or index in grid.motors or workshops[index].kind not in PowerGrid.MOTOR_KINDS or not _station_accessible(id,workshops[index]): return false
+		if not game.inventories[id].consume("motor",1): return false
+		grid.motors.append(index); grid.evaluate(game.world,workshops,tribes); return true
+	var source: String = str(data.get("a",data.get("id","")))
+	var row: Dictionary = grid.endpoint(source,workshops)
+	if row.is_empty() or not tribes.can_build(row["owner"],identity) or game.players[id].position.distance_to(grid.point(source,workshops))>5: return false
+	if action=="energy_connect": return grid.link_ports(source,str(data["b"]),identity,game.inventories[id],game.world,workshops,tribes)
+	if action=="energy_toggle": grid.nodes[source]["enabled"]=not grid.nodes[source]["enabled"]; grid.evaluate(game.world,workshops,tribes); return true
+	if action=="energy_disconnect":
+		for index in range(grid.links.size()):
+			var link: Dictionary = grid.links[index]
+			if (link["a"]==data["a"] and link["b"]==data["b"]) or (link["a"]==data["b"] and link["b"]==data["a"]): return grid.unlink_ports(index,identity,game.inventories[id],tribes)
+	return false

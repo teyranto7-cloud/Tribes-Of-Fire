@@ -14,6 +14,10 @@ static func descriptor(data: Dictionary) -> bool:
 	if not number(world.get("seed"),0,2147483647,true) or not number(world.get("generator"),0,3,true): return false
 	return world.get("seed") == data.get("seed") and ((world["generator"] == 0 and world.get("size") == 128 and world["seed"] == 1337) or (world["generator"] == 1 and world.get("size") == 320) or (int(world["generator"]) in [2,3] and world.get("size") == 1536))
 static func extra(data: Dictionary, extent: float) -> bool:
+	if data.has("energy_grid") and not preload("res://Energy/Grid.gd").valid(data["energy_grid"],extent,data.get("workshops",[]).size()): return false
+	for index in data.get("energy_grid",{}).get("motors",[]):
+		if data["workshops"][int(index)]["kind"] not in preload("res://Energy/Grid.gd").MOTOR_KINDS: return false
+	if not preload("res://Building/Automation.gd").valid(data.get("automation",[]),data.get("workshops",[]).size()): return false
 	var edits:Variant=data.get("terrain_changes",{})
 	if not edits is Dictionary or edits.size()>1024:return false
 	for cell in edits:

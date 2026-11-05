@@ -1,0 +1,55 @@
+cycles-server exit= 0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=56264 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=929518245 count=1
+PLAYER_JOINED id=756223967 count=2
+NET_GATHER_WOOD_DONE
+NET_BEFORE_CHARCOAL {"axe":2,"campfire":0,"clay":10,"cooking_fire":0,"copper_ore":8,"fiber":4,"pickaxe":1,"plank":6,"rope":1,"shelter":0,"stone":15,"wood":9}
+PLAYER_LEFT id=929518245
+PLAYER_JOINED id=631425383 count=2
+PHASE3_NETWORK CHECKS=372 FAILED=0 restore=false
+PLAYER_LEFT id=756223967
+PLAYER_LEFT id=631425383
+
+cycles-actor exit= 0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=929518245 count=1
+PHASE3_CLIENT_READY observer=false
+PLAYER_JOINED id=756223967 count=2
+PLAYER_JOINED id=756223967 count=1
+PLAYER_JOINED id=631425383 count=2
+PHASE3_CLIENT_PASS observer=false checks=1 failed=0
+
+cycles-observer exit= 0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=929518245 count=1
+PLAYER_JOINED id=756223967 count=2
+PHASE3_CLIENT_READY observer=true
+PLAYER_LEFT id=929518245
+PLAYER_JOINED id=631425383 count=2
+PHASE3_CLIENT_PASS observer=true checks=1 failed=0
+
+restart-server exit= 0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=56264 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=831075760 count=1
+PHASE3_NETWORK CHECKS=8 FAILED=0 restore=true
+PLAYER_LEFT id=831075760
+
+restart-actor exit= 0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=831075760 count=1
+PHASE3_CLIENT_READY observer=false
+PHASE3_CLIENT_PASS observer=false checks=1 failed=0
+
+PHASE3_NETWORK_PASS: two real clients, collection, two production cycles, duplicate requests, transport reconnect, paid escrow, clean server restart

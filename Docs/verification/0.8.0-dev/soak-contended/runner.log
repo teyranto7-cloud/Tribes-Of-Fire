@@ -1,0 +1,103 @@
+cycle-server exit= 1
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=50996 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1919969649 count=1
+PLAYER_JOINED id=2054740323 count=2
+PLAYER_JOINED id=974990897 count=3
+PLAYER_LEFT id=2054740323
+PLAYER_JOINED id=255095484 count=3
+SOAK_SAMPLE {"chunks":96,"hour":9.60985863999999,"memory_bytes":126356610.0,"nodes":5847,"players":3,"seconds":61.224}
+SOAK_SAMPLE {"chunks":96,"hour":10.0179279066666,"memory_bytes":126358014.0,"nodes":5847,"players":3,"seconds":122.433}
+SOAK_SAMPLE {"chunks":96,"hour":10.42617456,"memory_bytes":126367490.0,"nodes":5847,"players":3,"seconds":183.672}
+SOAK_SAMPLE {"chunks":96,"hour":10.8344908799999,"memory_bytes":126368230.0,"nodes":5847,"players":3,"seconds":244.92}
+SOAK_SAMPLE {"chunks":96,"hour":11.2596953666666,"memory_bytes":126369138.0,"nodes":5847,"players":3,"seconds":308.755}
+SOAK_SAMPLE {"chunks":96,"hour":11.6676754733333,"memory_bytes":126369926.0,"nodes":5847,"players":3,"seconds":369.9}
+SOAK_SAMPLE {"chunks":96,"hour":12.0759196599999,"memory_bytes":126370786.0,"nodes":5847,"players":3,"seconds":431.133}
+SOAK_SAMPLE {"chunks":96,"hour":12.4869286133333,"memory_bytes":126371574.0,"nodes":5847,"players":3,"seconds":492.781}
+SOAK_SAMPLE {"chunks":96,"hour":12.8951905466666,"memory_bytes":126372378.0,"nodes":5847,"players":3,"seconds":554.029}
+SOAK_SAMPLE {"chunks":96,"hour":13.3286907733333,"memory_bytes":126373262.0,"nodes":5847,"players":3,"seconds":619.057}
+SOAK_SAMPLE {"chunks":96,"hour":13.73679006,"memory_bytes":126374050.0,"nodes":5847,"players":3,"seconds":680.275}
+SOAK_SAMPLE {"chunks":96,"hour":14.1450242800001,"memory_bytes":126374766.0,"nodes":5847,"players":3,"seconds":741.498}
+SOAK_SAMPLE {"chunks":96,"hour":14.5533366133334,"memory_bytes":126375626.0,"nodes":5847,"players":3,"seconds":802.745}
+SOAK_SAMPLE {"chunks":96,"hour":14.9619636466667,"memory_bytes":126376574.0,"nodes":5847,"players":3,"seconds":864.047}
+SOAK_SAMPLE {"chunks":96,"hour":15.3700671533334,"memory_bytes":126377362.0,"nodes":5847,"players":3,"seconds":925.259}
+SOAK_SAMPLE {"chunks":96,"hour":15.7786403866668,"memory_bytes":126378150.0,"nodes":5847,"players":3,"seconds":986.543}
+SOAK_SAMPLE {"chunks":96,"hour":16.1867843866668,"memory_bytes":126378938.0,"nodes":5847,"players":3,"seconds":1047.763}
+SOAK_SAMPLE {"chunks":96,"hour":16.5948978333335,"memory_bytes":126379710.0,"nodes":5847,"players":3,"seconds":1108.98}
+SOAK_SAMPLE {"chunks":96,"hour":17.0030314666668,"memory_bytes":126380498.0,"nodes":5847,"players":3,"seconds":1170.215}
+SOAK_SAMPLE {"chunks":96,"hour":17.4111407866669,"memory_bytes":126381502.0,"nodes":5847,"players":3,"seconds":1231.416}
+SOAK_SAMPLE {"chunks":96,"hour":17.8192344200002,"memory_bytes":126382306.0,"nodes":5847,"players":3,"seconds":1292.634}
+SOAK_SAMPLE {"chunks":96,"hour":18.4551238666672,"memory_bytes":126383094.0,"nodes":5847,"players":3,"seconds":1353.893}
+SOAK_SAMPLE {"chunks":96,"hour":19.2716183200006,"memory_bytes":126383882.0,"nodes":5847,"players":3,"seconds":1415.123}
+ERROR: Real client command arrived: eat
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (res://Tests/test_settlement_network.gd:27)
+       [1] order (res://Tests/test_settlement_network.gd:62)
+SOAK_SAMPLE {"chunks":96,"hour":20.1718010666674,"memory_bytes":126384710.0,"nodes":5847,"players":3,"seconds":1482.629}
+SOAK_SAMPLE {"chunks":96,"hour":21.0437643200007,"memory_bytes":126385482.0,"nodes":5847,"players":3,"seconds":1548.036}
+SOAK_SAMPLE {"chunks":96,"hour":21.860229853334,"memory_bytes":126386270.0,"nodes":5847,"players":3,"seconds":1609.27}
+SOAK_SAMPLE {"chunks":96,"hour":22.6897545866672,"memory_bytes":126387042.0,"nodes":5847,"players":3,"seconds":1671.484}
+SOAK_SAMPLE {"chunks":96,"hour":23.5060992000004,"memory_bytes":126387846.0,"nodes":5847,"players":3,"seconds":1732.703}
+SOAK_SAMPLE {"chunks":96,"hour":0.322291480000167,"memory_bytes":126388970.0,"nodes":5847,"players":3,"seconds":1793.922}
+SOAK_SAMPLE {"chunks":96,"hour":0.461404466666846,"memory_bytes":126385558.0,"nodes":5847,"players":3,"seconds":1804.352}
+PLAYER_LEFT id=1919969649
+PLAYER_LEFT id=255095484
+PLAYER_LEFT id=974990897
+SETTLEMENT_NETWORK CHECKS=273 FAILED=1
+
+Traceback (most recent call last):
+  File "/workspace/Tribes-Of-Fire/Tools/test_settlement_network.py", line 46, in <module>
+    assert process.returncode == 0 and not any(error in output for error in ['SCRIPT ERROR', 'ERROR:', 'instances leaked']), output
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SERVER_LISTENING port=50996 dedicated=true
+GAME_READY role=dedicated Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1919969649 count=1
+PLAYER_JOINED id=2054740323 count=2
+PLAYER_JOINED id=974990897 count=3
+PLAYER_LEFT id=2054740323
+PLAYER_JOINED id=255095484 count=3
+SOAK_SAMPLE {"chunks":96,"hour":9.60985863999999,"memory_bytes":126356610.0,"nodes":5847,"players":3,"seconds":61.224}
+SOAK_SAMPLE {"chunks":96,"hour":10.0179279066666,"memory_bytes":126358014.0,"nodes":5847,"players":3,"seconds":122.433}
+SOAK_SAMPLE {"chunks":96,"hour":10.42617456,"memory_bytes":126367490.0,"nodes":5847,"players":3,"seconds":183.672}
+SOAK_SAMPLE {"chunks":96,"hour":10.8344908799999,"memory_bytes":126368230.0,"nodes":5847,"players":3,"seconds":244.92}
+SOAK_SAMPLE {"chunks":96,"hour":11.2596953666666,"memory_bytes":126369138.0,"nodes":5847,"players":3,"seconds":308.755}
+SOAK_SAMPLE {"chunks":96,"hour":11.6676754733333,"memory_bytes":126369926.0,"nodes":5847,"players":3,"seconds":369.9}
+SOAK_SAMPLE {"chunks":96,"hour":12.0759196599999,"memory_bytes":126370786.0,"nodes":5847,"players":3,"seconds":431.133}
+SOAK_SAMPLE {"chunks":96,"hour":12.4869286133333,"memory_bytes":126371574.0,"nodes":5847,"players":3,"seconds":492.781}
+SOAK_SAMPLE {"chunks":96,"hour":12.8951905466666,"memory_bytes":126372378.0,"nodes":5847,"players":3,"seconds":554.029}
+SOAK_SAMPLE {"chunks":96,"hour":13.3286907733333,"memory_bytes":126373262.0,"nodes":5847,"players":3,"seconds":619.057}
+SOAK_SAMPLE {"chunks":96,"hour":13.73679006,"memory_bytes":126374050.0,"nodes":5847,"players":3,"seconds":680.275}
+SOAK_SAMPLE {"chunks":96,"hour":14.1450242800001,"memory_bytes":126374766.0,"nodes":5847,"players":3,"seconds":741.498}
+SOAK_SAMPLE {"chunks":96,"hour":14.5533366133334,"memory_bytes":126375626.0,"nodes":5847,"players":3,"seconds":802.745}
+SOAK_SAMPLE {"chunks":96,"hour":14.9619636466667,"memory_bytes":126376574.0,"nodes":5847,"players":3,"seconds":864.047}
+SOAK_SAMPLE {"chunks":96,"hour":15.3700671533334,"memory_bytes":126377362.0,"nodes":5847,"players":3,"seconds":925.259}
+SOAK_SAMPLE {"chunks":96,"hour":15.7786403866668,"memory_bytes":126378150.0,"nodes":5847,"players":3,"seconds":986.543}
+SOAK_SAMPLE {"chunks":96,"hour":16.1867843866668,"memory_bytes":126378938.0,"nodes":5847,"players":3,"seconds":1047.763}
+SOAK_SAMPLE {"chunks":96,"hour":16.5948978333335,"memory_bytes":126379710.0,"nodes":5847,"players":3,"seconds":1108.98}
+SOAK_SAMPLE {"chunks":96,"hour":17.0030314666668,"memory_bytes":126380498.0,"nodes":5847,"players":3,"seconds":1170.215}
+SOAK_SAMPLE {"chunks":96,"hour":17.4111407866669,"memory_bytes":126381502.0,"nodes":5847,"players":3,"seconds":1231.416}
+SOAK_SAMPLE {"chunks":96,"hour":17.8192344200002,"memory_bytes":126382306.0,"nodes":5847,"players":3,"seconds":1292.634}
+SOAK_SAMPLE {"chunks":96,"hour":18.4551238666672,"memory_bytes":126383094.0,"nodes":5847,"players":3,"seconds":1353.893}
+SOAK_SAMPLE {"chunks":96,"hour":19.2716183200006,"memory_bytes":126383882.0,"nodes":5847,"players":3,"seconds":1415.123}
+ERROR: Real client command arrived: eat
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (res://Tests/test_settlement_network.gd:27)
+       [1] order (res://Tests/test_settlement_network.gd:62)
+SOAK_SAMPLE {"chunks":96,"hour":20.1718010666674,"memory_bytes":126384710.0,"nodes":5847,"players":3,"seconds":1482.629}
+SOAK_SAMPLE {"chunks":96,"hour":21.0437643200007,"memory_bytes":126385482.0,"nodes":5847,"players":3,"seconds":1548.036}
+SOAK_SAMPLE {"chunks":96,"hour":21.860229853334,"memory_bytes":126386270.0,"nodes":5847,"players":3,"seconds":1609.27}
+SOAK_SAMPLE {"chunks":96,"hour":22.6897545866672,"memory_bytes":126387042.0,"nodes":5847,"players":3,"seconds":1671.484}
+SOAK_SAMPLE {"chunks":96,"hour":23.5060992000004,"memory_bytes":126387846.0,"nodes":5847,"players":3,"seconds":1732.703}
+SOAK_SAMPLE {"chunks":96,"hour":0.322291480000167,"memory_bytes":126388970.0,"nodes":5847,"players":3,"seconds":1793.922}
+SOAK_SAMPLE {"chunks":96,"hour":0.461404466666846,"memory_bytes":126385558.0,"nodes":5847,"players":3,"seconds":1804.352}
+PLAYER_LEFT id=1919969649
+PLAYER_LEFT id=255095484
+PLAYER_LEFT id=974990897
+SETTLEMENT_NETWORK CHECKS=273 FAILED=1
+

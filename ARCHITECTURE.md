@@ -80,3 +80,16 @@ station_reason/recipe_unlock_reason são a única validação de pré-condiçõe
 UI e operação; transferência real continua atômica. A projeção de capacidade usa
 uma cópia de Inventory. _begin_authority limpa comandos anteriores ao snapshot.
 Não houve alteração de gerador, catálogo, renderer, voz ou modelos nesta auditoria.
+
+
+## Continuidade 0.8.0-dev
+
+Energy/Grid é o grafo autoritativo de geradores/aparelhos/cabos/motores; Presentation
+mantém colisões e modelos, com hash de topologia separado dos timers de esteira.
+Building/Automation transfere buffers completos em passos de um item/s, validando
+receita/permissões/capacidade; Runtime avança somente na autoridade. Trading/Exchange
+publica ofertas imutáveis só aos participantes e efetiva ambas as cópias de inventário
+juntas. Ofertas/pings expiram; inventários e energia/rotas persistem na versão 4.
+Communication/TeamPings e Channels filtram relações, células descobertas e bloqueio.
+World/Shapes normaliza malhas antes do batching para conservar todas as faces.
+Ver Docs/SETTLEMENT_REPORT.md para integração, contratos e limites.

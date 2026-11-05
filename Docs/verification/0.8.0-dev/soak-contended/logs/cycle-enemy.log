@@ -1,0 +1,10 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1919969649 count=1
+PLAYER_JOINED id=2054740323 count=2
+PLAYER_JOINED id=974990897 count=3
+SETTLEMENT_CLIENT_READY enemy
+PLAYER_LEFT id=2054740323
+PLAYER_JOINED id=255095484 count=3
+SETTLEMENT_CLIENT_PASS role=enemy checks=13 failed=0

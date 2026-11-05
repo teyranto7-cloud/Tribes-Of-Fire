@@ -1,3 +1,12 @@
+# 0.8.0-dev
+
+- Conserva faces ao unir malhas indexadas/não indexadas; corrige partes invisíveis.
+- Melhora menu, HUD, mapa, 17 oficinas e pickups por família.
+- Adiciona energia fluvial, cabos, postes, luzes, motores, esteiras e receitas correspondentes.
+- Adiciona trocas com consentimento/atomicidade, canal de aliados e pings privados da equipe.
+- Preserva saves antigos, saúde/chuva, crafting, rede e pacotes anteriores.
+- Testes de atualização nativa entre versões e matriz de pedidos/pendências.
+
 # Mudanças — Tribes of Fire
 
 ## 0.7.1-dev — auditoria de regressão das Fases 1–3

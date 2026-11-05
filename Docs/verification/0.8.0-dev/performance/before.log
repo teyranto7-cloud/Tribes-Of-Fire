@@ -1,0 +1,11 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+AUDIT_PERF {"draw_calls":436.0,"fps":5.97008242445047,"frames":72,"godot_static_bytes":138703058,"nodes":5333,"p50_ms":167.508,"p95_ms":184.697,"physics_ms":7.08976388888888,"process_ms":152.078388888889,"scene":"day"}
+AUDIT_PERF {"draw_calls":427.0,"fps":6.02212296993616,"frames":73,"godot_static_bytes":137035331,"nodes":5145,"p50_ms":165.628,"p95_ms":183.102,"physics_ms":5.81342465753425,"process_ms":159.744452054795,"scene":"station"}
+AUDIT_PERF {"draw_calls":436.0,"fps":6.56871083562067,"frames":79,"godot_static_bytes":137124511,"nodes":5145,"p50_ms":152.291,"p95_ms":167.938,"physics_ms":5.15822784810127,"process_ms":144.108670886076,"scene":"night"}
+AUDIT_PERF {"draw_calls":437.0,"fps":6.29894894577558,"frames":76,"godot_static_bytes":137137415,"nodes":5145,"p50_ms":159.074,"p95_ms":174.709,"physics_ms":5.59403947368421,"process_ms":152.191710526316,"scene":"storm"}

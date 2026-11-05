@@ -74,7 +74,10 @@ jobs:
         if: steps.package.outputs.available == 'true'
         shell: pwsh
         run: |
-          ./Tools/Test-Windows.ps1 -Installer (Join-Path $env:PACKAGE_DIRECTORY ('TribesOfFire-' + $env:PACKAGE_VERSION + '-Windows-Setup.exe')) -OutputDirectory (Join-Path $env:RUNNER_TEMP 'Tribes-QA') -Headless
+          $previous = 'Downloads/0.7.1-dev/TribesOfFire-0.7.1-dev-Windows-Setup.exe'
+          $upgrade = @{}
+          if ([version](($env:PACKAGE_VERSION -split '-')[0]) -gt [version]'0.7.1' -and (Test-Path $previous)) { $upgrade.PreviousInstaller = $previous }
+          ./Tools/Test-Windows.ps1 @upgrade -Installer (Join-Path $env:PACKAGE_DIRECTORY ('TribesOfFire-' + $env:PACKAGE_VERSION + '-Windows-Setup.exe')) -OutputDirectory (Join-Path $env:RUNNER_TEMP 'Tribes-QA') -Headless
       - name: Annotate failed native assertions
         if: failure() && steps.package.outputs.available == 'true'
         shell: pwsh

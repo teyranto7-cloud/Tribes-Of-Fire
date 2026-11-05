@@ -2661,6 +2661,124 @@
         "pt_BR": "Recurso de sobrevivência ou item fabricado."
       },
       "source": "craft"
+    },
+    "waterwheel": {
+      "id": "waterwheel",
+      "name": {
+        "pt_BR": "Roda-d’água geradora",
+        "en": "Waterwheel generator"
+      },
+      "type": "mechanical",
+      "rarity": "common",
+      "weight": 3.0,
+      "stack": 10,
+      "icon": "res://Assets/UI/Items/waterwheel.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "energy"
+      ],
+      "description": {
+        "pt_BR": "Converta a corrente de um rio em energia para uma pequena oficina.",
+        "en": "Turn flowing river water into power for a small workshop."
+      },
+      "source": "craft",
+      "place": "waterwheel"
+    },
+    "power_pole": {
+      "id": "power_pole",
+      "name": {
+        "pt_BR": "Poste elétrico",
+        "en": "Power pole"
+      },
+      "type": "electrical",
+      "rarity": "common",
+      "weight": 3.0,
+      "stack": 10,
+      "icon": "res://Assets/UI/Items/power_pole.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "energy"
+      ],
+      "description": {
+        "pt_BR": "Estenda cabos em segmentos de até 18 metros.",
+        "en": "Extend cables in segments of up to 18 metres."
+      },
+      "source": "craft",
+      "place": "power_pole"
+    },
+    "electric_lamp": {
+      "id": "electric_lamp",
+      "name": {
+        "pt_BR": "Luminária elétrica",
+        "en": "Electric lamp"
+      },
+      "type": "electrical",
+      "rarity": "common",
+      "weight": 3.0,
+      "stack": 10,
+      "icon": "res://Assets/UI/Items/electric_lamp.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "energy"
+      ],
+      "description": {
+        "pt_BR": "Consome 6 W de uma rede ligada.",
+        "en": "Uses 6 W from a connected grid."
+      },
+      "source": "craft",
+      "place": "electric_lamp"
+    },
+    "motor": {
+      "id": "motor",
+      "name": {
+        "pt_BR": "Motor de bancada",
+        "en": "Workshop motor"
+      },
+      "type": "mechanical",
+      "rarity": "common",
+      "weight": 3.0,
+      "stack": 10,
+      "icon": "res://Assets/UI/Items/motor.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "energy"
+      ],
+      "description": {
+        "pt_BR": "Instale em uma máquina: 40 W, produção 50% mais rápida; para sem energia.",
+        "en": "Install in a machine: 40 W, 50% faster production; pauses without power."
+      },
+      "source": "craft"
+    },
+    "conveyor": {
+      "id": "conveyor",
+      "name": {
+        "pt_BR": "Esteira transportadora",
+        "en": "Conveyor belt"
+      },
+      "type": "mechanical",
+      "rarity": "common",
+      "weight": 4.0,
+      "stack": 10,
+      "icon": "res://Assets/UI/Items/conveyor.svg",
+      "pickup_model": "res://Items/WorldPickup.gd",
+      "durability": 0,
+      "statistics": {},
+      "tags": [
+        "automation"
+      ],
+      "description": {
+        "pt_BR": "Transfere 1 item por segundo entre oficinas a até 8 m. A origem precisa de motor energizado.",
+        "en": "Moves 1 item per second between workshops within 8 m. Source requires a powered motor."
+      },
+      "source": "craft"
     }
   },
   "recipes": {
@@ -3925,6 +4043,81 @@
       "era": 0,
       "category": "medicine",
       "unlocks": []
+    },
+    "waterwheel": {
+      "inputs": {
+        "plank": 8,
+        "iron_ingot": 6,
+        "gear": 3,
+        "wire": 4
+      },
+      "outputs": {
+        "waterwheel": 1
+      },
+      "station": "mechanical_workshop",
+      "time": 6.0,
+      "era": 0,
+      "unlocks": [],
+      "category": "mechanical"
+    },
+    "power_pole": {
+      "inputs": {
+        "plank": 2,
+        "wire": 1
+      },
+      "outputs": {
+        "power_pole": 1
+      },
+      "station": "mechanical_workshop",
+      "time": 6.0,
+      "era": 0,
+      "unlocks": [],
+      "category": "electrical"
+    },
+    "electric_lamp": {
+      "inputs": {
+        "iron_ingot": 2,
+        "wire": 3,
+        "glass": 2
+      },
+      "outputs": {
+        "electric_lamp": 1
+      },
+      "station": "electrical_bench",
+      "time": 6.0,
+      "era": 0,
+      "unlocks": [],
+      "category": "electrical"
+    },
+    "motor": {
+      "inputs": {
+        "iron_ingot": 3,
+        "gear": 2,
+        "wire": 3
+      },
+      "outputs": {
+        "motor": 1
+      },
+      "station": "mechanical_workshop",
+      "time": 6.0,
+      "era": 0,
+      "unlocks": [],
+      "category": "mechanical"
+    },
+    "conveyor": {
+      "inputs": {
+        "iron_ingot": 2,
+        "gear": 1,
+        "cloth": 2
+      },
+      "outputs": {
+        "conveyor": 1
+      },
+      "station": "mechanical_workshop",
+      "time": 5.0,
+      "era": 0,
+      "unlocks": [],
+      "category": "mechanical"
     }
   },
   "stations": {
@@ -4341,7 +4534,9 @@
       "6. Monte a bigorna; transforme cobre e gravetos em uma picareta de cobre. Ela alcança o ferro.",
       "7. Fundir ferro permite serraria e oficina mecânica; fios, circuitos e concreto abrem as oficinas seguintes.",
       "Filas guardam materiais reservados. Sem espaço, a entrega aguarda; cancelar também espera espaço para devolver tudo.",
-      "Bancadas possuem entradas/saídas próprias e continuam produzindo enquanto o servidor está aberto, mesmo sem o dono conectado."
+      "Bancadas possuem entradas/saídas próprias e continuam produzindo enquanto o servidor está aberto, mesmo sem o dono conectado.",
+      "8. Na oficina mecânica, fabrique a roda-d’água, postes e um motor. Instale a roda em corrente profunda, use cabos até 18 m, instale o motor em uma máquina e conecte. Na bancada elétrica, fabrique luminárias. Sem energia suficiente, a máquina motorizada para.",
+      "9. Fabrique uma esteira na oficina mecânica. Abra a máquina de origem, escolha produto e destino compatível a até 8 m e conecte. A origem precisa de motor energizado; 1 item/s sai de seu buffer e entra no destino, sem criar recursos."
     ],
     "en": [
       "Gather wood and stone, then craft an axe and a stone pickaxe.",
@@ -4352,7 +4547,9 @@
       "Build an anvil and craft a copper pickaxe from copper and sticks; use it to mine iron.",
       "Iron enables sawmills and mechanics; wire, circuits and concrete unlock further workshops.",
       "Escrow waits safely when full; cancellation also needs room for a complete refund.",
-      "Stations keep producing on a running server when their owner disconnects."
+      "Stations keep producing on a running server when their owner disconnects.",
+      "Build waterwheel, poles and motor at the mechanical workshop. Place the wheel in a deep river current, connect cables up to 18 m, install and wire a workshop motor. Make lamps at the electrical bench. An installed motor pauses when power is insufficient.",
+      "Craft a conveyor at the mechanical workshop. Open the source machine, choose an output and a compatible destination within 8 m. A powered source motor moves 1 item/s from output storage into the destination, without creating resources."
     ]
   },
   "legacy_machines": {

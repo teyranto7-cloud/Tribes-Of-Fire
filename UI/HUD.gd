@@ -18,6 +18,7 @@ var inventory_signature: String = ""
 var refresh_left: float = 0.0
 var sensitivity_value: float = 0.003
 var root: Control
+var menu_backdrop: Control
 
 const INK := Color("#e8e6d0")
 const GOLD := Color("#eeb777")
@@ -59,6 +60,11 @@ func _ready() -> void:
 		button_style.content_margin_bottom = 9
 		theme.set_stylebox(state, "Button", button_style)
 	root.theme = theme
+	menu_backdrop = preload("res://UI/MenuBackdrop.gd").new()
+	menu_backdrop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	root.add_child(menu_backdrop)
+	var vitals := preload("res://UI/VitalsOverlay.gd").new(); vitals.game = game
+	vitals.position = Vector2(18, 18); root.add_child(vitals)
 	var minimap := preload("res://UI/NavigationMiniMap.gd").new(); minimap.game=game
 	minimap.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
 	minimap.offset_left=-178;minimap.offset_right=-18;minimap.offset_top=18;minimap.offset_bottom=178
@@ -74,8 +80,9 @@ func _ready() -> void:
 	stats.add_theme_constant_override("shadow_offset_x", 2)
 	stats.add_theme_constant_override("shadow_offset_y", 2)
 	root.add_child(stats)
+	stats.hide()
 	exposure_label = Label.new()
-	exposure_label.position = Vector2(24, 102)
+	exposure_label.position = Vector2(24, 166)
 	exposure_label.add_theme_color_override("font_color", Color("#b6d9ef"))
 	root.add_child(exposure_label)
 	hint = Label.new()
@@ -89,7 +96,11 @@ func _ready() -> void:
 	hint.add_theme_constant_override("shadow_offset_y", 1)
 	root.add_child(hint)
 	notice_label = Label.new()
-	notice_label.position = Vector2(24, 158)
+	notice_label.position = Vector2(24, 225)
+	notice_label.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
+	notice_label.position = Vector2(24, 225)
+	notice_label.custom_minimum_size.x = 290
+	notice_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	notice_label.add_theme_color_override("font_color", GOLD)
 	notice_label.add_theme_font_size_override("font_size", 18)
 	root.add_child(notice_label)
@@ -135,12 +146,16 @@ func _ready() -> void:
 
 func _fit_panel() -> void:
 	var viewport_size := get_viewport().get_visible_rect().size
+	panel.set_anchors_preset(Control.PRESET_CENTER)
 	var half_width := minf(420.0 if mode in ["inventory", "map"] else 300.0, viewport_size.x * 0.5 - 12.0)
 	var half_height := minf(308.0, viewport_size.y * 0.5 - 12.0)
 	panel.offset_left = -half_width
 	panel.offset_right = half_width
 	panel.offset_top = -half_height
 	panel.offset_bottom = half_height
+	if mode=="menu" and viewport_size.x>=1100:
+		panel.set_anchors_preset(Control.PRESET_CENTER_LEFT)
+		panel.offset_left=48;panel.offset_right=528
 
 
 func text(value: String, size: int = 17, tint: Color = INK) -> Label:
@@ -198,6 +213,8 @@ func loading(value: String) -> void:
 
 func show_panel(value: String) -> void:
 	mode = value
+	menu_backdrop.visible = not game.running
+	shade.color.a = 0.12 if not game.running else 0.64
 	_fit_panel()
 	game.set_controls(value == "")
 	panel.visible = value != ""
@@ -244,6 +261,15 @@ func show_panel(value: String) -> void:
 		"technology": _technology()
 		"storage": _storage()
 		"factory": _factory()
+		"energy":
+			_heading(t("Rede de energia", "Power grid"))
+			_add_panel(preload("res://UI/EnergyPanel.gd"))
+			button(t("Atualizar conexões", "Refresh connections"), func():show_panel("energy"))
+			button(tr("Back"), func():show_panel(""))
+		"trade":
+			_heading(t("Trocas entre jogadores", "Player trading"))
+			_add_panel(preload("res://UI/TradePanel.gd"))
+			button(tr("Back"), func(): show_panel("pause"))
 		"clans": _clans()
 		"map":
 			_heading(tr("World map"))
@@ -267,9 +293,9 @@ func show_panel(value: String) -> void:
 
 func _main_menu() -> void:
 	var emblem:=TextureRect.new();emblem.texture=preload("res://Assets/icon.svg")
-	emblem.custom_minimum_size=Vector2(64,64);emblem.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
+	emblem.custom_minimum_size=Vector2(40,40);emblem.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
 	emblem.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;column.add_child(emblem)
-	_heading(t("Sobrevivência • exploração • construção", "Survival • exploration • building"))
+	_heading(t("Entre no vale. Acenda sua história.", "Enter the valley. Kindle your story."))
 	button(t("Continuar jornada salva", "Continue saved journey"), Callable(game, "load_game")).disabled = game.saved.is_empty()
 	button(t("Nova jornada local", "New local journey"), func(): show_panel("create_world"))
 	button(t("Hospedar / Conectar por IP", "Host / Connect by IP"), func(): show_panel("network"))
@@ -284,6 +310,7 @@ func _main_menu() -> void:
 
 func _pause() -> void:
 	_heading(t("ACAMPAMENTO", "CAMP"))
+	button(t("Trocar com um jogador próximo", "Trade with a nearby player"), func(): show_panel("trade"))
 	button(t("Tribos e diplomacia","Tribes and diplomacy"),func():show_panel("clans"))
 	button(t("Retomar jornada", "Resume journey"), func(): show_panel(""))
 	var save_button := button(t("Salvar [F5]", "Save [F5]"), Callable(game, "save_game"))

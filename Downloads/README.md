@@ -1,6 +1,6 @@
 # Downloads — Tribes of Fire
 
-Criado por **felipealx**. Entrega atual: [0.7.1-dev](0.7.1-dev/).
+Criado por **felipealx**. Entrega atual: [0.8.0-dev](0.8.0-dev/).
 
 - Windows: execute o instalador `Windows-Setup.exe` ou extraia `Windows.zip`.
 - Linux: extraia `Linux.zip`, permita executar e abra `TribesOfFire.x86_64`.

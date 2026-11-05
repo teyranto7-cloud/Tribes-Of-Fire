@@ -38,12 +38,16 @@ func _build() -> void:
 					if game.world.sampler.watershed != null and game.world.sampler.path_distance(p.x,p.y)<2.2:color=Color("#bda77a")
 			image.set_pixel(x, y, color)
 	texture = ImageTexture.create_from_image(image)
+	var layout:=HBoxContainer.new();layout.add_theme_constant_override("separation",16);add_child(layout)
+	var left:=VBoxContainer.new();left.size_flags_horizontal=Control.SIZE_EXPAND_FILL;layout.add_child(left)
+	var aspect:=AspectRatioContainer.new();aspect.ratio=1;aspect.size_flags_horizontal=Control.SIZE_EXPAND_FILL;aspect.size_flags_vertical=Control.SIZE_EXPAND_FILL;left.add_child(aspect)
+	var side:=VBoxContainer.new();side.custom_minimum_size.x=240;side.size_flags_horizontal=Control.SIZE_EXPAND_FILL;layout.add_child(side)
 	canvas = MapCanvas.new()
 	canvas.owner_panel = self
 	canvas.custom_minimum_size = Vector2(280, 280)
 	canvas.clip_contents = true
-	add_child(canvas)
-	var navigation := HBoxContainer.new(); add_child(navigation)
+	aspect.add_child(canvas)
+	var navigation := HBoxContainer.new(); left.add_child(navigation)
 	var center := Button.new(); center.text = label("Centrar no jogador", "Center on player")
 	center.pressed.connect(func(): canvas.center_player()); navigation.add_child(center)
 	var reset := Button.new(); reset.text = label("Mapa inteiro", "Whole map")
@@ -51,23 +55,29 @@ func _build() -> void:
 	coordinates = CheckBox.new(); coordinates.text = label("Coordenadas", "Coordinates")
 	coordinates.button_pressed = game.settings_manager.read("accessibility", "map_coordinates", false) == true
 	coordinates.toggled.connect(func(value): game.settings_manager.write_sections({"accessibility": {"map_coordinates": value}}); canvas.queue_redraw())
-	add_child(coordinates)
+	side.add_child(coordinates)
 	selection_label = Label.new(); selection_label.text = label("Roda: zoom • Arraste com botão direito • Clique para marcar", "Wheel: zoom • Right drag: pan • Click to mark")
 	selection_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; add_child(selection_label)
 	marker_name = LineEdit.new()
 	marker_name.max_length = 40
 	marker_name.placeholder_text = label("Nome do marcador", "Marker name")
-	add_child(marker_name)
+	side.add_child(marker_name)
 	share = CheckBox.new()
 	share.text = label("Compartilhar com a tribo", "Share with tribe")
 	share.disabled = game.runtime.tribes.tribe_of(game.session.player_key(game.session.local_id)).is_empty()
-	add_child(share)
+	side.add_child(share)
 	var add := Button.new()
 	add.text = label("Adicionar marcador", "Add marker")
 	add.pressed.connect(func():
 		game.request_command("map_mark", {"position": [selected.x, selected.y], "name": marker_name.text, "color": 0, "shared": share.button_pressed})
 		game.hud.show_panel("map"))
-	add_child(add)
+	side.add_child(add)
+	var ping := Button.new()
+	ping.text = label("Enviar ping à tribo e aliados · 20 s", "Ping tribe and allies · 20 s")
+	ping.disabled = share.disabled
+	ping.tooltip_text = label("Escolha um local descoberto a até 250 m. O ping não revela terreno ou recursos.", "Choose a discovered location within 250 m. Pings reveal no terrain or resources.")
+	ping.pressed.connect(func(): game.request_command("team_ping", {"position": [selected.x, selected.y]}))
+	side.add_child(ping)
 	for marker in profile["markers"]:
 		var remove := Button.new()
 		remove.text = label("Remover: ", "Remove: ") + marker["name"]
@@ -131,6 +141,11 @@ class MapCanvas extends Control:
 			if owner_panel.coordinates != null and owner_panel.coordinates.button_pressed:
 				draw_string(get_theme_default_font(), Vector2(8, 20), "X %.0f  Z %.0f" % [body.position.x, body.position.z], HORIZONTAL_ALIGNMENT_LEFT, -1, 14)
 		var identity: String = owner_panel.game.session.player_key(owner_panel.game.session.local_id)
+		var pings: Array = owner_panel.game.runtime.team_pings.visible(identity, owner_panel.game.runtime.tribes, owner_panel.game.runtime.channels.blocked) if owner_panel.game.session.is_authority() else owner_panel.game.runtime.ping_view
+		for ping in pings:
+			var point := world_to_screen(Vector2(ping["position"][0], ping["position"][1]))
+			draw_arc(point, 10, 0, TAU, 24, Color("#e9b675"), 2, true)
+			draw_line(point - Vector2(0, 15), point + Vector2(0, 15), Color("#e9b675"), 1, true)
 		for marker in owner_panel.game.journal.visible_markers(identity, owner_panel.game.runtime.tribes):
 			var center := world_to_screen(Vector2(marker["position"][0], marker["position"][1]))
 			draw_circle(center, 4, Color("#edb36a"))

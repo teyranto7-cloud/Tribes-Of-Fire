@@ -97,6 +97,10 @@ def main() -> None:
     receipt_path = ROOT / 'builds' / 'build-receipt.json'
     if not args.test_only:
         receipt_path.unlink(missing_ok=True)
+    for generated in ('builds', 'dist'):
+        directory = ROOT / generated
+        directory.mkdir(parents=True, exist_ok=True)
+        (directory / '.gdignore').touch()
     # --import is explicitly documented to wait for imports and then quit.
     run(engine, ['--editor', '--import'], 'import.log', env)
     # Import can legitimately create UID/import metadata. Freeze the baseline
@@ -104,7 +108,7 @@ def main() -> None:
     expected_source = source_signature()
     tests = [name for name in ('test_rules.gd', 'test_world.gd', 'test_player.gd', 'test_input.gd',
                               'test_gameplay.gd', 'test_v3.gd', 'test_gameplay_regressions.gd',
-                              'test_tribes_regression.gd', 'test_ui_regressions.gd', 'test_phase2.gd', 'test_phase3.gd', 'test_station_transactions.gd', 'test_frontier.gd',
+                              'test_tribes_regression.gd', 'test_ui_regressions.gd', 'test_phase2.gd', 'test_phase3.gd', 'test_station_transactions.gd', 'test_settlement.gd', 'test_mesh_batching.gd', 'test_legacy_extensions.gd', 'test_frontier.gd',
                               'test_voice_regressions.gd', 'test_reliability.gd',
                               'test_startup_close.gd', 'test_delivery_regressions.gd', 'test_playability.gd', 'test_reconstruction.gd', 'test_runner.gd')
              if (ROOT / 'Tests' / name).is_file()]

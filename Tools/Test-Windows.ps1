@@ -1,5 +1,6 @@
 ﻿param(
     [Parameter(Mandatory = $true)][string]$Installer,
+    [string]$PreviousInstaller = "",
     [string]$OutputDirectory = (Join-Path $env:TEMP 'Tribes QA João'),
     [switch]$Headless
 )
@@ -105,11 +106,26 @@ function Run-Game([string]$Arguments, [string]$Log, [string]$Name) {
     return $Text
 }
 try {
+    $UpgradeBefore = $null
+    if (-not [string]::IsNullOrWhiteSpace($PreviousInstaller)) {
+        $PreviousInstaller = (Resolve-Path $PreviousInstaller).Path
+        $Bootstrap = Start-Process -FilePath $PreviousInstaller -ArgumentList @('/S', "/D=$InstallDirectory") -Wait -PassThru
+        Check ($Bootstrap.ExitCode -eq 0) 'Previous released installer succeeds before upgrade'
+        $Executable = Join-Path $InstallDirectory 'TribesOfFire.exe'
+        $PreviousExecutableHash = (Get-FileHash -LiteralPath $Executable -Algorithm SHA256).Hash
+        $WorldDirectory = Join-Path $OutputDirectory 'Persistent world João'
+        $OldLog = Join-Path $OutputDirectory 'previous-version.log'
+        $OldArguments = '--headless --audio-driver Dummy --log-file "' + $OldLog + '" -- --play --save-dir="' + $WorldDirectory + '" --quit-after-seconds=3'
+        $null = Run-Game $OldArguments $OldLog 'Previous released Windows game'
+        $UpgradeBefore = Read-WorldSnapshot $WorldDirectory
+        Check (@($UpgradeBefore.Data.players.PSObject.Properties).Count -gt 0) 'Previous version creates a real persisted profile'
+    }
     # NSIS /D must be last and consumes the unquoted remainder, including spaces.
     $Process = Start-Process -FilePath $Installer -ArgumentList @('/S', "/D=$InstallDirectory") -Wait -PassThru
     Check ($Process.ExitCode -eq 0) 'Installer exits successfully'
     $Executable = Join-Path $InstallDirectory 'TribesOfFire.exe'
     Check (Test-Path $Executable) 'Game executable installed'
+    if ($null -ne $UpgradeBefore) { Check ((Get-FileHash -LiteralPath $Executable -Algorithm SHA256).Hash -ne $PreviousExecutableHash) 'Upgrade replaces the old game binary' }
     $RequiredDocs = @('README.md', 'ARCHITECTURE.md', 'PROGRESS.md', 'CREDITS.md', 'Docs/COMMUNICATION.md', 'Docs/AUDIT.md', 'Docs/TEST_REPORT.md', 'Tests/MANUAL.md', 'Tools/Test-Windows.ps1')
     Check (@($RequiredDocs | Where-Object { -not (Test-Path (Join-Path $InstallDirectory $_)) }).Count -eq 0) 'All linked documentation installed'
     Check (Test-Path $ShortcutPath) 'Desktop shortcut created by default'
@@ -122,9 +138,19 @@ try {
     $WorldDirectory = Join-Path $OutputDirectory 'Persistent world João'
     $Log = Join-Path $OutputDirectory 'game-export.log'
     $Arguments = '--log-file "' + $Log + '" -- --play --save-dir="' + $WorldDirectory + '" --quit-after-seconds=3'
+    if ($null -ne $UpgradeBefore) { $Arguments = $Arguments.Replace('--play', '--server') }
     if ($Headless) { $Arguments = '--headless --audio-driver Dummy ' + $Arguments }
     $null = Run-Game $Arguments $Log 'Exported Windows game'
     $Before = Read-WorldSnapshot $WorldDirectory
+    if ($null -ne $UpgradeBefore) {
+        Check (Json-Equal $UpgradeBefore.Data.players $Before.Data.players) 'Cross-version upgrade preserves every saved player field'
+        Check (Json-Equal $UpgradeBefore.Data.world $Before.Data.world) 'Cross-version upgrade preserves seed and generator'
+        Check ($Before.Sequence -gt $UpgradeBefore.Sequence -and $Before.Data.phase -gt $UpgradeBefore.Data.phase) 'Cross-version upgrade loads the old world and advances it'
+        $ClientLog = Join-Path $OutputDirectory 'upgraded-client.log'
+        $ClientWorld = Join-Path $OutputDirectory 'Isolated upgraded client'
+        $ClientArguments = '--headless --audio-driver Dummy --log-file "' + $ClientLog + '" -- --play --save-dir="' + $ClientWorld + '" --quit-after-seconds=2'
+        $null = Run-Game $ClientArguments $ClientLog 'Upgraded Windows client'
+    }
     Check ($Before.Data.phase -gt 450) 'Unicode path with spaces stores a checksummed world with players and advancing time'
     Check (-not (Test-Path (Join-Path $WorldDirectory '.writer-lock'))) 'Game shutdown releases the world lock'
 
@@ -163,8 +189,10 @@ try {
     [pscustomobject]@{
         System = [Environment]::OSVersion.VersionString
         ExecutionMode = $(if ($Headless) { 'headless; graphical validation remains pending' } else { 'graphical startup' })
+        PreviousInstallerTested = $PreviousInstaller
+        CrossVersionUpgradeTested = ($null -ne $UpgradeBefore)
         PersistenceExecutionMode = 'headless dedicated server restart'
         ExecutedChecks = $Results
-        ManualPending = @('Installer language chooser and all six languages', 'Launch through the desktop shortcut without arguments', 'Rendered gameplay and graphical first-run language selection', 'Interactive character creation and persistence', 'Microphone and speakers', 'Multiplayer with real remote peers', 'Windows 10 and Windows 11 separate machines', 'Target hardware benchmark', 'Upgrade from a different released version')
+        ManualPending = @('Installer language chooser and all six languages', 'Launch through the desktop shortcut without arguments', 'Rendered gameplay and graphical first-run language selection', 'Interactive character creation and persistence', 'Microphone and speakers', 'Multiplayer with real remote peers', 'Windows 10 and Windows 11 separate machines', 'Target hardware benchmark')
     } | ConvertTo-Json -Depth 5 | Set-Content -Encoding UTF8 -LiteralPath (Join-Path $OutputDirectory 'windows-report.json')
 }

@@ -1,0 +1,177 @@
+Engine: 4.6.3.stable.official.7d41c59c4
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --editor --import
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (1 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
+[   0% ] [90m[1mreimport[22m | windows-results.csv[39m[0m
+[  50% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (1 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_rules.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+RULES CHECKS=61 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_world.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+WORLD CHECKS=25 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_player.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PLAYER_CHECKS=11 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_input.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+INPUT CHECKS=8 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_gameplay.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+GAMEPLAY CHECKS=17 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_v3.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+V3 CHECKS=109 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_gameplay_regressions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAMEPLAY_REGRESSIONS CHECKS=25 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_tribes_regression.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+TRIBES CHECKS=32 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_ui_regressions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+NETWORK_FAILURE simulated connection failure for regression test
+PLAYER_JOINED id=1 count=1
+UI_REGRESSIONS CHECKS=33 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_phase2.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PHASE2 CHECKS=36 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_phase3.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_LEFT id=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=2 count=2
+PLAYER_LEFT id=2
+PLAYER_JOINED id=1 count=1
+PHASE3 CHECKS=804 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_station_transactions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_LEFT id=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+STATION_TRANSACTIONS CHECKS=46 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_frontier.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+FRONTIER CHECKS=2758 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_voice_regressions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+VOICE_REGRESSION CHECKS=8 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_reliability.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+RELIABILITY CHECKS=21 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_startup_close.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+STARTUP_CLOSE CHECKS=2 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_delivery_regressions.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+DELIVERY_REGRESSIONS CHECKS=9 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_playability.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYABILITY CHECKS=144 FAILED=0
++ /usr/local/bin/godot --headless --path /workspace/Tribes-Of-Fire --script res://Tests/test_reconstruction.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=2 count=2
+PLAYER_LEFT id=2
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+PLAYER_JOINED id=1 count=1
+RECONSTRUCTION CHECKS=83 FAILED=0
+PERSISTENCE_PROCESS CHECKS=4 FAILED=0 (forced termination, refusal, explicit recovery, release)
+STARTUP_PROCESS CHECKS=7 FAILED=0 (real isolated startup, safe mode, corrupt-save refusal)
+test_binary_stages_include_all_linked_local_documentation (__main__.BuildIntegrityTests.test_binary_stages_include_all_linked_local_documentation) ... ok
+test_checksum_link_is_external_without_editing_source_readme (__main__.BuildIntegrityTests.test_checksum_link_is_external_without_editing_source_readme) ... ok
+test_failed_new_full_build_does_not_leave_previous_receipt (__main__.BuildIntegrityTests.test_failed_new_full_build_does_not_leave_previous_receipt) ... ok
+test_git_source_zip_respects_ignore_and_keeps_new_public_sources (__main__.BuildIntegrityTests.test_git_source_zip_respects_ignore_and_keeps_new_public_sources) ... ok
+test_runtime_signature_does_not_hash_export_credentials (__main__.BuildIntegrityTests.test_runtime_signature_does_not_hash_export_credentials) ... ok
+test_source_changed_after_windows_export_stops_other_exports (__main__.BuildIntegrityTests.test_source_changed_after_windows_export_stops_other_exports) ... ok
+test_source_changed_at_last_export_cannot_write_receipt (__main__.BuildIntegrityTests.test_source_changed_at_last_export_cannot_write_receipt) ... ok
+test_source_changed_during_rules_rejects_the_cohort (__main__.BuildIntegrityTests.test_source_changed_during_rules_rejects_the_cohort) ... ok
+test_stable_import_tests_and_exports_share_one_receipt (__main__.BuildIntegrityTests.test_stable_import_tests_and_exports_share_one_receipt) ... ok
+test_standalone_source_zip_excludes_profiles_credentials_and_builds (__main__.BuildIntegrityTests.test_standalone_source_zip_excludes_profiles_credentials_and_builds) ... ok
+test_test_only_does_not_export_or_create_receipt (__main__.BuildIntegrityTests.test_test_only_does_not_export_or_create_receipt) ... ok
+test_test_only_source_change_also_invalidates_old_receipt (__main__.BuildIntegrityTests.test_test_only_source_change_also_invalidates_old_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.054s
+
+OK
+BUILD_INTEGRITY CHECKS=12 FAILED=0

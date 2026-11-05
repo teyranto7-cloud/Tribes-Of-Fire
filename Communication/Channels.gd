@@ -23,6 +23,10 @@ func recipients(sender: String, channel: String, target: String, positions: Dict
 				allowed = positions[sender].distance_to(positions[key]) <= (voice_range if voice else local_range)
 			"tribe":
 				allowed = tribes.tribe_of(sender) != "" and tribes.tribe_of(sender) == tribes.tribe_of(key)
+			"allies":
+				var a: String = tribes.tribe_of(sender)
+				var b: String = tribes.tribe_of(key)
+				allowed = not a.is_empty() and not b.is_empty() and (a == b or tribes.relations.get(tribes.pair_key(a, b), {}).get("status") == "allied")
 			"private":
 				if voice:
 					allowed = calls.has(target) and calls[target]["accepted"] and sender in calls[target]["members"] and key in calls[target]["members"]

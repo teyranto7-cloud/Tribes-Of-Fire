@@ -1,3 +1,28 @@
+# Continuidade — 0.8.0-dev
+
+Criado por **felipealx**. Mesmo projeto Godot 4.6.3/Compatibility; baseline 185a463
+preservado em checkpoint/pre-0.8-185a463. Nenhuma mecânica anterior removida.
+
+- Corrigida perda de faces no batching: 188→108 triângulos antes; 188→188 depois.
+- Menu/HUD, mapa proporcional, custos e progresso de bancada, 17 modelos de oficina
+  e famílias de pickups melhorados; malhas reunidas por material sem descartar partes.
+- Roda-d’água por corrente real, postes, cabos pagos/permissões, demanda/sobrecarga,
+  motor 40 W/produção automática 1,5× e lâmpada 6 W, com luz próxima limitada por preset.
+- Esteira 1 item/s entre oficinas até 8 m, com caminho livre e motor energizado.
+- Troca direta atômica com aceite, privacidade, capacidade, desgaste, replay e expiração.
+- Canal de aliados e pings temporários filtrados pelo servidor; chat existente mantido.
+- 105 itens/94 receitas/17 bancadas; campos opcionais de energia/rotas nos saves versão 4.
+
+Suíte final: **4.372 checks, zero falhas, 25 runners**, incluindo 59 de indústria/
+social/troca e oito de integridade geométrica. Builds Windows/Linux/dedicado gerados
+com recibo de fontes/binários. Demais resultados finais são registrados em
+[Docs/SETTLEMENT_REPORT.md](Docs/SETTLEMENT_REPORT.md) e Docs/verification/0.8.0-dev.
+Não transferir aprovação de instaladores antigos para esta revisão.
+
+[Rastreabilidade dos pedidos da conversa](Docs/REQUEST_TRACEABILITY.md): marcos A–D
+não integralmente aprovados; há conteúdo, arte, dispositivos e escalabilidade pendentes.
+O histórico anterior está preservado abaixo.
+
 # Auditoria das Fases 1–3 — 0.7.1-dev
 
 Criado por **felipealx**. Sem novo sistema, catálogo ou asset. Corrigidos replay de

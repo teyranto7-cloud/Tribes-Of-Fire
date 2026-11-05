@@ -1,0 +1,43 @@
+{
+  "version": "0.8.0-dev",
+  "baseline": "185a463",
+  "application_source_sha256": "99aea8f79d4ae2194923421e8e0574b745714b462cebe313af48a1cbd74c0398",
+  "suite": {
+    "checks": 4372,
+    "failed": 0,
+    "runners": 25
+  },
+  "gui": {
+    "captures": [
+      "res://builds/settlement/ui/main-menu-1280x720.png",
+      "res://builds/settlement/ui/energy-crafting-1280x720.png",
+      "res://builds/settlement/ui/trade-offer-1280x720.png",
+      "res://builds/settlement/ui/team-ping-map-1280x720.png",
+      "res://builds/settlement/ui/inventory-1920x1080.png",
+      "res://builds/settlement/ui/inventory-800x600.png",
+      "res://builds/settlement/ui/workshops-gallery.png",
+      "res://builds/settlement/ui/workshops-forge-closeup.png",
+      "res://builds/settlement/ui/workshops-loom-closeup.png",
+      "res://builds/settlement/ui/river-powered-workshop-night.png",
+      "res://builds/settlement/ui/vitals-hud-1280x720.png",
+      "res://builds/settlement/ui/character-complete-closeup.png"
+    ],
+    "checks": 37,
+    "failed": 0,
+    "method": "Actual window input and framebuffer; isolated fixture materials, second player, gallery and powered night scene. ENet separately tests command authority."
+  },
+  "startup": {
+    "checks": 50,
+    "failed": 0
+  },
+  "exports": {
+    "checks": 6,
+    "failed": 0
+  },
+  "source_package": {
+    "checks": 2,
+    "failed": 0
+  },
+  "soak": "first run failed one 5-second command deadline under competing QA/builds; isolated 15-second-deadline repeat pending",
+  "windows_native": "pending after publication"
+}

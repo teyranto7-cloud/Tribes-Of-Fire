@@ -1,3 +1,24 @@
+# Pendências atuais — 0.8.0-dev
+
+Consulte [REQUEST_TRACEABILITY.md](REQUEST_TRACEABILITY.md) para cada grupo de pedidos
+e [SETTLEMENT_REPORT.md](SETTLEMENT_REPORT.md) para testes desta revisão.
+
+Energia de rio, fios/luzes/motores, esteiras ponto a ponto, troca direta e pings de
+tribo/aliados agora possuem implementação integrada. Arte procedural foi refinada;
+a perda de faces no batching foi corrigida. Isso substitui as descrições antigas
+que tratavam toda energia/automação/troca/ping como ausentes.
+
+Continuam pendentes: todos os assets/animações finais, durabilidade por cópia,
+navios e túneis volumétricos, 12 km, suporte validado a oito grandes tribos e
+100 jogadores, cercos/guerra territorial/catapulta completos, mercados/NPCs,
+splitters/automação avançada, remoção/reposicionamento completo de aparelhos,
+WAL/fsync e testes de queda de energia, Steamworks/publicação Steam/assinatura,
+revisão linguística dos seis idiomas, microfones/voz humana e rede externa,
+Windows gráfico físico, GPU/hardware alvo e playtest humano dos 60 minutos.
+
+A cadeia industrial atual permite produção real; não equivale a uma cidade
+completa. Os relatos 0.5 abaixo são históricos, não a matriz atual de ausências.
+
 # Pendências — 0.5.0-dev
 
 Criado por **felipealx**. O estado anterior está preservado em

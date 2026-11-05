@@ -1,11 +1,32 @@
 # Tribes of Fire
 
-Criado por **felipealx** · código em desenvolvimento **0.7.1-dev** · Godot 4.6.3 · Windows/Linux x64
+Criado por **felipealx** · código em desenvolvimento **0.8.0-dev** · Godot 4.6.3 · Windows/Linux x64
 
 Jogo de sobrevivência 3D em terceira pessoa, com modo solo, hospedagem por jogador
 e servidor dedicado autoritativo. A reconstrução continua a base existente; não é
 uma versão 1.0 concluída. Funcionalidades, resultados observados e critérios ainda
 pendentes estão em [PROGRESS.md](PROGRESS.md) e [Docs/PENDENCIAS.md](Docs/PENDENCIAS.md).
+
+## Continuidade 0.8.0-dev — indústria e qualidade
+
+Corrigida uma causa de partes desaparecendo: a união de malhas perdia faces.
+Menu/HUD, mapa, 17 bancadas e famílias de pickups foram refinados. Roda-d’água,
+postes/fios, lâmpadas, motores e esteiras permitem uma cadeia automática real.
+Trocas entre jogadores, canal de aliados e pings de equipe têm autoridade no servidor.
+Catálogo atual: **105 itens, 94 receitas e 17 bancadas**.
+
+[Instalador, ZIPs Windows/Linux, servidor e fontes](Downloads/0.8.0-dev) ·
+[Resultados e reprodução](Docs/SETTLEMENT_REPORT.md) ·
+[Pedidos atendidos, parciais e pendentes](Docs/REQUEST_TRACEABILITY.md).
+
+Para energia, fabrique os kits na oficina mecânica/elétrica. Posicione pela mochila
+ou atalho, use E no aparelho e conecte cabos. Instale um motor na máquina; a produção
+automática pausa sem potência. Configure uma esteira para uma oficina próxima com
+receita compatível. Trocas ficam em Esc → Trocar com um jogador próximo; pings em M.
+
+Esta entrega permanece em desenvolvimento; a lista completa de funcionalidades
+pedidas não está concluída. Voz física, QA gráfico em Windows/hardware alvo e
+arte final exigem validação adicional. Os resultados abaixo da 0.7.1 são históricos.
 
 ## Auditoria de regressão 0.7.1-dev
 
@@ -23,7 +44,7 @@ hardware alvo e carga de 100 jogadores permanecem pendentes.
 
 ## Fase 3 — itens e fabricação preservados
 
-100 itens, 89 receitas e 17 bancadas em [Data/Items.json](Data/Items.json), com
+105 itens, 94 receitas e 17 bancadas em [Data/Items.json](Data/Items.json), com
 coleta por ferramenta/dureza, stacks e peso, filas atômicas, cancelamento com
 reembolso, produção persistida e proteção contra pedidos repetidos. Dois ciclos
 completos chegam a parede/baú e a uma ferramenta de cobre capaz de minerar ferro.
@@ -31,12 +52,12 @@ completos chegam a parede/baú e a uma ferramenta de cobre capaz de minerar ferr
 I abre a mochila; Fabricação contém busca, categorias e guia de progressão.
 Selecione um kit e use Posicionar. E abre a estação para selecionar receita,
 abastecer e retirar produtos. Consulte o [relatório da Fase 3](Docs/PHASE3_REPORT.md).
-**Baixar:** [Instalador Windows](Downloads/0.7.1-dev/TribesOfFire-0.7.1-dev-Windows-Setup.exe?raw=true) · [ZIP Windows](Downloads/0.7.1-dev/TribesOfFire-0.7.1-dev-Windows.zip?raw=true) · [ZIP Linux](Downloads/0.7.1-dev/TribesOfFire-0.7.1-dev-Linux.zip?raw=true) · [Servidor Linux](Downloads/0.7.1-dev/TribesOfFire-0.7.1-dev-Server-Linux.zip?raw=true) · [Fontes ZIP](Downloads/0.7.1-dev/TribesOfFire-0.7.1-dev-Source.zip?raw=true).
+**Baixar:** [Instalador Windows](Downloads/0.8.0-dev/TribesOfFire-0.8.0-dev-Windows-Setup.exe?raw=true) · [ZIP Windows](Downloads/0.8.0-dev/TribesOfFire-0.8.0-dev-Windows.zip?raw=true) · [ZIP Linux](Downloads/0.8.0-dev/TribesOfFire-0.8.0-dev-Linux.zip?raw=true) · [Servidor Linux](Downloads/0.8.0-dev/TribesOfFire-0.8.0-dev-Server-Linux.zip?raw=true) · [Fontes ZIP](Downloads/0.8.0-dev/TribesOfFire-0.8.0-dev-Source.zip?raw=true).
 
 No Windows, execute o instalador ou extraia o ZIP e abra `TribesOfFire.exe`.
 No Linux, extraia o ZIP e execute `chmod +x TribesOfFire.x86_64` seguido de
 `./TribesOfFire.x86_64`. O jogo exportado não exige o editor Godot.
-[Hashes SHA256](Downloads/0.7.1-dev/SHA256SUMS.txt) · [Verificação desta entrega](Docs/AUDIT_PHASES_1_3.md).
+[Hashes SHA256](Downloads/0.8.0-dev/SHA256SUMS.txt) · [Verificação desta entrega](Docs/SETTLEMENT_REPORT.md).
 A versão permanece em desenvolvimento; os pacotes anteriores estão preservados.
 
 ## Continuidade 0.6.0-dev
@@ -84,7 +105,7 @@ godot --path .
 ```
 
 O checkout contém código, assets, testes e instruções de build. A pasta
-`Downloads/0.7.1-dev` contém os pacotes preparados desta revisão.
+`Downloads/0.8.0-dev` contém os pacotes preparados desta revisão.
 
 Escolha o idioma, uma nova jornada, a seed e o personagem. Mundos novos usam um
 terreno de **1536 × 1536 m** com geração determinística; saves anteriores preservam

@@ -93,9 +93,20 @@ func run() -> void:
 	await physics_frame
 	check(world.cut_ids() == [1, 4] and world.fires.size() == 1 and world.shelters.size() == 1, "World edits restore across tree and building state")
 	player.queue_free()
+	var playbacks: Array[WeakRef] = []
+	_collect_playbacks(world,playbacks)
+	# Use the world's real emitter cleanup and verify mixer release. A fixed
+	# delay could race the audio thread when other processes are using the CPU.
+	world._stop_world_audio(world)
 	world.queue_free()
 	await process_frame
-	# Allow the audio mixer thread to retire playbacks before the runner exits.
-	await create_timer(0.2).timeout
+	var deadline := Time.get_ticks_msec()+2000
+	while playbacks.any(func(playback):return playback.get_ref()!=null) and Time.get_ticks_msec()<deadline:
+		await create_timer(0.02).timeout
+	check(not playbacks.any(func(playback):return playback.get_ref()!=null),"World teardown releases every captured mixer playback")
 	print("WORLD CHECKS=%d FAILED=%d" % [checks, failed])
 	quit(0 if failed == 0 else 1)
+
+func _collect_playbacks(node:Node,refs:Array[WeakRef])->void:
+	if (node is AudioStreamPlayer or node is AudioStreamPlayer3D) and node.has_stream_playback():refs.append(weakref(node.get_stream_playback()))
+	for child in node.get_children():_collect_playbacks(child,refs)

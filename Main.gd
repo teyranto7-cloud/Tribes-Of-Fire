@@ -508,6 +508,8 @@ func network_state(recipient_id: int = 0) -> Dictionary:
 	data.merge(runtime.save_state(), true)
 	for station in data.get("workshops",[]):
 		if not runtime.tribes.can_build(station["owner"],session.player_key(recipient_id)): station.erase("machine")
+	data["trade_offers"] = runtime.exchange.visible(session.player_key(recipient_id))
+	data["team_pings"] = runtime.team_pings.visible(session.player_key(recipient_id), runtime.tribes, runtime.channels.blocked)
 	data.erase("communication")
 	return data
 
@@ -528,6 +530,8 @@ func _receive_state(data: Dictionary) -> void:
 	clock.elapsed = float(data["phase"])
 	weather.restore(data["weather"])
 	runtime.apply_state(data)
+	runtime.trade_view = data.get("trade_offers", []).duplicate(true)
+	runtime.ping_view = data.get("team_pings", []).duplicate(true)
 	var ids: Array = []
 	for key in data["players"]:
 		var id := int(key)
@@ -962,6 +966,8 @@ func use_quick_slot(index: int) -> void:
 		hud.notify_message(hud.t("Você não possui esse item.","You do not have this item.")); return
 	if item in ["campfire","shelter"]:
 		tool = 2 if item == "campfire" else 3; build_piece=""; return
+	var placement_kind: String = Inventory.Catalog.get_item(item).get("place", "")
+	if not placement_kind.is_empty(): select_building(placement_kind); tool=1; return
 	if item == "water": request_command("drink",{}); return
 	var slots: Array = inventory.serialize()["slots"]
 	for i in range(slots.size()):

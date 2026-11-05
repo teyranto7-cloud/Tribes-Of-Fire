@@ -10,12 +10,13 @@ var minimized: Button
 var unread: int = 0
 var channel: String = "global"
 var target: String = ""
-const CHANNELS := ["global", "local", "tribe", "private", "group", "diplomacy"]
+const CHANNELS := ["global", "local", "tribe", "private", "group", "diplomacy", "allies"]
 func configure(value) -> void:
 	game = value
 	var root := Control.new()
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	root.theme = game.hud.root.theme
 	add_child(root)
 	panel = PanelContainer.new()
 	panel.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)

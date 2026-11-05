@@ -1,0 +1,58 @@
+{
+  "baseline": "185a463",
+  "limitations": "Short llvmpipe diagnostic with no physical GPU or target hardware. Live AI and software-renderer variability; not a sustained FPS certification.",
+  "scenes": [
+    {
+      "scene": "day",
+      "fps_before": 5.97008242445047,
+      "fps_after": 6.17689643074217,
+      "p95_before_ms": 184.697,
+      "p95_after_ms": 174.538,
+      "cpu_before_ms": 152.078388888889,
+      "cpu_after_ms": 148.20152,
+      "memory_before": 138703058,
+      "memory_after": 139748538,
+      "draws_before": 436.0,
+      "draws_after": 435.0
+    },
+    {
+      "scene": "station",
+      "fps_before": 6.02212296993616,
+      "fps_after": 5.81822758923215,
+      "p95_before_ms": 183.102,
+      "p95_after_ms": 197.361,
+      "cpu_before_ms": 159.744452054795,
+      "cpu_after_ms": 162.216070422535,
+      "memory_before": 137035331,
+      "memory_after": 138281571,
+      "draws_before": 427.0,
+      "draws_after": 419.0
+    },
+    {
+      "scene": "night",
+      "fps_before": 6.56871083562067,
+      "fps_after": 6.2945437321294,
+      "p95_before_ms": 167.938,
+      "p95_after_ms": 177.37,
+      "cpu_before_ms": 144.108670886076,
+      "cpu_after_ms": 153.75625,
+      "memory_before": 137124511,
+      "memory_after": 138372775,
+      "draws_before": 436.0,
+      "draws_after": 435.0
+    },
+    {
+      "scene": "storm",
+      "fps_before": 6.29894894577558,
+      "fps_after": 6.32124973768893,
+      "p95_before_ms": 174.709,
+      "p95_after_ms": 178.046,
+      "cpu_before_ms": 152.191710526316,
+      "cpu_after_ms": 153.579631578947,
+      "memory_before": 137137415,
+      "memory_after": 138385679,
+      "draws_before": 437.0,
+      "draws_after": 436.0
+    }
+  ]
+}

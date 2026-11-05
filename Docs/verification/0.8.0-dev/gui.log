@@ -1,0 +1,46 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+GAME_READY role=offline Godot=4.6.3-stable (official)
+AUDIT_GUI PASS Actual window size main-menu-1280x720
+AUDIT_GUI PASS Saved main-menu-1280x720
+PLAYER_JOINED id=1 count=1
+AUDIT_GUI PASS Waterwheel recipe exposes real obtainable materials and station
+AUDIT_GUI PASS Craft click reserves wheel materials exactly once
+AUDIT_GUI PASS Timed crafting creates a usable wheel kit
+AUDIT_GUI PASS Actual window size energy-crafting-1280x720
+AUDIT_GUI PASS Saved energy-crafting-1280x720
+AUDIT_GUI PASS Keyboard shortcut selects a data-defined build kit
+PLAYER_JOINED id=2 count=2
+AUDIT_GUI PASS Mouse creates an unpaid, consent-based trade offer
+AUDIT_GUI PASS Actual window size trade-offer-1280x720
+AUDIT_GUI PASS Saved trade-offer-1280x720
+AUDIT_GUI PASS Accepting counterpart executes the offered trade
+AUDIT_GUI PASS Map button sends a server-owned discovered-position ping
+AUDIT_GUI PASS Actual window size team-ping-map-1280x720
+AUDIT_GUI PASS Saved team-ping-map-1280x720
+AUDIT_GUI PASS Inventory fits (1920, 1080)
+AUDIT_GUI PASS Actual window size inventory-1920x1080
+AUDIT_GUI PASS Saved inventory-1920x1080
+AUDIT_GUI PASS Inventory fits (800, 600)
+AUDIT_GUI PASS Actual window size inventory-800x600
+AUDIT_GUI PASS Saved inventory-800x600
+AUDIT_GUI PASS Actual window size workshops-gallery
+AUDIT_GUI PASS Saved workshops-gallery
+AUDIT_GUI PASS Actual window size workshops-forge-closeup
+AUDIT_GUI PASS Saved workshops-forge-closeup
+AUDIT_GUI PASS Actual window size workshops-loom-closeup
+AUDIT_GUI PASS Saved workshops-loom-closeup
+AUDIT_GUI PASS All 17 station silhouettes render in the review gallery
+AUDIT_GUI PASS Very Low enables two nearest electric lights instead of the first built lights
+AUDIT_GUI PASS Actual window size river-powered-workshop-night
+AUDIT_GUI PASS Saved river-powered-workshop-night
+AUDIT_GUI PASS Night scene lamp has real generator power
+AUDIT_GUI PASS Actual window size vitals-hud-1280x720
+AUDIT_GUI PASS Saved vitals-hud-1280x720
+AUDIT_GUI PASS Actual window size character-complete-closeup
+AUDIT_GUI PASS Saved character-complete-closeup
+AUDIT_GUI PASS Twelve actual articulated mining-animation frames saved
+SETTLEMENT_GUI CHECKS=37 FAILED=0

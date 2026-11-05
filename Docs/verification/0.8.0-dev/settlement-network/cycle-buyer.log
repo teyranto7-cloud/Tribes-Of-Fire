@@ -1,0 +1,11 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=1988582436 count=1
+PLAYER_JOINED id=1508313486 count=2
+SETTLEMENT_CLIENT_READY buyer
+PLAYER_JOINED id=1336313593 count=3
+PLAYER_JOINED id=1988582436 count=1
+PLAYER_JOINED id=1336313593 count=2
+PLAYER_JOINED id=1305630034 count=3
+SETTLEMENT_CLIENT_PASS role=buyer checks=12 failed=0

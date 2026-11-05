@@ -1,0 +1,571 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (117 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   1% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   2% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   3% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   4% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   5% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   5% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   6% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   8% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   9% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  10% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  11% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  11% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  13% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  14% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  15% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  18% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  19% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  21% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  22% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  22% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  24% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  27% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  27% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  28% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  31% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  34% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  35% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  36% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  37% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  39% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  41% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  42% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  43% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  44% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  44% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  45% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  47% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  48% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  49% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  51% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  54% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  55% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  55% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  57% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  58% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  59% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  62% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  63% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  65% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  67% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  68% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  69% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  71% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  72% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  72% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  74% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  75% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  77% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  77% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  78% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  79% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  80% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  81% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  83% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  83% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  84% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  86% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  87% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  89% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  90% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  91% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  93% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  94% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  94% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  95% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  96% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  97% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  98% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (141 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | build.wav[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | combat.wav[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | combat_music.wav[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | craft.wav[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | creation.wav[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | damage.wav[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | exploration.wav[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | menu.wav[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | night.wav[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | pickup.wav[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | step_dirt.wav[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | step_grass.wav[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | step_sand.wav[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | step_stone.wav[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | step_water.wav[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | step_wood.wav[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | stone.wav[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | ui.wav[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | wind.wav[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | wood.wav[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | NotoSansCJK-Regular.ttc[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | advanced_workshop.svg[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | alchemy.svg[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | anvil.svg[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | armor.svg[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | arrow.svg[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | axe.svg[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | bandage.svg[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | berries.svg[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | bone.svg[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | bone_armor.svg[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | bow.svg[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | brick.svg[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | bronze_armor.svg[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | bronze_ingot.svg[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | bronze_sword.svg[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | campfire.svg[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | carpenter.svg[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | cement.svg[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | chair.svg[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | charcoal.svg[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | chest_kit.svg[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | circuit.svg[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | clay.svg[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | cloth.svg[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | club.svg[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | coal.svg[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | concrete.svg[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | concrete_mixer.svg[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | conveyor.svg[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | cooked_fish.svg[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | cooked_meat.svg[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | cooking_fire.svg[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | copper_armor.svg[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | copper_ingot.svg[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | copper_ore.svg[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | copper_pickaxe.svg[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | copper_sword.svg[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | cost.svg[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | crusher.svg[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | durability.svg[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | electrical_bench.svg[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | electric_lamp.svg[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | fiber.svg[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | furnace.svg[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | gear.svg[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | glass.svg[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | gold_armor.svg[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | gold_ingot.svg[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | gold_ore.svg[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | gravel.svg[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | hand.svg[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | herb.svg[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | herbal_tea.svg[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | id.svg[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | iron_armor.svg[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | iron_ingot.svg[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | iron_ore.svg[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | iron_pickaxe.svg[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | iron_sword.svg[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | kitchen.svg[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | lantern.svg[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | leather.svg[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | leather_armor.svg[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | limestone.svg[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | log.svg[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | loom.svg[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | mason.svg[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | mechanical_workshop.svg[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | medical_kit.svg[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | motor.svg[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | nail.svg[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | petals.svg[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | pickaxe.svg[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | plank.svg[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | power_pole.svg[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | pt.svg[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | raft.svg[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | rare_ore.svg[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | raw_fish.svg[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | raw_meat.svg[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | recipes.svg[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | rope.svg[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | sand.svg[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | sawmill.svg[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | seed.svg[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | shaft.svg[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | shelter.svg[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | shield.svg[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | shovel.svg[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | silver_ingot.svg[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | silver_ore.svg[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | silver_sword.svg[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | smelter.svg[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | soil.svg[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | spear.svg[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | stack.svg[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | station.svg[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | steel_armor.svg[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | steel_ingot.svg[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | steel_sword.svg[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | stick.svg[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | stone.svg[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | stone_sword.svg[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | sulfur.svg[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | table.svg[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | tannery.svg[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | tin_ingot.svg[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | tin_ore.svg[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | torch.svg[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | totem.svg[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | vase.svg[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | wall_kit.svg[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | water.svg[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | waterwheel.svg[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | water_container.svg[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | weapons.svg[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | wire.svg[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | wood.svg[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | workbench.svg[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | icon.svg[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (141 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   1% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   2% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   2% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   3% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   4% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   4% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   5% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   6% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   7% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   7% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   8% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   9% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   9% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  10% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  11% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  11% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  12% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  13% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  14% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  14% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  15% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  16% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  16% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  17% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  18% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  19% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  19% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  20% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  21% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  21% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  22% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  23% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  23% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  24% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  25% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  26% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  26% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  27% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  28% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  28% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  29% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  30% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  30% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  31% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  32% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  33% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  33% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  34% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  35% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  35% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  36% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  37% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  38% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  38% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  39% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  40% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  40% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  41% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  42% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  42% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  43% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  44% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  45% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  45% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  46% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  47% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  47% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  48% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  49% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  50% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  50% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  51% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  52% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  52% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  53% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  54% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  54% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  55% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  56% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  57% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  57% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  58% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  59% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  59% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  60% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  61% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  61% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  62% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  63% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  64% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  64% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  65% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  66% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  66% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  67% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  68% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  69% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  69% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  70% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  71% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  71% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  72% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  73% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  73% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  74% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  75% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  76% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  76% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  77% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  78% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  78% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  79% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  80% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  80% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  81% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  82% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  83% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  83% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  84% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  85% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  85% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  86% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  87% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  88% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  88% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  89% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  90% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  90% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  91% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  92% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  92% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  93% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  94% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  95% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  95% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  96% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  97% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  97% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  98% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
+[   0% ] [90m[1mreimport[22m | NotoSansCJK-Regular.ttc[39m[0m
+[   0% ] [90m[1mreimport[22m | NotoSansCJK-Regular.ttc[39m[0m
+[   1% ] [90m[1mreimport[22m | medical_kit.svg[39m[0m
+[   2% ] [90m[1mreimport[22m | motor.svg[39m[0m
+[   2% ] [90m[1mreimport[22m | nail.svg[39m[0m
+[   3% ] [90m[1mreimport[22m | petals.svg[39m[0m
+[   4% ] [90m[1mreimport[22m | pickaxe.svg[39m[0m
+[   4% ] [90m[1mreimport[22m | plank.svg[39m[0m
+[   5% ] [90m[1mreimport[22m | power_pole.svg[39m[0m
+[   6% ] [90m[1mreimport[22m | pt.svg[39m[0m
+[   7% ] [90m[1mreimport[22m | raft.svg[39m[0m
+[   7% ] [90m[1mreimport[22m | rare_ore.svg[39m[0m
+[   8% ] [90m[1mreimport[22m | raw_fish.svg[39m[0m
+[   9% ] [90m[1mreimport[22m | raw_meat.svg[39m[0m
+[   9% ] [90m[1mreimport[22m | recipes.svg[39m[0m
+[  10% ] [90m[1mreimport[22m | rope.svg[39m[0m
+[  11% ] [90m[1mreimport[22m | sand.svg[39m[0m
+[  11% ] [90m[1mreimport[22m | sawmill.svg[39m[0m
+[  12% ] [90m[1mreimport[22m | seed.svg[39m[0m
+[  13% ] [90m[1mreimport[22m | hand.svg[39m[0m
+[  14% ] [90m[1mreimport[22m | herb.svg[39m[0m
+[  14% ] [90m[1mreimport[22m | herbal_tea.svg[39m[0m
+[  15% ] [90m[1mreimport[22m | id.svg[39m[0m
+[  16% ] [90m[1mreimport[22m | iron_armor.svg[39m[0m
+[  16% ] [90m[1mreimport[22m | iron_ingot.svg[39m[0m
+[  17% ] [90m[1mreimport[22m | iron_ore.svg[39m[0m
+[  18% ] [90m[1mreimport[22m | iron_pickaxe.svg[39m[0m
+[  19% ] [90m[1mreimport[22m | iron_sword.svg[39m[0m
+[  19% ] [90m[1mreimport[22m | kitchen.svg[39m[0m
+[  20% ] [90m[1mreimport[22m | lantern.svg[39m[0m
+[  21% ] [90m[1mreimport[22m | leather.svg[39m[0m
+[  21% ] [90m[1mreimport[22m | leather_armor.svg[39m[0m
+[  22% ] [90m[1mreimport[22m | limestone.svg[39m[0m
+[  23% ] [90m[1mreimport[22m | log.svg[39m[0m
+[  23% ] [90m[1mreimport[22m | loom.svg[39m[0m
+[  24% ] [90m[1mreimport[22m | mason.svg[39m[0m
+[  25% ] [90m[1mreimport[22m | mechanical_workshop.svg[39m[0m
+[  26% ] [90m[1mreimport[22m | sulfur.svg[39m[0m
+[  26% ] [90m[1mreimport[22m | table.svg[39m[0m
+[  27% ] [90m[1mreimport[22m | tannery.svg[39m[0m
+[  28% ] [90m[1mreimport[22m | tin_ingot.svg[39m[0m
+[  28% ] [90m[1mreimport[22m | tin_ore.svg[39m[0m
+[  29% ] [90m[1mreimport[22m | torch.svg[39m[0m
+[  30% ] [90m[1mreimport[22m | totem.svg[39m[0m
+[  30% ] [90m[1mreimport[22m | vase.svg[39m[0m
+[  31% ] [90m[1mreimport[22m | wall_kit.svg[39m[0m
+[  32% ] [90m[1mreimport[22m | water.svg[39m[0m
+[  33% ] [90m[1mreimport[22m | waterwheel.svg[39m[0m
+[  33% ] [90m[1mreimport[22m | water_container.svg[39m[0m
+[  34% ] [90m[1mreimport[22m | weapons.svg[39m[0m
+[  35% ] [90m[1mreimport[22m | wire.svg[39m[0m
+[  35% ] [90m[1mreimport[22m | wood.svg[39m[0m
+[  36% ] [90m[1mreimport[22m | workbench.svg[39m[0m
+[  37% ] [90m[1mreimport[22m | icon.svg[39m[0m
+[  38% ] [90m[1mreimport[22m | shaft.svg[39m[0m
+[  38% ] [90m[1mreimport[22m | shelter.svg[39m[0m
+[  39% ] [90m[1mreimport[22m | shield.svg[39m[0m
+[  40% ] [90m[1mreimport[22m | shovel.svg[39m[0m
+[  40% ] [90m[1mreimport[22m | silver_ingot.svg[39m[0m
+[  41% ] [90m[1mreimport[22m | silver_ore.svg[39m[0m
+[  42% ] [90m[1mreimport[22m | silver_sword.svg[39m[0m
+[  42% ] [90m[1mreimport[22m | smelter.svg[39m[0m
+[  43% ] [90m[1mreimport[22m | soil.svg[39m[0m
+[  44% ] [90m[1mreimport[22m | spear.svg[39m[0m
+[  45% ] [90m[1mreimport[22m | stack.svg[39m[0m
+[  45% ] [90m[1mreimport[22m | station.svg[39m[0m
+[  46% ] [90m[1mreimport[22m | steel_armor.svg[39m[0m
+[  47% ] [90m[1mreimport[22m | steel_ingot.svg[39m[0m
+[  47% ] [90m[1mreimport[22m | steel_sword.svg[39m[0m
+[  48% ] [90m[1mreimport[22m | stick.svg[39m[0m
+[  49% ] [90m[1mreimport[22m | stone.svg[39m[0m
+[  50% ] [90m[1mreimport[22m | stone_sword.svg[39m[0m
+[  50% ] [90m[1mreimport[22m | club.svg[39m[0m
+[  51% ] [90m[1mreimport[22m | cloth.svg[39m[0m
+[  52% ] [90m[1mreimport[22m | clay.svg[39m[0m
+[  52% ] [90m[1mreimport[22m | circuit.svg[39m[0m
+[  53% ] [90m[1mreimport[22m | chest_kit.svg[39m[0m
+[  54% ] [90m[1mreimport[22m | charcoal.svg[39m[0m
+[  54% ] [90m[1mreimport[22m | chair.svg[39m[0m
+[  55% ] [90m[1mreimport[22m | cement.svg[39m[0m
+[  56% ] [90m[1mreimport[22m | carpenter.svg[39m[0m
+[  57% ] [90m[1mreimport[22m | campfire.svg[39m[0m
+[  57% ] [90m[1mreimport[22m | bronze_sword.svg[39m[0m
+[  58% ] [90m[1mreimport[22m | bronze_ingot.svg[39m[0m
+[  59% ] [90m[1mreimport[22m | bronze_armor.svg[39m[0m
+[  59% ] [90m[1mreimport[22m | brick.svg[39m[0m
+[  60% ] [90m[1mreimport[22m | bow.svg[39m[0m
+[  61% ] [90m[1mreimport[22m | bone_armor.svg[39m[0m
+[  61% ] [90m[1mreimport[22m | bone.svg[39m[0m
+[  62% ] [90m[1mreimport[22m | berries.svg[39m[0m
+[  63% ] [90m[1mreimport[22m | bandage.svg[39m[0m
+[  64% ] [90m[1mreimport[22m | axe.svg[39m[0m
+[  64% ] [90m[1mreimport[22m | arrow.svg[39m[0m
+[  65% ] [90m[1mreimport[22m | armor.svg[39m[0m
+[  66% ] [90m[1mreimport[22m | anvil.svg[39m[0m
+[  66% ] [90m[1mreimport[22m | alchemy.svg[39m[0m
+[  67% ] [90m[1mreimport[22m | advanced_workshop.svg[39m[0m
+[  68% ] [90m[1mreimport[22m | gravel.svg[39m[0m
+[  69% ] [90m[1mreimport[22m | gold_ore.svg[39m[0m
+[  69% ] [90m[1mreimport[22m | gold_ingot.svg[39m[0m
+[  70% ] [90m[1mreimport[22m | gold_armor.svg[39m[0m
+[  71% ] [90m[1mreimport[22m | glass.svg[39m[0m
+[  71% ] [90m[1mreimport[22m | gear.svg[39m[0m
+[  72% ] [90m[1mreimport[22m | furnace.svg[39m[0m
+[  73% ] [90m[1mreimport[22m | fiber.svg[39m[0m
+[  73% ] [90m[1mreimport[22m | electric_lamp.svg[39m[0m
+[  74% ] [90m[1mreimport[22m | electrical_bench.svg[39m[0m
+[  75% ] [90m[1mreimport[22m | durability.svg[39m[0m
+[  76% ] [90m[1mreimport[22m | crusher.svg[39m[0m
+[  76% ] [90m[1mreimport[22m | coal.svg[39m[0m
+[  77% ] [90m[1mreimport[22m | concrete.svg[39m[0m
+[  78% ] [90m[1mreimport[22m | concrete_mixer.svg[39m[0m
+[  78% ] [90m[1mreimport[22m | conveyor.svg[39m[0m
+[  79% ] [90m[1mreimport[22m | cooked_fish.svg[39m[0m
+[  80% ] [90m[1mreimport[22m | cooked_meat.svg[39m[0m
+[  80% ] [90m[1mreimport[22m | cooking_fire.svg[39m[0m
+[  81% ] [90m[1mreimport[22m | copper_armor.svg[39m[0m
+[  82% ] [90m[1mreimport[22m | copper_ingot.svg[39m[0m
+[  83% ] [90m[1mreimport[22m | copper_ore.svg[39m[0m
+[  83% ] [90m[1mreimport[22m | copper_pickaxe.svg[39m[0m
+[  84% ] [90m[1mreimport[22m | copper_sword.svg[39m[0m
+[  85% ] [90m[1mreimport[22m | NotoSansCJK-Regular.ttc[39m[0m
+[  85% ] [90m[1mreimport[22m | medical_kit.svg[39m[0m
+[  86% ] [90m[1mreimport[22m | motor.svg[39m[0m
+[  87% ] [90m[1mreimport[22m | nail.svg[39m[0m
+[  88% ] [90m[1mreimport[22m | petals.svg[39m[0m
+[  88% ] [90m[1mreimport[22m | pickaxe.svg[39m[0m
+[  89% ] [90m[1mreimport[22m | plank.svg[39m[0m
+[  90% ] [90m[1mreimport[22m | power_pole.svg[39m[0m
+[  90% ] [90m[1mreimport[22m | pt.svg[39m[0m
+[  91% ] [90m[1mreimport[22m | raft.svg[39m[0m
+[  92% ] [90m[1mreimport[22m | rare_ore.svg[39m[0m
+[  92% ] [90m[1mreimport[22m | raw_fish.svg[39m[0m
+[  93% ] [90m[1mreimport[22m | raw_meat.svg[39m[0m
+[  94% ] [90m[1mreimport[22m | recipes.svg[39m[0m
+[  95% ] [90m[1mreimport[22m | rope.svg[39m[0m
+[  95% ] [90m[1mreimport[22m | sand.svg[39m[0m
+[  96% ] [90m[1mreimport[22m | sawmill.svg[39m[0m
+[  97% ] [90m[1mreimport[22m | seed.svg[39m[0m
+[  97% ] [90m[1mreimport[22m | hand.svg[39m[0m
+[  98% ] [90m[1mreimport[22m | herb.svg[39m[0m
+[  99% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (141 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m

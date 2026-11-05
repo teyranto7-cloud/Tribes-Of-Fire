@@ -370,6 +370,7 @@ func nearest_tree(player: Node3D):
 	return result
 
 func placement(player: CharacterBody3D, kind: String = "campfire", rotation_value: int = 0) -> Dictionary:
+	if kind in preload("res://Energy/Grid.gd").KINDS: return preload("res://Energy/Grid.gd").placement(self,player,kind)
 	if kind=="raft":
 		var at:Vector3=player.position-player.global_basis.z*4
 		at.y=water_level+0.12

@@ -1,0 +1,69 @@
+{
+  "gpu_time_ms": null,
+  "hardware": {
+    "cores": 5,
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "gpu": "llvmpipe (LLVM 19.1.7, 256 bits)",
+    "memory_bytes": 35743748096,
+    "renderer": "gl_compatibility"
+  },
+  "method": "Very Low, fixed camera/seed, wait for wanted chunks, Warmup/sample durations recorded in this report. Main world clock held, live physics/AI. Xorg/llvmpipe software; not target hardware or sustained performance.",
+  "resolution": [
+    1280,
+    720
+  ],
+  "sample_seconds": 12.0,
+  "samples": [
+    {
+      "draw_calls": 436.0,
+      "fps": 5.97008242445047,
+      "frames": 72,
+      "godot_static_bytes": 138703058,
+      "nodes": 5333,
+      "p50_ms": 167.508,
+      "p95_ms": 184.697,
+      "physics_ms": 7.08976388888888,
+      "process_ms": 152.078388888889,
+      "scene": "day"
+    },
+    {
+      "draw_calls": 427.0,
+      "fps": 6.02212296993616,
+      "frames": 73,
+      "godot_static_bytes": 137035331,
+      "nodes": 5145,
+      "p50_ms": 165.628,
+      "p95_ms": 183.102,
+      "physics_ms": 5.81342465753425,
+      "process_ms": 159.744452054795,
+      "scene": "station"
+    },
+    {
+      "draw_calls": 436.0,
+      "fps": 6.56871083562067,
+      "frames": 79,
+      "godot_static_bytes": 137124511,
+      "nodes": 5145,
+      "p50_ms": 152.291,
+      "p95_ms": 167.938,
+      "physics_ms": 5.15822784810127,
+      "process_ms": 144.108670886076,
+      "scene": "night"
+    },
+    {
+      "draw_calls": 437.0,
+      "fps": 6.29894894577558,
+      "frames": 76,
+      "godot_static_bytes": 137137415,
+      "nodes": 5145,
+      "p50_ms": 159.074,
+      "p95_ms": 174.709,
+      "physics_ms": 5.59403947368421,
+      "process_ms": 152.191710526316,
+      "scene": "storm"
+    }
+  ],
+  "seed": 718991,
+  "version": "0.7.1-dev",
+  "warmup_seconds": 5.0
+}

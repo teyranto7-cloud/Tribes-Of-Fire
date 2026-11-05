@@ -295,6 +295,15 @@
       "cooking_fire": {
         "wood": 8,
         "stone": 2
+      },
+      "waterwheel": {
+        "waterwheel": 1
+      },
+      "power_pole": {
+        "power_pole": 1
+      },
+      "electric_lamp": {
+        "electric_lamp": 1
       }
     },
     "maximum": 512,

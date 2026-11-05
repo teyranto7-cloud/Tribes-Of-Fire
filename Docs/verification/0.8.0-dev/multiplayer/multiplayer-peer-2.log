@@ -1,0 +1,7 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+GAME_READY role=client Godot=4.6.3-stable (official)
+PLAYER_JOINED id=325686008 count=1
+PLAYER_JOINED id=446570539 count=2
+MULTIPLAYER_SMOKE_OK client=2 players=2 snapshots=36 moved=true shared_tree=true wood=0
+NETWORK_FAILURE Servidor desconectado / Server disconnected.
